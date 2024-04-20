@@ -1,6 +1,11 @@
+import { Container } from './HomePage.styled';
+import VirtualTour from '../../components/VirtualTour/VirtualTour';
+
 const HomePage = () => {
   return (
-    <h1>Home page</h1>
+    <Container>
+      <VirtualTour/>
+    </Container>
   );
 };
 

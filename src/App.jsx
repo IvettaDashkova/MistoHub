@@ -6,9 +6,8 @@ const HomePage = lazy(() => import('./pages/HomePage/HomePage'));
 function App() {
   return (
     <Routes>
-      <Route path="/" element={<HomePage />}></Route>
-      </Routes>
-  )
+      <Route path="*" element={<HomePage />} />
+    </Routes>
+  );
 }
-
-export default App
+export default App;
