@@ -36,7 +36,7 @@ const HomePage = () => {
     imgData[3]
   }`;
 }
-
+console.log('done')
   return (
     <Container>
       <h1>Home Page</h1>
