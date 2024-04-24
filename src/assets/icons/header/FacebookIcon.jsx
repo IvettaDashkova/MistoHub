@@ -1,5 +1,5 @@
 const FacebookIcon = ({ colorLight, colorDark }) => {
-  console.log('colorDark: ', colorDark);
+  
   return (
     <svg
       version="1.1"
