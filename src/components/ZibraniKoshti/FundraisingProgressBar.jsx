@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { ProgressBar, Accumulated, AmountGif } from './ZibraniKoshti.styled';
 
 const FundraisingProgressBar = ({ totalAmount, targetAmount }) => {
   const percentage = Math.min((totalAmount / targetAmount) * 100, 100);
@@ -10,22 +11,28 @@ const FundraisingProgressBar = ({ totalAmount, targetAmount }) => {
   }, [percentage]);
 
   return (
-    <div
-      style={{
-        width: '100%',
-        height: '10px',
-        backgroundColor: '#f0f0f0',
-        overflow: 'hidden',
-      }}
-    >
+    <ProgressBar>
       <div
         style={{
-          width: `${progress}%`,
+          width: '100%',
           height: '10px',
-          backgroundColor: 'green',
+          backgroundColor: '#7E7E7E',
+          borderRadius: '100px',
+          position: 'relative',
         }}
-      />
-    </div>
+      >
+        <Accumulated
+          style={{
+            width: `${progress}%`,
+            height: '10px',
+            backgroundColor: '#FFFFFF',
+            
+          }}
+        >
+          <AmountGif>$125 000</AmountGif>
+        </Accumulated>
+      </div>
+    </ProgressBar>
   );
 };
 
