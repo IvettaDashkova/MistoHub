@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-
+//fixed tabs
 import VirtualTour from '../../components/VirtualTour/VirtualTour';
 import { fetchGoal, fetchCompanies, fetchPeople } from '../../services/API';
 import Header from '../../components/Header/Header';
