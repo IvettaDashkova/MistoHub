@@ -10,6 +10,15 @@ export const HowItWorkSection = styled.section`
   background-repeat: no-repeat;
   background-position: center;
   background-size: auto 100%;
+
+  @media(max-width: 768px) {
+    width: 768px;
+    padding: 0 32px;
+  }
+  @media(max-width: 375px) {
+    max-width: 375px;
+    padding: 0 16px;
+  }
 `;
 
 export const HowItWorkTitle = styled.h2`

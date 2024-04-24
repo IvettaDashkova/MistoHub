@@ -5,6 +5,15 @@ export const AboutSection = styled.section`
   margin: 0 auto;
   margin-bottom: 190px;
   padding: 0 120px;
+
+  @media(max-width: 768px) {
+    width: 768px;
+    padding: 0 32px;
+  }
+  @media(max-width: 375px) {
+    max-width: 375px;
+    padding: 0 16px;
+  }
 `;
 
 export const AboutProject = styled.p`
