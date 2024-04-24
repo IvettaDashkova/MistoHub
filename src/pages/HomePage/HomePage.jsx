@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 
-// import { Container } from './HomePage.styled';
 import VirtualTour from '../../components/VirtualTour/VirtualTour';
 import { fetchGoal, fetchCompanies, fetchPeople } from '../../services/API';
 import Header from '../../components/Header/Header';
