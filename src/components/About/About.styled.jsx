@@ -36,6 +36,10 @@ export const AboutList = styled.ul`
   justify-content: space-between;
   gap: 24px;
   margin-bottom: 190px;
+
+  @media(max-width: 768px) {
+    flex-direction: column;
+  }
 `;
 
 export const AboutItem = styled.li`

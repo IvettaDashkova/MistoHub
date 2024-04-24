@@ -1,6 +1,9 @@
 import { useState, useEffect } from 'react';
 import { Container } from './HomePage.styled';
 import VirtualTour from '../../components/VirtualTour/VirtualTour';
+import About from '../../components/About/About';
+import HowItWork from '../../components/About/HowItWork';
+import Building from '../../components/About/Building';
 import { fetchGoal, fetchCompanies, fetchPeople } from '../../services/API';
 const HomePage = () => {
 
@@ -40,6 +43,9 @@ console.log('done')
   return (
     <Container>
       <h1>Home Page</h1>
+      <About/>
+      <HowItWork/>
+      <Building />
       {goalData && <><p>{ goalData.raised}</p> <p>{goalData.goal}</p></>}
       {companiesData && <img src={formImgURL(companiesData[0].logoURL)} />}
        {peopleData && <img src={formImgURL(peopleData[0].imageURL)} />}
