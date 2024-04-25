@@ -1,10 +1,8 @@
 import { useState, useEffect } from 'react';
 import { Container } from './HomePage.styled';
 import VirtualTour from '../../components/VirtualTour/VirtualTour';
-import About from '../../components/About/About';
-import HowItWork from '../../components/About/HowItWork';
-import Building from '../../components/About/Building';
 import { fetchGoal, fetchCompanies, fetchPeople } from '../../services/API';
+import { About } from '../../components/About/About';
 import { ZibraniKoshti } from '../../components/ZibraniKoshti/ZibraniKoshti';
 
 const HomePage = () => {
@@ -41,11 +39,8 @@ const HomePage = () => {
   console.log('done');
   return (
     <Container>
-      {/* <About/> */}
-      <HowItWork/>
-      {/* <Building />
-      {goalData && <><p>{ goalData.raised}</p> <p>{goalData.goal}</p></>}
       <h1>Home Page</h1>
+      <About />
       {goalData && (
         <>
           <p>{goalData.raised}</p> <p>{goalData.goal}</p>
@@ -55,7 +50,7 @@ const HomePage = () => {
       {peopleData && <img src={formImgURL(peopleData[0].imageURL)} />}
       <VirtualTour />
       <VirtualTour />
-      <ZibraniKoshti /> */}
+      <ZibraniKoshti />
     </Container>
   );
 };

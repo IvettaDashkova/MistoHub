@@ -2,6 +2,7 @@ import styled from '@emotion/styled';
 
 export const AboutSection = styled.section`
   padding: 30px 0;
+  font-family: "FixelDisplay";
 
   .container {
     min-width: 320px;
@@ -20,6 +21,7 @@ export const AboutSection = styled.section`
   }
 
   .about-title {
+    font-family: "Oddval";
     font-weight: 600;
     font-size: 24px;
     line-height: 1.33;
@@ -72,7 +74,7 @@ export const AboutSection = styled.section`
   }
 
   .about-list-item-title {
-    font-family: Oddval;
+    font-family: "Oddval";
     font-size: 20px;
     font-weight: 600;
     line-height: 1.2;
@@ -83,7 +85,6 @@ export const AboutSection = styled.section`
   }
 
   .about-list-item-text {
-    font-family: MacPaw Fixel Display;
     font-size: 16px;
     font-weight: 500;
     line-height: 1.25;
@@ -93,13 +94,14 @@ export const AboutSection = styled.section`
   }
 
   .about-info {
+    font-family: "Oddval";
     font-weight: 600;
     font-size: 24px;
     line-height: 1.33;
     letter-spacing: -0.02em;
     color: #0b0b0b;
     text-align: center;
-    padding: 24px 20px;
+    padding: 24px 0;
   }
 
   @media (min-width: 768px) {

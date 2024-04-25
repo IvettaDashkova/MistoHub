@@ -5,11 +5,11 @@ import 'swiper/css/pagination';
 
 import { AboutSection } from './About.styled';
 
-const About = () => {
+export const About = () => {
   return (
     <AboutSection>
       <div className="container">
-        <p className="about-project">Про проект</p>
+        <p className="about-project">Про проєкт</p>
 
         <h2 className="about-title">
           <span className="accent">Містохаб</span> це
@@ -77,5 +77,3 @@ const About = () => {
     </AboutSection>
   );
 };
-
-export default About;
