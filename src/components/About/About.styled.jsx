@@ -53,6 +53,9 @@ export const AboutSection = styled.section`
     padding: 38px 32px;
     border-radius: 20px;
   }
+  .swiper-slide{
+    height: unset;
+  }
 
   .about-list-item-number {
     width: 44px;
@@ -68,7 +71,7 @@ export const AboutSection = styled.section`
 
     font-size: 24px;
     font-weight: 500;
-    line-height: 1.33;
+    line-height: 1.3;
     letter-spacing: -0.02em;
     color: #ffffff;
   }
@@ -139,6 +142,8 @@ export const AboutSection = styled.section`
 
     .about-list-item {
       padding: 38px 38px;
+      min-height: 100%;
+      align-self: stretch;
     }
 
     .about-list-item-number {
@@ -166,7 +171,7 @@ export const AboutSection = styled.section`
     }
 
     .swiper-pagination-bullet {
-      background: #0b0b0b0d;
+      background: #0b0b0b;
     }
 
     .swiper-pagination-bullet-active {

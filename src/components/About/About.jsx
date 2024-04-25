@@ -24,22 +24,31 @@ export const About = () => {
             1440: {
               slidesPerView: 3,
               enabled: false,
-              autoHeight: true,
               spaceBetween: '24px',
+              grid: {
+                row: 1,
+              }
             },
             768: {
               slidesPerView: 2,
               enabled: true,
-              autoHeight: true,
               spaceBetween: '16px',
-            },
-            375: {
-              slidesPerView: 1,
-              enabled: false,
+              grid: {
+                row: 1,
+              },
+              pagination: {
+                enabled: true,
+                clickable: true,
+              }
             },
           }}
+          slidesPerView = {1}
+          grid={{
+              row: 3
+          }}
+          enabled={false}
           pagination={{
-            enabled: true,
+            enabled: false,
             clickable: true,
           }}
           modules={[Pagination]}
