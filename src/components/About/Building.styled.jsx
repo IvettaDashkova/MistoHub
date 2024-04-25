@@ -11,14 +11,6 @@ export const BuildingSection = styled.section`
   padding: 0 120px;
   position: relative;
 
-  @media(max-width: 768px) {
-    width: 768px;
-    padding: 0 32px;
-  }
-  @media(max-width: 375px) {
-    max-width: 375px;
-    padding: 0 16px;
-  }
 `;
 
 export const BuildingTitle = styled.h2`
@@ -46,9 +38,6 @@ export const BuildingText = styled.p`
   margin-bottom: 40px;
   padding-right: 280px;
 
-  @media (max-width: 1024px) {
-      margin-bottom: 60px;
-  }
 `;
 
 export const BuildingImg = styled.img`

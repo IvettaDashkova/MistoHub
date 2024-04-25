@@ -22,7 +22,7 @@ export const HowItWorkSection = styled.section`
     margin-bottom: 80px;
   }
 
-  .accent{
+  .accent {
     color: #f77d07;
   }
 
@@ -49,55 +49,55 @@ export const HowItWorkSection = styled.section`
       color: #898b90;
     }
   }
-`;
 
-export const HowItWorkList = styled.ul`
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: space-between;
-  gap: 24px;
-  margin-bottom: 80px;
-`;
-
-export const HowItWorkItem = styled.li`
-  background: #ffffff;
-  padding: 40px;
-  border-radius: 20px;
-  width: calc((100% - 48px) / 3);
-
-  &:first-child {
-    width: calc(47% - 24px);
+  .how-it-work-list {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    gap: 24px;
+    margin-bottom: 80px;
   }
-  &:nth-child(2) {
-    width: 53%;
+
+  .how-it-work-item {
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 20px;
+    width: calc((100% - 48px) / 3);
+
+    &:first-child {
+      width: calc(47% - 24px);
+    }
+    &:nth-child(2) {
+      width: 53%;
+    }
   }
-`;
 
-export const HowItWorkNumber = styled.div`
-  width: 72px;
-  height: 72px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 100%;
-  opacity: 0px;
-  background: #f77d07;
-  box-shadow: 0px 1px 4px 0px #1018280f;
-  margin-bottom: 30px;
+  .how-it-work-number {
+    width: 72px;
+    height: 72px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100%;
+    opacity: 0px;
+    background: #f77d07;
+    box-shadow: 0px 1px 4px 0px #1018280f;
+    margin-bottom: 30px;
 
-  font-size: 40px;
-  font-weight: 500;
-  line-height: 1.1;
-  letter-spacing: -0.02em;
-  color: #ffffff;
-`;
+    font-size: 40px;
+    font-weight: 500;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    color: #ffffff;
+  }
 
-export const HowItWorkItemText = styled.p`
-  font-family: Oddval;
-  font-size: 22px;
-  font-weight: 600;
-  line-height: 1.18;
-  letter-spacing: -0.02em;
-  text-align: left;
-  color: #0b0b0b;
+  .how-it-work-text {
+    font-family: Oddval;
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 1.18;
+    letter-spacing: -0.02em;
+    text-align: left;
+    color: #0b0b0b;
+  }
 `;
