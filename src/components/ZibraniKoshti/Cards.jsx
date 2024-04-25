@@ -5,7 +5,7 @@ import { CardsList } from './ZibraniKoshti.styled';
 export const Cards = () => {
   return (
     <CardsList>
-      {/* <NeedToDoCards /> */}
+      <NeedToDoCards />
       <MadeCards />
     </CardsList>
   );

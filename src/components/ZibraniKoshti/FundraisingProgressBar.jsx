@@ -12,23 +12,8 @@ const FundraisingProgressBar = ({ totalAmount, targetAmount }) => {
 
   return (
     <ProgressBar>
-      <div
-        style={{
-          width: '100%',
-          height: '10px',
-          backgroundColor: '#7E7E7E',
-          borderRadius: '100px',
-          position: 'relative',
-        }}
-      >
-        <Accumulated
-          style={{
-            width: `${progress}%`,
-            height: '10px',
-            backgroundColor: '#FFFFFF',
-            
-          }}
-        >
+      <div>
+        <Accumulated progress={percentage}>
           <AmountGif>$125 000</AmountGif>
         </Accumulated>
       </div>

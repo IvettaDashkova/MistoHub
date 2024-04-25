@@ -37,7 +37,8 @@ const HomePage = () => {
   }
   console.log('done');
   return (
-    <Container>
+    <>
+      {/* // <Container> */}
       <h1>Home Page</h1>
       {goalData && (
         <>
@@ -49,7 +50,8 @@ const HomePage = () => {
       <VirtualTour />
       <VirtualTour />
       <ZibraniKoshti />
-    </Container>
+      {/* // </Container> */}
+    </>
   );
 };
 

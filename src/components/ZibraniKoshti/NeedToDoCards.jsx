@@ -1,4 +1,4 @@
-import { NeedToDoItem } from './ZibraniKoshti.styled';
+import { NeedToDoItem, SVGContainerForNeedItem } from './ZibraniKoshti.styled';
 
 export const NeedToDoCards = () => {
   const tasks = [
@@ -10,6 +10,7 @@ export const NeedToDoCards = () => {
     <NeedToDoItem key={i}>
       <h4>Залишилось зробити</h4>
       <p>{task}</p>
+      <SVGContainerForNeedItem>$</SVGContainerForNeedItem>
     </NeedToDoItem>
   ));
 };
