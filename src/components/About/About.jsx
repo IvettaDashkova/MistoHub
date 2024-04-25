@@ -1,11 +1,9 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination } from 'swiper/modules';
-
-// Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/pagination';
 
-import { AboutSection, AboutInfo } from './About.styled';
+import { AboutSection } from './About.styled';
 
 const About = () => {
   return (
@@ -68,10 +66,10 @@ const About = () => {
             </p>
           </SwiperSlide>
         </Swiper>
-        <AboutInfo>
+        <div className='about-info'>
           80% прибутку <span className="accent">МІСТОХАБ</span> буде спрямовано
           на фінансування соціальних проєктів містян
-        </AboutInfo>
+        </div>
       </div>
     </AboutSection>
   );
