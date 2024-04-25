@@ -3,7 +3,6 @@ import { Container } from './HomePage.styled';
 import VirtualTour from '../../components/VirtualTour/VirtualTour';
 import { fetchGoal, fetchCompanies, fetchPeople } from '../../services/API';
 import { About } from '../../components/About/About';
-import { HowItWork } from '../../components/About/HowItWork';
 import Icon from 'src/components/Icon/Icon';
 import { ZibraniKoshti } from '../../components/ZibraniKoshti/ZibraniKoshti';
 
@@ -46,7 +45,6 @@ const HomePage = () => {
 
       <h1>Home Page</h1>
       <About />
-      <HowItWork />
       {goalData && (
         <>
           <p>{goalData.raised}</p> <p>{goalData.goal}</p>
