@@ -42,7 +42,6 @@ const HomePage = () => {
 console.log('done')
   return (
     <Container>
-      <h1>Home Page</h1>
       <About/>
       <HowItWork/>
       <Building />

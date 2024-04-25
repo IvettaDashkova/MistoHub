@@ -14,6 +14,38 @@ export const AboutSection = styled.section`
     max-width: 375px;
     padding: 0 16px;
   }
+
+  .swiper {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    height: 300px;
+  
+    /* Center slide text vertically */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .swiper-pagination-bullet{
+
+  }
+
+  .swiper-pagination-bullet-active{
+    background: #f77d07;
+  }
 `;
 
 export const AboutProject = styled.p`
