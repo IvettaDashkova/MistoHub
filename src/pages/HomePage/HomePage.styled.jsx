@@ -5,7 +5,10 @@ export const Container = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding-top: 50px;
+  padding-top: 500px;
+
+  .vector-svg {
+    fill: green;
+    stroke: red;
+  }
 `;
-
-
