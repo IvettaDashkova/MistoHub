@@ -4,8 +4,8 @@ import VirtualTour from '../../components/VirtualTour/VirtualTour';
 import { fetchGoal, fetchCompanies, fetchPeople } from '../../services/API';
 import Header from '../../components/Header/Header';
 import { SomeSectionContainer } from './HomePage.styled';
+import Icon from 'src/components/Icon/Icon';
 import { ZibraniKoshti } from '../../components/ZibraniKoshti/ZibraniKoshti';
-
 
 const HomePage = () => {
   const [goalData, setGoalData] = useState(null);
@@ -43,6 +43,7 @@ const HomePage = () => {
     <>
       <Header />
       <SomeSectionContainer>
+        <Icon width="40" height="30" iconName="Vector" styles="vector-svg" />
         <h1>Home Page</h1>
         {goalData && (
           <>

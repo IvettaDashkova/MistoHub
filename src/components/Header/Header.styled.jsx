@@ -64,6 +64,16 @@ export const HeaderContainer = styled(Container)`
     fill: #f77d07;
     transform: rotate(-4deg);
   }
+
+  .btn-clouds:hover svg.clouds {
+    fill: #e97200;
+    transition: fill 0.25s ease-in-out;
+  }
+
+  .btn-clouds:active svg.clouds {
+    fill: #e3e3e3;
+    transition: fill 0.25s ease-in-out;
+  }
 `;
 
 export const BurgerMenu = styled(BurgerMenuIcon)`

@@ -8,4 +8,8 @@ export const SomeSectionContainer = styled(Container)`
   padding-top: 500px;
 
   background-color: #d2d2d2;
+  .vector-svg {
+    fill: green;
+    stroke: red;
+  }
 `;
