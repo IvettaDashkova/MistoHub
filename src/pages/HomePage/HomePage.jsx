@@ -3,6 +3,7 @@ import { Container } from './HomePage.styled';
 import VirtualTour from '../../components/VirtualTour/VirtualTour';
 import { fetchGoal, fetchCompanies, fetchPeople } from '../../services/API';
 import { ZibraniKoshti } from '../../components/ZibraniKoshti/ZibraniKoshti';
+import ScrollToTopButton from '../../components/ScrollToTopButton/ScrollToTopButton';
 
 const HomePage = () => {
   const [goalData, setGoalData] = useState(null);
@@ -49,6 +50,7 @@ const HomePage = () => {
       <VirtualTour />
       <VirtualTour />
       <ZibraniKoshti />
+      <ScrollToTopButton />
     </Container>
   );
 };
