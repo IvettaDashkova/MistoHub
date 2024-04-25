@@ -5,8 +5,9 @@ import About from '../../components/About/About';
 import HowItWork from '../../components/About/HowItWork';
 import Building from '../../components/About/Building';
 import { fetchGoal, fetchCompanies, fetchPeople } from '../../services/API';
-const HomePage = () => {
+import { ZibraniKoshti } from '../../components/ZibraniKoshti/ZibraniKoshti';
 
+const HomePage = () => {
   const [goalData, setGoalData] = useState(null);
   const [companiesData, setCompaniesData] = useState(null);
   const [peopleData, setPeopleData] = useState(null);
@@ -17,9 +18,7 @@ const HomePage = () => {
         const goalResponse = await fetchGoal();
         const companiesResponse = await fetchCompanies();
         const peopleResponse = await fetchPeople();
-        
-    
-        
+
         setGoalData(goalResponse);
         setCompaniesData(companiesResponse);
         setPeopleData(peopleResponse);
@@ -28,27 +27,35 @@ const HomePage = () => {
       }
     };
     fetchData();
-  }, []); 
+  }, []);
 
   function formImgURL(img) {
-  const imgData = img.asset._ref.split('-');
+    const imgData = img.asset._ref.split('-');
 
-  return `https://cdn.sanity.io/images/${
-    import.meta.env.VITE_ADMIN_PROJECT_ID
-  }/${import.meta.env.VITE_ADMIN_DATASET}/${imgData[1]}-${imgData[2]}.${
-    imgData[3]
-  }`;
-}
-console.log('done')
+    return `https://cdn.sanity.io/images/${
+      import.meta.env.VITE_ADMIN_PROJECT_ID
+    }/${import.meta.env.VITE_ADMIN_DATASET}/${imgData[1]}-${imgData[2]}.${
+      imgData[3]
+    }`;
+  }
+  console.log('done');
   return (
     <Container>
       <About/>
       <HowItWork/>
       <Building />
       {goalData && <><p>{ goalData.raised}</p> <p>{goalData.goal}</p></>}
+      <h1>Home Page</h1>
+      {goalData && (
+        <>
+          <p>{goalData.raised}</p> <p>{goalData.goal}</p>
+        </>
+      )}
       {companiesData && <img src={formImgURL(companiesData[0].logoURL)} />}
-       {peopleData && <img src={formImgURL(peopleData[0].imageURL)} />}
-      <VirtualTour/>
+      {peopleData && <img src={formImgURL(peopleData[0].imageURL)} />}
+      <VirtualTour />
+      <VirtualTour />
+      <ZibraniKoshti />
     </Container>
   );
 };
