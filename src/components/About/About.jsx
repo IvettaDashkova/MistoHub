@@ -7,7 +7,7 @@ import { AboutSection } from './About.styled';
 
 export const About = () => {
   return (
-    <AboutSection>
+    <AboutSection id="about-project">
       <div className="container">
         <p className="about-project">Про проєкт</p>
 

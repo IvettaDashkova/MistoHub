@@ -8,7 +8,7 @@ import {
 
 const HowItWork = () => {
   return (
-    <HowItWorkSection>
+    <HowItWorkSection id="how-it-work">
       <h2 className='how-it-work-title'>Як це працює?</h2>
       <HowItWorkList>
         <HowItWorkItem>

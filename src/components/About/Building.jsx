@@ -4,7 +4,7 @@ import building2x from '../../assets/about/building@2x.jpg';
 
 const Building = () => {
   return (
-    <BuildingSection>
+    <BuildingSection id="building">
         <BuildingTitle>
         Будівля <Mistohub>МІСТОХАБ</Mistohub> це історична спадщина Полтави
         </BuildingTitle>
