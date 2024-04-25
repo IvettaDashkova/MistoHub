@@ -1,9 +1,11 @@
 import { useState, useEffect } from 'react';
-//fixed tabs
+
 import VirtualTour from '../../components/VirtualTour/VirtualTour';
 import { fetchGoal, fetchCompanies, fetchPeople } from '../../services/API';
 import Header from '../../components/Header/Header';
 import { SomeSectionContainer } from './HomePage.styled';
+import { ZibraniKoshti } from '../../components/ZibraniKoshti/ZibraniKoshti';
+
 
 const HomePage = () => {
   const [goalData, setGoalData] = useState(null);
@@ -50,6 +52,7 @@ const HomePage = () => {
         {companiesData && <img src={formImgURL(companiesData[0].logoURL)} />}
         {peopleData && <img src={formImgURL(peopleData[0].imageURL)} />}
         <VirtualTour />
+        <ZibraniKoshti />
       </SomeSectionContainer>
     </>
   );
