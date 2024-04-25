@@ -41,9 +41,9 @@ const HomePage = () => {
   console.log('done');
   return (
     <Container>
-      <About/>
-      {/* <HowItWork/>
-      <Building />
+      {/* <About/> */}
+      <HowItWork/>
+      {/* <Building />
       {goalData && <><p>{ goalData.raised}</p> <p>{goalData.goal}</p></>}
       <h1>Home Page</h1>
       {goalData && (

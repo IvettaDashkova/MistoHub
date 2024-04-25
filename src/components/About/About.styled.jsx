@@ -92,7 +92,7 @@ export const AboutSection = styled.section`
     color: #0b0b0bcc;
   }
 
-  .about-info{
+  .about-info {
     font-weight: 600;
     font-size: 24px;
     line-height: 1.33;
@@ -101,7 +101,7 @@ export const AboutSection = styled.section`
     text-align: center;
     padding: 24px 20px;
   }
-  
+
   @media (min-width: 768px) {
     padding: 60px 0;
 
@@ -129,10 +129,10 @@ export const AboutSection = styled.section`
     }
 
     .about-list {
-      display:flex;
+      display: flex;
       flex-direction: row;
       align-items: stretch;
-      gap:0;
+      gap: 0;
     }
 
     .about-list-item {
@@ -176,7 +176,6 @@ export const AboutSection = styled.section`
       line-height: 1.11;
       padding: 32px 44px;
     }
-  
   }
 
   @media (min-width: 1440px) {
@@ -223,5 +222,5 @@ export const AboutSection = styled.section`
       line-height: 1.13;
       padding: 40px 84px;
     }
-    }
+  }
 `;

@@ -11,25 +11,44 @@ export const HowItWorkSection = styled.section`
   background-position: center;
   background-size: auto 100%;
 
-  @media(max-width: 768px) {
-    width: 768px;
-    padding: 0 32px;
+  .how-it-work-title {
+    font-family: Oddval;
+    font-size: 60px;
+    font-weight: 600;
+    line-height: 1.13;
+    letter-spacing: -0.02em;
+    text-align: left;
+    color: #ffffff;
+    margin-bottom: 80px;
   }
-  @media(max-width: 375px) {
-    max-width: 375px;
-    padding: 0 16px;
-  }
-`;
 
-export const HowItWorkTitle = styled.h2`
-  font-family: Oddval;
-  font-size: 60px;
-  font-weight: 600;
-  line-height: 1.13;
-  letter-spacing: -0.02em;
-  text-align: left;
-  color: #ffffff;
-  margin-bottom: 80px;
+  .accent{
+    color: #f77d07;
+  }
+
+  .how-it-work-btn {
+    display: block;
+    padding: 23px 46px;
+    border-radius: 60px;
+    opacity: 0px;
+    background: #ffffff;
+    border: none;
+    outline: none;
+    margin: 0 auto;
+
+    font-family: MacPaw Fixel Display;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 1.33;
+    letter-spacing: -0.02em;
+    text-align: center;
+    color: #0b0b0b;
+
+    &:hover {
+      background: #e3e3e3;
+      color: #898b90;
+    }
+  }
 `;
 
 export const HowItWorkList = styled.ul`
@@ -81,32 +100,4 @@ export const HowItWorkItemText = styled.p`
   letter-spacing: -0.02em;
   text-align: left;
   color: #0b0b0b;
-`;
-
-export const HowItWorkAccent = styled.span`
-  color: #f77d07;
-`;
-
-export const HowItWorkButton = styled.button`
-display: block;
-padding: 23px 46px;
-border-radius: 60px;
-opacity: 0px;
-background: #FFFFFF;
-border: none;
-outline: none;
-margin: 0 auto;
-
-font-family: MacPaw Fixel Display;
-font-size: 18px;
-font-weight: 600;
-line-height: 1.33;
-letter-spacing: -0.02em;
-text-align: center;
-color: #0B0B0B;
-
-&:hover {
-  background: #E3E3E3;
-  color: #898B90;
-}
 `;

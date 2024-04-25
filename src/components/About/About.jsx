@@ -9,27 +9,29 @@ const About = () => {
   return (
     <AboutSection>
       <div className="container">
-        <p className='about-project'>Про проект</p>
-        <h2 className='about-title'>
+        <p className="about-project">Про проект</p>
+
+        <h2 className="about-title">
           <span className="accent">Містохаб</span> це
         </h2>
+
         <Swiper
           wrapperTag="ul"
           wrapperClass="about-list"
-          className='swiper'
+          className="swiper"
           observer={true}
           breakpoints={{
             1440: {
               slidesPerView: 3,
               enabled: false,
               autoHeight: true,
-              spaceBetween: "24px",
+              spaceBetween: '24px',
             },
             768: {
               slidesPerView: 2,
               enabled: true,
               autoHeight: true,
-              spaceBetween: "16px",
+              spaceBetween: '16px',
             },
             375: {
               slidesPerView: 1,
@@ -66,7 +68,8 @@ const About = () => {
             </p>
           </SwiperSlide>
         </Swiper>
-        <div className='about-info'>
+
+        <div className="about-info">
           80% прибутку <span className="accent">МІСТОХАБ</span> буде спрямовано
           на фінансування соціальних проєктів містян
         </div>
