@@ -11,22 +11,27 @@ const About = () => {
   return (
     <AboutSection>
       <div className="container">
-        <p>Про проект</p>
-        <h2>
+        <p className='about-project'>Про проект</p>
+        <h2 className='about-title'>
           <span className="accent">Містохаб</span> це
         </h2>
         <Swiper
           wrapperTag="ul"
           wrapperClass="about-list"
           className='swiper'
+          observer={true}
           breakpoints={{
             1440: {
-              enabled: false,
               slidesPerView: 3,
+              enabled: false,
+              autoHeight: true,
+              spaceBetween: "24px",
             },
             768: {
               slidesPerView: 2,
               enabled: true,
+              autoHeight: true,
+              spaceBetween: "16px",
             },
             375: {
               slidesPerView: 1,
