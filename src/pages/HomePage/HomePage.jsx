@@ -42,7 +42,7 @@ const HomePage = () => {
   return (
     <Container>
       <About/>
-      <HowItWork/>
+      {/* <HowItWork/>
       <Building />
       {goalData && <><p>{ goalData.raised}</p> <p>{goalData.goal}</p></>}
       <h1>Home Page</h1>
@@ -55,7 +55,7 @@ const HomePage = () => {
       {peopleData && <img src={formImgURL(peopleData[0].imageURL)} />}
       <VirtualTour />
       <VirtualTour />
-      <ZibraniKoshti />
+      <ZibraniKoshti /> */}
     </Container>
   );
 };
