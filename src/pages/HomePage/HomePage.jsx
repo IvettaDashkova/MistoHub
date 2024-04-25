@@ -2,11 +2,11 @@ import { useState, useEffect } from 'react';
 import { Container } from './HomePage.styled';
 import VirtualTour from '../../components/VirtualTour/VirtualTour';
 import { fetchGoal, fetchCompanies, fetchPeople } from '../../services/API';
-import InvestorsBlock from '../../components/VirtualTour/investors/InvestorsBlock';
+import InvestorsBlock from '../../components/investors/InvestorsBlock';
 const HomePage = () => {
-  const [goalData, setGoalData] = useState(null);
-  const [companiesData, setCompaniesData] = useState(null);
-  const [peopleData, setPeopleData] = useState(null);
+  // const [goalData, setGoalData] = useState(null);
+  // const [companiesData, setCompaniesData] = useState(null);
+  // const [peopleData, setPeopleData] = useState(null);
 
   // useEffect(() => {
   //   const fetchData = async () => {
@@ -38,14 +38,14 @@ const HomePage = () => {
   return (
     <>
       <Container>
-        <h1>Home Page</h1>
+        {/* <h1>Home Page</h1>
         {goalData && (
           <>
             <p>{goalData.raised}</p> <p>{goalData.goal}</p>
           </>
         )}
         {companiesData && <img src={formImgURL(companiesData[0].logoURL)} />}
-        {peopleData && <img src={formImgURL(peopleData[0].imageURL)} />}
+        {peopleData && <img src={formImgURL(peopleData[0].imageURL)} />} */}
         <VirtualTour />
       </Container>
       <InvestorsBlock />

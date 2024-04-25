@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { fetchGoal, fetchCompanies, fetchPeople } from '../../../services/API';
+import { fetchGoal, fetchCompanies, fetchPeople } from '../../services/API';
 import InvestorsPeople from './investorsPeople/InvestorsPeople';
 import InvestorsCompanies from './investorsCompanies/InvestorsCompanies';
 import ModalInvestors from './modalInvestors/ModalInvestors';
@@ -36,7 +36,7 @@ const InvestorsBlock = () => {
     <div>
       <p>Імпакт-інвестори МІСТОХАБ</p>
       <h2>З нами вже</h2>
-      <p>{goal.investorsCount} людини</p>
+      <p>{people.length} людини</p>
       <div>
         {people.map((person) => (
           <InvestorsPeople
@@ -45,7 +45,7 @@ const InvestorsBlock = () => {
             onClick={() => openModal(person)}
           />
         ))}
-        <p>{goal.length} компаній</p>
+        <p>{companies.length} компаній</p>
         {companies.map((company) => (
           <InvestorsCompanies
             key={company.id}

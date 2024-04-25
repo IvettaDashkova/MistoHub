@@ -1,3 +1,5 @@
+import VectorSVG from '../svgModalInvest/Vector.svg';
+
 const ModalInvestors = ({ data, onClose }) => {
   const {
     firstName,
@@ -10,11 +12,15 @@ const ModalInvestors = ({ data, onClose }) => {
     answer,
   } = data;
 
+  const imageRef = imageURL.asset._ref;
+  const imageSrc = `https://cdn.sanity.io/images/${imageRef}`;
+
   return (
     <div>
       <div>
         <div>
-          <img src={imageURL} alt={`${firstName} ${secondName}`} />
+          <img src={imageSrc} alt={`${firstName} ${secondName}`} />
+
           <div>
             <h3>{`${firstName} ${secondName}`}</h3>
             <p>{type}</p>
@@ -26,7 +32,12 @@ const ModalInvestors = ({ data, onClose }) => {
           <p>{answer}</p>
           <div>
             {facebook && <a href={facebook}>Facebook</a>}
-            {instagram && <a href={instagram}>Instagram</a>}
+            {instagram && (
+              <a href={instagram} target="_blank">
+                Instagram
+              </a>
+            )}
+            <img src={VectorSVG} alt="vector" />
           </div>
         </div>
       </div>
