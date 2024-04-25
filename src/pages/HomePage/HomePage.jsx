@@ -1,11 +1,17 @@
 import { Container } from './HomePage.styled';
 import VirtualTour from '../../components/VirtualTour/VirtualTour';
+import HeroSection from '../../components/HeroSection/HeroSection';
+import JoinModal from '../../components/JoinModal/JoinModal';
 
 const HomePage = () => {
   return (
-    <Container>
-      <VirtualTour/>
-    </Container>
+    <>
+      <HeroSection />
+      <Container>
+        <VirtualTour />
+      </Container>
+      <JoinModal />
+    </>
   );
 };
 
