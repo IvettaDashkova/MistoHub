@@ -46,20 +46,22 @@ const InvestorsPeople = () => {
 
   return (
     <ListWrapper>
-      <ul>
-        {duplicateInvestors.map((investor, index) => (
-          <li key={index}>
-            <img
-              src={formImgURL(investor.imageURL)}
-              alt={`Investor ${index}`}
-              onClick={() => openModal(investor)}
-            />
-          </li>
-        ))}
-        {selectedInvestor && (
-          <ModalInvestors data={selectedInvestor} onClose={closeModal} />
-        )}
-      </ul>
+      <div>
+        <ul>
+          {duplicateInvestors.map((investor, index) => (
+            <li key={index}>
+              <img
+                src={formImgURL(investor.imageURL)}
+                alt={`Investor ${index}`}
+                onClick={() => openModal(investor)}
+              />
+            </li>
+          ))}
+          {selectedInvestor && (
+            <ModalInvestors data={selectedInvestor} onClose={closeModal} />
+          )}
+        </ul>
+      </div>
     </ListWrapper>
   );
 };

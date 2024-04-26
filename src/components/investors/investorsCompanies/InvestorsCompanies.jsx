@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { fetchCompanies } from '../../../services/API';
 import ModalCompanies from '../modalCompanies/ModalCompanies';
+import { CompanyWrapper } from './InvestorsCompanies.styled';
 
 const InvestorsCompanies = () => {
   const [companiesData, setCompaniesData] = useState(null);
@@ -45,26 +46,28 @@ const InvestorsCompanies = () => {
 
   console.log(selectedCompanies);
   return (
-    <>
-      <ul>
-        {duplicateCompanies.map((company, index) => (
-          <li key={index}>
-            <img
-              src={formImgURL(company.logoURL)}
-              alt={`Company ${index}`}
-              onClick={() => openModal(company)}
+    <CompanyWrapper>
+      <div>
+        <ul>
+          {duplicateCompanies.map((company, index) => (
+            <li key={index}>
+              <img
+                src={formImgURL(company.logoURL)}
+                alt={`Company ${index}`}
+                onClick={() => openModal(company)}
+              />
+            </li>
+          ))}
+          {selectedCompanies && (
+            <ModalCompanies
+              isOpen={selectedCompanies !== null}
+              data={selectedCompanies}
+              onClose={closeModal}
             />
-          </li>
-        ))}
-        {selectedCompanies && (
-          <ModalCompanies
-            isOpen={selectedCompanies !== null}
-            data={selectedCompanies}
-            onClose={closeModal}
-          />
-        )}
-      </ul>
-    </>
+          )}
+        </ul>
+      </div>
+    </CompanyWrapper>
   );
 };
 

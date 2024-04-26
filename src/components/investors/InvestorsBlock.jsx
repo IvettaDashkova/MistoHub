@@ -3,6 +3,12 @@ import { fetchGoal, fetchCompanies, fetchPeople } from '../../services/API';
 import InvestorsPeople from './investorsPeople/InvestorsPeople';
 import InvestorsCompanies from './investorsCompanies/InvestorsCompanies';
 import ModalInvestors from './modalInvestors/ModalInvestors';
+import {
+  InfoText,
+  MainHeading,
+  SecondHeading,
+  TextWrapper,
+} from './InvestorsBlock.styled';
 
 const InvestorsBlock = () => {
   const [goal, setGoal] = useState({});
@@ -18,6 +24,7 @@ const InvestorsBlock = () => {
 
       setGoal(goalData);
       setCompanies(companiesData);
+
       setPeople(peopleData);
     };
 
@@ -34,9 +41,11 @@ const InvestorsBlock = () => {
 
   return (
     <div>
-      <p>Імпакт-інвестори МІСТОХАБ</p>
-      <h2>З нами вже</h2>
-      <p>{people.length} людини</p>
+      <TextWrapper>
+        <InfoText>Імпакт-інвестори МІСТОХАБ</InfoText>
+        <MainHeading>З нами вже</MainHeading>
+        <SecondHeading>{people.length} людини</SecondHeading>
+      </TextWrapper>
       <div>
         {people.map((person) => (
           <InvestorsPeople
@@ -45,7 +54,9 @@ const InvestorsBlock = () => {
             onClick={() => openModal(person)}
           />
         ))}
-        <p>{companies.length} компаній</p>
+        <TextWrapper>
+          <SecondHeading>{companies.length} компаній</SecondHeading>
+        </TextWrapper>
         {companies.map((company) => (
           <InvestorsCompanies
             key={company.id}

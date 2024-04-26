@@ -39,7 +39,7 @@ const HomePage = () => {
   console.log('done');
   return (
     <Container>
-      <h1>Home Page</h1>
+      {/* <h1>Home Page</h1>
       {goalData && (
         <>
           <p>{goalData.raised}</p> <p>{goalData.goal}</p>
@@ -48,8 +48,9 @@ const HomePage = () => {
       {companiesData && <img src={formImgURL(companiesData[0].logoURL)} />}
       {peopleData && <img src={formImgURL(peopleData[0].imageURL)} />}
       <VirtualTour />
-      <VirtualTour />
-      <ZibraniKoshti />
+      <VirtualTour /> */}
+      {/* <ZibraniKoshti /> */}
+      <InvestorsBlock />
     </Container>
   );
 };
