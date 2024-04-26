@@ -3,36 +3,44 @@ import styled from 'styled-components';
 export const HeroStyledСontainer = styled.section`
   position: relative;
   min-width: 320px;
-  max-width: 375px;
+  width: 100%;
   height: 700px;
   display: flex;
   justify-content: center;
   align-items: center;
   margin: 0 auto;
 
+  @media only screen and (min-width: 375px) {
+    width: 375px;
+  }
+
   @media only screen and (min-width: 768px) {
-    max-width: 768px;
+    width: 768px;
     height: 1024px;
   }
 
   @media only screen and (min-width: 1024px) {
-    max-width: 1440px;
+    width: 1440px;
     height: 880px;
   }
 
   .mySwiper {
     min-width: 320px;
-    max-width: 375px;
+    width: 100%;
     height: 700px;
     overflow: hidden;
 
+    @media only screen and (min-width: 375px) {
+      width: 375px;
+    }
+
     @media only screen and (min-width: 768px) {
-      max-width: 768px;
+      width: 768px;
       height: 1024px;
     }
 
     @media only screen and (min-width: 1024px) {
-      max-width: 1440px;
+      width: 1440px;
       height: 880px;
     }
 
@@ -195,19 +203,22 @@ export const HeroStyledСontainer = styled.section`
 
   .heroImg {
     min-width: 320px;
-    max-width: 375px;
     width: 100%;
     height: 700px;
     height: 100%;
     object-fit: cover;
 
+    @media only screen and (min-width: 375px) {
+      width: 375px;
+    }
+
     @media only screen and (min-width: 768px) {
-      max-width: 768px;
+      width: 768px;
       height: 1024px;
     }
 
     @media only screen and (min-width: 1024px) {
-      max-width: 1440px;
+      width: 1440px;
       height: 880px;
     }
   }
@@ -241,6 +252,7 @@ export const HeroStyledСontainer = styled.section`
       line-height: 1;
     }
   }
+
   .swiper {
     z-index: 0;
   }
