@@ -1,17 +1,4 @@
 import styled from 'styled-components';
-// import sprite from '../../../../acces/hero/iconsHero/sprite.svg';
-
-// :root {
-//   --main-black: #0b0b0b;
-//   --main-white: #ffffff;
-//   --accent-orange: #f77d07;
-//   --main-background: #e6e6e6;
-//   --secondary-background: #f8f8f8;
-
-//   --font-family: 'MacPaw Fixel Display', sans-serif;
-//   --second-family: 'Oddval', sans-serif;
-//   --third-family: 'Inter', sans-serif;
-// }
 
 export const HeroStyledСontainer = styled.section`
   position: relative;
@@ -56,7 +43,6 @@ export const HeroStyledСontainer = styled.section`
 
     .swiper-slide {
       position: relative;
-      z-index: 1;
       filter: brightness(0.8);
 
       &::before {
@@ -67,7 +53,6 @@ export const HeroStyledСontainer = styled.section`
         right: 0;
         bottom: 0;
         background: rgba(11, 11, 11, 0.6);
-        z-index: 2;
         filter: brightness(0.8);
       }
     }
@@ -75,20 +60,19 @@ export const HeroStyledСontainer = styled.section`
     .swiper-button-prev,
     .swiper-button-next {
       position: absolute;
-      top: 660px;
+      top: 640px;
       width: 44px;
       height: 44px;
       border-radius: 50%;
-      background-color: var(--white-color);
+      background-color: #fff;
       border: 2px solid rgba(255, 255, 255, 0.15);
       box-shadow: 0 14px 44px 0 rgba(14, 20, 34, 0.08);
       transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
+      z-index: 0;
 
       &:hover,
       &:focus-visible {
         background-color: #f77d07;
-
-        //TODO при ховері кнопки міняється філ для свг
       }
 
       @media only screen and (min-width: 768px) {
@@ -105,8 +89,6 @@ export const HeroStyledСontainer = styled.section`
     .swiper-button-prev {
       right: 20px;
       left: 35%;
-
-      //TODO при ховері кнопки міняється філ для свг
 
       @media only screen and (min-width: 768px) {
         right: 40px;
@@ -125,7 +107,7 @@ export const HeroStyledСontainer = styled.section`
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><path d="M12.586 27.414l-10-10c-0.781-0.781-0.781-2.047 0-2.828l10-10c0.781-0.781 2.047-0.781 2.828 0s0.781 2.047 0 2.828l-6.586 6.586h19.172c1.105 0 2 0.895 2 2s-0.895 2-2 2h-19.172l6.586 6.586c0.39 0.39 0.586 0.902 0.586 1.414s-0.195 1.024-0.586 1.414c-0.781 0.781-2.047 0.781-2.828 0z"/></svg>');
+      background-image: url('data:image/svg+xml;utf8,<svg version="1.1" xmlns="http://www.w3.org/2000/svg" fill="black" viewBox="0 0 32 32"><title>arrow-left2</title><path d="M12.586 27.414l-10-10c-0.781-0.781-0.781-2.047 0-2.828l10-10c0.781-0.781 2.047-0.781 2.828 0s0.781 2.047 0 2.828l-6.586 6.586h19.172c1.105 0 2 0.895 2 2s-0.895 2-2 2h-19.172l6.586 6.586c0.39 0.39 0.586 0.902 0.586 1.414s-0.195 1.024-0.586 1.414c-0.781 0.781-2.047 0.781-2.828 0z"></path></svg>');
       background-repeat: no-repeat;
       background-size: contain;
       width: 16px;
@@ -138,15 +120,13 @@ export const HeroStyledСontainer = styled.section`
       }
     }
 
-    /* .swiper-button-prev:hover::after,
+    .swiper-button-prev:hover::after,
     .swiper-button-prev:focus-visible::after {
-      fill: var(--accent-orange);
-    } */
+      background-image: url('data:image/svg+xml;utf8,<svg version="1.1" xmlns="http://www.w3.org/2000/svg" fill="white" viewBox="0 0 32 32"><title>arrow-left2</title><path d="M12.586 27.414l-10-10c-0.781-0.781-0.781-2.047 0-2.828l10-10c0.781-0.781 2.047-0.781 2.828 0s0.781 2.047 0 2.828l-6.586 6.586h19.172c1.105 0 2 0.895 2 2s-0.895 2-2 2h-19.172l6.586 6.586c0.39 0.39 0.586 0.902 0.586 1.414s-0.195 1.024-0.586 1.414c-0.781 0.781-2.047 0.781-2.828 0z"></path></svg>');
+    }
 
     .swiper-button-next {
       right: 35%;
-
-      //TODO при ховері кнопки міняється філ для свг
 
       @media only screen and (min-width: 768px) {
         right: 40%;
@@ -159,12 +139,12 @@ export const HeroStyledСontainer = styled.section`
 
     .swiper-button-next::after {
       content: '';
+      background-image: url('data:image/svg+xml;utf8,<svg version="1.1" xmlns="http://www.w3.org/2000/svg" fill="black" viewBox="0 0 32 32"><title>arrow-right2</title><path d="M19.414 27.414l10-10c0.781-0.781 0.781-2.047 0-2.828l-10-10c-0.781-0.781-2.047-0.781-2.828 0s-0.781 2.047 0 2.828l6.586 6.586h-19.172c-1.105 0-2 0.895-2 2s0.895 2 2 2h19.172l-6.586 6.586c-0.39 0.39-0.586 0.902-0.586 1.414s0.195 1.024 0.586 1.414c0.781 0.781 2.047 0.781 2.828 0z"></path></svg>');
       display: block;
       position: absolute;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><path d="M19.414 27.414l10-10c0.781-0.781 0.781-2.047 0-2.828l-10-10c-0.781-0.781-2.047-0.781-2.828 0s-0.781 2.047 0 2.828l6.586 6.586h-19.172c-1.105 0-2 0.895-2 2s0.895 2 2 2h19.172l-6.586 6.586c-0.39 0.39-0.586 0.902-0.586 1.414s0.195 1.024 0.586 1.414c0.781 0.781 2.047 0.781 2.828 0z"/></svg>');
       background-repeat: no-repeat;
       background-size: contain;
       width: 16px;
@@ -177,10 +157,10 @@ export const HeroStyledСontainer = styled.section`
       }
     }
 
-    /* .swiper-button-next:hover::after,
+    .swiper-button-next:hover::after,
     .swiper-button-next:focus-visible::after {
-      fill: var(--accent-orange);
-    } */
+      background-image: url('data:image/svg+xml;utf8,<svg version="1.1" xmlns="http://www.w3.org/2000/svg" fill="white" viewBox="0 0 32 32"><title>arrow-right2</title><path d="M19.414 27.414l10-10c0.781-0.781 0.781-2.047 0-2.828l-10-10c-0.781-0.781-2.047-0.781-2.828 0s-0.781 2.047 0 2.828l6.586 6.586h-19.172c-1.105 0-2 0.895-2 2s0.895 2 2 2h19.172l-6.586 6.586c-0.39 0.39-0.586 0.902-0.586 1.414s0.195 1.024 0.586 1.414c0.781 0.781 2.047 0.781 2.828 0z"></path></svg>');
+    }
 
     .swiper-button-disabled {
       background-color: rgba(230, 230, 230, 0.15);
@@ -192,10 +172,24 @@ export const HeroStyledСontainer = styled.section`
       &:focus-visible {
         background-color: rgba(230, 230, 230, 0.15);
         border: 2px solid rgba(247, 125, 7);
-
-        //TODO при ховері кнопки міняється філ для свг
-        //TODO  і він інший для цієї кнопки
       }
+    }
+
+    .swiper-button-prev.swiper-button-disabled::after {
+      background-image: url('data:image/svg+xml;utf8,<svg version="1.1" xmlns="http://www.w3.org/2000/svg" fill="white" viewBox="0 0 32 32"><title>arrow-left2</title><path d="M12.586 27.414l-10-10c-0.781-0.781-0.781-2.047 0-2.828l10-10c0.781-0.781 2.047-0.781 2.828 0s0.781 2.047 0 2.828l-6.586 6.586h19.172c1.105 0 2 0.895 2 2s-0.895 2-2 2h-19.172l6.586 6.586c0.39 0.39 0.586 0.902 0.586 1.414s-0.195 1.024-0.586 1.414c-0.781 0.781-2.047 0.781-2.828 0z"></path></svg>');
+    }
+
+    .swiper-button-prev.swiper-button-disabled:hover::after,
+    .swiper-button-prev.swiper-button-disabled:focus-visible::after {
+      background-image: url('data:image/svg+xml;utf8,<svg version="1.1" xmlns="http://www.w3.org/2000/svg" fill="orange" viewBox="0 0 32 32"><title>arrow-left2</title><path d="M12.586 27.414l-10-10c-0.781-0.781-0.781-2.047 0-2.828l10-10c0.781-0.781 2.047-0.781 2.828 0s0.781 2.047 0 2.828l-6.586 6.586h19.172c1.105 0 2 0.895 2 2s-0.895 2-2 2h-19.172l6.586 6.586c0.39 0.39 0.586 0.902 0.586 1.414s-0.195 1.024-0.586 1.414c-0.781 0.781-2.047 0.781-2.828 0z"></path></svg>');
+    }
+
+    .swiper-button-next.swiper-button-disabled::after {
+      background-image: url('data:image/svg+xml;utf8,<svg version="1.1" xmlns="http://www.w3.org/2000/svg" fill="white" viewBox="0 0 32 32"><title>arrow-right2</title><path d="M19.414 27.414l10-10c0.781-0.781 0.781-2.047 0-2.828l-10-10c-0.781-0.781-2.047-0.781-2.828 0s-0.781 2.047 0 2.828l6.586 6.586h-19.172c-1.105 0-2 0.895-2 2s0.895 2 2 2h19.172l-6.586 6.586c-0.39 0.39-0.586 0.902-0.586 1.414s0.195 1.024 0.586 1.414c0.781 0.781 2.047 0.781 2.828 0z"></path></svg>');
+    }
+    .swiper-button-next.swiper-button-disabled:hover::after,
+    .swiper-button-next.swiper-button-disabled:focus-visible::after {
+      background-image: url('data:image/svg+xml;utf8,<svg version="1.1" xmlns="http://www.w3.org/2000/svg" fill="orange" viewBox="0 0 32 32"><title>arrow-right2</title><path d="M19.414 27.414l10-10c0.781-0.781 0.781-2.047 0-2.828l-10-10c-0.781-0.781-2.047-0.781-2.828 0s-0.781 2.047 0 2.828l6.586 6.586h-19.172c-1.105 0-2 0.895-2 2s0.895 2 2 2h19.172l-6.586 6.586c-0.39 0.39-0.586 0.902-0.586 1.414s0.195 1.024 0.586 1.414c0.781 0.781 2.047 0.781 2.828 0z"></path></svg>');
     }
   }
 
@@ -227,9 +221,8 @@ export const HeroStyledСontainer = styled.section`
     line-height: 0.9;
     letter-spacing: -0.02em;
     text-align: center;
-    color: var(--white-color);
+    color: #fff;
     position: absolute;
-    z-index: 1;
 
     & > span {
       text-transform: uppercase;
@@ -248,100 +241,7 @@ export const HeroStyledСontainer = styled.section`
       line-height: 1;
     }
   }
+  .swiper {
+    z-index: 0;
+  }
 `;
-
-// export const HeroBtn = styled.button`
-//   border-radius: 50%;
-//   background-color: ${(props) =>
-//     props.variant === 'disabled' ? 'rgba(230, 230, 230, 0.15)' : '#ffffff'};
-//   width: 44px;
-//   height: 44px;
-//   border: 2px solid rgba(230, 230, 230, 0.6);
-//   box-shadow: 0 14px 44px 0 rgba(14, 20, 34, 0.08);
-//   ${(props) =>
-//     props.variant === 'disabled' &&
-//     'backdrop-filter: blur(17.399999618530273px);'}
-//   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-//   &:hover,
-//   &:focus-visible {
-//     background-color: ${(props) =>
-//       props.variant === 'disabled' ? 'rgba(230, 230, 230, 0.1)' : '#f77d07'};
-//     border: 1px solid rgba(247, 125, 7, 0.8);
-
-//     & > svg {
-//       fill: ${(props) =>
-//         props.variant === 'disabled'
-//           ? 'var(--accent-orange)'
-//           : 'var(--main-white)'};
-//       transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
-//     }
-//   }
-
-//   & > svg {
-//     width: 16px;
-//     height: 14px;
-//     fill: ${(props) =>
-//       props.variant === 'disabled' ? 'var(--main-white)' : 'var(--main-black)'};
-//     transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
-//   }
-
-//   @media only screen and (min-width: 768px) {
-//     width: 60px;
-//     height: 60px;
-
-//     & > svg {
-//       width: 20px;
-//       height: 18px;
-//     }
-//   }
-// `;
-
-/* 
-    & > div:nth-child(2) {
-      margin-bottom: 40px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    & > div:nth-child(2) > button {
-      background-color: blue;
-      border-radius: 50%;
-      background-color: var(--main-white);
-      width: 44px;
-      height: 44px;
-      border: 2px solid rgba(255, 255, 255, 0.8);
-      box-shadow: 0 14px 44px 0 rgba(14, 20, 34, 0.08);
-      transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
-
-      &:hover,
-      &:focus-visible {
-        background-color: var(--accent-orange);
-        border: 2px solid rgba(247, 125, 7, 0.8);
-
-        & > div > svg {
-          fill: red;
-        }
-        & > svg {
-          fill: var(--main-white);
-        }
-      }
-
-      & > svg {
-        width: 16px;
-        height: 14px;
-        fill: var(--main-black);
-        transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
-      }
-
-      @media only screen and (min-width: 768px) {
-        width: 60px;
-        height: 60px;
-        top: 944px;
-      }
-
-      @media only screen and (min-width: 1024px) {
-        top: 800px;
-      }
-    }
-  } */
