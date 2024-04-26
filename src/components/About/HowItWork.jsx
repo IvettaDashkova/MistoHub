@@ -29,6 +29,7 @@ export const HowItWork = () => {
               grid={{
                 row: 1,
               }}
+              resizeObserver={true}
               enabled={true}
               pagination={{
                 enabled: true,

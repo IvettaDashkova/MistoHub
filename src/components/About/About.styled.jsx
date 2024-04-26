@@ -60,13 +60,13 @@ export const AboutSection = styled.section`
   }
 
   .about-list-item-number {
+    padding-top:3px;
     width: 44px;
     height: 44px;
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 100%;
-    opacity: 0px;
     background: #0b0b0b;
     box-shadow: 0px 1px 4px 0px #1018280f;
     margin-bottom: 24px;
@@ -149,6 +149,7 @@ export const AboutSection = styled.section`
     }
 
     .about-list-item-number {
+      padding-top:4px;
       width: 60px;
       height: 60px;
       margin-bottom: 32px;
@@ -207,6 +208,7 @@ export const AboutSection = styled.section`
     }
 
     .about-list-item-number {
+      padding-top:5px;
       width: 72px;
       height: 72px;
       margin-bottom: 40px;

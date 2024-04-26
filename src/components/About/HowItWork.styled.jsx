@@ -40,7 +40,6 @@ export const HowItWorkSection = styled.section`
     display: block;
     padding: 15px 20px;
     border-radius: 30px;
-    opacity: 0px;
     background: #ffffff;
     border: none;
     outline: none;
@@ -54,8 +53,7 @@ export const HowItWorkSection = styled.section`
     color: #0b0b0b;
 
     &:hover {
-      background: #e3e3e3;
-      color: #898b90;
+      color: #F77D07;
     }
   }
 

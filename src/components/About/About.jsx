@@ -1,5 +1,6 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination } from 'swiper/modules';
+import Container from '../../shared/Container/Container';
 import 'swiper/css';
 import 'swiper/css/pagination';
 
@@ -8,7 +9,7 @@ import { AboutSection } from './About.styled';
 export const About = () => {
   return (
     <AboutSection id="about-project">
-      <div className="container">
+      <Container>
         <p className="about-project">Про проєкт</p>
 
         <h2 className="about-title">
@@ -78,11 +79,11 @@ export const About = () => {
           </SwiperSlide>
         </Swiper>
 
-        <div className="about-info">
+        <p className="about-info">
           80% прибутку <span className="accent">МІСТОХАБ</span> буде спрямовано
           на фінансування соціальних проєктів містян
-        </div>
-      </div>
+        </p>
+      </Container>
     </AboutSection>
   );
 };

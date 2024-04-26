@@ -5,45 +5,112 @@ import buildingThree from '../../assets/about/building3.svg';
 import buildingFour from '../../assets/about/building4.svg';
 
 export const BuildingSection = styled.section`
-  width: 1440px;
-  margin: 0 auto;
-  margin-bottom: 150px;
-  padding: 0 120px;
-  position: relative;
-
-`;
-
-export const BuildingTitle = styled.h2`
-  font-weight: 600;
-  font-size: 60px;
-  line-height: 1.13;
-  letter-spacing: -0.02em;
-  color: #0b0b0b;
-  padding-bottom: 30px;
-  padding-right: 200px;
-`;
-export const Mistohub = styled.span`
-  color: #f77d07;
-  text-transform: uppercase;
-`;
-
-export const BuildingText = styled.p`
-  font-family: MacPaw Fixel Display;
-  font-size: 28px;
-  font-weight: 500;
-  line-height: 1.21;
-  letter-spacing: -0.02em;
-  text-align: left;
-  color: #0b0b0bcc;
-  margin-bottom: 40px;
-  padding-right: 280px;
-
-`;
-
-export const BuildingImg = styled.img`
+  margin-bottom: 60px;
+  font-family: 'FixelDisplay';
   width: 100%;
-  border-radius: 20px;
-  margin-bottom: 31px;
+
+  .container {
+    min-width: 320px;
+    max-width: 375px;
+    padding: 0 16px;
+    margin: 0 auto;
+  }
+
+  .building-title {
+    font-family: 'Oddval';
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 1.33;
+    letter-spacing: -0.02em;
+    color: #0b0b0b;
+    margin-bottom: 14px;
+  }
+
+  .accent {
+    color: #f77d07;
+    text-transform: uppercase;
+  }
+
+  .building-text {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.25;
+    letter-spacing: -0.02em;
+    text-align: left;
+    color: #0b0b0bcc;
+    margin-bottom: 40px;
+  }
+  .building-img {
+    width: 100%;
+    max-width: 100%;
+    border-radius: 20px;
+    margin-bottom: 16px;
+  }
+
+  .building-img-container {
+    position: relative;
+  }
+
+  @media (min-width: 768px) {
+    margin-bottom: 78px;
+
+    .container {
+      width: 768px;
+      padding: 0 32px;
+      max-width: unset;
+      min-width: unset;
+    }
+
+    .building-title {
+      font-size: 45px;
+      line-height: 1.11;
+      margin-bottom: 30px;
+    }
+    accent {
+      color: #f77d07;
+      text-transform: uppercase;
+    }
+    .building-text {
+      font-size: 24px;
+      line-height: 1.33;
+    }
+
+    .building-img {
+      width: 100%;
+      border-radius: 20px;
+      margin-bottom: 14px;
+    }
+  }
+
+  @media (min-width: 1440px) {
+    margin-bottom: 150px;
+
+    .container {
+      width: 1440px;
+      padding: 0 120px;
+    }
+
+    .building-title {
+      font-size: 60px;
+      line-height: 1.13;
+      margin-bottom: 30px;
+    }
+    accent {
+      color: #f77d07;
+      text-transform: uppercase;
+    }
+    .building-text {
+      font-size: 28px;
+      line-height: 1.21;
+      margin-bottom: 40px;
+    }
+
+    .building-img {
+      width: 100%;
+      border-radius: 20px;
+      margin-bottom: 31px;
+    }
+  }
 `;
 
 export const Bicon = styled.span`
@@ -51,32 +118,62 @@ export const Bicon = styled.span`
   background-position: center;
   background-size: contain;
   position: absolute;
+  fill: #f77d07;
 `;
 export const BIconOne = styled(Bicon)`
   background-image: url(${buildingOne});
-  top: 415px;
-  left: 10px;
-  width: 138px;
-  height: 170px;
+  top: 93px;
+  left: -50px;
+  width: 91px;
+  height: 45px;
+  transform: rotate(-59deg);
+
+  @media (min-width: 768px) {
+    top: 123px;
+    left: -80px;
+    width: 151px;
+    height: 75px;
+  }
+  @media (min-width: 1440px) {
+    top: 190px;
+    left: -150px;
+    width: 182px;
+    height: 91px;
+  }
 `;
 export const BIconTwo = styled(Bicon)`
   background-image: url(${buildingTwo});
-  left: 33px;
-  top: 699px;
-  width: 65px;
-  height: 65px;
+  left: -22px;
+  top: 221px;
+  width: 40px;
+  height: 40px;
+  @media (min-width: 768px) {
+    top: 332px;
+    left: -39px;
+    width: 65px;
+    height: 65px;
+  }
+  @media (min-width: 1440px) {
+    left: -87px;
+    top: 423px;
+    width: 65px;
+    height: 65px;
+  }
 `;
 export const BIconThree = styled(Bicon)`
   background-image: url(${buildingThree});
-  top: 615px;
-  right: 8px;
-  width: 82px;
-  height: 113px;
+  bottom: 282px;
+  right: -89px;
+  width: 56px;
+  height: 119px;
+  transform: rotate(-154deg);
 `;
 export const BIconFour = styled(Bicon)`
   background-image: url(${buildingFour});
-  bottom: 0;
-  right: 3px;
-  width: 187px;
-  height: 258px;
-`;
+  bottom: -7px;
+  right: -152px;
+  width: 266px;
+  height: 183px;
+  transform: rotate(-68.59deg);
+}
+  `;
