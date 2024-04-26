@@ -6,16 +6,35 @@ import 'swiper/css/pagination';
 import { HowItWorkSection } from './HowItWork.styled';
 
 export const HowItWork = () => {
+
   return (
     <HowItWorkSection id="how-it-work">
       <div className="container">
+        <div className='container-inner'>
         <h2 className="how-it-work-title">Як це працює?</h2>
 
         <Swiper
           wrapperTag="ul"
           wrapperClass="how-it-work-list"
           className="swiper"
-          observer={true}
+          onResize={(swiper) => {
+            if(swiper.currentBreakpoint === "768") {
+              // swiper.disable();
+              swiper.destroy(true, true);
+              // swiper.params.enabled = false;
+              // swiper.pagination.enabled = false;
+              // swiper.el.classList.remove('swiper');
+              // swiper.wrapperEl.classList.remove('swiper-wrapper');
+            }else{
+              swiper.init(".swiper");
+              swiper.attachEvents();
+              swiper.enable();
+              // swiper.params.enabled = true;
+              // swiper.pagination.enabled = true;
+              // swiper.el.classList.add('swiper');
+              // swiper.wrapperEl.classList.add('swiper-wrapper');
+            }
+          }}
           breakpoints={{
             768: {
               enabled: false,
@@ -74,6 +93,7 @@ export const HowItWork = () => {
         <button className="how-it-work-btn" type="button">
           Приєднатися
         </button>
+        </div>
       </div>
     </HowItWorkSection>
   );

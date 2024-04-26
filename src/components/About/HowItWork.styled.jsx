@@ -2,10 +2,10 @@ import styled from '@emotion/styled';
 import bgImage from '../../assets/about/howItWorkBg.svg';
 
 export const HowItWorkSection = styled.section`
-  margin: 30px 0;
+  padding: 30px 0;
   width: 100%;
   font-family: 'FixelDisplay';
-  padding: 104px 0 82px;
+  
   background-image: url(${bgImage});
   background-repeat: no-repeat;
   background-position: center;
@@ -16,6 +16,9 @@ export const HowItWorkSection = styled.section`
     max-width: 375px;
     padding: 0 16px;
     margin: 0 auto;
+  }
+  .container-inner{
+    padding: 104px 0 82px;
   }
 
 
@@ -126,20 +129,90 @@ export const HowItWorkSection = styled.section`
 
     .container {
       width: 768px;
+      padding: 0 32px;
       min-width: unset;
       max-width: unset;
-      padding: 0 32px;
     }
+
+    .how-it-work-title {
+      font-family: Oddval;
+      font-size: 60px;
+      font-weight: 600;
+      line-height: 1.13;
+      letter-spacing: -0.02em;
+      text-align: left;
+      color: #ffffff;
+      margin-bottom: 80px;
+    }
+
+    .accent {
+      color: #f77d07;
+    }
+
+    .how-it-work-btn {
+      display: block;
+      padding: 23px 46px;
+      border-radius: 60px;
+      opacity: 0px;
+      background: #ffffff;
+      border: none;
+      outline: none;
+      margin: 0 auto;
+
+      font-family: MacPaw Fixel Display;
+      font-size: 18px;
+      font-weight: 600;
+      line-height: 1.33;
+      letter-spacing: -0.02em;
+      text-align: center;
+      color: #0b0b0b;
+
+      &:hover {
+        background: #e3e3e3;
+        color: #898b90;
+      }
+    }
+
+    .how-it-work-list {
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: space-between;
+      gap: 24px;
+      margin-bottom: 80px;
+    }
+
+    .how-it-work-item {
+      background: #ffffff;
+      padding: 32px;
+      border-radius: 20px;
+      width: calc((100% - 48px) / 3);
+
+      &:first-of-type {
+        width: calc(47% - 24px);
+      }
+      &:nth-of-type(2) {
+        width: 53%;
+      }
+    }
+
+    .how-it-work-number {
+      width: 60px;
+      height: 60px;
+      margin-bottom: 16px;
+
+      font-size: 32px;
+      line-height: 1.125;
+    }
+
+    .how-it-work-text {
+      font-size: 16px;
+      line-height: 1.25;
+    }
+  }
   }
 
   @media (min-width: 1440px) {
     padding: 60px 0;
-    margin-bottom: 150px;
-    padding: 258px 120px 207px;
-    background-image: url(${bgImage});
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: auto 100%;
 
     .container {
       width: 1440px;
