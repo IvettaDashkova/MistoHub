@@ -1,13 +1,15 @@
 import styled from '@emotion/styled';
 
 export const AboutSection = styled.section`
-  padding: 30px 0;
+  width: 100%;
+  margin-bottom: 60px;
   font-family: "FixelDisplay";
 
   .container {
     min-width: 320px;
     max-width: 375px;
     padding: 0 16px;
+    margin: 0 auto;
   }
 
   .about-project {
@@ -108,7 +110,7 @@ export const AboutSection = styled.section`
   }
 
   @media (min-width: 768px) {
-    padding: 60px 0;
+    margin-bottom: 120px;
 
     .about-project {
       font-size: 16px;
@@ -186,7 +188,7 @@ export const AboutSection = styled.section`
   }
 
   @media (min-width: 1440px) {
-    padding: 60px 0;
+    margin-bottom: 150px;
 
     .container {
       width: 1440px;

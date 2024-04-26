@@ -2,10 +2,10 @@ import styled from '@emotion/styled';
 import bgImage from '../../assets/about/howItWorkBg.svg';
 
 export const HowItWorkSection = styled.section`
-  padding: 30px 0;
+  margin-bottom: 60px;
   width: 100%;
   font-family: 'FixelDisplay';
-  
+
   background-image: url(${bgImage});
   background-repeat: no-repeat;
   background-position: center;
@@ -17,10 +17,9 @@ export const HowItWorkSection = styled.section`
     padding: 0 16px;
     margin: 0 auto;
   }
-  .container-inner{
+  .container-inner {
     padding: 104px 0 82px;
   }
-
 
   .how-it-work-title {
     font-family: Oddval;
@@ -47,7 +46,6 @@ export const HowItWorkSection = styled.section`
     outline: none;
     margin: 0 auto;
 
-    font-family: MacPaw Fixel Display;
     font-size: 14px;
     font-weight: 600;
     line-height: 1.29;
@@ -78,7 +76,7 @@ export const HowItWorkSection = styled.section`
     padding: 32px;
     border-radius: 20px;
   }
-  .swiper-slide{
+  .swiper-slide {
     height: unset;
   }
 
@@ -116,16 +114,15 @@ export const HowItWorkSection = styled.section`
   }
 
   .swiper-pagination-bullet {
-    background: #FFFFFFa6;
+    background: #ffffffa6;
   }
 
   .swiper-pagination-bullet-active {
     background: #ffffff;
   }
 
-
   @media (min-width: 768px) {
-    padding: 60px 0;
+    margin-bottom: 120px;
 
     .container {
       width: 768px;
@@ -134,64 +131,44 @@ export const HowItWorkSection = styled.section`
       max-width: unset;
     }
 
-    .how-it-work-title {
-      font-family: Oddval;
-      font-size: 60px;
-      font-weight: 600;
-      line-height: 1.13;
-      letter-spacing: -0.02em;
-      text-align: left;
-      color: #ffffff;
-      margin-bottom: 80px;
+    .container-inner {
+      padding: 200px 0 161px;
     }
 
-    .accent {
-      color: #f77d07;
+    .how-it-work-title {
+      font-size: 45px;
+      line-height: 1.11;
+      margin-bottom: 60px;
     }
 
     .how-it-work-btn {
-      display: block;
-      padding: 23px 46px;
-      border-radius: 60px;
-      opacity: 0px;
-      background: #ffffff;
-      border: none;
-      outline: none;
-      margin: 0 auto;
+      padding: 20px 40px;
+      border-radius: 30px;
 
-      font-family: MacPaw Fixel Display;
-      font-size: 18px;
-      font-weight: 600;
-      line-height: 1.33;
-      letter-spacing: -0.02em;
-      text-align: center;
-      color: #0b0b0b;
-
-      &:hover {
-        background: #e3e3e3;
-        color: #898b90;
-      }
+      font-size: 16px;
+      line-height: 1.5;
     }
 
     .how-it-work-list {
       display: flex;
       flex-flow: row wrap;
       justify-content: space-between;
-      gap: 24px;
-      margin-bottom: 80px;
+      gap: 16px;
+      margin-bottom: 60px;
     }
 
+    .swiper-slide,
     .how-it-work-item {
       background: #ffffff;
       padding: 32px;
       border-radius: 20px;
-      width: calc((100% - 48px) / 3);
+      width: calc((100% - 48px) / 3) !important;
 
       &:first-of-type {
-        width: calc(47% - 24px);
+        width: calc(47% - 24px) !important;
       }
       &:nth-of-type(2) {
-        width: 53%;
+        width: 53% !important;
       }
     }
 
@@ -208,54 +185,37 @@ export const HowItWorkSection = styled.section`
       font-size: 16px;
       line-height: 1.25;
     }
-  }
+
+    .swiper {
+      padding-bottom: 0;
+    }
   }
 
   @media (min-width: 1440px) {
-    padding: 60px 0;
+    margin-bottom: 150px;
 
     .container {
       width: 1440px;
       padding: 0 120px;
     }
 
+    .container-inner {
+      padding: 258px 0 207px;
+    }
+
+
     .how-it-work-title {
-      font-family: Oddval;
       font-size: 60px;
-      font-weight: 600;
       line-height: 1.13;
-      letter-spacing: -0.02em;
-      text-align: left;
-      color: #ffffff;
       margin-bottom: 80px;
     }
 
-    .accent {
-      color: #f77d07;
-    }
-
     .how-it-work-btn {
-      display: block;
       padding: 23px 46px;
       border-radius: 60px;
-      opacity: 0px;
-      background: #ffffff;
-      border: none;
-      outline: none;
-      margin: 0 auto;
 
-      font-family: MacPaw Fixel Display;
       font-size: 18px;
-      font-weight: 600;
       line-height: 1.33;
-      letter-spacing: -0.02em;
-      text-align: center;
-      color: #0b0b0b;
-
-      &:hover {
-        background: #e3e3e3;
-        color: #898b90;
-      }
     }
 
     .how-it-work-list {
@@ -266,6 +226,7 @@ export const HowItWorkSection = styled.section`
       margin-bottom: 80px;
     }
 
+    .swiper-slide,
     .how-it-work-item {
       background: #ffffff;
       padding: 40px;
@@ -300,7 +261,6 @@ export const HowItWorkSection = styled.section`
     }
 
     .how-it-work-text {
-      font-family: Oddval;
       font-size: 22px;
       font-weight: 600;
       line-height: 1.18;
