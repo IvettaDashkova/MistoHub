@@ -13,6 +13,7 @@ import {
   LeftArrow,
   RightArrow,
 } from './StyledComponents';
+import Icon from './Icon';
 
 const Visualization = () => {
   const isDesktop = useMediaQuery({ minWidth: 1440 });
@@ -71,6 +72,10 @@ const Visualization = () => {
     setIsTourOpen(isTourOpen.map((open, i) => (i === index ? !open : false)));
   };
 
+  const isDesktopOrLarger = useMediaQuery({ minWidth: 1440 });
+  const isTabletOrLarger = useMediaQuery({ minWidth: 768 });
+  const iconSize = isDesktopOrLarger ? '30' : isTabletOrLarger ? '30' : '22';
+
   return (
     <ContainerVisual>
       <TitleContainer>Як виглядатиме простір?</TitleContainer>
@@ -113,13 +118,17 @@ const Visualization = () => {
           className={`${currentCard > 0 ? 'enabled' : ''}`}
           onClick={prevCard}
         >
-          ←
+          <Icon width={iconSize} height={iconSize} iconName="icon-arrow-left" />
         </LeftArrow>
         <RightArrow
           className={`${currentCard < images.length - (isDesktop ? 2 : 1) ? 'enabled' : ''}`}
           onClick={nextCard}
         >
-          →
+          <Icon
+            width={iconSize}
+            height={iconSize}
+            iconName="icon-arrow-right"
+          />
         </RightArrow>
       </Arrow>
     </ContainerVisual>

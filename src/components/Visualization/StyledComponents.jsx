@@ -152,12 +152,14 @@ export const LeftArrow = styled.button`
   height: 44px;
   border-radius: 50%;
   background: #ffffff;
-  color: #f77d07;
+
+  fill: #f77d07;
+
   border: 2px solid #f77d07;
 
   &.enabled {
     background: #f77d07;
-    color: #ffffff;
+    fill: #ffffff;
   }
 
   @media (min-width: 768px) {
