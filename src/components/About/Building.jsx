@@ -11,12 +11,13 @@ import buildingTablet from '../../assets/about/building-tablet.jpg';
 import buildingTablet2x from '../../assets/about/building-tablet@2x.jpg';
 import buildingMobile from '../../assets/about/building-mobile.jpg';
 import buildingMobile2x from '../../assets/about/building-mobile@2x.jpg';
+import Container from '../../shared/Container/Container.jsx';
 
 
 export const Building = () => {
   return (
     <BuildingSection id="building">
-      <div className="container">
+      <Container>
         <h2 className="building-title">
           Будівля <span className="accent">МІСТОХАБ</span> це історична спадщина
           Полтави
@@ -51,7 +52,7 @@ export const Building = () => {
           <BIconThree />
           <BIconFour />
         </div>
-      </div>
+      </Container>
     </BuildingSection>
   );
 };

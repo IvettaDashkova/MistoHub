@@ -9,13 +9,6 @@ export const BuildingSection = styled.section`
   font-family: 'FixelDisplay';
   width: 100%;
 
-  .container {
-    min-width: 320px;
-    max-width: 375px;
-    padding: 0 16px;
-    margin: 0 auto;
-  }
-
   .building-title {
     font-family: 'Oddval';
     font-weight: 600;
@@ -53,13 +46,6 @@ export const BuildingSection = styled.section`
   @media (min-width: 768px) {
     margin-bottom: 78px;
 
-    .container {
-      width: 768px;
-      padding: 0 32px;
-      max-width: unset;
-      min-width: unset;
-    }
-
     .building-title {
       font-size: 45px;
       line-height: 1.11;
@@ -73,11 +59,6 @@ export const BuildingSection = styled.section`
 
   @media (min-width: 1440px) {
     margin-bottom: 181px;
-
-    .container {
-      width: 1440px;
-      padding: 0 120px;
-    }
 
     .building-title {
       font-size: 60px;
