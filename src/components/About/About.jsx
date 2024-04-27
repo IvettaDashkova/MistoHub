@@ -20,10 +20,16 @@ export const About = () => {
           wrapperTag="ul"
           wrapperClass="about-list"
           className="swiper"
-          observer={true}
+          resizeObserver={true}
+          onResize={(swiper) => {
+            swiper.slideTo(0);
+            swiper.update();
+          }}
           breakpoints={{
             1440: {
               slidesPerView: 3,
+              initialSlide: 0,
+              slideTo: 0,
               enabled: false,
               spaceBetween: '24px',
               grid: {
@@ -32,6 +38,8 @@ export const About = () => {
             },
             768: {
               slidesPerView: 2,
+              initialSlide: 0,
+              slideTo: 0,
               enabled: true,
               spaceBetween: '16px',
               grid: {
@@ -42,15 +50,26 @@ export const About = () => {
                 clickable: true,
               }
             },
+            375: {
+              slidesPerView: 1,
+              initialSlide: 0,
+              slideTo: 0,
+              enabled: true,
+              pagination: {
+                enabled: false,
+                clickable: false,
+              }
+            }
           }}
           slidesPerView = {1}
           grid={{
               row: 3
           }}
+          initialSlide = {0}
           enabled={false}
           pagination={{
             enabled: false,
-            clickable: true,
+            clickable: false,
           }}
           modules={[Pagination]}
         >
