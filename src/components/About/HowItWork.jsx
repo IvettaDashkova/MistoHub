@@ -17,21 +17,28 @@ export const HowItWork = () => {
               wrapperTag="ul"
               wrapperClass="how-it-work-list"
               className="swiper"
+              resizeObserver={true}
+              onResize={(swiper) => {
+                swiper.slideTo(0);
+                swiper.update();
+              }}
               breakpoints={{
                 768: {
-                  enabled: false,
+                  enabled: true,
+                  initialSlide: 0,
+                  slideTo: 0,
                   pagination: {
                     enabled: false,
                   },
                   spaceBetween: 0,
                 },
-              }}
+             }}
               slidesPerView={1}
               grid={{
                 row: 1,
               }}
-              resizeObserver={true}
               enabled={true}
+              initialSlide = {0}
               pagination={{
                 enabled: true,
                 clickable: true,
