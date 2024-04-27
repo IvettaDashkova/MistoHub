@@ -4,13 +4,14 @@ export const CompanyWrapper = styled.div`
   @media screen and (min-width: 375px) and (max-width: 811.9px) {
     div {
       max-width: 375px;
-      background-image: url('../svgModalInvest/Vector-background.svg');
-      background-repeat: no-repeat;
-      background-position: right center;
+      margin-bottom: 60px;
     }
     @keyframes moveRightToLeft {
       0% {
-        transform: translateX(0%);
+        transform: translateX(0);
+      }
+      50% {
+        transform: translateX(-50%);
       }
       100% {
         transform: translateX(-100%);
@@ -20,8 +21,8 @@ export const CompanyWrapper = styled.div`
     ul {
       display: flex;
       gap: 12px;
-      width: max-content;
-      animation: moveRightToLeft 7s linear infinite;
+      width: 100vw;
+      animation: moveRightToLeft 10s linear infinite;
     }
 
     ul:hover {
@@ -30,6 +31,12 @@ export const CompanyWrapper = styled.div`
 
     li {
       cursor: pointer;
+    }
+
+    div {
+      position: relative;
+      display: flex;
+      overflow: hidden;
     }
 
     img {
@@ -42,10 +49,14 @@ export const CompanyWrapper = styled.div`
   @media screen and (min-width: 768px) and (max-width: 1023.9px) {
     div {
       max-width: 768px;
+      margin-bottom: 120px;
     }
     @keyframes moveRightToLeft {
       0% {
-        transform: translateX(0%);
+        transform: translateX(0);
+      }
+      50% {
+        transform: translateX(-50%);
       }
       100% {
         transform: translateX(-100%);
@@ -55,8 +66,8 @@ export const CompanyWrapper = styled.div`
     ul {
       display: flex;
       gap: 32px;
-      width: max-content;
-      animation: moveRightToLeft 15s linear infinite;
+      width: 100vw;
+      animation: moveRightToLeft 5s linear infinite;
     }
 
     ul:hover {
@@ -65,6 +76,57 @@ export const CompanyWrapper = styled.div`
 
     li {
       cursor: pointer;
+    }
+
+    div {
+      display: flex;
+      overflow: hidden;
+    }
+
+    img {
+      width: 180px;
+      height: 140px;
+      border-radius: 10px;
+    }
+  }
+
+  @media screen and (min-width: 1024px) {
+    div {
+      max-width: 1024px;
+      margin-bottom: 150px;
+    }
+
+    @keyframes moveRightToLeft {
+      0% {
+        transform: translateX(0);
+      }
+      50% {
+        transform: translateX(-50%);
+      }
+      100% {
+        transform: translateX(-100%);
+      }
+    }
+
+    ul {
+      display: flex;
+      gap: 32px;
+      width: 100vw;
+      animation: moveRightToLeft 5s linear infinite;
+    }
+
+    ul:hover {
+      animation-play-state: paused;
+    }
+
+    li {
+      cursor: pointer;
+    }
+
+    div {
+      // position: relative;
+      display: flex;
+      overflow: hidden;
     }
 
     img {

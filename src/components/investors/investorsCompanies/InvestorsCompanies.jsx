@@ -18,10 +18,12 @@ const InvestorsCompanies = () => {
   }
 
   useEffect(() => {
+    console.log('useEffect');
     const fetchData = async () => {
       try {
         const companiesResponse = await fetchCompanies();
         setCompaniesData(companiesResponse);
+        console.log(companiesResponse);
       } catch (error) {
         console.error('Error fetching companies data:', error);
       }
@@ -37,27 +39,23 @@ const InvestorsCompanies = () => {
     setSelectedCompanies(null);
   };
 
-  if (!companiesData) return null;
+  if (!companiesData) return;
 
-  const duplicateCompanies = Array.from(
-    { length: 11 },
-    (_, index) => companiesData[index % companiesData.length]
-  );
-
-  console.log(selectedCompanies);
+  let randomId = () => Math.floor(Math.random() * 10000);
   return (
     <CompanyWrapper>
       <div>
         <ul>
-          {duplicateCompanies.map((company, index) => (
-            <li key={index}>
+          {companiesData.map((company, index) => (
+            <li key={randomId()}>
               <img
                 src={formImgURL(company.logoURL)}
-                alt={`Company ${index}`}
+                alt={`Company ${company.id}`}
                 onClick={() => openModal(company)}
               />
             </li>
           ))}
+
           {selectedCompanies && (
             <ModalCompanies
               isOpen={selectedCompanies !== null}

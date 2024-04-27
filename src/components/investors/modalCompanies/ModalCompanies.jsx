@@ -1,38 +1,11 @@
 import ReactModal from 'react-modal';
-import { ModalCompanyWrapper } from './ModalCompanies.styled';
+import { CustomModal, ModalCompanyWrapper } from './ModalCompanies.styled';
+import sprite from '../../../assets/investors/sprite.svg';
 
 const ModalCompanies = ({ isOpen, data, onClose }) => {
   const { name, logoURL, link, question, answer } = data;
   console.log(isOpen);
   if (!isOpen) return null;
-
-  const customStyles = {
-    div: {
-      margin: '0',
-      padding: '0',
-      borderRadius: '10px',
-      background: '#FFF',
-      boxShadow:
-        '4px 17px 102.1px 0px rgba(0, 0, 0, 0.19), 0px 25px 30.4px 0px rgba(0, 0, 0, 0.09)',
-    },
-    overlay: {
-      position: 'fixed',
-      backgroundColor: 'rgba(0, 0, 0, 0.5)',
-    },
-    content: {
-      width: '343px',
-      height: 'fit-content',
-      margin: 'auto',
-      padding: '10px',
-    },
-    closeButton: {
-      position: 'absolute',
-      top: '10px',
-      right: '10px',
-      cursor: 'pointer',
-      padding: '0',
-    },
-  };
 
   function formImgURL(img) {
     const imgData = img.asset._ref.split('-');
@@ -40,8 +13,8 @@ const ModalCompanies = ({ isOpen, data, onClose }) => {
   }
 
   return (
-    <ReactModal
-      style={customStyles}
+    <CustomModal
+      // style={CustomStyles}
       onRequestClose={onClose}
       isOpen={isOpen}
       onClose={onClose}
@@ -49,33 +22,43 @@ const ModalCompanies = ({ isOpen, data, onClose }) => {
       contentLabel="Image Modal"
     >
       <ModalCompanyWrapper>
-        <button className="closeButton" onClick={onClose}>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="28"
-            height="28"
-            viewBox="0 0 28 28"
-            fill="none"
-          >
-            <path
-              d="M19.8332 8.1665L8.1665 19.8332M8.1665 8.1665L19.8332 19.8332"
-              stroke="#0B0B0B"
-              strokeOpacity="0.5"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-          </svg>
-        </button>
+        <div className="closeWrapper">
+          <button className="closeWord" onClick={onClose}>
+            Закрити
+          </button>
+          <button className="closeButton" onClick={onClose}>
+            <svg width="28" height="28" color="grey">
+              <use xlinkHref={`${sprite}#icon-x`}></use>
+            </svg>
+            {/* <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="28"
+              height="28"
+              viewBox="0 0 28 28"
+              fill="none"
+            >
+              <path
+                d="M19.8332 8.1665L8.1665 19.8332M8.1665 8.1665L19.8332 19.8332"
+                stroke="#0B0B0B"
+                strokeOpacity="0.5"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg> */}
+          </button>
+        </div>
         <div className="contentWrapper">
           <img src={formImgURL(logoURL)} alt={name} />
           {link && (
             <div className="svgWrapper">
               <a href={link} target="_blank" rel="noopener noreferrer">
-                <svg
+                <svg className="instaIcon">
+                  <use xlinkHref={`${sprite}#icon-instagram`}></use>
+                </svg>
+                {/* <svg
+                  className="instaIcon"
                   xmlns="http://www.w3.org/2000/svg"
-                  width="14"
-                  height="14"
                   viewBox="0 0 14 14"
                   fill="none"
                   padding="0"
@@ -88,7 +71,7 @@ const ModalCompanies = ({ isOpen, data, onClose }) => {
                     d="M6.99638 8.73934C7.96384 8.73934 8.74813 7.95505 8.74813 6.98759C8.74813 6.02013 7.96384 5.23584 6.99638 5.23584C6.02891 5.23584 5.24463 6.02013 5.24463 6.98759C5.24463 7.95505 6.02891 8.73934 6.99638 8.73934Z"
                     fill="white"
                   />
-                </svg>
+                </svg> */}
               </a>
             </div>
           )}
@@ -98,7 +81,7 @@ const ModalCompanies = ({ isOpen, data, onClose }) => {
           <p className="textAnswer">{answer}</p>
         </div>
       </ModalCompanyWrapper>
-    </ReactModal>
+    </CustomModal>
   );
 };
 

@@ -39,6 +39,7 @@ const InvestorsBlock = () => {
     setSelectedItem(null);
   };
 
+  console.log(companies);
   return (
     <div>
       <TextWrapper>
@@ -47,23 +48,16 @@ const InvestorsBlock = () => {
         <SecondHeading>{people.length} людини</SecondHeading>
       </TextWrapper>
       <div>
-        {people.map((person) => (
-          <InvestorsPeople
-            key={person.id}
-            data={person}
-            onClick={() => openModal(person)}
-          />
-        ))}
+        <InvestorsPeople
+        // key={person.id}
+        // data={person}
+        // onClick={() => openModal(person)}
+        />
+
         <TextWrapper>
           <SecondHeading>{companies.length} компаній</SecondHeading>
         </TextWrapper>
-        {companies.map((company) => (
-          <InvestorsCompanies
-            key={company.id}
-            data={company}
-            onClick={() => openModal(company)}
-          />
-        ))}
+        <InvestorsCompanies />
       </div>
       {selectedItem && (
         <ModalInvestors data={selectedItem} onClose={closeModal} />

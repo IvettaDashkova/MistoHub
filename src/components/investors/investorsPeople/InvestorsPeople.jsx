@@ -39,30 +39,53 @@ const InvestorsPeople = () => {
     setSelectedInvestor(null);
   };
 
-  const duplicateInvestors = Array.from(
-    { length: 93 },
-    (_, index) => peopleData[index % peopleData.length]
-  );
+  const groupedPeople = peopleData.reduce((acc, person, index) => {
+    const groupIndex = Math.floor(index / 25);
+    acc[groupIndex] = [...(acc[groupIndex] || []), person];
+    return acc;
+  }, []);
 
   return (
     <ListWrapper>
-      <div>
-        <ul>
-          {duplicateInvestors.map((investor, index) => (
-            <li key={index}>
-              <img
-                src={formImgURL(investor.imageURL)}
-                alt={`Investor ${index}`}
-                onClick={() => openModal(investor)}
-              />
-            </li>
-          ))}
-          {selectedInvestor && (
-            <ModalInvestors data={selectedInvestor} onClose={closeModal} />
-          )}
-        </ul>
-      </div>
+      {groupedPeople.map((group, groupIndex) => (
+        <div key={groupIndex} className="group">
+          <ul>
+            {group.map((investor, index) => (
+              <li key={index}>
+                <img
+                  src={formImgURL(investor.imageURL)}
+                  alt={`Investor ${index}`}
+                  onClick={() => openModal(investor)}
+                />
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+      {selectedInvestor && (
+        <ModalInvestors data={selectedInvestor} onClose={closeModal} />
+      )}
     </ListWrapper>
+
+    // return (
+    //   <ListWrapper>
+    //     <div>
+    //       <ul>
+    //         {peopleData.map((investor, index) => (
+    //           <li key={index}>
+    //             <img
+    //               src={formImgURL(investor.imageURL)}
+    //               alt={`Investor ${index}`}
+    //               onClick={() => openModal(investor)}
+    //             />
+    //           </li>
+    //         ))}
+    //         {selectedInvestor && (
+    //           <ModalInvestors data={selectedInvestor} onClose={closeModal} />
+    //         )}
+    //       </ul>
+    //     </div>
+    //   </ListWrapper>
   );
 };
 

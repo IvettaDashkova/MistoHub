@@ -10,33 +10,33 @@ const HomePage = () => {
   const [companiesData, setCompaniesData] = useState(null);
   const [peopleData, setPeopleData] = useState(null);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const goalResponse = await fetchGoal();
-        const companiesResponse = await fetchCompanies();
-        const peopleResponse = await fetchPeople();
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     try {
+  //       const goalResponse = await fetchGoal();
+  //       const companiesResponse = await fetchCompanies();
+  //       const peopleResponse = await fetchPeople();
 
-        setGoalData(goalResponse);
-        setCompaniesData(companiesResponse);
-        setPeopleData(peopleResponse);
-      } catch (error) {
-        console.error('Error fetching data:', error);
-      }
-    };
-    fetchData();
-  }, []);
+  //       setGoalData(goalResponse);
+  //       setCompaniesData(companiesResponse);
+  //       setPeopleData(peopleResponse);
+  //     } catch (error) {
+  //       console.error('Error fetching data:', error);
+  //     }
+  //   };
+  //   fetchData();
+  // }, []);
 
-  function formImgURL(img) {
-    const imgData = img.asset._ref.split('-');
+  // function formImgURL(img) {
+  //   const imgData = img.asset._ref.split('-');
 
-    return `https://cdn.sanity.io/images/${
-      import.meta.env.VITE_ADMIN_PROJECT_ID
-    }/${import.meta.env.VITE_ADMIN_DATASET}/${imgData[1]}-${imgData[2]}.${
-      imgData[3]
-    }`;
-  }
-  console.log('done');
+  //   return `https://cdn.sanity.io/images/${
+  //     import.meta.env.VITE_ADMIN_PROJECT_ID
+  //   }/${import.meta.env.VITE_ADMIN_DATASET}/${imgData[1]}-${imgData[2]}.${
+  //     imgData[3]
+  //   }`;
+  // }
+  // console.log('done');
   return (
     <Container>
       {/* <h1>Home Page</h1>
