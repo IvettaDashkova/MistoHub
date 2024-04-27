@@ -13,6 +13,7 @@ export const HowItWorkSection = styled.section`
   background-position: center;
   background-size: auto 100%;
   background-position: 60% 50%;
+  
 
   .container {
     min-width: 320px;

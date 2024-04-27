@@ -2,6 +2,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/pagination';
+import Container from'../../shared/Container/Container.jsx';
 
 import { HowItWorkSection } from './HowItWork.styled';
 
@@ -9,7 +10,7 @@ export const HowItWork = () => {
 
   return (
     <HowItWorkSection id="how-it-work">
-      <div className="container">
+      <Container>
         <div className="container-inner">
           <h2 className="how-it-work-title">Як це працює?</h2>
             <Swiper
@@ -83,7 +84,7 @@ export const HowItWork = () => {
             Приєднатися
           </button>
         </div>
-      </div>
+      </Container>
     </HowItWorkSection>
   );
 };
