@@ -1,5 +1,5 @@
 import Iconsvg from '../../Icon/Icon';
-import '../icons.css';
+
 import { BackgroundVectorsContainer } from './BackgroundVectors.styled';
 
 const BackgroundVectors = () => {

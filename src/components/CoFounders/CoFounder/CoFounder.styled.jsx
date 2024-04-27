@@ -24,7 +24,7 @@ export const PersonName = styled.h3`
   @media (max-width: 374px) {
     width: 100px;
   }
-  @media (min-width: 767px) {
+  @media (min-width: 768px) {
     font-size: 20px;
     line-height: 130%;
     margin-top: 30px;
@@ -39,7 +39,7 @@ export const PersonDescription = styled.p`
   text-align: center;
   margin-top: 8px;
   color: rgba(11, 11, 11, 0.5);
-  @media (min-width: 767px) {
+  @media (min-width: 768px) {
     font-size: 16px;
     line-height: 150%;
   }
@@ -53,7 +53,7 @@ export const PersonImage = styled.img`
   border-radius: 50%;
   width: 100px;
   height: 100px;
-  @media (min-width: 767px) {
+  @media (min-width: 768px) {
     width: 180px;
     height: 180px;
   }
@@ -72,7 +72,16 @@ export const SocialNetworkLink = styled.a`
   display: flex;
   align-items: center;
   justify-content: center;
-  @media (min-width: 767px) {
+  .socialNetworkIcon {
+    width: 14px;
+    height: 14px;
+  }
+
+  @media (min-width: 768px) {
+    .socialNetworkIcon {
+      width: 16px;
+      height: 16px;
+    }
     padding: 10px;
     width: 36px;
     height: 36px;

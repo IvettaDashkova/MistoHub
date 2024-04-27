@@ -1,10 +1,10 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, lazy } from 'react';
 import { Container } from './HomePage.styled';
 import VirtualTour from '../../components/VirtualTour/VirtualTour';
 import { fetchGoal, fetchCompanies, fetchPeople } from '../../services/API';
 import Icon from 'src/components/Icon/Icon';
 import { ZibraniKoshti } from '../../components/ZibraniKoshti/ZibraniKoshti';
-
+import CoFounders from '../../components/CoFounders/CoFounders';
 const HomePage = () => {
   const [goalData, setGoalData] = useState(null);
   const [companiesData, setCompaniesData] = useState(null);
@@ -38,20 +38,23 @@ const HomePage = () => {
   }
   console.log('done');
   return (
-    <Container>
-      <Icon width="40" height="30" iconName="Vector" styles="vector-svg" />
+    <>
+      {/* <Container>
+        <Icon width="40" height="30" iconName="Vector" styles="vector-svg" />
 
-      <h1>Home Page</h1>
-      {goalData && (
-        <>
-          <p>{goalData.raised}</p> <p>{goalData.goal}</p>
-        </>
-      )}
-      {companiesData && <img src={formImgURL(companiesData[0].logoURL)} />}
-      {peopleData && <img src={formImgURL(peopleData[0].imageURL)} />}
-      <VirtualTour />
-      <ZibraniKoshti />
-    </Container>
+        <h1>Home Page</h1>
+        {goalData && (
+          <>
+            <p>{goalData.raised}</p> <p>{goalData.goal}</p>
+          </>
+        )}
+        {companiesData && <img src={formImgURL(companiesData[0].logoURL)} />}
+        {peopleData && <img src={formImgURL(peopleData[0].imageURL)} />}
+        <VirtualTour />
+        <ZibraniKoshti />
+      </Container> */}
+      <CoFounders />
+    </>
   );
 };
 

@@ -1,17 +1,20 @@
 import styled from '@emotion/styled';
+import { StyledContainer } from '../../shared/Container/Container.styled';
 
-export const SectionContainer = styled.section`
+export const SectionContainer = styled.section``;
+
+export const CoFoundersContainer = styled(StyledContainer)`
   position: relative;
-  margin: 0 auto;
   padding: 60px 15px;
   overflow: hidden;
+  display: block;
   @media (max-width: 374px) {
     padding: 60px 0;
   }
-  @media (min-width: 767px) {
+  @media (min-width: 768px) {
     padding: 120px 32px;
   }
-  @media (min-width: 1439px) {
+  @media (min-width: 1440px) {
     padding: 150px 120px;
   }
 `;
@@ -25,11 +28,11 @@ export const SectionTitle = styled.h2`
   @media (max-width: 374px) {
     margin-left: 15px;
   }
-  @media (min-width: 767px) {
+  @media (min-width: 768px) {
     font-size: 45px;
     line-height: 111%;
   }
-  @media (min-width: 1439px) {
+  @media (min-width: 1440px) {
     font-size: 60px;
     line-height: 113%;
   }
@@ -51,12 +54,12 @@ export const List = styled.ul`
     max-width: 312px;
     gap: 36px 8px;
   }
-  @media (min-width: 767px) {
+  @media (min-width: 768px) {
     max-width: 704px;
     margin-top: 80px;
     gap: 54px 50px;
   }
-  @media (min-width: 1439px) {
+  @media (min-width: 1440px) {
     max-width: 1200px;
     gap: 50px;
   }
