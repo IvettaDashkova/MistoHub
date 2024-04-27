@@ -15,12 +15,6 @@ export const HowItWorkSection = styled.section`
   background-position: 60% 50%;
   
 
-  .container {
-    min-width: 320px;
-    max-width: 375px;
-    padding: 0 16px;
-    margin: 0 auto;
-  }
   .container-inner {
     padding: 104px 0 82px;
   }
@@ -130,13 +124,6 @@ export const HowItWorkSection = styled.section`
     background-size: auto 100%;
     background-position: 60% 50%;
 
-    .container {
-      width: 768px;
-      padding: 0 32px;
-      min-width: unset;
-      max-width: unset;
-    }
-
     .container-inner {
       padding: 200px 0 161px;
     }
@@ -209,15 +196,9 @@ export const HowItWorkSection = styled.section`
     background-image: url(${bgImageDesktop});
     background-position: 67% 50%;
 
-    .container {
-      width: 1440px;
-      padding: 0 120px;
-    }
-
     .container-inner {
       padding: 258px 0 207px;
     }
-
 
     .how-it-work-title {
       font-size: 60px;
