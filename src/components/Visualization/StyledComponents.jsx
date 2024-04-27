@@ -152,6 +152,10 @@ export const LeftArrow = styled.button`
   height: 44px;
   border-radius: 50%;
   background: #ffffff;
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   fill: #f77d07;
 

@@ -27,7 +27,7 @@ const CloseButton = styled.button`
 
 const TourModal = forwardRef(({ image, onClose }, ref) => {
   const wrapperRef = useRef();
-
+  //  закриття туру при кліку поза його межами
   const closeTourOnClickOutside = useCallback(
     (event) => {
       if (wrapperRef.current && !wrapperRef.current.contains(event.target)) {
@@ -36,7 +36,7 @@ const TourModal = forwardRef(({ image, onClose }, ref) => {
     },
     [onClose]
   );
-
+  // обробник події при створенні та демонтуванні компонента
   useEffect(() => {
     document.addEventListener('mousedown', closeTourOnClickOutside);
     return () => {

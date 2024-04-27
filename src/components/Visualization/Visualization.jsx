@@ -16,14 +16,16 @@ import {
 import Icon from './Icon';
 
 const Visualization = () => {
+  // визначення ширини екрану
   const isDesktop = useMediaQuery({ minWidth: 1440 });
   const isTablet = useMediaQuery({ minWidth: 768, maxWidth: 1439 });
   const isMobile = useMediaQuery({ maxWidth: 767 });
-
+  // Стан для поточної картки та відкритого туру
   const [currentCard, setCurrentCard] = useState(0);
   const [isTourOpen, setIsTourOpen] = useState([false, false]);
+  //  ref для фотосфери
   const photoSphereRef = useRef();
-
+  //  встановлення  зображення в залежності від ширини екрану
   const setImageSrc = (cardIndex) => {
     if (isDesktop) {
       return images[cardIndex].src.desktop;
@@ -33,7 +35,7 @@ const Visualization = () => {
       return images[cardIndex].src.mobile;
     }
   };
-
+  //  встановлення ретина зображення  в залежності від ширини екрану
   const setImageSrcSet = (cardIndex) => {
     if (isDesktop) {
       return images[cardIndex].srcSet.desktop;
@@ -43,7 +45,7 @@ const Visualization = () => {
       return images[cardIndex].srcSet.mobile;
     }
   };
-
+  //  оновлення поточної картки при зміні розміру вікна
   useEffect(() => {
     const handleResize = () => {
       setCurrentCard(currentCard);
@@ -52,7 +54,7 @@ const Visualization = () => {
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   }, [currentCard]);
-
+  //  перехід до наступної картки
   const nextCard = () => {
     if (
       !isTourOpen.some((open) => open) &&
@@ -61,17 +63,17 @@ const Visualization = () => {
       setCurrentCard(currentCard + 1);
     }
   };
-
+  //  перехід до попередньої картки
   const prevCard = () => {
     if (!isTourOpen.some((open) => open) && currentCard > 0) {
       setCurrentCard(currentCard - 1);
     }
   };
-
+  // відкриття та закриття туру
   const toggleTour = (index) => {
     setIsTourOpen(isTourOpen.map((open, i) => (i === index ? !open : false)));
   };
-
+  // розмір іконки в залежності від ширини екрану
   const isDesktopOrLarger = useMediaQuery({ minWidth: 1440 });
   const isTabletOrLarger = useMediaQuery({ minWidth: 768 });
   const iconSize = isDesktopOrLarger ? '30' : isTabletOrLarger ? '30' : '22';
@@ -92,7 +94,7 @@ const Visualization = () => {
             >
               <img
                 src={setImageSrc((currentCard + index) % images.length)}
-                srcSet={setImageSrcSet((currentCard + index) % images.length)}
+                srcSet={setImageSrcSet((currentCard + index) % images.length)} // ретина
                 alt={image.title}
                 style={{ display: 'none' }}
               />
