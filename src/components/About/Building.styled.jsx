@@ -80,6 +80,7 @@ export const Bicon = styled.span`
   background-size: contain;
   position: absolute;
 `;
+
 export const BIconOne = styled(Bicon)`
   background-image: url(${buildingOne});
   top: 93px;
@@ -107,6 +108,7 @@ export const BIconTwo = styled(Bicon)`
   left: -22px;
   width: 40px;
   height: 40px;
+
   @media (min-width: 768px) {
     top: 332px;
     left: -39px;
@@ -127,6 +129,7 @@ export const BIconThree = styled(Bicon)`
   width: 27px;
   height: 59px;
   transform: rotate(-154deg);
+
   @media (min-width: 768px) {
     top: 169px;
     left: 687px;
@@ -147,6 +150,7 @@ export const BIconFour = styled(Bicon)`
   width: 100px;
   height: 69px;
   transform: rotate(-68.59deg);
+  
   @media (min-width: 768px) {
     top: 400px;
     left: 580px;
