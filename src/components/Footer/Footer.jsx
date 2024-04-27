@@ -2,8 +2,18 @@ import { StyledFooter, FooterContainer, FooterDown } from './Footer.styled';
 import Contacts from './Contacts';
 import MyGoogleMap from './MyGoogleMap';
 import Icon from '../Icon/Icon';
+import { useState } from 'react';
+import TeamModal from '../TeamModal/TeamModal';
 
 export default function Footer() {
+  const [modalIsOpen, setModalIsOpen] = useState(false);
+
+  const openModal = () => {
+    setModalIsOpen(true);
+  };
+  const closeModal = () => {
+    setModalIsOpen(false);
+  };
   return (
     <StyledFooter>
       <FooterContainer>
@@ -28,10 +38,7 @@ export default function Footer() {
             <p>© ГО «МІСТО ХАБ»</p>
             <p>Всі права захищені</p>
           </div>
-          <button
-            className="btn-goit"
-            onClick={() => console.log('Modal for team project is open!')}
-          >
+          <button className="btn-goit" onClick={openModal}>
             Розроблено студентами{' '}
             <Icon
               width="59"
@@ -42,6 +49,7 @@ export default function Footer() {
           </button>
         </FooterDown>
       </FooterContainer>
+      <TeamModal modalTeamIsOpen={modalIsOpen} modalTeamOnClose={closeModal} />
     </StyledFooter>
   );
 }
