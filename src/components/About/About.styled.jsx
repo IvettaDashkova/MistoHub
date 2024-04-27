@@ -5,13 +5,6 @@ export const AboutSection = styled.section`
   margin-bottom: 60px;
   font-family: "FixelDisplay";
 
-  .container {
-    min-width: 320px;
-    max-width: 375px;
-    padding: 0 16px;
-    margin: 0 auto;
-  }
-
   .about-project {
     font-size: 14px;
     font-weight: 500;
@@ -73,7 +66,7 @@ export const AboutSection = styled.section`
 
     font-size: 24px;
     font-weight: 500;
-    line-height: 1.3;
+    line-height: 1.33;
     letter-spacing: -0.02em;
     color: #ffffff;
   }
@@ -124,12 +117,6 @@ export const AboutSection = styled.section`
       margin-bottom: 60px;
     }
 
-    .container {
-      width: 768px;
-      min-width: unset;
-      max-width: unset;
-      padding: 0 32px;
-    }
     .swiper {
       margin-bottom: 120px;
       padding-bottom: 48px;
@@ -190,11 +177,6 @@ export const AboutSection = styled.section`
 
   @media (min-width: 1440px) {
     margin-bottom: 150px;
-
-    .container {
-      width: 1440px;
-      padding: 0 120px;
-    }
 
     .about-title {
       font-size: 60px;
