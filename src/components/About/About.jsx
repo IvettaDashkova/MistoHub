@@ -30,7 +30,7 @@ export const About = () => {
               slidesPerView: 3,
               initialSlide: 0,
               slideTo: 0,
-              enabled: false,
+              enabled: true,
               spaceBetween: '24px',
               grid: {
                 row: 1,
@@ -57,7 +57,7 @@ export const About = () => {
               enabled: true,
               pagination: {
                 enabled: false,
-                clickable: false,
+                clickable: true,
               }
             }
           }}
@@ -66,7 +66,7 @@ export const About = () => {
               row: 3
           }}
           initialSlide = {0}
-          enabled={false}
+          enabled={true}
           pagination={{
             enabled: false,
             clickable: false,
