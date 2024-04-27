@@ -62,7 +62,7 @@ export const Building = () => {
             <source
               type="image/webp"
               srcSet={`${buildingWebP} 1x, ${building2xWebP} 2x`}
-              width="704" height="534"
+              width="1200" height="753"
             />
             <img
               className="building-img"
