@@ -1,10 +1,13 @@
 import styled from 'styled-components';
 
-export const ListItem = styled.li`
+export const ListItem = styled.div`
   width: 159px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  @media (max-width: 374px) {
+    width: 152px;
+  }
   @media (min-width: 767px) {
     width: 234px;
   }
@@ -18,6 +21,9 @@ export const PersonName = styled.h3`
   color: #0b0b0b;
   text-align: center;
   margin-top: 16px;
+  @media (max-width: 374px) {
+    width: 100px;
+  }
   @media (min-width: 767px) {
     font-size: 20px;
     line-height: 130%;

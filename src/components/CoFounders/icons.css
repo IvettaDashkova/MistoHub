@@ -28,10 +28,10 @@
 }
 
 .blobIcon {
-  width: 35px;
-  height: 35px;
+  width: 33px;
+  height: 36px;
   position: absolute;
-  right: 10px;
+  right: 5px;
   top: 381px;
 }
 
@@ -47,8 +47,23 @@
   width: 116px;
   height: 53px;
   position: absolute;
-  right: -51px;
+  right: -41px;
   top: 895px;
+}
+
+@media (max-width: 374px) {
+  .octagonIcon {
+    left: -28px;
+  }
+
+  .ovalIcon {
+    height: 20px;
+  }
+
+  .sliceIcon {
+    top: 610px;
+    right: -47px;
+  }
 }
 
 @media (min-width: 767px) {

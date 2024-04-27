@@ -5,6 +5,9 @@ export const SectionContainer = styled.section`
   margin: 0 auto;
   padding: 60px 15px;
   overflow: hidden;
+  @media (max-width: 374px) {
+    padding: 60px 0;
+  }
   @media (min-width: 767px) {
     padding: 120px 32px;
   }
@@ -19,6 +22,9 @@ export const SectionTitle = styled.h2`
   font-size: 24px;
   line-height: 133%;
   letter-spacing: -0.02em;
+  @media (max-width: 374px) {
+    margin-left: 15px;
+  }
   @media (min-width: 767px) {
     font-size: 45px;
     line-height: 111%;
@@ -41,6 +47,10 @@ export const List = styled.ul`
   max-width: 343px;
   margin: 32px auto 0;
   flex-wrap: wrap;
+  @media (max-width: 374px) {
+    max-width: 312px;
+    gap: 36px 8px;
+  }
   @media (min-width: 767px) {
     max-width: 704px;
     margin-top: 80px;
