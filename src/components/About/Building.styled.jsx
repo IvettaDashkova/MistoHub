@@ -4,6 +4,8 @@ import buildingTwo from '../../assets/about/building2.svg';
 import buildingThree from '../../assets/about/building3.svg';
 import buildingFour from '../../assets/about/building4.svg';
 
+import Icon from '../../assets/icons.svg';
+
 export const BuildingSection = styled.section`
   margin-bottom: 60px;
   font-family: 'FixelDisplay';
@@ -91,6 +93,57 @@ export const BuildingSection = styled.section`
       margin-bottom: 40px;
     }
   }
+
+
+
+
+.ic{ 
+  background: transparent url(${Icon}) no-repeat;
+  width:64px; height: 64px; 
+  background-color:yellow;
+  background-size: contain;
+} 
+.ic.position_1{ 
+  background-image: url(${Icon}#Vector); 
+  fill: red;
+}
+.ic.position_2{ 
+  background-image: url(${Icon}#build); 
+  fill:green; 
+}
+
+
+  .icon {
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="64" height="16" viewBox="0 0 64 16"> <circle fill="blue" cx="8" cy="8" r="8"/> <circle fill="red" cx="24" cy="8" r="8"/> <circle fill="yellow" cx="40" cy="8" r="8"/> <circle fill="green" cx="56" cy="8" r="8"/> </svg>');
+    background-repeat: no-repeat;
+    background-size: auto 100%;
+    display: inline-block;
+}
+.icon.small {
+    height: 1em;
+    width: 1em;
+}
+.icon.medium {
+    height: 2em;
+    width: 2em;
+}
+.icon.large {
+    height: 4em;
+    width: 4em;
+}
+.icon_1 {
+    background-position: 0 0;
+}
+.icon_2 {
+    background-position: 33.33% 0;
+}
+.icon_3 {
+    background-position: 66.67% 0;
+}
+.icon_4 {
+    background-position: 100% 0;
+}
+
 `;
 
 export const Bicon = styled.span`
