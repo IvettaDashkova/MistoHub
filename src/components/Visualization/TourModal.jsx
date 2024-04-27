@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import Icon from './Icon';
 
 const ModalWrapper = styled.div`
+  borderRadius: '20px'
   position: relative;
   width: 100%;
   height: 100%;
