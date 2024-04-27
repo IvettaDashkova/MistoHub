@@ -17,13 +17,6 @@ export const Building = () => {
   return (
     <BuildingSection id="building">
       <div className="container">
-      
-<span className="icon icon_1 medium"></span>
-<span className="icon icon_2 large"></span>
-<span className="icon icon_1 small"></span>
-<div className='ic position_1'></div>
-<div className='ic position_2'></div>
-
         <h2 className="building-title">
           Будівля <span className="accent">МІСТОХАБ</span> це історична спадщина
           Полтави
