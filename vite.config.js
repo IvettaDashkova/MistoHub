@@ -9,6 +9,7 @@ export default defineConfig({
       src: '/src',
       assets: '/src/assets',
       components: '/src/components',
+      constants: '/src/constants',
       pages: '/src/pages',
       services: '/src/services',
       shared: '/src/shared',
