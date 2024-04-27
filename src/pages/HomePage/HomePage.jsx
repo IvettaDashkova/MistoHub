@@ -18,6 +18,7 @@ const HomePage = () => {
         const companiesResponse = await fetchCompanies();
         const peopleResponse = await fetchPeople();
 
+
         setGoalData(goalResponse);
         setCompaniesData(companiesResponse);
         setPeopleData(peopleResponse);
@@ -27,10 +28,19 @@ const HomePage = () => {
     };
     fetchData();
   }, []);
+  }, []);
 
   function formImgURL(img) {
     const imgData = img.asset._ref.split('-');
+    const imgData = img.asset._ref.split('-');
 
+    return `https://cdn.sanity.io/images/${
+      import.meta.env.VITE_ADMIN_PROJECT_ID
+    }/${import.meta.env.VITE_ADMIN_DATASET}/${imgData[1]}-${imgData[2]}.${
+      imgData[3]
+    }`;
+  }
+  console.log('done');
     return `https://cdn.sanity.io/images/${
       import.meta.env.VITE_ADMIN_PROJECT_ID
     }/${import.meta.env.VITE_ADMIN_DATASET}/${imgData[1]}-${imgData[2]}.${
@@ -43,6 +53,11 @@ const HomePage = () => {
       <Icon width="40" height="30" iconName="Vector" styles="vector-svg" />
 
       <h1>Home Page</h1>
+      {goalData && (
+        <>
+          <p>{goalData.raised}</p> <p>{goalData.goal}</p>
+        </>
+      )}
       {goalData && (
         <>
           <p>{goalData.raised}</p> <p>{goalData.goal}</p>
