@@ -24,7 +24,7 @@ import imgD2_P from './imgVisualization/кафе-пк-2x.jpg';
 import imgD3_P from './imgVisualization/містошоп-пк-2x.jpg';
 // Імпорт зображень для віртуального туру.
 import visualIn from './imgVisualization/Івент-простір-Віз.jpg';
-import visualK from '/src/components/Visualization/imgVisualization/Кафе-Віз.jpg';
+import visualK from './imgVisualization/Кафе-Віз.jpg';
 import visualM from './imgVisualization/Містошоп-Віз.jpg';
 
 export const images = [

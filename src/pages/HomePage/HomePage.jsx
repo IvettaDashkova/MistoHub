@@ -4,7 +4,7 @@ import VirtualTour from '../../components/VirtualTour/VirtualTour';
 import { fetchGoal, fetchCompanies, fetchPeople } from '../../services/API';
 import Icon from 'src/components/Icon/Icon';
 import { ZibraniKoshti } from '../../components/ZibraniKoshti/ZibraniKoshti';
-
+import Visualization from "../../components/Visualization/Visualization"
 
 const HomePage = () => {
   const [goalData, setGoalData] = useState(null);
@@ -52,6 +52,7 @@ const HomePage = () => {
       {peopleData && <img src={formImgURL(peopleData[0].imageURL)} />}
       <VirtualTour />
       <ZibraniKoshti />
+      <Visualization />
     </Container>
   );
 };
