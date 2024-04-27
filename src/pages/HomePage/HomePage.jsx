@@ -39,7 +39,7 @@ const HomePage = () => {
   console.log('done');
   return (
     <>
-      {/* <Container>
+      <Container>
         <Icon width="40" height="30" iconName="Vector" styles="vector-svg" />
 
         <h1>Home Page</h1>
@@ -52,7 +52,7 @@ const HomePage = () => {
         {peopleData && <img src={formImgURL(peopleData[0].imageURL)} />}
         <VirtualTour />
         <ZibraniKoshti />
-      </Container> */}
+      </Container>
       <CoFounders />
     </>
   );
