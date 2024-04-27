@@ -3,6 +3,7 @@ import { Container } from './HomePage.styled';
 import VirtualTour from '../../components/VirtualTour/VirtualTour';
 import { fetchGoal, fetchCompanies, fetchPeople } from '../../services/API';
 import Icon from 'src/components/Icon/Icon';
+import { Building } from '../../components/About/Building';
 import { ZibraniKoshti } from '../../components/ZibraniKoshti/ZibraniKoshti';
 
 
@@ -43,7 +44,9 @@ const HomePage = () => {
       <Icon width="40" height="30" iconName="Vector" styles="vector-svg" />
 
       <h1>Home Page</h1>
-      {goalData && (
+
+      <Building />
+      {/* {goalData && (
         <>
           <p>{goalData.raised}</p> <p>{goalData.goal}</p>
         </>
@@ -51,7 +54,7 @@ const HomePage = () => {
       {companiesData && <img src={formImgURL(companiesData[0].logoURL)} />}
       {peopleData && <img src={formImgURL(peopleData[0].imageURL)} />}
       <VirtualTour />
-      <ZibraniKoshti />
+      <ZibraniKoshti /> */}
     </Container>
   );
 };
