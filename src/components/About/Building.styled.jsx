@@ -72,7 +72,7 @@ export const BuildingSection = styled.section`
   }
 
   @media (min-width: 1440px) {
-    margin-bottom: 150px;
+    margin-bottom: 181px;
 
     .container {
       width: 1440px;
@@ -87,6 +87,7 @@ export const BuildingSection = styled.section`
     .building-text {
       font-size: 28px;
       line-height: 1.21;
+      padding-right: 120px;
       margin-bottom: 40px;
     }
   }
