@@ -1,0 +1,53 @@
+[
+  {
+    "id": 0,
+    "img": "./src/components/CoFounders/img/alyonagoncgarenko.jpg",
+    "instagram": "https://www.instagram.com/alena_poltava/",
+    "name": "Альона Гончаренко",
+    "description": "Керівниця центру підтримки підприємців \"Дія.Бізнес\" Полтава"
+  },
+  {
+    "id": 1,
+    "img": "./src/components/CoFounders/img/marynagerasymenko.jpg",
+    "instagram": "https://www.instagram.com/herasymenko.maryna/",
+    "name": "Марина Герасименко",
+    "description": "Проектна менеджерка, інструкторка з першої домедичної допомоги"
+  },
+  {
+    "id": 2,
+    "img": "./src/components/CoFounders/img/nataliiagranchak.jpg",
+    "instagram": "https://instagram.com/nngranat?igshid=YmMyMTA2M2Y=",
+    "name": "Наталія Гранчак",
+    "description": "Голова БО «Полтавський Батальйон Небайдужих»"
+  },
+  {
+    "id": 3,
+    "img": "./src/components/CoFounders/img/nataliabarannyk.jpg",
+    "instagram": "https://www.instagram.com/natalibarannik?igsh=d2h5cmxpbGNxajE=",
+    "name": "Наталя Баранник",
+    "description": "Ілюстраторка-аніматорка, менеджерка проєктів"
+  },
+  {
+    "id": 4,
+    "img": "./src/components/CoFounders/img/valentynbybniyk.jpg",
+    "instagram": null,
+    "facebook": "https://www.facebook.com/profile.php?id=100009217334803",
+    "name": "Валентин Бубнюк",
+    "description": "Митрополит Полтавський і Кременчуцький"
+  },
+  {
+    "id": 5,
+    "img": "./src/components/CoFounders/img/denissergeev.jpg",
+    "instagram": "https://www.instagram.com/denys.serheyev?igsh=MWY2Z3BucWs5Zzd4bQ==",
+    "name": "Денис Сергєєв",
+    "description": "Операційний директор IT-компанії"
+  },
+  {
+    "id": 6,
+    "img": "./src/components/CoFounders/img/vitaliyvolodchenko.jpg",
+    "instagram": null,
+    "facebook": " https://www.facebook.com/volodchenk/?locale=ru_RU",
+    "name": "Віталій Володченко",
+    "description": "Підприємець, тренер з неформальної освіти та віце-президент БО \"Взаємопоміч\""
+  }
+]

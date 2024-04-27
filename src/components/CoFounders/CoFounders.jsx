@@ -1,11 +1,12 @@
+import BackgroundVectors from './BackgroundVectors/BackgroundVectors';
 import CoFounder from './CoFounder/CoFounder';
 import {
   List,
-  ListItem,
   SectionContainer,
   SectionSpan,
   SectionTitle,
 } from './CoFounders.styled';
+import data from './cofounders.json';
 const CoFounders = () => {
   return (
     <SectionContainer>
@@ -14,77 +15,18 @@ const CoFounders = () => {
         <SectionSpan>містохаб</SectionSpan>
       </SectionTitle>
       <List>
-        <ListItem>
+        {data.map((person) => (
           <CoFounder
-            img={'Person Image'}
-            instagram={'Some LInk'}
-            name={'Альона Гончаренко'}
-            description={
-              'Керівниця центру підтримки підприємців "Дія.Бізнес" Полтава'
-            }
+            key={person.id}
+            img={person.img}
+            instagram={person.instagram}
+            facebook={person?.facebook}
+            name={person.name}
+            description={person.description}
           />
-        </ListItem>
-        <ListItem>
-          <CoFounder
-            img={'Person Image'}
-            instagram={'Some LInk'}
-            name={'Альона Гончаренко'}
-            description={
-              'Керівниця центру підтримки підприємців "Дія.Бізнес" Полтава'
-            }
-          />
-        </ListItem>
-        <ListItem>
-          <CoFounder
-            img={'Person Image'}
-            instagram={'Some LInk'}
-            name={'Альона Гончаренко'}
-            description={
-              'Керівниця центру підтримки підприємців "Дія.Бізнес" Полтава'
-            }
-          />
-        </ListItem>
-        <ListItem>
-          <CoFounder
-            img={'Person Image'}
-            instagram={'Some LInk'}
-            name={'Альона Гончаренко'}
-            description={
-              'Керівниця центру підтримки підприємців "Дія.Бізнес" Полтава'
-            }
-          />
-        </ListItem>
-        <ListItem>
-          <CoFounder
-            img={'Person Image'}
-            instagram={'Some LInk'}
-            name={'Альона Гончаренко'}
-            description={
-              'Керівниця центру підтримки підприємців "Дія.Бізнес" Полтава'
-            }
-          />
-        </ListItem>
-        <ListItem>
-          <CoFounder
-            img={'Person Image'}
-            instagram={'Some LInk'}
-            name={'Альона Гончаренко'}
-            description={
-              'Керівниця центру підтримки підприємців "Дія.Бізнес" Полтава'
-            }
-          />
-        </ListItem>
-        <ListItem>
-          <CoFounder
-            img={'Person Image'}
-            instagram={'Some LInk'}
-            name={'Альона Гончаренко'}
-            description={
-              'Керівниця центру підтримки підприємців "Дія.Бізнес" Полтава'
-            }
-          />
-        </ListItem>
+        ))}
       </List>
+      <BackgroundVectors />
     </SectionContainer>
   );
 };
