@@ -50,8 +50,6 @@ const TourModal = forwardRef(({ image, onClose }, ref) => {
         ref={ref}
         src={image}
         hideNavbarButton={false}
-        // height={'280px'}
-        // width={'280px'}
         height={'100%'}
         width={'100%'}
         defaultZoomLvl={10}

@@ -22,7 +22,7 @@ export const ContainerVisual = styled.div`
 `;
 
 export const TitleContainer = styled.div`
-  font-family: inherit;
+  font-family: 'Oddval', sans-serif;
   font-weight: 600;
   font-size: 24px;
   line-height: 1.33;
@@ -46,11 +46,8 @@ export const TitleContainer = styled.div`
 `;
 
 export const Card = styled.div`
-  min-width: 288px;
-  min-height: 288px;
   width: 100%;
   height: 100%;
-
   border-radius: 20px;
   display: flex;
   justify-content: center;
@@ -60,6 +57,17 @@ export const Card = styled.div`
   background-repeat: no-repeat;
   position: relative;
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+
+  @media screen and (min-width: 320px) and (max-width: 374px) {
+    margin: 0 auto;
+    width: 288px;
+    height: 288px;
+  }
+
+  @media (min-width: 375px) {
+    width: 343px;
+    height: 343px;
+  }
 
   @media (min-width: 768px) {
     width: 704px;
@@ -75,7 +83,7 @@ export const Card = styled.div`
 export const CardTitle = styled.h2`
   text-align: center;
   margin-bottom: 15px;
-  font-family: inherit;
+  font-family: 'Oddval', sans-serif;
   font-weight: 600;
   font-size: 20px;
   line-height: 1.2;
@@ -102,7 +110,8 @@ export const ButtonTour = styled.button`
   box-shadow: 0 1px 2px 0 rgba(16, 24, 40, 0.05);
   background: #ffffff;
   border: none;
-  font-family: inherit;
+
+  font-family: 'MacPaw Fixel Display', sans-serif;
   font-weight: 600;
   font-size: 14px;
   line-height: 1.29;
@@ -188,8 +197,3 @@ export const CardsContainer = styled.div`
     justify-content: space-between;
   }
 `;
-
-// export const CardBox = styled.div`
-//   width: 100%;
-//   height: 100%;
-// `;

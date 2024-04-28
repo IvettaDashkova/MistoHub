@@ -117,12 +117,14 @@ const Visualization = () => {
       </CardsContainer>
       <Arrow>
         <LeftArrow
+          type="button"
           className={`${currentCard > 0 ? 'enabled' : ''}`}
           onClick={prevCard}
         >
           <Icon width={iconSize} height={iconSize} iconName="icon-arrow-left" />
         </LeftArrow>
         <RightArrow
+          type="button"
           className={`${currentCard < images.length - (isDesktop ? 2 : 1) ? 'enabled' : ''}`}
           onClick={nextCard}
         >
