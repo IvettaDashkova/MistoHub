@@ -15,8 +15,15 @@ const ModalInvestors = ({ data, onClose, isOpen }) => {
     answer,
   } = data;
 
-  const imageRef = imageURL.asset._ref;
-  const imageSrc = `https://cdn.sanity.io/images/${imageRef}`;
+  function formImgURL(img) {
+    const imgData = img.asset._ref.split('-');
+
+    return `https://cdn.sanity.io/images/${
+      import.meta.env.VITE_ADMIN_PROJECT_ID
+    }/${import.meta.env.VITE_ADMIN_DATASET}/${imgData[1]}-${imgData[2]}.${
+      imgData[3]
+    }`;
+  }
 
   return (
     <CustomModal
@@ -32,7 +39,7 @@ const ModalInvestors = ({ data, onClose, isOpen }) => {
             <div className="title-wrapper">
               <img
                 className="main-image"
-                src={imageSrc}
+                src={formImgURL(imageURL)}
                 alt={`${firstName} ${secondName}`}
               />
               {facebook ? (
