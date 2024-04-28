@@ -1,9 +1,31 @@
 import styled from '@emotion/styled';
+import Container from '../../shared/Container/Container';
+
+export const AboutContainer = styled(Container)`
+  width: 100%;
+  min-width: 320px;
+  max-width: 375px;
+  padding: 0 16px;
+  margin: 0 auto;
+  outline: none;
+
+  @media (min-width: 768px) {
+    width: 768px;
+    min-width: unset;
+    max-width: unset;
+    padding: 0 32px;
+  }
+
+  @media (min-width: 1440px) {
+    width: 1440px;
+    padding: 0 120px;
+  }
+`;
 
 export const AboutSection = styled.section`
   width: 100%;
   margin-bottom: 60px;
-  font-family: "FixelDisplay";
+  font-family: 'FixelDisplay';
 
   .about-project {
     font-size: 14px;
@@ -16,7 +38,7 @@ export const AboutSection = styled.section`
   }
 
   .about-title {
-    font-family: "Oddval";
+    font-family: 'Oddval';
     font-weight: 600;
     font-size: 24px;
     line-height: 1.33;
@@ -48,12 +70,12 @@ export const AboutSection = styled.section`
     padding: 38px 32px;
     border-radius: 20px;
   }
-  .swiper-slide{
+  .swiper-slide {
     height: unset;
   }
 
   .about-list-item-number {
-    padding-top:3px;
+    padding-top: 3px;
     width: 44px;
     height: 44px;
     display: flex;
@@ -72,7 +94,7 @@ export const AboutSection = styled.section`
   }
 
   .about-list-item-title {
-    font-family: "Oddval";
+    font-family: 'Oddval';
     font-size: 20px;
     font-weight: 600;
     line-height: 1.2;
@@ -92,7 +114,7 @@ export const AboutSection = styled.section`
   }
 
   .about-info {
-    font-family: "Oddval";
+    font-family: 'Oddval';
     font-weight: 600;
     font-size: 24px;
     line-height: 1.33;
@@ -136,7 +158,7 @@ export const AboutSection = styled.section`
     }
 
     .about-list-item-number {
-      padding-top:4px;
+      padding-top: 4px;
       width: 60px;
       height: 60px;
       margin-bottom: 32px;
@@ -190,7 +212,7 @@ export const AboutSection = styled.section`
     }
 
     .about-list-item-number {
-      padding-top:5px;
+      padding-top: 5px;
       width: 72px;
       height: 72px;
       margin-bottom: 40px;
