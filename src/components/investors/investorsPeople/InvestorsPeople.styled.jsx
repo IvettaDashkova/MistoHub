@@ -271,6 +271,10 @@ export const ListWrapper = styled.div`
       animation-play-state: paused;
     }
 
+    li {
+      cursor: pointer;
+    }
+
     img {
       width: 180px;
       height: 140px;
@@ -392,6 +396,10 @@ export const ListWrapper = styled.div`
 
     ul:hover {
       animation-play-state: paused;
+    }
+
+    li {
+      cursor: pointer;
     }
 
     img {

@@ -2,6 +2,9 @@ import styled from 'styled-components';
 import ReactModal from 'react-modal';
 
 export const ModalCompanyWrapper = styled.div`
+  div {
+    max-width: 320px;
+  }
   @media screen and (min-width: 375px) and (max-width: 767.9px) {
     .text {
       color: rgba(11, 11, 11, 0.5);
@@ -428,16 +431,13 @@ export const CustomModal = styled(ReactModal)`
     width: 100%;
     height: fit-content;
     margin: auto;
-    // padding: 10px;
     border-radius: 10px;
     border: none;
     background: #fff;
     box-shadow:
       4px 17px 102.1px 0px rgba(0, 0, 0, 0.19),
       0px 25px 30.4px 0px rgba(0, 0, 0, 0.09);
-    overflow: fixed;
-    backgroundcolor: rgba(0, 0, 0, 0.5);
-    // z-index: -1;
+    // z-index: 10;
 
     @media screen and (min-width: 375px) and (max-width: 811.9px) {
       width: 343px;
