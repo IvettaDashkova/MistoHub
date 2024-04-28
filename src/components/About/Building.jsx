@@ -1,5 +1,6 @@
 import {
   BuildingSection,
+  BuildingContainer,
   BIconOne,
   BIconTwo,
   BIconThree,
@@ -19,13 +20,11 @@ import buildingTablet2xWebP from '../../assets/about/building-tablet@2x.webp';
 import buildingMobileWebP from '../../assets/about/building-mobile.webp';
 import buildingMobile2xWebP from '../../assets/about/building-mobile@2x.webp';
 
-import Container from '../../shared/Container/Container.jsx';
-
 
 export const Building = () => {
   return (
     <BuildingSection id="building">
-      <Container>
+      <BuildingContainer>
         <h2 className="building-title">
           Будівля <span className="accent">МІСТОХАБ</span> це історична спадщина
           Полтави
@@ -78,7 +77,7 @@ export const Building = () => {
           <BIconThree />
           <BIconFour />
         </div>
-      </Container>
+      </BuildingContainer>
     </BuildingSection>
   );
 };

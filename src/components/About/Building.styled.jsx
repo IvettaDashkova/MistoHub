@@ -3,6 +3,28 @@ import buildingOne from '../../assets/about/building1.svg';
 import buildingTwo from '../../assets/about/building2.svg';
 import buildingThree from '../../assets/about/building3.svg';
 import buildingFour from '../../assets/about/building4.svg';
+import Container from '../../shared/Container/Container';
+
+export const BuildingContainer = styled(Container)`
+  width: 100%;
+  min-width: 320px;
+  max-width: 375px;
+  padding: 0 16px;
+  margin: 0 auto;
+  outline: none;
+
+  @media (min-width: 768px) {
+    width: 768px;
+    min-width: unset;
+    max-width: unset;
+    padding: 0 32px;
+  }
+
+  @media (min-width: 1440px) {
+    width: 1440px;
+    padding: 0 120px;
+  }
+`;
 
 export const BuildingSection = styled.section`
   margin-bottom: 60px;

@@ -40,13 +40,18 @@ const HomePage = () => {
   }
   console.log('done');
   return (
+
+    <>
+    
+    <Building />
+
     <Container>
       <Icon width="40" height="30" iconName="Vector" styles="vector-svg" />
 
       <h1>Home Page</h1>
 
-      <Building />
-      {/* {goalData && (
+      
+      {goalData && (
         <>
           <p>{goalData.raised}</p> <p>{goalData.goal}</p>
         </>
@@ -54,8 +59,9 @@ const HomePage = () => {
       {companiesData && <img src={formImgURL(companiesData[0].logoURL)} />}
       {peopleData && <img src={formImgURL(peopleData[0].imageURL)} />}
       <VirtualTour />
-      <ZibraniKoshti /> */}
+      <ZibraniKoshti />
     </Container>
+    </>
   );
 };
 
