@@ -31,6 +31,11 @@ export const TitleContainer = styled.div`
   text-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
   margin-bottom: 32px;
 
+  @media screen and (min-width: 320px) and (max-width: 374px) {
+    font-size: 20px;
+    line-height: 1.5;
+  }
+
   @media (min-width: 768px) {
     font-size: 45px;
     line-height: 1.11;
