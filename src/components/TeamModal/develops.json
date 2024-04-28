@@ -5,9 +5,9 @@
     "role": "Project Manager",
     "link": "https://www.linkedin.com/in/yehor-shevtsov/",
     "ipg": "/src/assets/img/dev-photo/id-1.jpg",
-    "jpg@x2": "/src/assets/img/dev-photo/id-1@x2.jpg",
+    "jpgx2": "/src/assets/img/dev-photo/id-1x2.jpg",
     "webp": "/src/assets/img/dev-photo/id-1.webp",
-    "webp@x2": "/src/assets/img/dev-photo/id-1@x2.webp"
+    "webpx2": "/src/assets/img/dev-photo/id-1x2.webp"
   },
   {
     "id": "id-2",
@@ -15,9 +15,9 @@
     "role": "Front-end розробник",
     "link": "https://www.linkedin.com/in/yuriy-shukan/",
     "ipg": "/src/assets/img/dev-photo/id-2.jpg",
-    "jpg@x2": "/src/assets/img/dev-photo/id-2@x2.jpg",
+    "jpgx2": "/src/assets/img/dev-photo/id-2x2.jpg",
     "webp": "/src/assets/img/dev-photo/id-2.webp",
-    "webp@x2": "/src/assets/img/dev-photo/id-2@x2.webp"
+    "webpx2": "/src/assets/img/dev-photo/id-2x2.webp"
   },
   {
     "id": "id-3",
@@ -25,9 +25,9 @@
     "role": "Front-end розробник",
     "link": "http://www.linkedin.com/in/anna-dudnik-dev/",
     "ipg": "/src/assets/img/dev-photo/id-3.jpg",
-    "jpg@x2": "/src/assets/img/dev-photo/id-3@x2.jpg",
+    "jpgx2": "/src/assets/img/dev-photo/id-3x2.jpg",
     "webp": "/src/assets/img/dev-photo/id-3.webp",
-    "webp@x2": "/src/assets/img/dev-photo/id-3@x2.webp"
+    "webpx2": "/src/assets/img/dev-photo/id-3x2.webp"
   },
   {
     "id": "id-4",
@@ -35,9 +35,9 @@
     "role": "UI/UX Designer ",
     "link": "http://linkedin.com/in/ilona-ratushniak-3a678624b/",
     "ipg": "/src/assets/img/dev-photo/id-4.jpg",
-    "jpg@x2": "/src/assets/img/dev-photo/id-4@x2.jpg",
+    "jpgx2": "/src/assets/img/dev-photo/id-4x2.jpg",
     "webp": "/src/assets/img/dev-photo/id-4.webp",
-    "webp@x2": "/src/assets/img/dev-photo/id-4@x2.webp"
+    "webpx2": "/src/assets/img/dev-photo/id-4x2.webp"
   },
   {
     "id": "id-5",
@@ -45,9 +45,9 @@
     "role": "Front-end розробник",
     "link": "https://www.linkedin.com/in/annarychkova1/",
     "ipg": "/src/assets/img/dev-photo/id-5.jpg",
-    "jpg@x2": "/src/assets/img/dev-photo/id-5@x2.jpg",
+    "jpgx2": "/src/assets/img/dev-photo/id-5x2.jpg",
     "webp": "/src/assets/img/dev-photo/id-5.webp",
-    "webp@x2": "/src/assets/img/dev-photo/id-5@x2.webp"
+    "webpx2": "/src/assets/img/dev-photo/id-5x2.webp"
   },
   {
     "id": "id-6",
@@ -55,9 +55,9 @@
     "role": "Front-end розробник",
     "link": "https://www.linkedin.com/in/anastasiia-dudka-/",
     "ipg": "/src/assets/img/dev-photo/id-6.jpg",
-    "jpg@x2": "/src/assets/img/dev-photo/id-6@x2.jpg",
+    "jpgx2": "/src/assets/img/dev-photo/id-6x2.jpg",
     "webp": "/src/assets/img/dev-photo/id-6.webp",
-    "webp@x2": "/src/assets/img/dev-photo/id-6@x2.webp"
+    "webpx2": "/src/assets/img/dev-photo/id-6x2.webp"
   },
   {
     "id": "id-7",
@@ -65,9 +65,9 @@
     "role": "Front-end розробник",
     "link": "https://www.linkedin.com/in/demchuk-volodymyr/",
     "ipg": "/src/assets/img/dev-photo/id-7.jpg",
-    "jpg@x2": "/src/assets/img/dev-photo/id-7@x2.jpg",
+    "jpgx2": "/src/assets/img/dev-photo/id-7x2.jpg",
     "webp": "/src/assets/img/dev-photo/id-7.webp",
-    "webp@x2": "/src/assets/img/dev-photo/id-7@x2.webp"
+    "webpx2": "/src/assets/img/dev-photo/id-7x2.webp"
   },
   {
     "id": "id-8",
@@ -75,9 +75,9 @@
     "role": "Front-end розробник",
     "link": "https://www.linkedin.com/in/serhiy-savchenko/",
     "ipg": "/src/assets/img/dev-photo/id-8.png",
-    "jpg@x2": "/src/assets/img/dev-photo/id-8@x2.png",
+    "jpgx2": "/src/assets/img/dev-photo/id-8x2.png",
     "webp": "/src/assets/img/dev-photo/id-8.webp",
-    "webp@x2": "/src/assets/img/dev-photo/id-8@x2.webp"
+    "webpx2": "/src/assets/img/dev-photo/id-8x2.webp"
   },
   {
     "id": "id-9",
@@ -85,9 +85,9 @@
     "role": "Front-end розробник",
     "link": "https://www.linkedin.com/in/mykytakudlai/",
     "ipg": "/src/assets/img/dev-photo/id-9.jpg",
-    "jpg@x2": "/src/assets/img/dev-photo/id-9@x2.jpg",
+    "jpgx2": "/src/assets/img/dev-photo/id-9x2.jpg",
     "webp": "/src/assets/img/dev-photo/id-9.webp",
-    "webp@x2": "/src/assets/img/dev-photo/id-9@x2.webp"
+    "webpx2": "/src/assets/img/dev-photo/id-9x2.webp"
   },
   {
     "id": "id-10",
@@ -95,9 +95,9 @@
     "role": "Front-end розробник",
     "link": "http://www.linkedin.com/in/karolina-taran-developer/",
     "ipg": "/src/assets/img/dev-photo/id-10.jpg",
-    "jpg@x2": "/src/assets/img/dev-photo/id-10@x2.jpg",
+    "jpgx2": "/src/assets/img/dev-photo/id-10x2.jpg",
     "webp": "/src/assets/img/dev-photo/id-10.webp",
-    "webp@x2": "/src/assets/img/dev-photo/id-10@x2.webp"
+    "webpx2": "/src/assets/img/dev-photo/id-10x2.webp"
   },
   {
     "id": "id-11",
@@ -105,9 +105,9 @@
     "role": "Front-end розробник",
     "link": "http://www.linkedin.com/in/serhii-monzhelesov/",
     "ipg": "/src/assets/img/dev-photo/id-11.jpg",
-    "jpg@x2": "/src/assets/img/dev-photo/id-11@x2.jpg",
+    "jpgx2": "/src/assets/img/dev-photo/id-11x2.jpg",
     "webp": "/src/assets/img/dev-photo/id-11.webp",
-    "webp@x2": "/src/assets/img/dev-photo/id-11@x2.webp"
+    "webpx2": "/src/assets/img/dev-photo/id-11x2.webp"
   },
   {
     "id": "id-12",
@@ -115,9 +115,9 @@
     "role": "QA-тестувальник",
     "link": "https://www.linkedin.com/in/liudmyla-pasieka-112a6429b/",
     "ipg": "/src/assets/img/dev-photo/id-12.jpg",
-    "jpg@x2": "/src/assets/img/dev-photo/id-12@x2.jpg",
+    "jpgx2": "/src/assets/img/dev-photo/id-12x2.jpg",
     "webp": "/src/assets/img/dev-photo/id-12.webp",
-    "webp@x2": "/src/assets/img/dev-photo/id-12@x2.webp"
+    "webpx2": "/src/assets/img/dev-photo/id-12x2.webp"
   },
   {
     "id": "id-13",
@@ -125,9 +125,9 @@
     "role": "QA-тестувальник",
     "link": "http://www.linkedin.com/in/olena-salobai/",
     "ipg": "/src/assets/img/dev-photo/id-13.jpg",
-    "jpg@x2": "/src/assets/img/dev-photo/id-13@x2.jpg",
+    "jpgx2": "/src/assets/img/dev-photo/id-13x2.jpg",
     "webp": "/src/assets/img/dev-photo/id-13.webp",
-    "webp@x2": "/src/assets/img/dev-photo/id-13@x2.webp"
+    "webpx2": "/src/assets/img/dev-photo/id-13x2.webp"
   },
   {
     "id": "id-14",
@@ -135,9 +135,9 @@
     "role": "QA-тестувальник",
     "link": "https://www.linkedin.com/in/liubomyr-senchyshyn-691596298/",
     "ipg": "/src/assets/img/dev-photo/id-14.jpg",
-    "jpg@x2": "/src/assets/img/dev-photo/id-14@x2.jpg",
+    "jpgx2": "/src/assets/img/dev-photo/id-14x2.jpg",
     "webp": "/src/assets/img/dev-photo/id-14.webp",
-    "webp@x2": "/src/assets/img/dev-photo/id-14@x2.webp"
+    "webpx2": "/src/assets/img/dev-photo/id-14x2.webp"
   },
   {
     "id": "id-15",
@@ -145,9 +145,9 @@
     "role": "QA-тестувальник",
     "link": "https://www.linkedin.com/in/hanna-oliinyk-66835715a/",
     "ipg": "/src/assets/img/dev-photo/id-15.jpg",
-    "jpg@x2": "/src/assets/img/dev-photo/id-15@x2.jpg",
+    "jpgx2": "/src/assets/img/dev-photo/id-15x2.jpg",
     "webp": "/src/assets/img/dev-photo/id-15.webp",
-    "webp@x2": "/src/assets/img/dev-photo/id-15@x2.webp"
+    "webpx2": "/src/assets/img/dev-photo/id-15x2.webp"
   },
   {
     "id": "id-16",
@@ -155,9 +155,9 @@
     "role": "QA-тестувальник",
     "link": "http://www.linkedin.com/in/nikita-yatsukhno/",
     "ipg": "/src/assets/img/dev-photo/id-16.jpg",
-    "jpg@x2": "/src/assets/img/dev-photo/id-16@x2.jpg",
+    "jpgx2": "/src/assets/img/dev-photo/id-16x2.jpg",
     "webp": "/src/assets/img/dev-photo/id-16.webp",
-    "webp@x2": "/src/assets/img/dev-photo/id-16@x2.webp"
+    "webpx2": "/src/assets/img/dev-photo/id-16x2.webp"
   },
   {
     "id": "id-17",
@@ -165,8 +165,8 @@
     "role": "Tech Lead",
     "link": "https://www.linkedin.com/in/ivettadashkova/",
     "ipg": "/src/assets/img/dev-photo/id-17.jpg",
-    "jpg@x2": "/src/assets/img/dev-photo/id-17@x2.jpg",
+    "jpgx2": "/src/assets/img/dev-photo/id-17x2.jpg",
     "webp": "/src/assets/img/dev-photo/id-17.webp",
-    "webp@x2": "/src/assets/img/dev-photo/id-17@x2.webp"
+    "webpx2": "/src/assets/img/dev-photo/id-17x2.webp"
   }
 ]
