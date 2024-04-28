@@ -1,4 +1,5 @@
 import { styled } from 'styled-components';
+import { StyledContainer } from '../../shared/Container/Container.styled';
 
 export const StyledFooter = styled.footer`
   width: 100%;
@@ -10,7 +11,7 @@ export const StyledFooter = styled.footer`
    @media (min-width: 375px) {
    font-size: 16px;
 `;
-export const FooterContainer = styled.div`
+export const FooterContainer = styled(StyledContainer)`
   min-width: 320px;
   max-width: 375px;
   padding: 32px 16px 20px 16px;
@@ -64,8 +65,7 @@ export const FooterContainer = styled.div`
     background-color: #f77d07;
     margin-bottom: 64px;
     &:hover {
-      background: #e3e3e3;
-      color: #898b90;
+      background: #e97200;
     }
   }
   @media (min-width: 375px) {
@@ -97,6 +97,9 @@ export const FooterContainer = styled.div`
     }
     a {
       font-size: 24px;
+      &: hover {
+        color: #f77d07;
+      }
     }
     .btn-supp {
       font-size: 18px;
@@ -170,9 +173,14 @@ export const FooterDown = styled.div`
     height: 18px;
     fill: #bbb;
   }
-  // .icon-goit-white path:hover {
-  //   fill: #ffffff;
-  // }
+  .icon-goit-white .white {
+    fill: #ffffff;
+  }
+
+  .icon-goit-white .orange {
+    fill: #ffa500;
+  }
+
   @media (min-width: 768px) {
     padding-top: 38px;
     display: flex;

@@ -1,7 +1,7 @@
 import { StyledFooter, FooterContainer, FooterDown } from './Footer.styled';
 import Contacts from './Contacts';
 import MyGoogleMap from './MyGoogleMap';
-import Icon from '../Icon/Icon';
+import Iconsvg from '../Icon/Icon';
 import { useState } from 'react';
 import TeamModal from '../TeamModal/TeamModal';
 
@@ -40,7 +40,7 @@ export default function Footer() {
           </div>
           <button className="btn-goit" onClick={openModal}>
             Розроблено студентами{' '}
-            <Icon
+            <Iconsvg
               width="59"
               height="18"
               iconName="icon-goit-white"
