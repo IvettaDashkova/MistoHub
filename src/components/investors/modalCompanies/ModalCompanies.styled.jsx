@@ -18,6 +18,7 @@ export const ModalCompanyWrapper = styled.div`
       font-weight: 600;
       line-height: 20px; /* 111.111% */
       letter-spacing: -0.36px;
+      margin-top: 28px;
     }
 
     .companyName {
@@ -38,15 +39,38 @@ export const ModalCompanyWrapper = styled.div`
       min-width: 303px;
       position: relative;
       z-index: 1;
+      padding-right: 20px;
     }
 
     .contentWrapper {
-      padding: 18px 10px 10px 10px;
+      padding: 0 0 20px 20px;
+      position: relative;
+      background-image: url('/src/assets/investors/Vector_mob.svg');
+
+      background-repeat: no-repeat;
+      background-size: 207px 143px;
+      background-position: bottom right;
+      border-radius: 10px;
+    }
+
+    .main-heading-wrapper {
+      display: flex;
+      flex-direction: column;
+      padding-top: 28px;
+      height: fit-content;
+      gap: 4px;
+      width: fit-content;
     }
 
     .closeWrapper {
       display: flex;
       justify-content: flex-end;
+      width: fit-content;
+      height: fit-content;
+      order: 1;
+      margin-left: auto;
+      padding-top: 10px;
+      padding-right: 10px;
     }
     .closeButton {
       float: right;
@@ -72,6 +96,9 @@ export const ModalCompanyWrapper = styled.div`
       padding: 8px;
       align-items: center;
       gap: 10px;
+      position: absolute;
+      top: 82px;
+      left: 41px;
     }
 
     a {
@@ -88,6 +115,23 @@ export const ModalCompanyWrapper = styled.div`
 
     .closeWord {
       display: none;
+    }
+
+    .top-wrapper {
+      display: flex;
+      gap: 10px;
+    }
+
+    .title-wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      padding-top: 28px;
+    }
+
+    .main-image {
+      width: 70px;
+      height: 70px;
     }
   }
 
@@ -106,6 +150,7 @@ export const ModalCompanyWrapper = styled.div`
       font-size: 20px;
       font-weight: 600;
       line-height: 26px; /* 130% */
+      margin-top: 32px;
     }
 
     .companyName {
@@ -129,12 +174,33 @@ export const ModalCompanyWrapper = styled.div`
     }
 
     .contentWrapper {
-      padding: 14px 30px 30px 30px;
+      padding: 0 0 30px 30px;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='373' height='184' viewBox='0 0 373 184' fill='none'%3E%3Cpath d='M339.305 3.92172C323.991 12.3595 318.501 31.7173 327.066 47.076C335.631 62.4347 378.89 74.906 378.89 74.906C378.89 74.906 391.174 31.8313 382.609 16.4726C374.044 1.11389 354.62 -4.51608 339.305 3.92172Z' fill='%23FFF6F1'/%3E%3Cpath d='M65.3343 150.247H27.4817C24.4862 150.247 21.6722 151.881 20.1291 154.515L1.15736 187.298C-0.385788 189.931 -0.385788 193.11 1.15736 195.743L20.1291 228.526C21.6722 231.16 24.3954 232.794 27.4817 232.794H65.3343C68.3299 232.794 71.1438 231.16 72.687 228.526L91.6587 195.743C93.2019 193.11 93.2019 189.931 91.6587 187.298L72.687 154.515C71.1438 151.79 68.3299 150.247 65.3343 150.247Z' fill='%23FFF6F1'/%3E%3Cpath d='M106.877 153.04L152.512 88.7681L73.2585 81.8759L106.877 153.04Z' fill='%23FFF6F1'/%3E%3Cpath d='M383.765 64.4387C308.743 43.4582 313.801 150.438 313.801 150.438C313.801 150.438 289.248 24.3625 211.486 58.2541C133.502 92.2092 209.193 170.681 209.193 170.681C209.193 170.681 113.897 104.499 85.3086 165.063C56.72 225.628 193.412 304.902 296.424 275.781C415.033 242.213 434.427 78.7199 383.765 64.4387Z' fill='%23FFF6F1'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-size: 410px 282px;
+      background-position: bottom right;
+      border-radius: 10px;
+      position: relative;
+    }
+
+    .main-heading-wrapper {
+      display: flex;
+      flex-direction: column;
+      padding-top: 30px;
+      height: fit-content;
+      gap: 4px;
     }
 
     .closeWrapper {
       display: flex;
       justify-content: flex-end;
+      padding-top: 16px;
+      padding-right: 16px;
+      width: fit-content;
+      height: fit-content;
+      gap: 4px;
+      order: 1;
+      margin-left: auto;
     }
 
     .closeWord {
@@ -146,8 +212,9 @@ export const ModalCompanyWrapper = styled.div`
       letter-spacing: -0.32px;
       background: #fff;
       border: none;
-
-      margin-right: 4px;
+      width: 65px;
+      hieght: 24px;
+      padding: 0;
     }
 
     .closeButton {
@@ -170,127 +237,188 @@ export const ModalCompanyWrapper = styled.div`
 
     .svgWrapper {
       background: #f77d07;
-      width: 40px;
-      height: 40px;
+      width: 36px;
+      height: 36px;
       border-radius: 100px;
       display: inline-flex;
       padding: 8px;
       align-items: center;
       justify-content: center;
       gap: 10px;
+      position: absolute;
+      top: 109px;
+      left: 61px;
+    }
+
+    .instaIcon {
+      width: 16px;
+      height: 16px;
     }
 
     a {
       padding: 0;
+      width: 36px;
+      height: 36px;
     }
 
-    .svgBackground {
-      position: absolute;
-      bottom: 0;
-      right: 0;
-      width: 410px;
-      height: 282px;
+    .top-wrapper {
+      display: flex;
+      gap: 16px;
+    }
+
+    .title-wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      padding-top: 30px;
+    }
+
+    .main-image {
+      width: 100px;
+      height: 100px;
     }
   }
 
-    @media screen and (min-width: 1024px) {
-      .text {
-        color: rgba(11, 11, 11, 0.5);
-        font-family: 'MacPaw Fixel Display';
-        font-size: 14px;
-        line-height: 18px; /* 128.571% */
-        letter-spacing: -0.28px;
-      }
+  @media screen and (min-width: 1024px) {
+    .text {
+      color: rgba(11, 11, 11, 0.5);
+      font-family: 'MacPaw Fixel Display';
+      font-size: 14px;
+      line-height: 18px; /* 128.571% */
+      letter-spacing: -0.28px;
+    }
 
-      .textQuestion {
-        color: #0b0b0b;
-        font-family: Oddval;
-        font-size: 20px;
-        font-weight: 600;
-        line-height: 26px; /* 130% */
-      }
+    .textQuestion {
+      color: #0b0b0b;
+      font-family: Oddval;
+      font-size: 20px;
+      font-weight: 600;
+      line-height: 26px; /* 130% */
+      margin-top: 32px;
+    }
 
-      .companyName {
-        color: #0b0b0b;
-        font-family: Oddval;
-        font-size: 20px;
-        font-weight: 600;
-        line-height: 26px; /* 130% */
-      }
+    .companyName {
+      color: #0b0b0b;
+      font-family: Oddval;
+      font-size: 20px;
+      font-weight: 600;
+      line-height: 26px; /* 130% */
+    }
 
-      .textAnswer {
-        color: #0b0b0b;
-        font-family: 'MacPaw Fixel Display';
-        font-size: 16px;
-        line-height: 24px; /* 150% */
-        letter-spacing: -0.32px;
-        max-width: 516px;
-        position: relative;
-        z-index: 1;
-      }
+    .textAnswer {
+      color: #0b0b0b;
+      font-family: 'MacPaw Fixel Display';
+      font-size: 16px;
+      line-height: 24px; /* 150% */
+      letter-spacing: -0.32px;
+      max-width: 516px;
+      position: relative;
+      z-index: 1;
+    }
 
-      .contentWrapper {
-        padding: 14px 30px 30px 30px;
-      }
+    .contentWrapper {
+      padding: 0 0 30px 30px;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='373' height='184' viewBox='0 0 373 184' fill='none'%3E%3Cpath d='M339.305 3.92172C323.991 12.3595 318.501 31.7173 327.066 47.076C335.631 62.4347 378.89 74.906 378.89 74.906C378.89 74.906 391.174 31.8313 382.609 16.4726C374.044 1.11389 354.62 -4.51608 339.305 3.92172Z' fill='%23FFF6F1'/%3E%3Cpath d='M65.3343 150.247H27.4817C24.4862 150.247 21.6722 151.881 20.1291 154.515L1.15736 187.298C-0.385788 189.931 -0.385788 193.11 1.15736 195.743L20.1291 228.526C21.6722 231.16 24.3954 232.794 27.4817 232.794H65.3343C68.3299 232.794 71.1438 231.16 72.687 228.526L91.6587 195.743C93.2019 193.11 93.2019 189.931 91.6587 187.298L72.687 154.515C71.1438 151.79 68.3299 150.247 65.3343 150.247Z' fill='%23FFF6F1'/%3E%3Cpath d='M106.877 153.04L152.512 88.7681L73.2585 81.8759L106.877 153.04Z' fill='%23FFF6F1'/%3E%3Cpath d='M383.765 64.4387C308.743 43.4582 313.801 150.438 313.801 150.438C313.801 150.438 289.248 24.3625 211.486 58.2541C133.502 92.2092 209.193 170.681 209.193 170.681C209.193 170.681 113.897 104.499 85.3086 165.063C56.72 225.628 193.412 304.902 296.424 275.781C415.033 242.213 434.427 78.7199 383.765 64.4387Z' fill='%23FFF6F1'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-size: 410px 282px;
+      background-position: bottom right;
+      border-radius: 10px;
+      position: relative;
+    }
 
-      .closeWrapper {
-        display: flex;
-        justify-content: flex-end;
-      }
+    .main-heading-wrapper {
+      display: flex;
+      flex-direction: column;
+      padding-top: 30px;
+      height: fit-content;
+      gap: 4px;
+    }
 
-      .closeWord {
-        color: rgba(11, 11, 11, 0.5);
-        font-family: 'MacPaw Fixel Display';
-        font-size: 16px;
-        font-weight: 500;
-        line-height: 24px; /* 150% */
-        letter-spacing: -0.32px;
-        background: #fff;
-        border: none;
-        margin-right: 4px;
-      }
+    .closeWrapper {
+      display: flex;
+      justify-content: flex-end;
+      padding-top: 16px;
+      padding-right: 16px;
+      width: fit-content;
+      height: fit-content;
+      gap: 4px;
+      order: 1;
+      margin-left: auto;
+    }
 
-      .closeButton {
-        float: right;
-        border: none;
-        border-radius: 10px;
-        background: #fff;
-        box-shadow:
-          4px 17px 102.1px 0px rgba(0, 0, 0, 0.19),
-          0px 25px 30.4px 0px rgba(0, 0, 0, 0.09);
-        padding: 0;
-        position: relative;
-        z-index: 1;
-      }
+    .closeWord {
+      color: rgba(11, 11, 11, 0.5);
+      font-family: 'MacPaw Fixel Display';
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 24px; /* 150% */
+      letter-spacing: -0.32px;
+      background: #fff;
+      border: none;
+      width: 65px;
+      hieght: 24px;
+      padding: 0;
+    }
 
-      .closeSvg {
-        width: 28px;
-        height: 28px;
-      }
+    .closeButton {
+      float: right;
+      border: none;
+      border-radius: 10px;
+      background: #fff;
+      box-shadow:
+        4px 17px 102.1px 0px rgba(0, 0, 0, 0.19),
+        0px 25px 30.4px 0px rgba(0, 0, 0, 0.09);
+      padding: 0;
+      position: relative;
+      z-index: 1;
+    }
 
-      .svgWrapper {
-        background: #f77d07;
-        width: 40px;
-        height: 40px;
-        border-radius: 100px;
-        display: inline-flex;
-        padding: 8px;
-        align-items: center;
-        justify-content: center;
-        gap: 10px;
-      }
+    .closeSvg {
+      width: 28px;
+      height: 28px;
+    }
 
-      a {
-        padding: 0;
-      }
+    .svgWrapper {
+      background: #f77d07;
+      width: 36px;
+      height: 36px;
+      border-radius: 100px;
+      display: inline-flex;
+      padding: 8px;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      position: absolute;
+      top: 109px;
+      left: 61px;
+    }
 
-      .svgBackground {
-        position: absolute;
-        bottom: 0;
-        right: 0;
-        width: 410px;
-        height: 282px;
-      }
+    .instaIcon {
+      width: 16px;
+      height: 16px;
+    }
+
+    a {
+      padding: 0;
+      width: 36px;
+      height: 36px;
+    }
+
+    .top-wrapper {
+      display: flex;
+      gap: 16px;
+    }
+
+    .title-wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      padding-top: 30px;
+    }
+
+    .main-image {
+      width: 100px;
+      height: 100px;
     }
   }
 `;
@@ -300,14 +428,16 @@ export const CustomModal = styled(ReactModal)`
     width: 100%;
     height: fit-content;
     margin: auto;
-    padding: 10px;
+    // padding: 10px;
     border-radius: 10px;
+    border: none;
     background: #fff;
     box-shadow:
       4px 17px 102.1px 0px rgba(0, 0, 0, 0.19),
       0px 25px 30.4px 0px rgba(0, 0, 0, 0.09);
     overflow: fixed;
     backgroundcolor: rgba(0, 0, 0, 0.5);
+    // z-index: -1;
 
     @media screen and (min-width: 375px) and (max-width: 811.9px) {
       width: 343px;
@@ -322,34 +452,3 @@ export const CustomModal = styled(ReactModal)`
     }
   }
 `;
-
-// div: {
-//   margin: '0',
-//   padding: '0',
-//   borderRadius: '10px',
-//   background: '#FFF',
-//   boxShadow:
-//     '4px 17px 102.1px 0px rgba(0, 0, 0, 0.19), 0px 25px 30.4px 0px rgba(0, 0, 0, 0.09)',
-// },
-// overlay: {
-//   position: 'fixed',
-//   backgroundColor: 'rgba(0, 0, 0, 0.5)',
-// },
-// content: {
-//   width: '343px',
-//   height: 'fit-content',
-//   margin: 'auto',
-//   padding: '10px',
-// },
-// closeButton: {
-//   position: 'absolute',
-//   top: '10px',
-//   right: '10px',
-//   cursor: 'pointer',
-//   padding: '0',
-// },
-
-// '@media screen and (min-width: 768px) and (max-width: 1023.9px)': {
-//   content: {
-//     width: '576px',
-// }

@@ -6,6 +6,7 @@ import { ListWrapper } from './InvestorsPeople.styled';
 const InvestorsPeople = () => {
   const [peopleData, setPeopleData] = useState(null);
   const [selectedInvestor, setSelectedInvestor] = useState(null);
+  const [isOpen, setIsOpen] = useState(false);
 
   function formImgURL(img) {
     const imgData = img.asset._ref.split('-');
@@ -33,10 +34,12 @@ const InvestorsPeople = () => {
 
   const openModal = (investor) => {
     setSelectedInvestor(investor);
+    setIsOpen(true);
   };
 
   const closeModal = () => {
     setSelectedInvestor(null);
+    setIsOpen(false);
   };
 
   const groupedPeople = peopleData.reduce((acc, person, index) => {
@@ -48,7 +51,10 @@ const InvestorsPeople = () => {
   return (
     <ListWrapper>
       {groupedPeople.map((group, groupIndex) => (
-        <div key={groupIndex} className="group">
+        <div
+          key={groupIndex}
+          className={`group-${groupIndex} ${groupIndex % 2 === 0 ? 'odd-group' : 'even-group'}`}
+        >
           <ul>
             {group.map((investor, index) => (
               <li key={index}>
@@ -63,7 +69,11 @@ const InvestorsPeople = () => {
         </div>
       ))}
       {selectedInvestor && (
-        <ModalInvestors data={selectedInvestor} onClose={closeModal} />
+        <ModalInvestors
+          data={selectedInvestor}
+          onClose={closeModal}
+          isOpen={isOpen}
+        />
       )}
     </ListWrapper>
 

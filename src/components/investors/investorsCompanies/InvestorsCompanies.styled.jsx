@@ -10,8 +10,14 @@ export const CompanyWrapper = styled.div`
       0% {
         transform: translateX(0);
       }
+      25% {
+        transform: translateX(-25%);
+      }
       50% {
         transform: translateX(-50%);
+      }
+      75% {
+        transform: translateX(-75%);
       }
       100% {
         transform: translateX(-100%);
@@ -51,12 +57,19 @@ export const CompanyWrapper = styled.div`
       max-width: 768px;
       margin-bottom: 120px;
     }
+
     @keyframes moveRightToLeft {
       0% {
         transform: translateX(0);
       }
+      25% {
+        transform: translateX(-25%);
+      }
       50% {
         transform: translateX(-50%);
+      }
+      75% {
+        transform: translateX(-75%);
       }
       100% {
         transform: translateX(-100%);
@@ -100,8 +113,14 @@ export const CompanyWrapper = styled.div`
       0% {
         transform: translateX(0);
       }
+      25% {
+        transform: translateX(-25%);
+      }
       50% {
         transform: translateX(-50%);
+      }
+      75% {
+        transform: translateX(-75%);
       }
       100% {
         transform: translateX(-100%);
