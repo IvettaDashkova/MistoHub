@@ -93,7 +93,7 @@ const Visualization = () => {
               }}
             >
               <img
-                src={setImageSrc((currentCard + index) % images.length)}
+                src={setImageSrc((currentCard + index) % images.length)} // звичайна картинка
                 srcSet={setImageSrcSet((currentCard + index) % images.length)} // ретина
                 alt={image.title}
                 style={{ display: 'none' }}

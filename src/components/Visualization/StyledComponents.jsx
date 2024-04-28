@@ -47,9 +47,10 @@ export const TitleContainer = styled.div`
 
 export const Card = styled.div`
   min-width: 288px;
+  min-height: 288px;
   width: 100%;
   height: 100%;
-  min-height: 288px;
+
   border-radius: 20px;
   display: flex;
   justify-content: center;
@@ -152,7 +153,7 @@ export const LeftArrow = styled.button`
   height: 44px;
   border-radius: 50%;
   background: #ffffff;
-  
+
   display: flex;
   justify-content: center;
   align-items: center;
@@ -187,3 +188,8 @@ export const CardsContainer = styled.div`
     justify-content: space-between;
   }
 `;
+
+// export const CardBox = styled.div`
+//   width: 100%;
+//   height: 100%;
+// `;

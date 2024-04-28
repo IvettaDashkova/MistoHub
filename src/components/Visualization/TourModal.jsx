@@ -1,70 +1,72 @@
-// import { forwardRef, useEffect, useCallback, useRef } from 'react';
-// import { ReactPhotoSphereViewer } from 'react-photo-sphere-viewer';
-// import styled from 'styled-components';
-// import Icon from './Icon';
+import { forwardRef, useEffect, useCallback, useRef } from 'react';
+import { ReactPhotoSphereViewer } from 'react-photo-sphere-viewer';
+import styled from 'styled-components';
+import Icon from './Icon';
 
-// const ModalWrapperTour = styled.div`
-//   border-radius: 20px;
-//   overflow: hidden;
-//   position: relative;
-//   width: 100%;
-//   height: 100%;
-// `;
+const ModalWrapperTour = styled.div`
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  height: 100%;
+`;
 
-// const CloseButton = styled.button`
-//   position: absolute;
-//   top: 10px;
-//   right: 10px;
-//   background-color: transparent;
-//   border: none;
-//   border-radius: 50%;
-//   display: flex;
-//   align-items: center;
-//   justify-content: center;
-//   cursor: pointer;
-//   stroke: #ffffff;
-// `;
+const CloseButton = styled.button`
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: transparent;
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  stroke: #ffffff;
+`;
 
-// const TourModal = forwardRef(({ image, onClose }, ref) => {
-//   const wrapperRef = useRef();
-//   //  закриття туру при кліку поза його межами
-//   const closeTourOnClickOutside = useCallback(
-//     (event) => {
-//       if (wrapperRef.current && !wrapperRef.current.contains(event.target)) {
-//         onClose();
-//       }
-//     },
-//     [onClose]
-//   );
-//   // обробник події при створенні та демонтуванні компонента
-//   useEffect(() => {
-//     document.addEventListener('mousedown', closeTourOnClickOutside);
-//     return () => {
-//       document.removeEventListener('mousedown', closeTourOnClickOutside);
-//     };
-//   }, [closeTourOnClickOutside]);
+const TourModal = forwardRef(({ image, onClose }, ref) => {
+  const wrapperRef = useRef();
+  //  закриття туру при кліку поза його межами
+  const closeTourOnClickOutside = useCallback(
+    (event) => {
+      if (wrapperRef.current && !wrapperRef.current.contains(event.target)) {
+        onClose();
+      }
+    },
+    [onClose]
+  );
+  // обробник події при створенні та демонтуванні компонента
+  useEffect(() => {
+    document.addEventListener('mousedown', closeTourOnClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', closeTourOnClickOutside);
+    };
+  }, [closeTourOnClickOutside]);
 
-//   return (
-//     <ModalWrapperTour ref={wrapperRef}>
-//       <ReactPhotoSphereViewer
-//         ref={ref}
-//         src={image}
-//         hideNavbarButton={false}
-//         height={'100%'}
-//         width={'100%'}
-//         defaultZoomLvl={10}
-//         navbar={true}
-//       />
-//       <CloseButton onClick={onClose}>
-//         <Icon width="16" height="16" iconName="icon-closeX" />
-//       </CloseButton>
-//     </ModalWrapperTour>
-//   );
-// });
+  return (
+    <ModalWrapperTour ref={wrapperRef}>
+      <ReactPhotoSphereViewer
+        ref={ref}
+        src={image}
+        hideNavbarButton={false}
+        // height={'280px'}
+        // width={'280px'}
+        height={'100%'}
+        width={'100%'}
+        defaultZoomLvl={10}
+        navbar={true}
+      />
+      <CloseButton onClick={onClose}>
+        <Icon width="16" height="16" iconName="icon-closeX" />
+      </CloseButton>
+    </ModalWrapperTour>
+  );
+});
 
-// TourModal.displayName = 'TourModal';
+TourModal.displayName = 'TourModal';
 
-// export default TourModal;
+export default TourModal;
 
 /**================проба=зробити=нав=бар====================== */
 // import { forwardRef, useEffect, useCallback, useRef, useState } from 'react';
@@ -192,142 +194,142 @@
 
 /**================проба=зробити=нав=бар=2===================== */
 
-import { forwardRef, useEffect, useCallback, useRef, useState } from 'react';
-import { ReactPhotoSphereViewer } from 'react-photo-sphere-viewer';
-import styled from 'styled-components';
-import Icon from './Icon';
+// import { forwardRef, useEffect, useCallback, useRef, useState } from 'react';
+// import { ReactPhotoSphereViewer } from 'react-photo-sphere-viewer';
+// import styled from 'styled-components';
+// import Icon from './Icon';
 
-const ModalWrapperTour = styled.div`
-  border-radius: 20px;
-  overflow: hidden;
-  position: relative;
-  width: 100%;
-  height: 100%;
-`;
+// const ModalWrapperTour = styled.div`
+//   border-radius: 20px;
+//   overflow: hidden;
+//   position: relative;
+//   width: 100%;
+//   height: 100%;
+// `;
 
-const CloseButton = styled.button`
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  background-color: transparent;
-  border: none;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  stroke: #ffffff;
-`;
+// const CloseButton = styled.button`
+//   position: absolute;
+//   top: 10px;
+//   right: 10px;
+//   background-color: transparent;
+//   border: none;
+//   border-radius: 50%;
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+//   cursor: pointer;
+//   stroke: #ffffff;
+// `;
 
-const TourModal = forwardRef(({ image, onClose }, ref) => {
-  const [viewer, setViewer] = useState(null);
-  const wrapperRef = useRef();
+// const TourModal = forwardRef(({ image, onClose }, ref) => {
+//   const [viewer, setViewer] = useState(null);
+//   const wrapperRef = useRef();
 
-  const closeTourOnClickOutside = useCallback(
-    (event) => {
-      if (wrapperRef.current && !wrapperRef.current.contains(event.target)) {
-        onClose();
-      }
-    },
-    [onClose]
-  );
+//   const closeTourOnClickOutside = useCallback(
+//     (event) => {
+//       if (wrapperRef.current && !wrapperRef.current.contains(event.target)) {
+//         onClose();
+//       }
+//     },
+//     [onClose]
+//   );
 
-  useEffect(() => {
-    document.addEventListener('mousedown', closeTourOnClickOutside);
-    return () => {
-      document.removeEventListener('mousedown', closeTourOnClickOutside);
-    };
-  }, [closeTourOnClickOutside]);
+//   useEffect(() => {
+//     document.addEventListener('mousedown', closeTourOnClickOutside);
+//     return () => {
+//       document.removeEventListener('mousedown', closeTourOnClickOutside);
+//     };
+//   }, [closeTourOnClickOutside]);
 
-  useEffect(() => {
-    if (ref.current) {
-      setViewer(ref.current);
-    }
-  }, [ref]);
+//   useEffect(() => {
+//     if (ref.current) {
+//       setViewer(ref.current);
+//     }
+//   }, [ref]);
 
-  const zoomIn = () => {
-    if (viewer) {
-      viewer.zoomIn();
-    } else {
-      console.warn('Viewer is not available');
-    }
-  };
+//   const zoomIn = () => {
+//     if (viewer) {
+//       viewer.zoomIn();
+//     } else {
+//       console.warn('Viewer is not available');
+//     }
+//   };
 
-  const zoomOut = () => {
-    if (viewer) {
-      viewer.zoomOut();
-    } else {
-      console.warn('Viewer is not available');
-    }
-  };
+//   const zoomOut = () => {
+//     if (viewer) {
+//       viewer.zoomOut();
+//     } else {
+//       console.warn('Viewer is not available');
+//     }
+//   };
 
-  const toggleFullscreen = () => {
-    if (viewer) {
-      viewer.toggleFullscreen();
-    } else {
-      console.warn('Viewer is not available');
-    }
-  };
+//   const toggleFullscreen = () => {
+//     if (viewer) {
+//       viewer.toggleFullscreen();
+//     } else {
+//       console.warn('Viewer is not available');
+//     }
+//   };
 
-  return (
-    <ModalWrapperTour ref={wrapperRef}>
-      <ReactPhotoSphereViewer
-        ref={ref}
-        src={image}
-        hideNavbarButton={false}
-        height={'100%'}
-        width={'100%'}
-        defaultZoomLvl={10}
-        navbar={[
-          {
-            id: 'zoomIn',
-            content: 'Збільшити',
-            className: 'custom-button',
-            style: {
-              backgroundColor: 'white',
-              borderRadius: '5px',
-              cursor: 'pointer',
-              margin: '10px',
-              padding: '10px',
-            },
-            onClick: zoomIn,
-          },
-          {
-            id: 'zoomOut',
-            content: 'Зменшити',
-            className: 'custom-button',
-            style: {
-              backgroundColor: 'white',
-              borderRadius: '5px',
-              cursor: 'pointer',
-              margin: '10px',
-              padding: '10px',
-            },
-            onClick: zoomOut,
-          },
-          {
-            id: 'fullscreen',
-            content: 'На весь екран',
-            className: 'custom-button',
-            style: {
-              backgroundColor: 'white',
-              borderRadius: '5px',
-              // cursor: 'pointer',
-              cursor: 'grab',
-              margin: '10px',
-              padding: '10px',
-            },
-            onClick: toggleFullscreen,
-          },
-        ]}
-      />
-      <CloseButton onClick={onClose}>
-        <Icon width="16" height="16" iconName="icon-closeX" />
-      </CloseButton>
-    </ModalWrapperTour>
-  );
-});
+//   return (
+//     <ModalWrapperTour ref={wrapperRef}>
+//       <ReactPhotoSphereViewer
+//         ref={ref}
+//         src={image}
+//         hideNavbarButton={false}
+//         height={'100%'}
+//         width={'100%'}
+//         defaultZoomLvl={10}
+//         navbar={[
+//           {
+//             id: 'zoomIn',
+//             content: 'Збільшити',
+//             className: 'custom-button',
+//             style: {
+//               backgroundColor: 'white',
+//               borderRadius: '5px',
+//               cursor: 'pointer',
+//               margin: '10px',
+//               padding: '10px',
+//             },
+//             onClick: zoomIn,
+//           },
+//           {
+//             id: 'zoomOut',
+//             content: 'Зменшити',
+//             className: 'custom-button',
+//             style: {
+//               backgroundColor: 'white',
+//               borderRadius: '5px',
+//               cursor: 'pointer',
+//               margin: '10px',
+//               padding: '10px',
+//             },
+//             onClick: zoomOut,
+//           },
+//           {
+//             id: 'fullscreen',
+//             content: 'На весь екран',
+//             className: 'custom-button',
+//             style: {
+//               backgroundColor: 'white',
+//               borderRadius: '5px',
+//               // cursor: 'pointer',
+//               cursor: 'grab',
+//               margin: '10px',
+//               padding: '10px',
+//             },
+//             onClick: toggleFullscreen,
+//           },
+//         ]}
+//       />
+//       <CloseButton onClick={onClose}>
+//         <Icon width="16" height="16" iconName="icon-closeX" />
+//       </CloseButton>
+//     </ModalWrapperTour>
+//   );
+// });
 
-TourModal.displayName = 'TourModal';
+// TourModal.displayName = 'TourModal';
 
-export default TourModal;
+// export default TourModal;
