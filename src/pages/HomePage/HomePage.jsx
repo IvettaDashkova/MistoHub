@@ -40,10 +40,14 @@ const HomePage = () => {
   }
   console.log('done');
   return (
+    <>
+    
+    <HowItWork />
+
     <Container>
       <Icon width="40" height="30" iconName="Vector" styles="vector-svg" />
       <h1>Home Page</h1>
-      <HowItWork />
+      
       {/* {goalData && (
         <>
           <p>{goalData.raised}</p> <p>{goalData.goal}</p>
@@ -54,6 +58,7 @@ const HomePage = () => {
       <VirtualTour />
       <ZibraniKoshti /> */}
     </Container>
+    </>
   );
 };
 

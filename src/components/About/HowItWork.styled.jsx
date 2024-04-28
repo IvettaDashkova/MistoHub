@@ -2,6 +2,28 @@ import styled from '@emotion/styled';
 import bgImage from '../../assets/about/howItWorkBg.svg';
 import bgImageTablet from '../../assets/about/howItWorkBg-tablet.svg';
 import bgImageDesktop from '../../assets/about/howItWorkBg-desktop.svg';
+import Container from '../../shared/Container/Container';
+
+export const HowItWorkContainer = styled(Container)`
+  width: 100%;
+  min-width: 320px;
+  max-width: 375px;
+  padding: 0 16px;
+  margin: 0 auto;
+  outline: none;
+
+  @media (min-width: 768px) {
+    width: 768px;
+    min-width: unset;
+    max-width: unset;
+    padding: 0 32px;
+  }
+
+  @media (min-width: 1440px) {
+    width: 1440px;
+    padding: 0 120px;
+  }
+`;
 
 export const HowItWorkSection = styled.section`
   width: 100%;
