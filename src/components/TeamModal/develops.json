@@ -168,5 +168,25 @@
     "jpgx2": "/src/assets/img/dev-photo/id-17x2.jpg",
     "webp": "/src/assets/img/dev-photo/id-17.webp",
     "webpx2": "/src/assets/img/dev-photo/id-17x2.webp"
+  },
+  {
+    "id": "id-18",
+    "name": "Піляєв Ігор",
+    "role": "Front-end розробник",
+    "link": "https://www.linkedin.com/in/igor-piliaiev/",
+    "ipg": "/src/assets/img/dev-photo/id-18.jpg",
+    "jpgx2": "/src/assets/img/dev-photo/id-18x2.jpg",
+    "webp": "/src/assets/img/dev-photo/id-18.webp",
+    "webpx2": "/src/assets/img/dev-photo/id-18x2.webp"
+  },
+  {
+    "id": "id-19",
+    "name": "Вікторія Бєлінська",
+    "role": "QA-тестувальник",
+    "link": "http://www.linkedin.com/in/viktoriia-bielinska-95892429b/",
+    "ipg": "/src/assets/img/dev-photo/id-19.jpg",
+    "jpgx2": "/src/assets/img/dev-photo/id-19x2.jpg",
+    "webp": "/src/assets/img/dev-photo/id-19.webp",
+    "webpx2": "/src/assets/img/dev-photo/i9-16x2.webp"
   }
 ]
