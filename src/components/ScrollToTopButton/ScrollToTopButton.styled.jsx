@@ -20,8 +20,11 @@ export const StyledScrollButton = styled.button`
   }
 
   svg {
+    width: 20px;
+    height: 20px;
     stroke-width: 1.6px;
     fill: none;
+    stroke: #fff;
 
     @media screen and (min-width: 768px) {
       width: 24px;

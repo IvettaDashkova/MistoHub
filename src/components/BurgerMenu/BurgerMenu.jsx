@@ -1,5 +1,4 @@
 import Navigation from '../Navigation/Navigation';
-import Modal from 'react-modal';
 import {
   BottomContainer,
   BtnClose,
@@ -9,6 +8,7 @@ import {
   FlexContainer,
   ImgContainer,
   SocLincContainer,
+  StyledMenu,
   StyledText,
   TopContainer,
 } from './BurgerMenu.styled';
@@ -21,15 +21,16 @@ const BurgerMenu = ({ onClose, isOpen, links }) => {
       left: '0',
       width: '100vw',
       height: '100vh',
-      backgroundColor: '#ffffff',
-      padding: '20px 16px',
+      display: 'flex',
+      flexDirection: 'column',
+      justifyContent: 'space-between',
     },
   };
 
-  Modal.setAppElement('#root');
+  StyledMenu.setAppElement('#root');
 
   return (
-    <Modal
+    <StyledMenu
       style={customStyles}
       isOpen={isOpen}
       onRequestClose={onClose}
@@ -40,6 +41,9 @@ const BurgerMenu = ({ onClose, isOpen, links }) => {
         <StyledText>Меню</StyledText>
         <BtnContainer>
           <BtnSupport>Підтримати проєкт</BtnSupport>
+          <StyledText>
+            <span>Закрити</span>
+          </StyledText>
           <BtnClose onClick={onClose}>
             <Iconsvg iconName="close" width="14" height="15" />
           </BtnClose>
@@ -52,25 +56,35 @@ const BurgerMenu = ({ onClose, isOpen, links }) => {
           <Iconsvg iconName="mistohub" />
         </ImgContainer>
       </FlexContainer>
+      <div>
+        <BottomContainer>
+          <StyledText>ГО МІСТО ХАБ</StyledText>
+          <StyledText>Всі права захищені</StyledText>
+          <StyledText>|</StyledText>
+          <StyledText>Poзроблено студентами</StyledText>
+          <BtnGoIt>
+            <Iconsvg iconName="goit" width="100" height="30" />
+          </BtnGoIt>
+        </BottomContainer>
 
-      <BottomContainer>
-        <StyledText>ГО МІСТО ХАБ</StyledText>
-        <StyledText>Всі права захищені</StyledText>
-        <StyledText>|</StyledText>
-        <StyledText>Poзроблено студентами</StyledText>
-        <BtnGoIt>
-          <Iconsvg iconName="goit" width="100" height="30" />
-        </BtnGoIt>
-      </BottomContainer>
-      <SocLincContainer>
-        <a href="" target="_blank">
-          <Iconsvg iconName="instagram" width="36" height="36" />
-        </a>
-        <a href="" target="_blank">
-          <Iconsvg iconName="facebook" width="36" height="36" />
-        </a>
-      </SocLincContainer>
-    </Modal>
+        <SocLincContainer>
+          <a
+            href=" https://www.instagram.com/mistohub "
+            target="_blank"
+            rel="noreferrer"
+          >
+            <Iconsvg iconName="instagram" width="36" height="36" />
+          </a>
+          <a
+            href="https://www.facebook.com/mistohub/?locale=uk_UA"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <Iconsvg iconName="facebook" width="36" height="36" />
+          </a>
+        </SocLincContainer>
+      </div>
+    </StyledMenu>
   );
 };
 

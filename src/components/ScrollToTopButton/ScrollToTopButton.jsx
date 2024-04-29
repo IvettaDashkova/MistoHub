@@ -30,7 +30,7 @@ const ScrollToTopButton = () => {
 
   return (
     <StyledScrollButton visible={isVisible ? 1 : 0} onClick={scrollToTop}>
-      <Iconsvg width="20" height="20" iconName="topscroll" />
+      <Iconsvg iconName="topscroll" />
     </StyledScrollButton>
   );
 };
