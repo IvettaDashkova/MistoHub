@@ -1,10 +1,10 @@
 import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyle = createGlobalStyle`
-  
+
 @font-face {
   font-family: "Oddval";
-  src: 
+  src: local('Oddval SemiBold'), local('Oddval-SemiBold'),
     url("/src/assets/fonts/Oddval-SemiBold.woff2") format('woff2');
   font-weight: 600;
   font-style: normal;
@@ -13,7 +13,7 @@ const GlobalStyle = createGlobalStyle`
 
 @font-face {
   font-family: "FixelDisplay";
-  src: 
+  src: local('FixelDisplay Medium'), local('FixelDisplay-Medium'),
     url("/src/assets/fonts/FixelDisplay-Medium.ttf") format('truetype');
   font-weight: 500;
   font-style: normal;
@@ -22,7 +22,7 @@ const GlobalStyle = createGlobalStyle`
 
 @font-face {
   font-family: "FixelDisplay";
-  src:
+  src: local('FixelDisplay SemiBold'), local('FixelDisplay-SemiBold'),
     url("/src/assets/fonts/FixelDisplay-SemiBold.ttf") format('truetype');
   font-weight: 600;
   font-style: normal;
@@ -33,6 +33,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: #fff;
+  font-family: "FixelDisplay";
   font-weight: 500;
   font-style: normal;
   color:#000;
