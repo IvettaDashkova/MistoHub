@@ -17,10 +17,12 @@ export const LoaderContainer = styled.div`
 
     .house-svg{
     margin-right: 5px;
+    fill: #F77D07;
   }
 
   .wave-svg{
     margin-left: 1px;
+    fill: #F77D07;
   }
   
 `;
