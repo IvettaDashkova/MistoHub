@@ -1,27 +1,28 @@
 import Modal from 'react-modal';
 import { TeamModalStyled } from './TeamModal.styled';
 import Iconsvg from '../Icon/Icon';
+import { useModal } from '/src/contexts/ModalHook';
 import data from './develops.json';
-Modal.setAppElement('#root');
 
-const TeamModal = ({ modalTeamIsOpen, modalTeamOnClose }) => {
+const TeamModal = () => {
+  const { isModalOpen, closeModal } = useModal();
   return (
-    <TeamModalStyled isOpen={modalTeamIsOpen} onRequestClose={modalTeamOnClose}>
+    <TeamModalStyled isOpen={isModalOpen} onRequestClose={closeModal}>
       <p>Команда</p>
-      <button className="сloseBtn" type="button" onClick={modalTeamOnClose}>
+      <button className="сloseBtn" type="button" onClick={closeModal}>
         <span className="сloseText">Закрити</span>
         <Iconsvg
           width="12"
           height="12"
-          iconName="icon-close-icon"
-          styles="icon-close-icon"
+          iconName="icon-close"
+          styles="icon-close"
         />
       </button>
       <h2>
         <span>Команда</span>, що створила сайт
       </h2>
       <ul>
-        {data.map((person) => (
+        {/* {data.map((person) => (
           <li key={person.id}>
             <Developer
               name={person.name}
@@ -33,7 +34,7 @@ const TeamModal = ({ modalTeamIsOpen, modalTeamOnClose }) => {
               webpx2={person.webpx2}
             />
           </li>
-        ))}
+        ))} */}
       </ul>
     </TeamModalStyled>
   );

@@ -14,7 +14,7 @@ export const StyledFooter = styled.footer`
 export const FooterContainer = styled(StyledContainer)`
   min-width: 320px;
   max-width: 375px;
-  padding: 32px 16px 20px 16px;
+  padding: 32px 16px 20px;
   .footer-up {
     > div:first-child {
       display: none;
@@ -26,6 +26,12 @@ export const FooterContainer = styled(StyledContainer)`
     height: 370px;
     border-radius: 20px;
     margin-bottom: 32px;
+  }
+  .icon-logo {
+    width: 81px;
+    height: 27px;
+    fill: #ffffff;
+    margin-bottom: 24px;
   }
   .address {
     line-height: 1.2;
@@ -52,7 +58,13 @@ export const FooterContainer = styled(StyledContainer)`
   }
   a {
     color: inherit;
+    outline: none;
     font-size: 20px;
+    transition: color 0.25s ease-in-out;
+    &:hover,
+    &:focus {
+      color: #f77d07;
+    }
   }
   .btn-supp {
     font-size: 16px;
@@ -64,8 +76,17 @@ export const FooterContainer = styled(StyledContainer)`
     border-radius: 30px;
     background-color: #f77d07;
     margin-bottom: 64px;
-    &:hover {
+    outline: none;
+    transition: background 0.25s ease-in-out;
+    transition: color 0.25s ease-in-out;
+
+    &:hover,
+    &:focus {
       background: #e97200;
+    }
+    &:active {
+      color: #898b90;
+      background: #e3e3e3;
     }
   }
   @media (min-width: 375px) {
@@ -75,13 +96,18 @@ export const FooterContainer = styled(StyledContainer)`
     width: 768px;
     min-width: unset;
     max-width: unset;
-    padding: 64px 32px 32px 32px;
+    padding: 64px 32px 32px;
     .map-wrapper {
       min-width: unset;
       max-width: unset;
       width: 704px;
       height: 486px;
       margin-bottom: 64px;
+    }
+    .icon-logo {
+      width: 118px;
+      height: 40px;
+      margin-bottom: 30px;
     }
     .address {
       line-height: 1.5;
@@ -97,9 +123,6 @@ export const FooterContainer = styled(StyledContainer)`
     }
     a {
       font-size: 24px;
-      &: hover {
-        color: #f77d07;
-      }
     }
     .btn-supp {
       font-size: 18px;
@@ -110,7 +133,7 @@ export const FooterContainer = styled(StyledContainer)`
   }
   @media (min-width: 1440px) {
     width: 1440px;
-    padding: 120px 120px 38px 120px;
+    padding: 120px 120px 38px;
     .footer-up {
       display: flex;
       gap: 120px;
@@ -121,6 +144,7 @@ export const FooterContainer = styled(StyledContainer)`
       height: 516px;
       margin-bottom: 80px;
     }
+
     ul {
       margin-bottom: 60px;
     }
@@ -163,38 +187,118 @@ export const FooterDown = styled.div`
     padding: 0;
     font: inherit;
     cursor: pointer;
-    outline: inherit;
-  }
-  .btn-goit:hover {
-    color: #ffffff;
+    outline: none;
+    margin-bottom: 20px;
+    transition: color 0.25s ease-in-out;
+    &: hover,
+    &:focus {
+      color: #ffffff;
+      .icon-goit-white {
+        fill: #ffffff;
+      }
+    }
   }
   .icon-goit-white {
     width: 59px;
     height: 18px;
-    fill: #bbb;
+    fill: #f77d07;
+    transition: fill 0.25s ease-in-out;
   }
-  .icon-goit-white .white {
-    fill: #ffffff;
+  .social-block {
+    display: flex;
+    margin-bottom: 0px;
+    gap: 8px;
   }
-
-  .icon-goit-white .orange {
-    fill: #ffa500;
+  .link-inst {
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px;
+    border-radius: 50%;
+    background: #ffffff;
+    outline: none;
+    transition: background 0.25s ease-in-out;
+    &:hover,
+    &:focus {
+      background: radial-gradient(
+        230.93% 230.93% at 102.01% 2.03%,
+        #f9ed32 0%,
+        #ee2a7b 36%,
+        #d22a8a 44%,
+        #8b2ab2 60%,
+        #1b2af0 83%,
+        #002aff 88%
+      );
+      .icon-instagram {
+        fill: #ffffff;
+      }
+    }
+  }
+  .icon-instagram {
+    fill: #0b0b0b;
+    transition: fill 0.25s ease-in-out;
+  }
+  .link-fb {
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px;
+    border-radius: 50%;
+    background: #ffffff;
+    outline: none;
+    transition: background 0.25s ease-in-out;
+    &:hover,
+    &:focus {
+      background: linear-gradient(180deg, #18acfe 0%, #0165e1 100%);
+      .icon-faceb {
+        fill: #ffffff;
+      }
+    }
+  }
+  .icon-faceb {
+    fill: #0b0b0b;
+    transition: fill 0.25s ease-in-out;
   }
 
   @media (min-width: 768px) {
     padding-top: 38px;
     display: flex;
-    gap: 10px;
+    column-gap: 10px;
     align-items: baseline;
+    flex-wrap: wrap;
+    row-gap: 24px;
+
     p {
       padding-right: 10px;
     }
     .btn-goit {
       gap: 10px;
+      margin-bottom: 0px;
     }
     .icon-goit-white {
       width: 100px;
       height: 30px;
+    }
+    .social-block {
+      gap: 10px;
+    }
+    .icon-instagram {
+      width: 40px;
+      height: 40px;
+    }
+    .icon-faceb {
+      width: 40x;
+      height: 40px;
+    }
+  }
+  @media (min-width: 1440px) {
+    .social-block {
+      margin-left: auto;
+      align-self: center;
     }
   }
 `;

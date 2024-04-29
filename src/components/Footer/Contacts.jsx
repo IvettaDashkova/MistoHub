@@ -10,7 +10,7 @@ const Contacts = () => {
         <span>Телефон: </span>
         <Link
           to={isMobile ? `tel:+380680745765` : `https://t.me/MISTOHUB_admin`}
-          target="_blank"
+          target="blank"
           rel="noopener noreferrer"
         >
           +38 (068) 074-57-65
@@ -20,7 +20,7 @@ const Contacts = () => {
         <span>Email:</span>
         <Link
           to={`mailto:mistohub@gmail.com`}
-          target="_blank"
+          target="blank"
           rel="noopener noreferrer"
         >
           mistohub@gmail.com

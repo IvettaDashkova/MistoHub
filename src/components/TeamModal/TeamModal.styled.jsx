@@ -30,7 +30,7 @@ export const TeamModalStyled = styled(Modal)`
     outline: inherit;
   }
 
-  .icon-close-icon {
+  .icon-close {
     stroke: rgba(11, 11, 11, 0.5);
   }
 `;
