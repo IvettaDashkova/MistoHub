@@ -41,18 +41,14 @@ const InvestorsBlock = () => {
 
   console.log(companies);
   return (
-    <div>
+    <>
       <TextWrapper>
         <InfoText>Імпакт-інвестори МІСТОХАБ</InfoText>
         <MainHeading>З нами вже</MainHeading>
         <SecondHeading>{people.length} людини</SecondHeading>
       </TextWrapper>
       <div>
-        <InvestorsPeople
-        // key={person.id}
-        // data={person}
-        // onClick={() => openModal(person)}
-        />
+        <InvestorsPeople />
 
         <TextWrapper>
           <SecondHeading>{companies.length} компаній</SecondHeading>
@@ -62,7 +58,7 @@ const InvestorsBlock = () => {
       {selectedItem && (
         <ModalInvestors data={selectedItem} onClose={closeModal} />
       )}
-    </div>
+    </>
   );
 };
 

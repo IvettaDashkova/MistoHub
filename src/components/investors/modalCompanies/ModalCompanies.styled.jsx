@@ -2,6 +2,145 @@ import styled from 'styled-components';
 import ReactModal from 'react-modal';
 
 export const ModalCompanyWrapper = styled.div`
+@media screen and (min-width: 320px) and (max-width: 374.9px) {
+  .text {
+      color: rgba(11, 11, 11, 0.5);
+      font-family: 'MacPaw Fixel Display';
+      font-size: 12px;
+      line-height: 16px; /* 133.333% */
+      letter-spacing: -0.24px;
+    }
+
+    .textQuestion {
+      color: #0b0b0b;
+      font-family: Oddval;
+      font-size: 18px;
+      font-weight: 600;
+      line-height: 20px; /* 111.111% */
+      letter-spacing: -0.36px;
+      margin-top: 28px;
+    }
+
+    .companyName {
+      color: #0b0b0b;
+      font-family: Oddval;
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 20px; /* 125% */
+      letter-spacing: -0.32px;
+    }
+
+    .textAnswer {
+      color: #0b0b0b;
+      font-family: 'MacPaw Fixel Display';
+      font-size: 14px;
+      line-height: 18px; /* 128.571% */
+      letter-spacing: -0.28px;
+      min-width: 303px;
+      position: relative;
+      z-index: 1;
+      padding-right: 20px;
+    }
+
+    .contentWrapper {
+      padding: 0 0 20px 20px;
+      position: relative;
+      background-image: url('/src/assets/investors/Vector_mob.svg');
+
+      background-repeat: no-repeat;
+      background-size: 207px 143px;
+      background-position: bottom right;
+      border-radius: 10px;
+    }
+
+    .main-heading-wrapper {
+      display: flex;
+      flex-direction: column;
+      padding-top: 28px;
+      height: fit-content;
+      gap: 4px;
+      width: fit-content;
+    }
+
+    .closeWrapper {
+      display: flex;
+      justify-content: flex-end;
+      width: fit-content;
+      height: fit-content;
+      order: 1;
+      margin-left: auto;
+      padding-top: 10px;
+      padding-right: 10px;
+    }
+    .closeButton {
+      float: right;
+      border: none;
+      border-radius: 10px;
+      background: #fff;
+      box-shadow:
+        4px 17px 102.1px 0px rgba(0, 0, 0, 0.19),
+        0px 25px 30.4px 0px rgba(0, 0, 0, 0.09);
+      padding: 0;
+    }
+
+    .close-icon {
+      stroke: rgba(11, 11, 11, 0.5);
+    }
+
+    .instaIcon {
+      width: 14px;
+      height: 14px;
+      fill: white;
+    }
+    .svgWrapper {
+      background: #f77d07;
+      width: 30px;
+      height: 30px;
+      border-radius: 100px;
+      display: inline-flex;
+      padding: 8px;
+      align-items: center;
+      gap: 10px;
+      position: absolute;
+      top: 82px;
+      left: 41px;
+    }
+
+    a {
+      padding: 0;
+    }
+
+    .svgBackground {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 189px;
+      height: 115px;
+    }
+
+    .closeWord {
+      display: none;
+    }
+
+    .top-wrapper {
+      display: flex;
+      gap: 10px;
+    }
+
+    .title-wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      padding-top: 28px;
+    }
+
+    .main-image {
+      width: 70px;
+      height: 70px;
+    }
+  }
+
+}
   @media screen and (min-width: 375px) and (max-width: 767.9px) {
     .text {
       color: rgba(11, 11, 11, 0.5);
@@ -83,9 +222,14 @@ export const ModalCompanyWrapper = styled.div`
       padding: 0;
     }
 
+    .close-icon {
+      stroke: rgba(11, 11, 11, 0.5);
+    }
+
     .instaIcon {
       width: 14px;
       height: 14px;
+      fill: white;
     }
     .svgWrapper {
       background: #f77d07;
@@ -235,10 +379,14 @@ export const ModalCompanyWrapper = styled.div`
       height: 28px;
     }
 
+    .close-icon {
+      stroke: rgba(11, 11, 11, 0.5);
+    }
+
     .svgWrapper {
       background: #f77d07;
-      width: 36px;
-      height: 36px;
+      width: 40px;
+      height: 40px;
       border-radius: 100px;
       display: inline-flex;
       padding: 8px;
@@ -253,12 +401,11 @@ export const ModalCompanyWrapper = styled.div`
     .instaIcon {
       width: 16px;
       height: 16px;
+      fill: white;
     }
 
     a {
       padding: 0;
-      width: 36px;
-      height: 36px;
     }
 
     .top-wrapper {
@@ -378,10 +525,14 @@ export const ModalCompanyWrapper = styled.div`
       height: 28px;
     }
 
+    .close-icon {
+      stroke: rgba(11, 11, 11, 0.5);
+    }
+
     .svgWrapper {
       background: #f77d07;
-      width: 36px;
-      height: 36px;
+      width: 40px;
+      height: 40px;
       border-radius: 100px;
       display: inline-flex;
       padding: 8px;
@@ -396,12 +547,11 @@ export const ModalCompanyWrapper = styled.div`
     .instaIcon {
       width: 16px;
       height: 16px;
+      fill: white;
     }
 
     a {
       padding: 0;
-      width: 36px;
-      height: 36px;
     }
 
     .top-wrapper {
@@ -434,8 +584,12 @@ export const CustomModal = styled(ReactModal)`
     box-shadow:
       4px 17px 102.1px 0px rgba(0, 0, 0, 0.19),
       0px 25px 30.4px 0px rgba(0, 0, 0, 0.09);
-    overflow: fixed;
+    overflow: hidden;
     backgroundcolor: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 
     @media screen and (min-width: 375px) and (max-width: 811.9px) {
       width: 343px;
@@ -451,6 +605,7 @@ export const CustomModal = styled(ReactModal)`
   }
 
   &.ReactModal__Overlay--after-open {
-    z-index: 10;
+    z-index: 100;
+    overflow: hidden;
   }
 `;

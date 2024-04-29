@@ -71,7 +71,7 @@ const ModalInvestors = ({ data, onClose, isOpen }) => {
                 Закрити
               </button>
               <button className="closeButton" onClick={onClose}>
-                <svg width="28" height="28">
+                <svg className="close-icon" width="28" height="28">
                   <use xlinkHref={`${sprite}#icon-x`}></use>
                 </svg>
               </button>
