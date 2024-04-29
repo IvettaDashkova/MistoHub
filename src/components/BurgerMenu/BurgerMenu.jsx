@@ -58,7 +58,9 @@ const BurgerMenu = ({ onClose, isOpen, links }) => {
       </FlexContainer>
       <div>
         <BottomContainer>
-          <StyledText>ГО МІСТО ХАБ</StyledText>
+          <span>
+            <StyledText>ГО МІСТО ХАБ</StyledText>
+          </span>
           <StyledText>Всі права захищені</StyledText>
           <StyledText>|</StyledText>
           <StyledText>Poзроблено студентами</StyledText>

@@ -129,6 +129,13 @@ export const BottomContainer = styled.div`
   gap: 8px;
   flex-wrap: wrap;
   padding: 0;
+
+  @media screen and (min-width: 768px) {
+    justify-content: end;
+    span {
+      margin-right: auto;
+    }
+  }
 `;
 
 export const BtnGoIt = styled.button`
