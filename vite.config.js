@@ -3,24 +3,17 @@ import react from '@vitejs/plugin-react-swc';
 import svgr from 'vite-plugin-svgr';
 
 export default defineConfig({
-  plugins: [
-    react(),
-    svgr({
-      svgrOptions: {
-        exportType: 'default',
-        ref: true,
-        svgo: false,
-        titleProp: true,
-      },
-      include: '**/*.svg',
-    }),
-  ],
+  plugins: [react(), svgr()],
   resolve: {
     alias: {
       src: '/src',
-      components: '/src/components',
-      pages: '/src/pages',
       assets: '/src/assets',
+      components: '/src/components',
+      constants: '/src/constants',
+      contexts: '/src/contexts',
+      pages: '/src/pages',
+      services: '/src/services',
+      shared: '/src/shared',
     },
   },
   base: '/MistoHub/',

@@ -3,14 +3,17 @@ import { lazy } from 'react';
 import ReactModal from 'react-modal';
 
 ReactModal.setAppElement('#root');
+import { ModalProvider } from '/src/contexts/ModalContext';
 
 const HomePage = lazy(() => import('./pages/HomePage/HomePage'));
 
 function App() {
   return (
-    <Routes>
-      <Route path="*" element={<HomePage />} />
-    </Routes>
+    <ModalProvider>
+      <Routes>
+        <Route path="*" element={<HomePage />} />
+      </Routes>
+    </ModalProvider>
   );
 }
 export default App;
