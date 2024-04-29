@@ -1,22 +1,61 @@
 import styled from 'styled-components';
 
-import BurgerMenuIcon from '../../assets/icons/header/burger-icon.svg';
-import Container from '../../shared/Container/Container';
+import Container from '/src/shared/Container/Container';
 
 export const StyledHeader = styled.header`
   width: 100%;
   position: fixed;
   top: 0;
   z-index: 1;
+
+  .main-logo {
+    fill: #ffffff;
+    transition: fill 0.7s;
+  }
+
+  .burger-menu-icon {
+    stroke: #ffffff;
+    transition: fill 0.7s;
+  }
+
+  .burger-menu-icon.short-header {
+    stroke: #0b0b0b;
+  }
+
+  .main-logo.short-header {
+    fill: #0b0b0b;
+  }
 `;
 
 export const HeaderContainer = styled(Container)`
-  padding: ${(props) => `30px ${props.$padding} 0 ${props.$padding}`};
-
+  max-width: 343px;
+  padding: 20px 0 0;
   display: flex;
-  flex-direction: row;
   align-items: center;
   justify-content: space-between;
+  transition: max-width 0.7s ease-in-out;
+
+  &.short-header {
+    max-width: 291px;
+  }
+
+  @media screen and (min-width: 768px) and (max-width: 1439px) {
+    max-width: 704px;
+    padding: 30px 0 0;
+
+    &.short-header {
+      max-width: 600px;
+    }
+  }
+
+  @media screen and (min-width: 1440px) {
+    max-width: 1200px;
+    padding: 30px 0 0;
+
+    &.short-header {
+      max-width: 874px;
+    }
+  }
 
   .menu-wrapper {
     width: 100%;
@@ -32,7 +71,6 @@ export const HeaderContainer = styled(Container)`
     padding: 0;
     border: none;
     background-color: transparent;
-    cursor: pointer;
     display: flex;
     svg {
       align-self: center;
@@ -58,26 +96,18 @@ export const HeaderContainer = styled(Container)`
     }
   }
 
-  svg.clouds {
-    width: 180px;
-    height: 85px;
+  svg.cloud-icon {
     fill: #f77d07;
     transform: rotate(-4deg);
   }
 
-  .btn-clouds:hover svg.clouds {
+  .btn-clouds:hover .cloud-icon {
     fill: #e97200;
     transition: fill 0.25s ease-in-out;
   }
 
-  .btn-clouds:active svg.clouds {
+  .btn-clouds:active .cloud-icon {
     fill: #e3e3e3;
     transition: fill 0.25s ease-in-out;
   }
-`;
-
-export const BurgerMenu = styled(BurgerMenuIcon)`
-  width: 54px;
-  height: 47px;
-  stroke: ${(props) => props.color};
 `;

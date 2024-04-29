@@ -1,11 +1,11 @@
 import { useState, useEffect } from 'react';
 
-import VirtualTour from '../../components/VirtualTour/VirtualTour';
+// import VirtualTour from '../../components/VirtualTour/VirtualTour';
 import { fetchGoal, fetchCompanies, fetchPeople } from '../../services/API';
 import Header from '../../components/Header/Header';
 import { SomeSectionContainer } from './HomePage.styled';
 import Icon from 'src/components/Icon/Icon';
-import { ZibraniKoshti } from '../../components/ZibraniKoshti/ZibraniKoshti';
+// import { ZibraniKoshti } from '../../components/ZibraniKoshti/ZibraniKoshti';
 
 const HomePage = () => {
   const [goalData, setGoalData] = useState(null);
@@ -42,9 +42,10 @@ const HomePage = () => {
   return (
     <>
       <Header />
-      <SomeSectionContainer>
+      <SomeSectionContainer style={{ height: '1500px' }}>
+        <div style={{ width: '100%', backgroundColor: 'grey' }}></div>
         <Icon width="40" height="30" iconName="Vector" styles="vector-svg" />
-        <h1>Home Page</h1>
+        {/*<h1>Home Page</h1>
         {goalData && (
           <>
             <p>{goalData.raised}</p> <p>{goalData.goal}</p>
@@ -53,7 +54,7 @@ const HomePage = () => {
         {companiesData && <img src={formImgURL(companiesData[0].logoURL)} />}
         {peopleData && <img src={formImgURL(peopleData[0].imageURL)} />}
         <VirtualTour />
-        <ZibraniKoshti />
+        <ZibraniKoshti />*/}
       </SomeSectionContainer>
     </>
   );
