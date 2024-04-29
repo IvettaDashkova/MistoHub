@@ -32,7 +32,6 @@ export const HowItWorkSection = styled.section`
 
   background-image: url(${bgImage});
   background-repeat: no-repeat;
-  background-position: center;
   background-size: auto 100%;
   background-position: 60% 50%;
   
