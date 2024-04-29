@@ -1,15 +1,14 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination } from 'swiper/modules';
-import Container from '../../shared/Container/Container';
 import 'swiper/css';
 import 'swiper/css/pagination';
 
-import { AboutSection } from './About.styled';
+import { AboutSection, AboutContainer } from './About.styled';
 
 export const About = () => {
   return (
     <AboutSection id="about-project">
-      <Container>
+      <AboutContainer>
         <p className="about-project">Про проєкт</p>
 
         <h2 className="about-title">
@@ -20,11 +19,17 @@ export const About = () => {
           wrapperTag="ul"
           wrapperClass="about-list"
           className="swiper"
-          observer={true}
+          resizeObserver={true}
+          onResize={(swiper) => {
+            swiper.slideTo(0);
+            swiper.update();
+          }}
           breakpoints={{
             1440: {
               slidesPerView: 3,
-              enabled: false,
+              initialSlide: 0,
+              slideTo: 0,
+              enabled: true,
               spaceBetween: '24px',
               grid: {
                 row: 1,
@@ -32,6 +37,8 @@ export const About = () => {
             },
             768: {
               slidesPerView: 2,
+              initialSlide: 0,
+              slideTo: 0,
               enabled: true,
               spaceBetween: '16px',
               grid: {
@@ -42,15 +49,26 @@ export const About = () => {
                 clickable: true,
               }
             },
+            375: {
+              slidesPerView: 1,
+              initialSlide: 0,
+              slideTo: 0,
+              enabled: true,
+              pagination: {
+                enabled: false,
+                clickable: true,
+              }
+            }
           }}
           slidesPerView = {1}
           grid={{
               row: 3
           }}
-          enabled={false}
+          initialSlide = {0}
+          enabled={true}
           pagination={{
             enabled: false,
-            clickable: true,
+            clickable: false,
           }}
           modules={[Pagination]}
         >
@@ -83,7 +101,7 @@ export const About = () => {
           80% прибутку <span className="accent">МІСТОХАБ</span> буде спрямовано
           на фінансування соціальних проєктів містян
         </p>
-      </Container>
+      </AboutContainer>
     </AboutSection>
   );
 };
