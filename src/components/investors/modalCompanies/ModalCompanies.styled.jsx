@@ -279,7 +279,7 @@ export const ModalCompanyWrapper = styled.div`
     }
   }
 
-  @media screen and (min-width: 768px) and (max-width: 1023.9px) {
+  @media screen and (min-width: 768px) and (max-width: 1439.9px) {
     .text {
       color: rgba(11, 11, 11, 0.5);
       font-family: 'MacPaw Fixel Display';
@@ -426,7 +426,7 @@ export const ModalCompanyWrapper = styled.div`
     }
   }
 
-  @media screen and (min-width: 1024px) {
+  @media screen and (min-width: 1440px) {
     .text {
       color: rgba(11, 11, 11, 0.5);
       font-family: 'MacPaw Fixel Display';
@@ -591,21 +591,16 @@ export const CustomModal = styled(ReactModal)`
     left: 50%;
     transform: translate(-50%, -50%);
 
-    @media screen and (min-width: 375px) and (max-width: 811.9px) {
+    @media screen and (min-width: 375px) and (max-width: 767.9px) {
       width: 343px;
     }
 
-    @media screen and (min-width: 768px) and (max-width: 1023.9px) {
+    @media screen and (min-width: 768px) and (max-width: 1439.9px) {
       width: 576px;
     }
 
-    @media screen and (min-width: 1024px) {
+    @media screen and (min-width: 1440px) {
       width: 576px;
     }
-  }
-
-  &.ReactModal__Overlay--after-open {
-    z-index: 100;
-    overflow: hidden;
   }
 `;
