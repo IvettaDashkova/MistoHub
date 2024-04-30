@@ -20,6 +20,7 @@ const ModalCompanies = ({ isOpen, data, onClose }) => {
     <CustomModal
       onRequestClose={onClose}
       isOpen={isOpen}
+      style={{ overlay: { zIndex: '2' } }}
       onClose={onClose}
       shouldCloseOnOverlayClick={true}
       contentLabel="Image Modal"

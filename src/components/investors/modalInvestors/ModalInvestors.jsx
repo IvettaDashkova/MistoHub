@@ -29,6 +29,7 @@ const ModalInvestors = ({ data, onClose, isOpen }) => {
     <CustomModal
       onRequestClose={onClose}
       isOpen={isOpen}
+      style={{ overlay: { zIndex: '2' } }}
       onClose={onClose}
       shouldCloseOnOverlayClick={true}
       contentLabel="Image Modal"
