@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 
 export const ListWrapper = styled.div`
-@media screen and (min-width: 320px) and (max-width: 374.9px) {
-  div {
+  @media screen and (min-width: 320px) and (max-width: 374.9px) {
+    div {
       // max-width: 375px;
       position: relative;
       overflow: hidden;
@@ -130,7 +130,6 @@ export const ListWrapper = styled.div`
     }
   }
 
-}
   @media screen and (min-width: 375px) and (max-width: 767.9px) {
     div {
       // max-width: 375px;
@@ -260,7 +259,7 @@ export const ListWrapper = styled.div`
     }
   }
 
-  @media screen and (min-width: 768px) and (max-width: 1023.9px) {
+  @media screen and (min-width: 768px) and (max-width: 1439.9px) {
     div {
       // max-width: 768px;
       position: relative;
@@ -414,7 +413,7 @@ export const ListWrapper = styled.div`
     }
   }
 
-  @media screen and (min-width: 1024px) {
+  @media screen and (min-width: 1440px) {
     div {
       position: relative;
       overflow: hidden;
