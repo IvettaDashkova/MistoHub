@@ -1,20 +1,73 @@
-import styled from '@emotion/styled';
+import { keyframes } from '@emotion/react';
+
 import backgroundImage from './Rectangle 42862.png';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import styled from '@emotion/styled';
+
+const progressAnimation = keyframes`
+  from {
+    width: 0;
+  }
+  to {
+    width: ${(props) => props.progress}%;
+  }
+`;
+
+const slideInFromBottom = keyframes`
+  from {
+    transform: translateY(100%);
+     }
+  to {
+    transform: translateY(0%);
+   
+  }
+`;
 
 export const ContainerWrapper = styled.section`
+  ${(props) => props.isDesktop && 'display:flex'};
   background-image: url('${backgroundImage}');
   background-size: cover;
   background-position: center;
   padding: 60px 0;
-  padding-left: 16px;
 
   @media screen and (min-width: 768px) {
     padding: 80px 0;
-    padding-left: 64px;
   }
 
-  > button {
+  @media screen and (min-width: 1440px) {
+    padding: 120px 60px 100px;
+
+    > div {
+      width: 100%;
+      margin-left: 113px;
+      margin-right: 83px;
+    }
+
+    > ul {
+      color: #ffffff;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      animation: ${slideInFromBottom} 3s ease forwards;
+    }
+  }
+
+  h4 {
+    font-family: 'Oddval', sans-serif;
+    font-weight: 600;
+    font-size: 10px;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    margin-bottom: 2px;
+
+    @media screen and (min-width: 768px) {
+      font-size: 14px;
+      line-height: 1.3;
+    }
+  }
+
+  button {
+    font-family: 'FixelDisplay', sans-serif;
     height: 48px;
     min-width: 171px;
     font-size: 14px;
@@ -28,8 +81,6 @@ export const ContainerWrapper = styled.section`
     padding: 15px 20px;
     display: flex;
     margin: 0 auto;
-    margin-left: calc(50%);
-    transform: translateX(-50%);
 
     @media screen and (min-width: 768px) {
       padding: 20px 40px;
@@ -38,12 +89,18 @@ export const ContainerWrapper = styled.section`
       line-height: 1.5;
       min-width: 230px;
     }
+
+    @media screen and (min-width: 768px) {
+      height: 70px;
+      width: 260px;
+      padding: 23px 46px;
+      font-size: 18px;
+    }
   }
 `;
 
 export const TitleContainer = styled.div`
-  padding: 0 59px;
-  padding-right: 65px;
+  padding: 0 65px;
   margin-bottom: 103px;
   display: flex;
   flex-direction: column;
@@ -55,26 +112,44 @@ export const TitleContainer = styled.div`
   letter-spacing: -0.02em;
 
   @media screen and (min-width: 768px) {
-    gap: 30px;
     margin-bottom: 173px;
+    gap: 30px;
+    padding: 0 204px;
+  }
+
+  @media screen and (min-width: 1440px) {
+    margin-bottom: 203px;
+    padding: 0;
   }
 
   > h2 {
+    font-family: 'Oddval', sans-serif;
     font-size: 18px;
     line-height: 1.2;
-
+    min-width: 245px;
     @media screen and (min-width: 768px) {
       font-size: 22px;
       line-height: 1.2;
+    }
+
+    @media screen and (min-width: 1440px) {
+      font-size: 28px;
+      line-height: 1.15;
     }
   }
 
   > p {
     font-size: 50px;
+    font-family: 'FixelDisplay', sans-serif;
 
     @media screen and (min-width: 768px) {
       font-size: 85px;
       line-height: 0.88;
+    }
+
+    @media screen and (min-width: 1440px) {
+      font-size: 120px;
+      line-height: 1;
     }
   }
 `;
@@ -82,14 +157,17 @@ export const TitleContainer = styled.div`
 export const ProgressBar = styled.div`
   backgound-color: #77ee7e;
   display: flex;
-  margin: 0 auto;
-  margin-bottom: 55px;
-  padding: 0 47px;
-  padding-left: 31px;
+  margin: 0 auto 55px;
+  padding: 0 30px;
   @media screen and (min-width: 768px) {
     margin-bottom: 116px;
     padding: 0 117px;
     padding-left: 53px;
+  }
+
+  @media screen and (min-width: 1440px) {
+    margin-bottom: 102px;
+    padding: 0;
   }
 
   > div {
@@ -112,6 +190,7 @@ export const Accumulated = styled.div`
   background-color: #ffffff;
   z-index: 15;
   border-radius: 100px;
+  animation: ${progressAnimation} 3s ease-in-out;
 
   @media screen and (min-width: 768px) {
     height: 20px;
@@ -128,7 +207,7 @@ export const Accumulated = styled.div`
     background-color: #fff;
     border-radius: 50%;
     z-index: 2;
-    box-shadow: 0 0 0 5px rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 0 8px rgba(255, 255, 255, 0.2);
 
     @media screen and (min-width: 768px) {
       width: 48px;
@@ -139,6 +218,7 @@ export const Accumulated = styled.div`
 `;
 
 export const AmountGif = styled.div`
+  font-family: 'FixelDisplay', sans-serif;
   position: absolute;
   display: flex;
   justify-content: center;
@@ -147,12 +227,14 @@ export const AmountGif = styled.div`
   line-height: 1.3;
   font-weight: 600;
   letter-spacing: -0.02em;
-  top: -56px;
+  top: -62px;
   right: -41px;
   width: 84px;
   height: 42px;
   border-radius: 45px;
   background-color: #fff;
+  opacity: ${(props) => (props.progress > 0 ? 1 : 0)};
+  transition: opacity 0.5s ease;
 
   @media screen and (min-width: 768px) {
     font-size: 28px;
@@ -180,9 +262,10 @@ export const AmountGif = styled.div`
   }
 
   &::after {
+    font-family: 'FixelDisplay', sans-serif;
     content: 'Зібрано';
     position: absolute;
-    bottom: -60px;
+    bottom: -65px;
     font-size: 12px;
     color: #ffffff;
     font-weight: 500;
@@ -200,40 +283,91 @@ export const CardsList = styled.ul`
   color: #fff;
   gap: 8px;
   overflow-x: auto;
-  padding-top: 13px;
-  padding-right: 16px;
-  padding-bottom: 28px;
+  padding: 13px 16px 28px;
+
   margin-bottom: 32px;
   width: 100%;
 
   @media screen and (min-width: 768px) {
     margin-bottom: 60px;
   }
-  
 
   &::-webkit-scrollbar {
     height: 6px;
-   
-    
   }
 
   &::-webkit-scrollbar-track {
     background-color: transparent;
     border-radius: 8px;
     margin: 80px;
-    @media screen and (min-width: 768px) {
-
-    }
-  }
   }
 
   &::-webkit-scrollbar-thumb {
     background-color: rgba(253, 253, 253, 0.4);
     border-radius: 8px;
-}
+  }
 
   &::-webkit-scrollbar-thumb:hover {
     background-color: #555;
+  }
+`;
+
+export const MadeListItem = styled.li`
+  ${(props) => props.isDesktop && 'display: flex;'};
+  position: relative;
+  background: #ffffff1a;
+  border-radius: 10px;
+  border: 1px solid #ffffff14;
+  padding: 10px;
+
+  min-width: 140px;
+  backdrop-filter: blur(5px);
+
+  @media screen and (min-width: 768px) {
+    padding: 20px;
+    min-width: 243px;
+  }
+
+  @media screen and (min-width: 1440px) {
+    padding: 20px;
+    max-width: 243px;
+  }
+
+  h4 {
+    font-family: 'Oddval', sans-serif;
+    font-weight: 600;
+    font-size: 10px;
+    line-height: 1.2;
+    margin-bottom: 2px;
+
+    @media screen and (min-width: 768px) {
+      font-size: 14px;
+    }
+  }
+
+  ul {
+    padding-left: 16px;
+    list-style-type: disc;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+
+    @media screen and (min-width: 1440px) {
+    }
+
+    li {
+      font-family: 'FixelDisplay', sans-serif;
+      font-size: 8px;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+
+      @media screen and (min-width: 768px) {
+        font-size: 10px;
+      }
+
+      @media screen and (min-width: 1440px) {
+      }
+    }
   }
 `;
 
@@ -253,23 +387,17 @@ export const NeedToDoItem = styled.li`
     padding: 20px;
   }
 
-  > h4 {
-    font-weight: 600;
-    font-size: 10px;
-    line-height: 1.2;
-    letter-spacing: -0.02em;
-    margin-bottom: 2px;
-
-    @media screen and (min-width: 768px) {
-      font-size: 14px;
-      line-height: 1.3;
-    }
+  @media screen and (min-width: 1440px) {
+    min-width: 273px;
+    display: flex;
   }
 
-  > p {
+  p {
+    font-family: 'FixelDisplay', sans-serif;
     font-weight: 500;
     font-size: 8px;
     line-height: 1.2;
+    letter-spacing: -0.02em;
 
     @media screen and (min-width: 768px) {
       font-size: 10px;
@@ -277,58 +405,14 @@ export const NeedToDoItem = styled.li`
   }
 `;
 
-export const MadeListItem = styled.li`
-  position: relative;
-  background: #ffffff1a;
-  border-radius: 10px;
-  border: 1px solid #ffffff14;
-  padding: 10px;
-
-  min-width: 140px;
-  backdrop-filter: blur(5px);
-
-  @media screen and (min-width: 768px) {
-    padding: 20px;
-    min-width: 243px;
-    min-height: 176px;
-  }
-
-  > h4 {
-    font-weight: 600;
-    font-size: 10px;
-    line-height: 1.2;
-    margin-bottom: 2px;
-
-    @media screen and (min-width: 768px) {
-      font-size: 14px;
-    }
-  }
-
-  > ul {
-    padding-left: 15px;
-    list-style-type: disc;
-    display: flex;
-    flex-direction: column;
-    gap: 2px;
-
-    li {
-      font-size: 8px;
-      line-height: 1.2;
-      letter-spacing: -0.02em;
-
-      @media screen and (min-width: 768px) {
-        font-size: 10px;
-      }
-    }
-  }
-`;
-
 export const SVGContainer = styled.div`
-  position: absolute;
+  ${(props) =>
+    !props.isDesktop &&
+    'position: absolute; left: 50%; top: -14px; margin-right: 5px;'};
+
   width: 20px;
   height: 20px;
-  left: 50%;
-  top: -14px;
+
   border-radius: 6px;
   display: flex;
   align-items: center;
@@ -342,9 +426,16 @@ export const SVGContainer = styled.div`
     height: 24px;
   }
 
+  @media screen and (min-width: 1440px) {
+    min-width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    transform: none;
+  }
+
   > svg {
-    width: 12px;
-    height: 12px;
+    width: 10px;
+    height: 10px;
   }
 `;
 

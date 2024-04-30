@@ -1,4 +1,6 @@
 import { NeedToDoItem, SVGContainerForNeedItem } from './ZibraniKoshti.styled';
+import { nanoid } from 'nanoid';
+import { useMediaQuery } from 'react-responsive';
 
 export const NeedToDoCards = () => {
   const tasks = [
@@ -6,11 +8,16 @@ export const NeedToDoCards = () => {
     'Встановлення системи кондиціонування',
     'Освітлення простору',
   ];
-  return tasks.map((task, i) => (
-    <NeedToDoItem key={i}>
-      <h4>Залишилось зробити</h4>
-      <p>{task}</p>
-      <SVGContainerForNeedItem>$</SVGContainerForNeedItem>
+
+  const isDesktop = useMediaQuery({ minWidth: 1440 });
+
+  return tasks.map((task) => (
+    <NeedToDoItem key={nanoid()}>
+      <SVGContainerForNeedItem isDesktop={isDesktop}>$</SVGContainerForNeedItem>
+      <div>
+        <h4>Залишилось зробити</h4>
+        <p>{task}</p>
+      </div>
     </NeedToDoItem>
   ));
 };

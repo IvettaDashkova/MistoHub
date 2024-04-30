@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
-import { ProgressBar, Accumulated, AmountGif } from './ZibraniKoshti.styled';
+import { ProgressBar, Accumulated } from './ZibraniKoshti.styled';
+import ProgressBarAmount from './ProgressBarAmount';
 
 const FundraisingProgressBar = ({ totalAmount, targetAmount }) => {
   const percentage = Math.min((totalAmount / targetAmount) * 100, 100);
@@ -14,7 +15,7 @@ const FundraisingProgressBar = ({ totalAmount, targetAmount }) => {
     <ProgressBar>
       <div>
         <Accumulated progress={percentage}>
-          <AmountGif>$125 000</AmountGif>
+          <ProgressBarAmount totalAmount={125000}></ProgressBarAmount>
         </Accumulated>
       </div>
     </ProgressBar>
