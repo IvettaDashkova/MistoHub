@@ -9,8 +9,8 @@ import { useState } from 'react';
 const Navigation = ({ links, onClose }) => {
   const [hoveredIndex, setHoveredIndex] = useState(null);
 
-  const handleMouseEnter = (index) => {
-    setHoveredIndex(index);
+  const handleMouseEnter = (id) => {
+    setHoveredIndex(id);
   };
 
   const handleMouseLeave = () => {
@@ -21,17 +21,17 @@ const Navigation = ({ links, onClose }) => {
     <>
       <nav>
         <StyledNavList>
-          {links.map((link, index) => (
+          {links.map((link) => (
             <li
-              key={index}
-              onMouseEnter={() => handleMouseEnter(index)}
+              key={link.id}
+              onMouseEnter={() => handleMouseEnter(link.id)}
               onMouseLeave={handleMouseLeave}
             >
               <HoverContainer>
-                <StyledNavLink href={link.href} onClick={onClose}>
+                <StyledNavLink href={`#${link.id}`} onClick={onClose}>
                   {link.value}
                 </StyledNavLink>
-                {hoveredIndex === index && (
+                {hoveredIndex === link.id && (
                   <Iconsvg iconName="hoverarrow" width="40" height="40" />
                 )}
               </HoverContainer>

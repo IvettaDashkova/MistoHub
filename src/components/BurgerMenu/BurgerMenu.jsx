@@ -13,8 +13,12 @@ import {
   TopContainer,
 } from './BurgerMenu.styled';
 import Iconsvg from '../Icon/Icon';
+import { useModal } from '../../contexts/ModalHook';
+import { links } from '../Navigation/links';
 
-const BurgerMenu = ({ onClose, isOpen, links }) => {
+const BurgerMenu = () => {
+  const { isModalOpen, closeModal } = useModal();
+
   const customStyles = {
     content: {
       top: '0',
@@ -32,8 +36,8 @@ const BurgerMenu = ({ onClose, isOpen, links }) => {
   return (
     <StyledMenu
       style={customStyles}
-      isOpen={isOpen}
-      onRequestClose={onClose}
+      isOpen={isModalOpen}
+      onRequestClose={closeModal}
       shouldCloseOnEsc={true}
       shouldCloseOnOverlayClick={false}
     >
@@ -44,14 +48,14 @@ const BurgerMenu = ({ onClose, isOpen, links }) => {
           <StyledText>
             <span>Закрити</span>
           </StyledText>
-          <BtnClose onClick={onClose}>
+          <BtnClose onClick={closeModal}>
             <Iconsvg iconName="close" width="14" height="15" />
           </BtnClose>
         </BtnContainer>
       </TopContainer>
 
       <FlexContainer>
-        <Navigation links={links} onClose={onClose} />
+        <Navigation links={links} onClose={closeModal} />
         <ImgContainer>
           <Iconsvg iconName="mistohub" />
         </ImgContainer>

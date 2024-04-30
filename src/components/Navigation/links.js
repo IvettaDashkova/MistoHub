@@ -1,30 +1,30 @@
 export const links = [
   {
     value: 'Головна',
-    href: '',
+    id: 'main',
   },
   {
     value: 'Про проєкт',
-    href: '',
+    id: 'about',
   },
   {
     value: 'Дизайн-проєкт',
-    href: '',
+    id: 'design',
   },
   {
     value: 'Зібрані кошти',
-    href: '',
+    id: 'funds',
   },
   {
     value: 'Інвестори',
-    href: '',
+    id: 'investors',
   },
   {
     value: 'Як інвестувати',
-    href: '',
+    id: 'how',
   },
   {
     value: 'Співзасновники',
-    href: '',
+    id: 'founders',
   },
 ];

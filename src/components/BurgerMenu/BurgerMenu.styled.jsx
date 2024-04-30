@@ -4,6 +4,7 @@ import Modal from 'react-modal';
 export const StyledMenu = styled(Modal)`
   background-color: #ffffff;
   padding: 20px 16px;
+  z-index: 999;
 
   @media screen and (min-width: 768px) {
     padding: 32px;

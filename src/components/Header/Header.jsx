@@ -4,11 +4,14 @@ import { useMediaQuery } from 'react-responsive';
 import { HeaderContainer, StyledHeader } from './Header.styled';
 import SocialBlock from '/src/shared/SocialBlock/SocialBlock';
 import Icon from '/src/components/Icon/Icon';
+import { useModal } from '../../contexts/ModalHook';
 
 function Header() {
   const [transitionClass, setTransitionClass] = useState('');
 
   const isMobile = useMediaQuery({ maxWidth: 767 });
+
+  const { openModal } = useModal();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -64,7 +67,7 @@ function Header() {
               />
               <span>Підтримати проект</span>
             </button>
-            <button type="button" onClick={() => console.log('Menu open!')}>
+            <button type="button" onClick={openModal}>
               <Icon
                 width="54"
                 height="47"
