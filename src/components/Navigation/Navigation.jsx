@@ -3,8 +3,19 @@ import { HoverContainer, StyledNavList } from './Navigation.styled';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
-const Navigation = ({ links, onClose, activeSection }) => {
+const Navigation = ({ links, activeSection, onClose }) => {
   const [hoveredIndex, setHoveredIndex] = useState(null);
+
+  const handleScrollToSection = (sectionId) => {
+    const section = document.getElementById(sectionId);
+    if (section) {
+      window.scrollTo({
+        top: section.offsetTop - 120,
+        behavior: 'smooth',
+      });
+    }
+    onClose();
+  };
 
   const handleMouseEnter = (id) => {
     setHoveredIndex(id);
@@ -26,9 +37,10 @@ const Navigation = ({ links, onClose, activeSection }) => {
             >
               <HoverContainer>
                 <Link
-                  to={`/#${link.id}`}
-                  onClick={onClose}
-                  // className="link"
+                  to={`#${link.id}`}
+                  onClick={() => {
+                    handleScrollToSection(link.id);
+                  }}
                   className={activeSection === link.id ? 'active' : 'link'}
                 >
                   {link.value}

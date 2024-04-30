@@ -5,7 +5,7 @@ export const StyledMenu = styled(Modal)`
   background-color: #ffffff;
   padding: 20px 16px;
   z-index: 999;
-
+  //проблема с zindex хедер располагается над меню ?
   @media screen and (min-width: 768px) {
     padding: 32px;
   }
@@ -89,10 +89,8 @@ export const BtnContainer = styled.div`
 export const ImgContainer = styled.div`
   width: 1053px;
   height: 563px;
-  background-image: url('/src/assets/menu-img/vector.png');
+  background-image: url('/src/assets/menu-img/vector.webp');
   background-repeat: no-repeat;
-  /* background-position: center; */
-  /* overflow: hidden; */
   padding: 0;
   display: none;
   position: relative;
@@ -105,13 +103,12 @@ export const ImgContainer = styled.div`
 
   img {
     width: 100%;
-    /* margin-left: -208px; */
   }
 
   @media screen and (min-device-pixel-ratio: 2),
     (min-resolution: 192dpi),
     (min-resolution: 2dppx) {
-    background-image: url('/src/assets/menu-img/vector-x2.png');
+    background-image: url('/src/assets/menu-img/vector-x2.webp');
   }
 `;
 

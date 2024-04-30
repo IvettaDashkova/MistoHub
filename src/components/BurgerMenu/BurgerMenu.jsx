@@ -14,7 +14,7 @@ import {
 } from './BurgerMenu.styled';
 import Iconsvg from '../Icon/Icon';
 import { useModal } from '../../contexts/ModalHook';
-import { links } from '../Navigation/links';
+import links from '../BurgerMenu/links.json';
 
 const BurgerMenu = ({ activeSection }) => {
   const { isModalOpen, closeModal } = useModal();

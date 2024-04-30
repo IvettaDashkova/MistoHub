@@ -32,8 +32,7 @@
 <symbol id="close" viewBox="0 0 14 15" >
   <path d="M12.8332 1.66669L1.1665 13.3334M1.1665 1.66669L12.8332 13.3334" stroke="#0B0B0B" stroke-opacity="0.5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /></symbol>
 
-<symbol id="topscroll" viewBox="0 0 32 20">
-<path d="m11 6.5-5-5-5 5" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+<symbol id="topscroll" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"><path stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m18 15-6-6-6 6"/></symbol>
 
 <symbol id="hoverarrow" viewBox="0 0 40 40">
   <rect width="40" height="40" rx="20" fill="#F77D07" />
@@ -45,7 +44,6 @@
 
 </defs>
 </svg>
-
 
 
 
