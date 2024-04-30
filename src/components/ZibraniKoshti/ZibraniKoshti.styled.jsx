@@ -1,12 +1,15 @@
 import { keyframes } from '@emotion/react';
 
-import backgroundImage from './Rectangle 42862.png';
+import backgroundImageForMobile from './Rectangle 42862.png';
+import backgroundImageForTablet from './back-for-tablet.png';
+import backgroundImageForDesktop from './back-for-desktop.png';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import styled from '@emotion/styled';
 
 const progressAnimation = keyframes`
   from {
     width: 0;
+   
   }
   to {
     width: ${(props) => props.progress}%;
@@ -16,26 +19,30 @@ const progressAnimation = keyframes`
 const slideInFromBottom = keyframes`
   from {
     transform: translateY(100%);
+    opacity: 0;
      }
   to {
     transform: translateY(0%);
+    opacity: 1;
    
   }
 `;
 
 export const ContainerWrapper = styled.section`
   ${(props) => props.isDesktop && 'display:flex'};
-  background-image: url('${backgroundImage}');
+  background-image: url('${backgroundImageForMobile}');
   background-size: cover;
   background-position: center;
   padding: 60px 0;
 
   @media screen and (min-width: 768px) {
     padding: 80px 0;
+    background-image: url('${backgroundImageForTablet}');
   }
 
   @media screen and (min-width: 1440px) {
     padding: 120px 60px 100px;
+    background-image: url('${backgroundImageForDesktop}');
 
     > div {
       width: 100%;
@@ -49,6 +56,7 @@ export const ContainerWrapper = styled.section`
       flex-direction: column;
       gap: 24px;
       animation: ${slideInFromBottom} 3s ease forwards;
+      backdrop-filter: blur(5px);
     }
   }
 
@@ -83,6 +91,8 @@ export const ContainerWrapper = styled.section`
     margin: 0 auto;
 
     @media screen and (min-width: 768px) {
+      height: 64px;
+      width: 230px;
       padding: 20px 40px;
       font-size: 16px;
       align-items: center;
@@ -90,9 +100,9 @@ export const ContainerWrapper = styled.section`
       min-width: 230px;
     }
 
-    @media screen and (min-width: 768px) {
-      height: 70px;
+    @media screen and (min-width: 1440px) {
       width: 260px;
+      height: 70px;
       padding: 23px 46px;
       font-size: 18px;
     }
@@ -162,7 +172,6 @@ export const ProgressBar = styled.div`
   @media screen and (min-width: 768px) {
     margin-bottom: 116px;
     padding: 0 117px;
-    padding-left: 53px;
   }
 
   @media screen and (min-width: 1440px) {
@@ -316,12 +325,12 @@ export const MadeListItem = styled.li`
   ${(props) => props.isDesktop && 'display: flex;'};
   position: relative;
   background: #ffffff1a;
+  backdrop-filter: blur(5px);
   border-radius: 10px;
   border: 1px solid #ffffff14;
   padding: 10px;
 
   min-width: 140px;
-  backdrop-filter: blur(5px);
 
   @media screen and (min-width: 768px) {
     padding: 20px;
@@ -331,18 +340,6 @@ export const MadeListItem = styled.li`
   @media screen and (min-width: 1440px) {
     padding: 20px;
     max-width: 243px;
-  }
-
-  h4 {
-    font-family: 'Oddval', sans-serif;
-    font-weight: 600;
-    font-size: 10px;
-    line-height: 1.2;
-    margin-bottom: 2px;
-
-    @media screen and (min-width: 768px) {
-      font-size: 14px;
-    }
   }
 
   ul {
@@ -431,6 +428,8 @@ export const SVGContainer = styled.div`
     height: 20px;
     margin-right: 10px;
     transform: none;
+    line-height: 1.3;
+    letter-spacing: -0.02em;
   }
 
   > svg {
@@ -441,44 +440,4 @@ export const SVGContainer = styled.div`
 
 export const SVGContainerForNeedItem = styled(SVGContainer)`
   background-color: #f77d07;
-`;
-
-export const StyledSwiper = styled(Swiper)`
-  display: flex;
-  gap: 8px;
-  padding: 12px;
-
-  > li {
-    position: relative;
-    background: #ffffff1a;
-    border-radius: 10px;
-    border: 1px solid #ffffff14;
-    padding: 20px;
-    width: 140px;
-    h4 {
-      font-weight: 600;
-      font-size: 10px;
-      line-height: 1.2;
-      margin-bottom: 2px;
-    }
-  }
-`;
-
-export const StyledSwiperSlide = styled(SwiperSlide)`
-  position: relative;
-  background: #ffffff1a;
-  border-radius: 10px;
-  border: 1px solid #ffffff14;
-  padding: 20px;
-  > ul {
-    display: flex;
-    flex-direction: column;
-    gap: 2px;
-    li {
-      font-size: 8px;
-      list-style-type: disc;
-      line-height: 1.2;
-      letter-spacing: -0.02em;
-    }
-  }
 `;
