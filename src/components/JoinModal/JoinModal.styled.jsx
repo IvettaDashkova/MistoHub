@@ -11,6 +11,7 @@ export const JoinModalStyled = styled(Modal)`
   left: 50%;
   transform: translate(-50%, -50%);
   padding: 23px 16px 20px 16px;
+
   box-shadow:
     0px 6px 10px rgba(123, 107, 88, 0.95),
     -8px 6px 16px rgba(199, 190, 185, 0.95),
@@ -22,9 +23,8 @@ export const JoinModalStyled = styled(Modal)`
   letter-spacing: -0.02em;
   font-weight: 500;
   color: rgba(11, 11, 11, 0.5);
-  z-index: 999;
   overflow-y: auto;
-  max-height: 90vh;
+  max-height: 99vh;
 
   @media only screen and (min-width: 375px) and (max-width: 812px) {
     width: 375px;
@@ -39,12 +39,16 @@ export const JoinModalStyled = styled(Modal)`
   }
 
   @media only screen and (min-width: 1024px) {
+    width: 100%;
     min-width: 1024px;
     max-width: 1440px;
-    width: 100%;
     height: 880px;
     padding: 40px 80px;
   }
+
+  /* body.modal-open {
+    overflow: hidden;
+  } */
 
   .joinCloseBtn {
     display: flex;
@@ -97,6 +101,10 @@ export const JoinModalStyled = styled(Modal)`
     display: flex;
     justify-content: space-between;
     gap: 90px;
+
+    /* @media only screen and (min-width: 1024px) {
+      height: 656px;
+    } */
   }
 
   .joinForm {
@@ -212,117 +220,10 @@ export const JoinModalStyled = styled(Modal)`
     background-color: #e97200;
   }
 
-  .joinSucccess {
-    padding-top: 199px;
-    padding-bottom: 252px;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-
-    @media only screen and (min-width: 768px) {
-      padding: 244px 31px 290px 31px;
-      gap: 30px;
-    }
-
-    @media only screen and (min-width: 1024px) {
-      padding: 203px 0;
-      margin: auto;
-    }
-  }
-
-  .joinText {
-    color: rgba(11, 11, 11, 0.8);
-    font-size: 16px;
-
-    @media only screen and (min-width: 768px) {
-      font-size: 20px;
-    }
-  }
-
-  .joinSuccessBtn {
-    margin-top: 20px;
-    border-radius: 30px;
-    padding: 13px 20px;
-    width: 122px;
-    height: 44px;
-    background-color: #f77d07;
-    border: none;
-    color: #fff;
-    font-size: 14px;
-
-    @media only screen and (min-width: 768px) {
-      margin-top: 30px;
-      padding: 15px 40px;
-      width: 170px;
-      height: 54px;
-      font-size: 16px;
-    }
-
-    & :hover {
-      color: #e97200;
-    }
-  }
-
-  .joinError {
-    padding-top: 199px;
-    padding-bottom: 220px;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-
-    @media only screen and (min-width: 768px) {
-      padding: 204px 31px 320px 31px;
-      gap: 30px;
-    }
-
-    @media only screen and (min-width: 1024px) {
-      padding: 176px 0 194px 0;
-      margin: auto;
-    }
-
-    & svg {
-      width: 16px;
-      height: 16px;
-      fill: red;
-
-      @media only screen and (min-width: 768px) {
-        width: 20px;
-        height: 20px;
-      }
-    }
-  }
-
-  .joinContacts {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    border: 1px solid rgba(11, 11, 11, 0.2);
-    border-radius: 16px;
-    padding: 20px;
-    width: 244px;
-    height: 152px;
-    color: #0b0b0b;
-
-    @media only screen and (min-width: 768px) {
-      gap: 24px;
-      padding: 24px;
-      width: 293px;
-      height: 196px;
-    }
-  }
-
-  .joinItemContact {
-    font-size: 20px;
-    color: #0b0b0b;
-
-    @media only screen and (min-width: 768px) {
-      font-size: 24px;
-    }
-  }
-
-  .joinItemContact:hover,
-  .joinItemContact:focus-visible {
-    color: #f77d07;
+  .joinSubmitBtn:active,
+  .joinSuccessBtn:active {
+    color: #898b90;
+    background-color: #e3e3e3;
   }
 
   .hidden {
@@ -333,6 +234,14 @@ export const JoinModalStyled = styled(Modal)`
     color: red;
     font-size: 14px;
   }
+
+  .errorInput {
+    border: 2px solid red;
+  }
+
+  /* .error.joinInput:active {
+    outline-color: red;
+  } */
 
   /* Стилі для тексту автозаповнення у Chrome та Safari */
   /* input:-webkit-autofill,
@@ -360,7 +269,10 @@ export const JoinModalStyled = styled(Modal)`
 `;
 
 export const MaskaStyled = styled.div`
-  padding-top: 60px;
+  padding-top: 56px;
+  /* padding-top: 86px; */
+  width: 548px;
+  height: 600px;
 
   .joinImg {
     width: 548px;
@@ -449,6 +361,119 @@ export const InfoStyled = styled.div`
         width: 100px;
         height: 30px;
       }
+    }
+  }
+`;
+
+export const ErrorStyledBlock = styled.div`
+  padding-top: 199px;
+  padding-bottom: 220px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  @media only screen and (min-width: 768px) {
+    padding: 204px 31px 320px 31px;
+    gap: 30px;
+  }
+
+  @media only screen and (min-width: 1024px) {
+    padding: 176px 0 194px 0;
+    margin: auto;
+  }
+
+  & svg {
+    width: 16px;
+    height: 16px;
+    fill: red;
+
+    @media only screen and (min-width: 768px) {
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  .joinContacts {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    border: 1px solid rgba(11, 11, 11, 0.2);
+    border-radius: 16px;
+    padding: 20px;
+    width: 244px;
+    height: 152px;
+    color: #0b0b0b;
+
+    @media only screen and (min-width: 768px) {
+      gap: 24px;
+      padding: 24px;
+      width: 293px;
+      height: 196px;
+    }
+  }
+
+  .joinItemContact {
+    font-size: 20px;
+    color: #0b0b0b;
+
+    @media only screen and (min-width: 768px) {
+      font-size: 24px;
+      margin-top: 6px;
+    }
+  }
+
+  .joinItemContact:hover,
+  .joinItemContact:focus-visible {
+    color: #f77d07;
+  }
+`;
+
+export const PostedStyledBlock = styled.div`
+  padding-top: 199px;
+  padding-bottom: 252px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  @media only screen and (min-width: 768px) {
+    padding: 244px 31px 290px 31px;
+    gap: 30px;
+  }
+
+  @media only screen and (min-width: 1024px) {
+    padding: 178px 0 203px 0;
+  }
+
+  .joinText {
+    color: rgba(11, 11, 11, 0.8);
+    font-size: 16px;
+
+    @media only screen and (min-width: 768px) {
+      font-size: 20px;
+    }
+  }
+
+  .joinSuccessBtn {
+    margin-top: 20px;
+    border-radius: 30px;
+    padding: 13px 20px;
+    width: 122px;
+    height: 44px;
+    background-color: #f77d07;
+    border: none;
+    color: #fff;
+    font-size: 14px;
+
+    @media only screen and (min-width: 768px) {
+      margin-top: 30px;
+      padding: 15px 40px;
+      width: 170px;
+      height: 54px;
+      font-size: 16px;
+    }
+
+    & :hover {
+      color: #e97200;
     }
   }
 `;

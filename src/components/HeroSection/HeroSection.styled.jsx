@@ -5,18 +5,19 @@ export const HeroSectionStyled = styled.section`
   min-width: 320px;
   width: 100%;
   height: 700px;
+  margin: 0 auto;
 
   @media only screen and (min-width: 375px) and (max-width: 812px) {
-    width: 375px;
+    max-width: 375px;
   }
 
   @media only screen and (min-width: 768px) {
     max-width: 768px;
-    width: 100%;
     height: 1024px;
   }
 
   @media only screen and (min-width: 1024px) {
+    min-width: 1024px;
     max-width: 1440px;
     width: 100%;
     height: 880px;
@@ -30,7 +31,26 @@ export const HeroContainer = styled(Container)`
   justify-content: center;
   align-items: center;
 
-  .hero-img {
+  min-width: 320px;
+  width: 100%;
+  height: 700px;
+  margin: 0 auto;
+
+  @media only screen and (min-width: 375px) and (max-width: 812px) {
+    max-width: 375px;
+  }
+
+  @media only screen and (min-width: 768px) {
+    max-width: 768px;
+    height: 1024px;
+  }
+
+  @media only screen and (min-width: 1024px) {
+    max-width: 1440px;
+    height: 880px;
+  }
+
+  .hero-img > {
     min-width: 320px;
     width: 100%;
     height: 700px;
@@ -41,18 +61,18 @@ export const HeroContainer = styled(Container)`
     transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
     @media only screen and (min-width: 375px) and (max-width: 812px) {
-      width: 375px;
+      max-width: 375px;
     }
 
     @media only screen and (min-width: 768px) {
       max-width: 768px;
-      width: 100%;
       height: 1024px;
     }
 
     @media only screen and (min-width: 1024px) {
-      max-width: 1440px;
       width: 100%;
+      min-width: 1024px;
+      max-width: 1440px;
       height: 880px;
     }
   }
@@ -132,22 +152,24 @@ export const HeroContainer = styled(Container)`
 
   .my-swiper {
     min-width: 320px;
+    max-width: 375px;
     width: 100%;
     height: 700px;
+    margin: 0 auto;
 
     @media only screen and (min-width: 375px) and (max-width: 812px) {
-      width: 375px;
+      max-width: 375px;
+      width: 100%;
     }
 
     @media only screen and (min-width: 768px) {
+      min-width: 375px;
       max-width: 768px;
-      width: 100%;
       height: 1024px;
     }
 
     @media only screen and (min-width: 1024px) {
       max-width: 1440px;
-      width: 100%;
       height: 880px;
     }
   }
@@ -158,6 +180,8 @@ export const HeroContainer = styled(Container)`
   }
 
   .swiper-slide {
+    min-width: 320px;
+    width: 100%;
     position: relative;
     filter: brightness(0.8);
 
@@ -170,6 +194,22 @@ export const HeroContainer = styled(Container)`
       bottom: 0;
       background: rgba(11, 11, 11, 0.6);
       filter: brightness(0.8);
+    }
+
+    @media only screen and (min-width: 375px) and (max-width: 812px) {
+      max-width: 375px;
+    }
+
+    @media only screen and (min-width: 768px) {
+      max-width: 768px;
+      height: 1024px;
+    }
+
+    @media only screen and (min-width: 1024px) {
+      min-width: 1024px;
+      max-width: 1440px;
+      width: 100%;
+      height: 880px;
     }
   }
 
@@ -193,7 +233,7 @@ export const HeroContainer = styled(Container)`
     font-family: 'Oddval', sans-serif;
     font-weight: 600;
     font-size: 32px;
-    line-height: 0.9;
+    line-height: 1;
     letter-spacing: -0.02em;
     text-align: center;
     color: #fff;

@@ -1,15 +1,16 @@
+import { useMediaQuery } from 'react-responsive';
+
 import Icon from '../Icon/Icon.jsx';
 
 import { InfoStyled } from './JoinModal.styled.jsx';
-import useWindowWidth from '/src/contexts/WindowWidth';
 
 const Info = () => {
-  const windowWidth = useWindowWidth();
+  const isMobile = useMediaQuery({ maxWidth: 767 });
   return (
     <InfoStyled>
-      {windowWidth >= 768 ? <p>&copy; ГО &laquo;МІСТО ХАБ&raquo;</p> : null}
+      {!isMobile && <p>&copy; ГО &laquo;МІСТО ХАБ&raquo;</p>}
       <div className="joinProtectionBlock">
-        {windowWidth < 768 ? <p>&copy; ГО &laquo;МІСТО ХАБ&raquo;</p> : null}
+        {isMobile && <p>&copy; ГО &laquo;МІСТО ХАБ&raquo;</p>}
         <p className="joinProtection">Всі права захищені</p>
         <p className="developers">
           Розроблено студентами

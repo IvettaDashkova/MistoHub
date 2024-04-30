@@ -49,12 +49,10 @@ function fillSlidesWithData() {
 
     const source1 = document.createElement('source');
     source1.srcset = `${data.imgPng1} 1x, ${data.imgPng2} 2x`;
-    source1.media = '(max-width:1440px)';
     source1.type = 'image/png';
 
     const source2 = document.createElement('source');
     source2.srcset = `${data.imgWebP1} 1x, ${data.imgWebP2} 2x`;
-    source2.media = '(max-width:1440px)';
     source2.type = 'image/webp';
 
     const img = document.createElement('img');

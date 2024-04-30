@@ -2,41 +2,43 @@ import { ErrorMessage, Field, Form, Formik } from 'formik';
 import { useState } from 'react';
 import { useEffect } from 'react';
 import * as Yup from 'yup';
+import { useMediaQuery } from 'react-responsive';
 
 import { useModal } from '/src/contexts/ModalHook';
 import { postData } from '/src/services/API.js';
-import useWindowWidth from '/src/contexts/WindowWidth';
-import { JoinModalStyled } from './JoinModal.styled.jsx';
-import Icon from '../Icon/Icon.jsx';
-import Maska from './Maska.jsx';
-import Info from './Info.jsx';
 
-import { nanoid } from 'nanoid';
+import { JoinModalStyled } from './JoinModal.styled.jsx';
+import Icon from '/src/components/Icon/Icon';
+import Maska from '/src/components/JoinModal/Maska';
+import Info from '/src/components/JoinModal/Info';
+import ErrorBlock from './ErrorBlock.jsx';
+import PostedBlock from './PostedBlock.jsx';
 
 const UserDataSchema = Yup.object().shape({
   name: Yup.string()
-    .required('User name is required!')
-    .min(2, 'User name must be at least 2 characters!')
-    .max(50, 'User name must be less than 50 characters!'),
+    .required(`Ім'я обов'язкове для заповнення!`)
+    .min(2, `Ім'я має бути мінімум 2 символи!`)
+    .max(50, `Ім'я занадто довге!`),
   lastname: Yup.string()
-    .required('User lastname is required!')
-    .min(2, 'User name must be at least 2 characters!')
-    .max(50, 'User name must be less than 50 characters!'),
+    .required(`Прізвище обов'язкове для заповнення!`)
+    .min(2, 'Прізвище має бути мінімум 2 символи!')
+    .max(50, `Прізвище занадто довге!`),
   phone: Yup.string()
-    .required('Phone number is required!')
-    .matches(/^\+3\(\d{3}\)\d{7}$/, 'Invalid phone number format'),
-  link: Yup.string().url('Invalid URL'),
-  about: Yup.string().max(500, 'About must be less than 500 characters'),
+    .required(`Номер телефону обов'язковий для заповнення!`)
+    .matches(/^\+3\d{11}$/, 'Невірний формат'),
+  link: Yup.string().url('Невірна адреса'),
+  about: Yup.string().max(500, 'Про себе може містити до 500 символів.'),
 });
 
 const JoinModal = () => {
-  const windowWidth = useWindowWidth();
   const { isModalOpen, openModal, closeModal } = useModal();
 
   const [userData, setUserData] = useState(null);
   const [isDataPosted, setIsDataPosted] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
+
+  const isDesctopMax = useMediaQuery({ minWidth: 1440 });
 
   const INITIAL_FORM_DATA = {
     name: '',
@@ -83,7 +85,7 @@ const JoinModal = () => {
   }, [userData]);
 
   const handleSubmit = (values, formActions) => {
-    const userData = { ...values, id: nanoid() };
+    const userData = { ...values };
     console.log(userData);
     setUserData(userData);
     formActions.resetForm();
@@ -103,7 +105,12 @@ const JoinModal = () => {
         Open Modal
       </button>
 
-      <JoinModalStyled isOpen={isModalOpen} onRequestClose={handleCloseModal}>
+      <JoinModalStyled
+        isOpen={isModalOpen}
+        onRequestClose={handleCloseModal}
+        style={{ overlay: { zIndex: '2' } }}
+        bodyOpenClassName="modal-open"
+      >
         <p>Підтримати проєкт</p>
         <button
           className="joinCloseBtn"
@@ -121,153 +128,115 @@ const JoinModal = () => {
                 initialValues={INITIAL_FORM_DATA}
                 onSubmit={handleSubmit}
               >
-                <Form className="joinForm">
-                  <h2 className="joinTitle">
-                    Приєднуйся до спільноти <br />
-                    <span className="joinTitleAccent">супергероїв</span> міста!
-                  </h2>
+                {({ errors, touched }) => (
+                  <Form className="joinForm">
+                    <h2 className="joinTitle">
+                      Приєднуйся до спільноти <br />
+                      <span className="joinTitleAccent">супергероїв</span>{' '}
+                      міста!
+                    </h2>
 
-                  <ul className="joinList">
-                    <li>
-                      <label className="joinLabel">
-                        <span>Ім’я*</span>
-                        <Field className="joinInput" type="text" name="name" />
-                        <ErrorMessage
-                          className="error"
-                          name="name"
-                          component="span"
-                        />
-                      </label>
-                    </li>
-                    <li>
-                      <label className="joinLabel">
-                        <span>Прізвище*</span>
-                        <Field
-                          className="joinInput"
-                          type="text"
-                          name="lastname"
-                        />
-                        <ErrorMessage
-                          className="error"
-                          name="lastname"
-                          component="span"
-                        />
-                      </label>
-                    </li>
-                    <li>
-                      <label className="joinLabel">
-                        <span>Телефон*</span>
-                        <Field
-                          className="joinInput"
-                          placeholder="+380"
-                          type="text"
-                          name="phone"
-                        />
-                        <ErrorMessage
-                          className="error"
-                          name="phone"
-                          component="span"
-                        />
-                      </label>
-                    </li>
-                    <li>
-                      <label className="joinLabel">
-                        <span>Інстаграм/Фейсбук</span>
-                        <Field
-                          className="joinInput"
-                          placeholder="Вставити посилання"
-                          type="link"
-                          name="link"
-                        />
-                        <ErrorMessage
-                          className="error"
-                          name="link"
-                          component="span"
-                        />
-                      </label>
-                    </li>
-                    <li>
-                      <label className="joinLabel">
-                        <span>Коротко про себе</span>
-                        <Field
-                          as="textarea"
-                          className="joinInput"
-                          type="text"
-                          name="about"
-                        />
-                        <ErrorMessage
-                          className="error"
-                          name="about"
-                          component="span"
-                        />
-                      </label>
-                    </li>
-                  </ul>
+                    <ul className="joinList">
+                      <li>
+                        <label className="joinLabel">
+                          <span>Ім’я*</span>
+                          <Field
+                            className={`joinInput ${errors.name && touched.name ? 'errorInput' : ''}`}
+                            type="text"
+                            name="name"
+                          />
+                          <ErrorMessage
+                            className="error"
+                            name="name"
+                            component="span"
+                          />
+                        </label>
+                      </li>
+                      <li>
+                        <label className="joinLabel">
+                          <span>Прізвище*</span>
+                          <Field
+                            className={`joinInput ${errors.lastname && touched.lastname ? 'errorInput' : ''}`}
+                            type="text"
+                            name="lastname"
+                          />
+                          <ErrorMessage
+                            className="error"
+                            name="lastname"
+                            component="span"
+                          />
+                        </label>
+                      </li>
+                      <li>
+                        <label className="joinLabel">
+                          <span>Телефон*</span>
+                          <Field
+                            className={`joinInput ${errors.phone && touched.phone ? 'errorInput' : ''}`}
+                            placeholder="+380"
+                            type="text"
+                            name="phone"
+                          />
+                          <ErrorMessage
+                            className="error"
+                            name="phone"
+                            component="span"
+                          />
+                        </label>
+                      </li>
+                      <li>
+                        <label className="joinLabel">
+                          <span>Інстаграм/Фейсбук</span>
+                          <Field
+                            className={`joinInput ${errors.link && touched.link ? 'errorInput' : ''}`}
+                            placeholder="Вставити посилання"
+                            type="text"
+                            name="link"
+                          />
+                          <ErrorMessage
+                            className="error"
+                            name="link"
+                            component="span"
+                          />
+                        </label>
+                      </li>
+                      <li>
+                        <label className="joinLabel">
+                          <span>Коротко про себе</span>
+                          <Field
+                            as="textarea"
+                            className={`joinInput ${errors.about && touched.about ? 'errorInput' : ''}`}
+                            type="text"
+                            name="about"
+                          />
+                          <ErrorMessage
+                            className="error"
+                            name="about"
+                            component="span"
+                          />
+                        </label>
+                      </li>
+                    </ul>
 
-                  <button
-                    className="joinSubmitBtn"
-                    type="submit"
-                    title="Click to submit"
-                    aria-label="Відправити"
-                  >
-                    Відправити
-                  </button>
+                    <button
+                      className="joinSubmitBtn"
+                      type="submit"
+                      title="Click to submit"
+                      aria-label="Відправити"
+                    >
+                      Відправити
+                    </button>
 
-                  {isLoading && <p>Loading data, please wait...</p>}
-                </Form>
+                    {isLoading && <p>Loading data, please wait...</p>}
+                  </Form>
+                )}
               </Formik>
             )}
             {isDataPosted && (
-              <div className="joinSucccess">
-                <h2 className="joinTitle">
-                  Дякуємо за перший крок до змін Полтави! Ваші дані успішно
-                  <span className="joinTitleAccent"> відправлені!</span>
-                </h2>
-                <p className="joinText">
-                  Протягом доби звʼяжемось з вами для обговорення подальших
-                  етапів.
-                </p>
-                <button
-                  className="joinSuccessBtn"
-                  type="button"
-                  onClick={handleCloseModal}
-                >
-                  На сторінку
-                </button>
-              </div>
+              <PostedBlock handleCloseModal={handleCloseModal} />
             )}
-            {isError && (
-              <div className="joinError">
-                <h2 className="joinTitle">
-                  На жаль, зараз{' '}
-                  <span className="joinTitleAccent ">сервіс</span> не відповідає
-                  &#58;&#40;
-                </h2>
-                <p className="joinText">
-                  Будь ласка, скористайтеся поштою або зателефонуйте{' '}
-                  <Icon iconName="heart" />
-                </p>
-                <ul className="joinContacts">
-                  <li>
-                    <p>Телефон:</p>
-                    <a className="joinItemContact" href="tel:+380680745765">
-                      +38 (068) 074-57-65
-                    </a>
-                  </li>
-                  <li>
-                    <p>Email:</p>
-                    <a
-                      className="joinItemContact"
-                      href="mailto:mistohub@gmail.com"
-                    >
-                      mistohub@gmail.com
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            )}
+            {isError && <ErrorBlock />}
           </div>
-          {windowWidth >= 1440 ? <Maska /> : null}
+          {isDesctopMax && <Maska />}
         </div>
         <Info />
       </JoinModalStyled>
