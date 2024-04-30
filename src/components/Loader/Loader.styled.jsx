@@ -1,7 +1,7 @@
 import styled, { keyframes } from 'styled-components';
 
 
-export const spinner = keyframes`
+const spinner = keyframes`
   to {
     transform: rotate(360deg);
   }
