@@ -3,7 +3,7 @@ import { HoverContainer, StyledNavList } from './Navigation.styled';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
-const Navigation = ({ links, onClose }) => {
+const Navigation = ({ links, onClose, activeSection }) => {
   const [hoveredIndex, setHoveredIndex] = useState(null);
 
   const handleMouseEnter = (id) => {
@@ -25,7 +25,12 @@ const Navigation = ({ links, onClose }) => {
               onMouseLeave={handleMouseLeave}
             >
               <HoverContainer>
-                <Link to={`#${link.id}`} onClick={onClose} className="link">
+                <Link
+                  to={`/#${link.id}`}
+                  onClick={onClose}
+                  // className="link"
+                  className={activeSection === link.id ? 'active' : 'link'}
+                >
                   {link.value}
                 </Link>
                 {hoveredIndex === link.id && (

@@ -11,16 +11,10 @@ const TestSections = () => {
             margin: '20px auto',
           }}
         >
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Id ipsum,
-            quo illum sint harum odit accusamus maiores placeat fugiat
-            temporibus eos ipsa ea ex eum repellendus nemo saepe corporis
-            dolore!
-          </p>
+          <p>Головна</p>
         </div>
       </section>
       <section id="about">
-        {' '}
         <div
           style={{
             height: '500px',
@@ -30,16 +24,10 @@ const TestSections = () => {
             margin: '20px auto',
           }}
         >
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Id ipsum,
-            quo illum sint harum odit accusamus maiores placeat fugiat
-            temporibus eos ipsa ea ex eum repellendus nemo saepe corporis
-            dolore!
-          </p>
+          <p>Про проєкт</p>
         </div>
       </section>
       <section id="design">
-        {' '}
         <div
           style={{
             height: '500px',
@@ -49,16 +37,10 @@ const TestSections = () => {
             margin: '20px auto',
           }}
         >
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Id ipsum,
-            quo illum sint harum odit accusamus maiores placeat fugiat
-            temporibus eos ipsa ea ex eum repellendus nemo saepe corporis
-            dolore!
-          </p>
+          <p>Дизайн-проєкт</p>
         </div>
       </section>
       <section id="funds">
-        {' '}
         <div
           style={{
             height: '500px',
@@ -68,16 +50,10 @@ const TestSections = () => {
             margin: '20px auto',
           }}
         >
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Id ipsum,
-            quo illum sint harum odit accusamus maiores placeat fugiat
-            temporibus eos ipsa ea ex eum repellendus nemo saepe corporis
-            dolore!
-          </p>
+          <p>Зібрані кошти</p>
         </div>
       </section>
       <section id="investors">
-        {' '}
         <div
           style={{
             height: '500px',
@@ -87,16 +63,10 @@ const TestSections = () => {
             margin: '20px auto',
           }}
         >
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Id ipsum,
-            quo illum sint harum odit accusamus maiores placeat fugiat
-            temporibus eos ipsa ea ex eum repellendus nemo saepe corporis
-            dolore!
-          </p>
+          <p>Інвестори</p>
         </div>
       </section>
       <section id="how">
-        {' '}
         <div
           style={{
             height: '500px',
@@ -106,16 +76,10 @@ const TestSections = () => {
             margin: '20px auto',
           }}
         >
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Id ipsum,
-            quo illum sint harum odit accusamus maiores placeat fugiat
-            temporibus eos ipsa ea ex eum repellendus nemo saepe corporis
-            dolore!
-          </p>
+          <p>Як інвестувати</p>
         </div>
       </section>
       <section id="founders">
-        {' '}
         <div
           style={{
             height: '500px',
@@ -125,12 +89,7 @@ const TestSections = () => {
             margin: '20px auto',
           }}
         >
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Id ipsum,
-            quo illum sint harum odit accusamus maiores placeat fugiat
-            temporibus eos ipsa ea ex eum repellendus nemo saepe corporis
-            dolore!
-          </p>
+          <p>Співзасновники</p>
         </div>
       </section>
     </>

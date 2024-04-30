@@ -16,7 +16,7 @@ import Iconsvg from '../Icon/Icon';
 import { useModal } from '../../contexts/ModalHook';
 import { links } from '../Navigation/links';
 
-const BurgerMenu = () => {
+const BurgerMenu = ({ activeSection }) => {
   const { isModalOpen, closeModal } = useModal();
 
   const customStyles = {
@@ -55,7 +55,11 @@ const BurgerMenu = () => {
       </TopContainer>
 
       <FlexContainer>
-        <Navigation links={links} onClose={closeModal} />
+        <Navigation
+          links={links}
+          onClose={closeModal}
+          activeSection={activeSection}
+        />
         <ImgContainer>
           <Iconsvg iconName="mistohub" />
         </ImgContainer>
