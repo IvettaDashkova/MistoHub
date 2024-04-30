@@ -67,7 +67,7 @@ const BurgerMenu = ({ activeSection }) => {
       <div>
         <BottomContainer>
           <span>
-            <StyledText>ГО МІСТО ХАБ</StyledText>
+            <StyledText>© ГО «МІСТО ХАБ»</StyledText>
           </span>
           <StyledText>Всі права захищені</StyledText>
           <StyledText>|</StyledText>

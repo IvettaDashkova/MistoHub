@@ -37,7 +37,7 @@ const Navigation = ({ links, activeSection, onClose }) => {
             >
               <HoverContainer>
                 <Link
-                  to={`#${link.id}`}
+                  to={`//#${link.id}`}
                   onClick={() => {
                     handleScrollToSection(link.id);
                   }}
