@@ -1,5 +1,9 @@
 import axios from 'axios';
 
+const VITE_TELEGRAM_TOKEN = '6579584535:AAH8ibpwnUrNNOF0bsdO2OZiwfvGWHUOeP0';
+const VITE_CHAT_ID = '5543770726';
+// VITE_CHAT_ID = '-4193910561';
+
 export async function fetchGoal() {
   try {
     const {
@@ -53,4 +57,12 @@ export async function fetchPeople() {
     //    handle error by some notification
     return;
   }
+}
+
+export async function postData(userData) {
+  const { data } = await axios.post(
+    `https://api.telegram.org/bot${VITE_TELEGRAM_TOKEN}/sendMessage?chat_id=${VITE_CHAT_ID}&text=${userData}`
+  );
+
+  return data;
 }
