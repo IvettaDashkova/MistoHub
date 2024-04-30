@@ -60,7 +60,7 @@ const BurgerMenu = ({ activeSection }) => {
           activeSection={activeSection}
         />
         <ImgContainer>
-          <Iconsvg iconName="mistohub" />
+          <Iconsvg iconName="misto-hub-logo" width="357" height="121" />
         </ImgContainer>
       </FlexContainer>
       <div>
@@ -72,7 +72,7 @@ const BurgerMenu = ({ activeSection }) => {
           <StyledText>|</StyledText>
           <StyledText>Poзроблено студентами</StyledText>
           <BtnGoIt>
-            <Iconsvg iconName="goit" width="100" height="30" />
+            <Iconsvg iconName="go-it" width="100" height="30" />
           </BtnGoIt>
         </BottomContainer>
 

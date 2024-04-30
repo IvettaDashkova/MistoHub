@@ -94,6 +94,14 @@ export const ImgContainer = styled.div`
   position: relative;
   left: 128px;
   background-size: contain;
+  position: relative;
+
+  svg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
 
   @media screen and (min-width: 1440px) {
     display: block;
@@ -125,6 +133,7 @@ export const BottomContainer = styled.div`
   gap: 8px;
   flex-wrap: wrap;
   padding: 0;
+  align-items: center;
 
   @media screen and (min-width: 768px) {
     justify-content: end;

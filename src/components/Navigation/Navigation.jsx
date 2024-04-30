@@ -45,9 +45,7 @@ const Navigation = ({ links, activeSection, onClose }) => {
                 >
                   {link.value}
                 </Link>
-                {hoveredIndex === link.id && (
-                  <Iconsvg iconName="hoverarrow" width="40" height="40" />
-                )}
+                {hoveredIndex === link.id && <Iconsvg iconName="hoverarrow" />}
               </HoverContainer>
             </li>
           ))}

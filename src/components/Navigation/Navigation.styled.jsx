@@ -19,7 +19,6 @@ export const StyledNavList = styled.ul`
 
     @media screen and (min-width: 768px) {
       font-size: 44px;
-      line-height: 1.14;
     }
   }
 
@@ -33,7 +32,6 @@ export const StyledNavList = styled.ul`
     border: none;
     @media screen and (min-width: 768px) {
       font-size: 44px;
-      line-height: 1.14;
     }
 
     &:hover {
@@ -51,5 +49,15 @@ export const HoverContainer = styled.div`
 
   @media screen and (min-width: 768px) {
     width: 466px;
+  }
+
+  svg {
+    width: 40px;
+    height: 40px;
+
+    @media screen and (min-width: 768px) {
+      width: 60px;
+      height: 60px;
+    }
   }
 `;
