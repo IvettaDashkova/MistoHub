@@ -33,6 +33,7 @@ export const ListItem = styled.div`
     }
 
   h3 {
+   color: #0B0B0B;
     font-family: Oddval;
     font-size: 18px;
     font-weight: 600;
@@ -47,7 +48,6 @@ export const ListItem = styled.div`
     line-height: 1.3;
     letter-spacing: -0.02em;
     text-align: center;
-    color: rgba(11, 11, 11, 0.5);
   }
 
   @media (min-width: 768px) {

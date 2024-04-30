@@ -15,7 +15,7 @@ const MyGoogleMap = () => {
       <GoogleMap
         mapContainerClassName="map-wrapper"
         center={center}
-        zoom={18}
+        zoom={19}
         options={{
           language: 'uk',
           gestureHandling: 'greedy',

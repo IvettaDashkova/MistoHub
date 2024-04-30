@@ -41,7 +41,9 @@ body {
   height: 100%;
   margin: 0;
 }
-
+.modal-open {
+  overflow: hidden;
+}
 h1,
 h2,
 h3,

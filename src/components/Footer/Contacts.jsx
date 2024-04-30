@@ -1,7 +1,8 @@
 import { Link } from 'react-router-dom';
 import { useMediaQuery } from 'react-responsive';
-export const isMobile = useMediaQuery({ query: '(max-width: 768px)' });
+
 const Contacts = () => {
+  const isMobile = useMediaQuery({ query: '(max-width: 768px)' });
   return (
     <ul>
       <li>

@@ -2,7 +2,6 @@ import { StyledFooter, FooterContainer, FooterDown } from './Footer.styled';
 import Contacts from './Contacts';
 import MyGoogleMap from './MyGoogleMap';
 import Iconsvg from '../Icon/Icon';
-import TeamModal from '../TeamModal/TeamModal';
 import { Link } from 'react-router-dom';
 import { useModal } from '../../contexts/ModalHook';
 
@@ -18,7 +17,7 @@ export default function Footer() {
             <Iconsvg
               width="81"
               height="27"
-              iconName="icon-logo"
+              iconName="main-logo"
               styles="icon-logo"
             />
             <p className="address">м.Полтава, вул. Спаська, 10</p>
@@ -78,7 +77,6 @@ export default function Footer() {
           </div>
         </FooterDown>
       </FooterContainer>
-      <TeamModal />
     </StyledFooter>
   );
 }
