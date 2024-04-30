@@ -40,7 +40,7 @@ function Header() {
         />
         {isMobile ? (
           <>
-            <button type="button" onClick={() => console.log('Menu open!')}>
+            <button type="button" onClick={openModal}>
               <Icon
                 width="44"
                 height="38"
