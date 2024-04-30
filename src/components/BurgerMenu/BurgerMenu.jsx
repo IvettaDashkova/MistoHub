@@ -20,15 +20,14 @@ const BurgerMenu = ({ activeSection }) => {
   const { isModalOpen, closeModal } = useModal();
 
   const customStyles = {
-    content: {
-      top: '0',
-      left: '0',
-      width: '100vw',
-      height: '100vh',
-      display: 'flex',
-      flexDirection: 'column',
-      justifyContent: 'space-between',
-    },
+    top: '0',
+    left: '0',
+    width: '100vw',
+    height: '100vh',
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'space-between',
+    overlay: { zIndex: '2' },
   };
 
   StyledMenu.setAppElement('#root');
