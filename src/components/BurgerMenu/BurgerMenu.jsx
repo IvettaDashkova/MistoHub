@@ -28,6 +28,7 @@ const BurgerMenu = ({ activeSection }) => {
     flexDirection: 'column',
     justifyContent: 'space-between',
     overlay: { zIndex: '2' },
+    bodyOpenClassName: 'modal-open',
   };
 
   StyledMenu.setAppElement('#root');
