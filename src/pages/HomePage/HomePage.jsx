@@ -1,4 +1,5 @@
 import Modal from 'react-modal';
+import Header from '/src/components/Header/Header';
 import { ZibraniKoshti } from '../../components/ZibraniKoshti/ZibraniKoshti';
 
 
@@ -9,6 +10,7 @@ const HomePage = () => {
 
   return (
     <>
+      <Header />
       <main>
         <ZibraniKoshti />
       </main>
