@@ -61,12 +61,6 @@ export const About = () => {
               }
             }
           }}
-          slidesPerView = {1}
-          grid={{
-              row: 3
-          }}
-          initialSlide = {0}
-          enabled={true}
           pagination={{
             enabled: false,
             clickable: false,
