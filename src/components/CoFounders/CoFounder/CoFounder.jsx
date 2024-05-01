@@ -23,7 +23,7 @@ const CoFounder = ({
   return (
     <ListItem>
       <PersonImageContainer>
-        <PersonImage>
+        <picture>
           <source srcSet={webpRetina} type="image/webp" />
 
           <source
@@ -33,8 +33,8 @@ const CoFounder = ({
           />
           <source srcSet={webp} type="image/webp" />
           <source srcSet={jpg} type="image/jpg" alt="Co-Founder avatar." />
-          <img src={jpg} />
-        </PersonImage>
+          <PersonImage src={jpg} />
+        </picture>
         {instagram !== null ? (
           <SocialNetworkLink href={instagram} target="blank">
             <Iconsvg
