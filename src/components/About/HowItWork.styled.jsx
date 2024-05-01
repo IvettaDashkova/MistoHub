@@ -5,7 +5,7 @@ import bgImageDesktop from '../../assets/about/howItWorkBg-desktop.svg';
 import { AboutProjectContainer } from './AboutProject.styled';
 
 
-export const HowItWorkBackground = styled.section`
+export const HowItWorkBackground = styled.div`
   width: 100%;
 
   background-image: url(${bgImage});
