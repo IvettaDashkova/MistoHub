@@ -55,7 +55,7 @@ export const HowItWork = () => {
               <SwiperSlide tag="li" className="how-it-work-item">
                 <div className="how-it-work-number">2</div>
                 <p className="how-it-work-text">
-                  У відновленій будівлі відкривається МІСТОХАБ, в якому
+                  У відновленій будівлі відкривається МІСТОХАБ в якому
                   функціонують:{' '}
                   <span className="accent">
                     Кафе, Крамниця локальних виробників Містошоп, Івент-простір
