@@ -1,5 +1,4 @@
 import Modal from 'react-modal';
-import AboutProject from '../../components/About/AboutProject';
 import Header from '/src/components/Header/Header';
 import { ZibraniKoshti } from '../../components/ZibraniKoshti/ZibraniKoshti';
 
@@ -10,7 +9,6 @@ const HomePage = () => {
     <>
       <Header />
       <main>
-        <AboutProject />
         <ZibraniKoshti />
       </main>
     </>
