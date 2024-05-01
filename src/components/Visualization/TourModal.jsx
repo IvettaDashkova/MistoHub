@@ -1,6 +1,6 @@
 import { forwardRef, useEffect, useCallback, useRef } from 'react';
 import { ReactPhotoSphereViewer } from 'react-photo-sphere-viewer';
-import Icon from './Icon';
+import Iconsvg from '../Icon/Icon';
 import { ModalWrapperTour, CloseButton } from './StyledComponents';
 
 const TourModal = forwardRef(({ image, onClose }, ref) => {
@@ -32,10 +32,10 @@ const TourModal = forwardRef(({ image, onClose }, ref) => {
         width={'100%'}
         defaultZoomLvl={10}
         navbar={true}
-        // style={{ cursor: `grab` }}
+       
       />
       <CloseButton onClick={onClose}>
-        <Icon width="18" height="18" iconName="icon-closeX" />
+        <Iconsvg width="18" height="18" iconName="icon-closeX" />
       </CloseButton>
     </ModalWrapperTour>
   );

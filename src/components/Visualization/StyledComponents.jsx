@@ -57,9 +57,6 @@ export const Card = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
   position: relative;
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
 
@@ -110,19 +107,18 @@ export const CardTitle = styled.h2`
 `;
 
 export const ButtonTour = styled.button`
-  border-radius: 30px;
-  padding: 15px 20px;
-  box-shadow: 0 1px 2px 0 rgba(16, 24, 40, 0.05);
-  background: #ffffff;
-  border: none;
-
   font-family: 'MacPaw Fixel Display', sans-serif;
   font-weight: 600;
   font-size: 14px;
   line-height: 1.29;
   letter-spacing: -0.02em;
   color: #0b0b0b;
-  cursor: pointer;
+  border-radius: 30px;
+  padding: 15px 20px;
+  box-shadow: 0 1px 2px 0 rgba(16, 24, 40, 0.05);
+  background: #ffffff;
+  border: none;
+
   transition: all 300ms ease-in-out;
 
   &:hover,
@@ -216,7 +212,6 @@ export const ModalWrapperTour = styled.div`
   width: 100%;
   height: 100%;
   cursor: grab;
-  /* cursor: move; */
 
   & .psv-navbar {
     background-color: transparent;
@@ -255,7 +250,7 @@ export const CloseButton = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
-  cursor: pointer;
+
   stroke: #ffffff;
   padding: 5px;
   transition: all 300ms ease-in-out;

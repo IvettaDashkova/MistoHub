@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { useMediaQuery } from 'react-responsive';
 import TourModal from './TourModal';
-import { images } from './ImageImports';
+import { images } from './ImageImportsVisualization';
 import {
   ContainerVisual,
   TitleContainer,
@@ -13,7 +13,7 @@ import {
   LeftArrow,
   RightArrow,
 } from './StyledComponents';
-import Icon from './Icon';
+import Iconsvg from '../Icon/Icon';
 
 const Visualization = () => {
   // визначення ширини екрану
@@ -121,14 +121,14 @@ const Visualization = () => {
           className={`${currentCard > 0 ? 'enabled' : ''}`}
           onClick={prevCard}
         >
-          <Icon width={iconSize} height={iconSize} iconName="icon-arrow-left" />
+          <Iconsvg width={iconSize} height={iconSize} iconName="icon-arrow-left" />
         </LeftArrow>
         <RightArrow
           type="button"
           className={`${currentCard < images.length - (isDesktop ? 2 : 1) ? 'enabled' : ''}`}
           onClick={nextCard}
         >
-          <Icon
+          <Iconsvg
             width={iconSize}
             height={iconSize}
             iconName="icon-arrow-right"
