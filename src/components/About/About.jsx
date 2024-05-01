@@ -2,11 +2,12 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/pagination';
-
 import { AboutSection, AboutContainer } from './About.styled';
+import { HowItWork } from '../About/HowItWork';
 
 export const About = () => {
   return (
+    <>
     <AboutSection id="about-project">
       <AboutContainer>
         <p className="about-project">Про проєкт</p>
@@ -103,5 +104,7 @@ export const About = () => {
         </p>
       </AboutContainer>
     </AboutSection>
+    <HowItWork />
+    </>
   );
 };

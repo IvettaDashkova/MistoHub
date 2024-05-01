@@ -5,7 +5,11 @@ export const Container = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+<<<<<<< HEAD
   // padding-top: 500px;
+=======
+  //padding-top: 500px;
+>>>>>>> demchukv/howitwork
 
   .vector-svg {
     fill: green;
