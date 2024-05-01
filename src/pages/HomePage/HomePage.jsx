@@ -4,7 +4,7 @@ import AboutProject from '../../components/About/AboutProject';
 import { ZibraniKoshti } from '../../components/ZibraniKoshti/ZibraniKoshti';
 import ScrollToTopButton from '../../components/ScrollToTopButton/ScrollToTopButton';
 import BurgerMenu from '../../components/BurgerMenu/BurgerMenu';
-import TestSections from '../../components/ScrollToTopButton/TestSections';
+// import TestSections from '../../components/ScrollToTopButton/TestSections';
 import { useEffect } from 'react';
 import { useState } from 'react';
 // import { useNavigate } from 'react-router-dom';
