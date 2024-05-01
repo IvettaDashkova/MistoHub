@@ -203,7 +203,7 @@ export const CardsContainer = styled.div`
   }
 `;
 
-/* ================= стилі для 3D туру ======================*/
+/* ========= стилі для 3D туру ===========*/
 
 export const ModalWrapperTour = styled.div`
   border-radius: 20px;

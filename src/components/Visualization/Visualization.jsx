@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { useMediaQuery } from 'react-responsive';
 import TourModal from './TourModal';
-import { images } from './ImageImportsVisualization';
+import { images } from '../../constants/ImageImportsVisualization';
 import {
   ContainerVisual,
   TitleContainer,
@@ -45,7 +45,7 @@ const Visualization = () => {
       return images[cardIndex].srcSet.mobile;
     }
   };
-  //  оновлення поточної картки при зміні розміру вікна
+  //  оновлення поточної картки при зміні розміру екрану
   useEffect(() => {
     const handleResize = () => {
       setCurrentCard(currentCard);
