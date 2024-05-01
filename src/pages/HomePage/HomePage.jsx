@@ -50,7 +50,7 @@ const HomePage = () => {
         <AboutProject />
         <ZibraniKoshti />
         <ScrollToTopButton />
-        <TestSections />
+        {/* <TestSections /> */}
       </main>
     </>
   );
