@@ -61,7 +61,8 @@ export async function fetchPeople() {
 
 export async function postData(userData) {
   const { data } = await axios.post(
-    `https://api.telegram.org/bot${VITE_TELEGRAM_TOKEN}/sendMessage?chat_id=${VITE_CHAT_ID}&text=${userData}`
+    `https://api.telegram.org/bot${VITE_TELEGRAM_TOKEN}/sendMessage`,
+    { chat_id: VITE_CHAT_ID, parse_mode: 'html', text: userData }
   );
 
   return data;

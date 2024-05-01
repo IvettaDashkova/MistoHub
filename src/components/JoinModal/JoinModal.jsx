@@ -45,7 +45,7 @@ const JoinModal = () => {
   };
 
   const handleSubmit = async (values, formActions) => {
-    const textedData = `Ім’я: ${values.name} Прізвище: ${values.lastname} Телефон: ${values.phone} Інстаграм/Фейсбук: ${values.link} Про себе:${values.about}`;
+    const textedData = `<b>Ім’я: ${values.name}</b>\n<b>Прізвище: ${values.lastname}</b>\nТелефон: <b>${values.phone}</b>\nІнстаграм/Фейсбук: <b>${values.link}</b>\nПро себе:${values.about}`;
     formActions.resetForm();
 
     try {
