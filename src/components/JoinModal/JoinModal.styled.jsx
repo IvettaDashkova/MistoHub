@@ -101,10 +101,6 @@ export const JoinModalStyled = styled(Modal)`
     display: flex;
     justify-content: space-between;
     gap: 90px;
-
-    /* @media only screen and (min-width: 1024px) {
-      height: 656px;
-    } */
   }
 
   .joinForm {
@@ -238,39 +234,10 @@ export const JoinModalStyled = styled(Modal)`
   .errorInput {
     border: 2px solid red;
   }
-
-  /* .error.joinInput:active {
-    outline-color: red;
-  } */
-
-  /* Стилі для тексту автозаповнення у Chrome та Safari */
-  /* input:-webkit-autofill,
-  textarea:-webkit-autofill {
-    background-color: transparent;
-    font-size: 16px;
-    color: #0b0b0b;
-  } */
-
-  /* Стилі для тексту автозаповнення у Firefox */
-  /* input:-moz-placeholder,
-  textarea:-moz-placeholder {
-    background-color: transparent;
-    font-size: 16px;
-    color: #0b0b0b;
-  } */
-
-  /* Стилі для тексту автозаповнення у IE */
-  /* input:-ms-input-placeholder,
-  textarea:-ms-input-placeholder {
-    background-color: transparent;
-    font-size: 16px;
-    color: #0b0b0b;
-  } */
 `;
 
 export const MaskaStyled = styled.div`
-  padding-top: 56px;
-  /* padding-top: 86px; */
+  margin-top: 56px;
   width: 548px;
   height: 600px;
 

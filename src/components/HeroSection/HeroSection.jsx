@@ -4,10 +4,10 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/navigation';
 
-import { heroData } from '../../constants/dataHeroSwiper.js';
-import { HeroSectionStyled } from './HeroSection.styled.jsx';
-import { HeroContainer } from './HeroSection.styled.jsx';
-import Icon from '../Icon/Icon.jsx';
+import { heroData } from '/src/constants/dataHeroSwiper.js';
+import { HeroSectionStyled } from '/src/components/HeroSection/HeroSection.styled';
+import { HeroContainer } from '/src/components/HeroSection/HeroSection.styled';
+import Icon from '/src/components/Icon/Icon';
 
 const HeroSection = () => {
   const swiperRef = useRef(null);

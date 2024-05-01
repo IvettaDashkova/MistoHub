@@ -5,7 +5,7 @@ export const HeroSectionStyled = styled.section`
   min-width: 320px;
   width: 100%;
   height: 700px;
-  margin: 0 auto;
+  margin: 0 auto 150px auto;
 
   @media only screen and (min-width: 375px) and (max-width: 812px) {
     max-width: 375px;
@@ -50,13 +50,12 @@ export const HeroContainer = styled(Container)`
     height: 880px;
   }
 
-  .hero-img > {
+  .hero-img > img {
     min-width: 320px;
     width: 100%;
     height: 700px;
     display: flex;
     justify-content: center;
-    overflow: hidden;
     object-fit: cover;
     transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
 

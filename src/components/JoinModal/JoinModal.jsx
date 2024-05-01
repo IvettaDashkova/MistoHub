@@ -1,18 +1,17 @@
 import { ErrorMessage, Field, Form, Formik } from 'formik';
-import { useState } from 'react';
-import { useEffect } from 'react';
-import * as Yup from 'yup';
 import { useMediaQuery } from 'react-responsive';
+import { useState } from 'react';
+import * as Yup from 'yup';
 
 import { useModal } from '/src/contexts/ModalHook';
 import { postData } from '/src/services/API.js';
 
-import { JoinModalStyled } from './JoinModal.styled.jsx';
+import { JoinModalStyled } from '/src/components/JoinModal/JoinModal.styled';
+import ErrorBlock from '/src/components/JoinModal/ErrorBlock';
+import PostedBlock from '/src/components/JoinModal/PostedBlock';
 import Icon from '/src/components/Icon/Icon';
 import Maska from '/src/components/JoinModal/Maska';
 import Info from '/src/components/JoinModal/Info';
-import ErrorBlock from './ErrorBlock.jsx';
-import PostedBlock from './PostedBlock.jsx';
 
 const UserDataSchema = Yup.object().shape({
   name: Yup.string()
@@ -32,12 +31,9 @@ const UserDataSchema = Yup.object().shape({
 
 const JoinModal = () => {
   const { isModalOpen, openModal, closeModal } = useModal();
-
-  const [userData, setUserData] = useState(null);
   const [isDataPosted, setIsDataPosted] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
-
   const isDesctopMax = useMediaQuery({ minWidth: 1440 });
 
   const INITIAL_FORM_DATA = {
@@ -48,54 +44,31 @@ const JoinModal = () => {
     about: '',
   };
 
-  useEffect(() => {
-    console.log(userData);
-    if (!userData || userData === null) {
-      setIsLoading(false);
-      setIsError(false);
-      setIsDataPosted(false);
-      return;
-    }
-
-    async function postUserData() {
-      try {
-        setIsLoading(true);
-        setIsError(false);
-
-        const textedData = `${userData.name} ${userData.lastname} ${userData.phone} ${userData.link} ${userData.about}`;
-
-        const data = await postData(textedData);
-        console.log(data);
-        console.log(data.result.text);
-
-        if (data.result.text !== '') {
-          console.log('well done');
-        }
-        setIsDataPosted(true);
-        // setUserData(null);
-      } catch (err) {
-        setIsError(true);
-        console.log(err);
-      } finally {
-        setIsLoading(false);
-      }
-    }
-
-    postUserData();
-  }, [userData]);
-
-  const handleSubmit = (values, formActions) => {
-    const userData = { ...values };
-    console.log(userData);
-    setUserData(userData);
+  const handleSubmit = async (values, formActions) => {
+    const textedData = `Ім’я: ${values.name} Прізвище: ${values.lastname} Телефон: ${values.phone} Інстаграм/Фейсбук: ${values.link} Про себе:${values.about}`;
     formActions.resetForm();
+
+    try {
+      setIsLoading(true);
+
+      const data = await postData(textedData);
+
+      if (data.result.text !== '') {
+        console.log(data.result.text);
+      }
+
+      setIsDataPosted(true);
+    } catch (err) {
+      setIsError(true);
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   const handleCloseModal = () => {
     setIsError(false);
     setIsLoading(false);
     setIsDataPosted(false);
-    setUserData(null);
     closeModal();
   };
 
