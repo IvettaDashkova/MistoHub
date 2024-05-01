@@ -1,5 +1,10 @@
-import { BuildingContainer } from './Building.styled';
-
+import {
+  BuildingContainer,
+  BIconOne,
+  BIconTwo,
+  BIconThree,
+  BIconFour,
+} from './Building.styled';
 import building from '../../assets/about/building.jpg';
 import building2x from '../../assets/about/building@2x.jpg';
 import buildingTablet from '../../assets/about/building-tablet.jpg';
@@ -14,7 +19,6 @@ import buildingTablet2xWebP from '../../assets/about/building-tablet@2x.webp';
 import buildingMobileWebP from '../../assets/about/building-mobile.webp';
 import buildingMobile2xWebP from '../../assets/about/building-mobile@2x.webp';
 
-import Icon from '../../components/Icon/Icon';
 
 export const Building = () => {
   return (
@@ -33,69 +37,43 @@ export const Building = () => {
               type="image/webp"
               media="(max-width: 767px)"
               srcSet={`${buildingMobileWebP} 1x, ${buildingMobile2xWebP} 2x`}
-              width="343"
-              height="348"
+              width="343" height="348"
             />
             <source
               media="(max-width: 767px)"
               srcSet={`${buildingMobile} 1x, ${buildingMobile2x} 2x`}
-              width="343"
-              height="348"
+              width="343" height="348"
             />
             <source
               type="image/webp"
               media="(max-width: 1439px)"
               srcSet={`${buildingTabletWebP} 1x, ${buildingTablet2xWebP} 2x`}
-              width="704"
-              height="534"
+              width="704" height="534"
             />
             <source
               media="(max-width: 1439px)"
               srcSet={`${buildingTablet} 1x, ${buildingTablet2x} 2x`}
-              width="704"
-              height="534"
-              loading="lazy"
-              decoding="async"
+              width="704" height="534"
             />
             <source
               type="image/webp"
               srcSet={`${buildingWebP} 1x, ${building2xWebP} 2x`}
-              width="1200"
-              height="753"
+              width="1200" height="753"
             />
             <img
               className="building-img"
-              srcSet={`${building} 1x, ${building2x} 2x`}
+              srcSet={`${building} 1x, ${building2x} 2x`} 
               src={building}
               alt="Будівля МІСТОХАБ"
               width="1200"
               height="753"
+              loading="lazy" decoding="async"
             />
           </picture>
-          <Icon
-            width="91"
-            height="45"
-            iconName="icon-building1"
-            styles="b-icon b1"
-          />
-          <Icon
-            width="40"
-            height="40"
-            iconName="icon-building2"
-            styles="b-icon b2"
-          />
-          <Icon
-            width="27"
-            height="59"
-            iconName="icon-building3"
-            styles="b-icon b3"
-          />
-          <Icon
-            width="100"
-            height="69"
-            iconName="icon-building4"
-            styles="b-icon b4"
-          />
+          <BIconOne />
+          <BIconTwo />
+          <BIconThree />
+          <BIconFour />
         </div>
       </BuildingContainer>
   );
