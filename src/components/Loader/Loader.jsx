@@ -1,4 +1,3 @@
-import React from 'react';
 import { LoaderContainer, Text } from './Loader.styled';
 import Iconsvg from '../Icon/Icon';
 
