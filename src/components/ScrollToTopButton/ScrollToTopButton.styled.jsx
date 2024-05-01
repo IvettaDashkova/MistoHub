@@ -10,25 +10,23 @@ export const StyledScrollButton = styled.button`
   background-color: #f77d07;
   border: none;
   outline: none;
-  padding: 8px;
   transition: opacity 0.3s ease;
   opacity: ${(props) => (props.visible ? '1' : '0')};
-
   @media screen and (min-width: 768px) {
     height: 60px;
     width: 60px;
   }
 
   svg {
-    width: 20px;
-    height: 20px;
+    width: 12px;
+    height: 8px;
     stroke-width: 1.6px;
     fill: none;
     stroke: #fff;
 
     @media screen and (min-width: 768px) {
-      width: 24px;
-      height: 24px;
+      width: 14px;
+      height: 10px;
       stroke-width: 2px;
     }
   }

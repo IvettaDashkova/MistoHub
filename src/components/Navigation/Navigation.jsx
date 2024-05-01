@@ -1,5 +1,5 @@
 import Iconsvg from '../Icon/Icon';
-import { HoverContainer, StyledNavList } from './Navigation.styled';
+import { StyledNavList, StyledItem } from './Navigation.styled';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
@@ -30,24 +30,24 @@ const Navigation = ({ links, activeSection, onClose }) => {
       <nav>
         <StyledNavList>
           {links.map((link) => (
-            <li
+            <StyledItem
               key={link.id}
               onMouseEnter={() => handleMouseEnter(link.id)}
               onMouseLeave={handleMouseLeave}
             >
-              <HoverContainer>
-                <Link
-                  to={`//#${link.id}`}
-                  onClick={() => {
-                    handleScrollToSection(link.id);
-                  }}
-                  className={activeSection === link.id ? 'active' : 'link'}
-                >
-                  {link.value}
-                </Link>
-                {hoveredIndex === link.id && <Iconsvg iconName="hoverarrow" />}
-              </HoverContainer>
-            </li>
+              {/* <HoverContainer> */}
+              <Link
+                to={`//#${link.id}`}
+                onClick={() => {
+                  handleScrollToSection(link.id);
+                }}
+                className={activeSection === link.id ? 'active' : 'link'}
+              >
+                {link.value}
+              </Link>
+              {hoveredIndex === link.id && <Iconsvg iconName="hoverarrow" />}
+              {/* </HoverContainer> */}
+            </StyledItem>
           ))}
         </StyledNavList>
       </nav>

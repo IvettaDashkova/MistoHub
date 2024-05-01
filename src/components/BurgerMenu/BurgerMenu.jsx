@@ -1,4 +1,5 @@
 import Navigation from '../Navigation/Navigation';
+import { Link } from 'react-router-dom';
 import {
   BottomContainer,
   BtnClose,
@@ -22,11 +23,6 @@ const BurgerMenu = ({ activeSection }) => {
   const customStyles = {
     top: '0',
     left: '0',
-    width: '100vw',
-    height: '100vh',
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'space-between',
     overlay: { zIndex: '2' },
     bodyOpenClassName: 'modal-open',
   };
@@ -78,20 +74,20 @@ const BurgerMenu = ({ activeSection }) => {
         </BottomContainer>
 
         <SocLincContainer>
-          <a
+          <Link
             href=" https://www.instagram.com/mistohub "
             target="_blank"
             rel="noreferrer"
           >
-            <Iconsvg iconName="instagram" width="36" height="36" />
-          </a>
-          <a
+            <Iconsvg iconName="instagram-menu" width="36" height="36" />
+          </Link>
+          <Link
             href="https://www.facebook.com/mistohub/?locale=uk_UA"
             target="_blank"
             rel="noreferrer"
           >
-            <Iconsvg iconName="facebook" width="36" height="36" />
-          </a>
+            <Iconsvg iconName="facebook-menu" width="36" height="36" />
+          </Link>
         </SocLincContainer>
       </div>
     </StyledMenu>

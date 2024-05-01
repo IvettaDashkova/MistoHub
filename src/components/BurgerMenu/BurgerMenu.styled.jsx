@@ -4,6 +4,12 @@ import Modal from 'react-modal';
 export const StyledMenu = styled(Modal)`
   background-color: #ffffff;
   padding: 20px 16px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
   @media screen and (min-width: 768px) {
     padding: 32px;
   }
@@ -87,7 +93,7 @@ export const BtnContainer = styled.div`
 export const ImgContainer = styled.div`
   width: 1053px;
   height: 563px;
-  background-image: url('/src/assets/menu-img/vector.webp');
+  background-image: url('/src/assets/menu-img/vector.png');
   background-repeat: no-repeat;
   padding: 0;
   display: none;
@@ -114,7 +120,7 @@ export const ImgContainer = styled.div`
   @media screen and (min-device-pixel-ratio: 2),
     (min-resolution: 192dpi),
     (min-resolution: 2dppx) {
-    background-image: url('/src/assets/menu-img/vector-x2.webp');
+    background-image: url('/src/assets/menu-img/vector-x2.png');
   }
 `;
 

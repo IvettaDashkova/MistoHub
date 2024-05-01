@@ -3,9 +3,7 @@ import styled from 'styled-components';
 export const StyledNavList = styled.ul`
   display: flex;
   flex-direction: column;
-  gap: 10px;
   list-style: none;
-  padding: 0;
 
   .active {
     font-weight: 600;
@@ -23,6 +21,11 @@ export const StyledNavList = styled.ul`
   }
 
   .link {
+    font-family:
+      MacPaw Fixel Display,
+      Oddval,
+      Inter,
+      sans-serif;
     font-weight: 600;
     font-size: 24px;
     line-height: 1.17;
@@ -36,6 +39,29 @@ export const StyledNavList = styled.ul`
 
     &:hover {
       color: #f77d07;
+    }
+  }
+`;
+
+export const StyledItem = styled.li`
+  width: 261px;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0;
+
+  @media screen and (min-width: 768px) {
+    width: 466px;
+  }
+
+  svg {
+    width: 40px;
+    height: 40px;
+
+    @media screen and (min-width: 768px) {
+      width: 80px;
+      height: 80px;
     }
   }
 `;
