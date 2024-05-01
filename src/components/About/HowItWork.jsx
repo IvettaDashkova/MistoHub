@@ -23,6 +23,7 @@ export const HowItWork = () => {
               }}
               breakpoints={{
                 768: {
+                  slidesPerView: 5,
                   enabled: true,
                   initialSlide: 0,
                   slideTo: 0,

@@ -49,6 +49,9 @@ export const About = () => {
             },
             375: {
               slidesPerView: 1,
+              grid: {
+                row: 3,
+              },
               initialSlide: 0,
               slideTo: 0,
               enabled: true,
