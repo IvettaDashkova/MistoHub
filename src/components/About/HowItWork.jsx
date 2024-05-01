@@ -8,7 +8,7 @@ import { HowItWorkBackground, HowItWorkContainer } from './HowItWork.styled';
 export const HowItWork = () => {
 
   return (
-    <HowItWorkBackground id="how-it-work">
+    <HowItWorkBackground>
       <HowItWorkContainer>
         <div className="container-inner">
           <h2 className="how-it-work-title">Як це працює?</h2>

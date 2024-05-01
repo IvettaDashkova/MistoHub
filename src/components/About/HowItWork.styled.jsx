@@ -4,7 +4,17 @@ import bgImageTablet from '../../assets/about/howItWorkBg-tablet.svg';
 import bgImageDesktop from '../../assets/about/howItWorkBg-desktop.svg';
 import { AboutProjectContainer } from './AboutProject.styled';
 
-export const HowItWorkContainer = styled(AboutProjectContainer);
+export const HowItWorkContainer = styled(AboutProjectContainer)`
+  margin-bottom: 60px;
+
+  @media (min-width: 768px) {
+    margin-bottom: 120px;
+  }
+
+  @media (min-width: 1440px) {
+    margin-bottom: 150px;
+  }
+`;
 
 export const HowItWorkBackground = styled.section`
   width: 100%;
