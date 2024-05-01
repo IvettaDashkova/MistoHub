@@ -91,6 +91,7 @@ export const ContainerWrapper = styled.section`
     padding: 15px 20px;
     display: flex;
     margin: 0 auto;
+    transition: all 0.25s ease-in-out;
 
     @media screen and (min-width: 768px) {
       height: 64px;
@@ -108,6 +109,11 @@ export const ContainerWrapper = styled.section`
       padding: 23px 46px;
       font-size: 18px;
     }
+  }
+
+  button:active {
+    background-color: #e3e3e3;
+    color: #898b90;
   }
 `;
 
