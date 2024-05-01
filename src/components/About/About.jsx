@@ -4,6 +4,7 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import { AboutSection, AboutContainer } from './About.styled';
 import { HowItWork } from '../About/HowItWork';
+import { Building } from '../About/Building';
 
 export const About = () => {
   return (
@@ -105,6 +106,7 @@ export const About = () => {
       </AboutContainer>
     </AboutSection>
     <HowItWork />
+    <Building />
     </>
   );
 };
