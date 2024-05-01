@@ -1,18 +1,17 @@
-import { keyframes } from '@emotion/react';
+import { css, keyframes } from '@emotion/react';
 
 import backgroundImageForMobile from './Rectangle 42862.png';
 import backgroundImageForTablet from './back-for-tablet.png';
 import backgroundImageForDesktop from './back-for-desktop.png';
-import { Swiper, SwiperSlide } from 'swiper/react';
+
 import styled from '@emotion/styled';
 
-const progressAnimation = keyframes`
+const progressAnimation = (props) => keyframes`
   from {
     width: 0;
-   
   }
   to {
-    width: ${(props) => props.progress}%;
+    width: ${props.progress}%;
   }
 `;
 
@@ -20,14 +19,12 @@ const slideInFromBottom = keyframes`
   from {
     transform: translateY(100%);
     opacity: 0;
-     }
+  }
   to {
     transform: translateY(0%);
     opacity: 1;
-   
   }
 `;
-
 export const ContainerWrapper = styled.section`
   ${(props) => props.isDesktop && 'display:flex'};
   background-image: url('${backgroundImageForMobile}');
@@ -56,7 +53,12 @@ export const ContainerWrapper = styled.section`
       display: flex;
       flex-direction: column;
       gap: 24px;
-      animation: ${slideInFromBottom} 3s ease forwards;
+      animation: ${({ goAnimation }) =>
+        goAnimation
+          ? css`
+              ${slideInFromBottom} 3s ease-in-out
+            `
+          : 'none'};
 
       backdrop-filter: blur(5px);
     }
@@ -207,7 +209,7 @@ export const Accumulated = styled.div`
   background-color: #ffffff;
   z-index: 15;
   border-radius: 100px;
-  animation: ${progressAnimation} 3s ease-in-out;
+  animation: ${(props) => progressAnimation(props)} 3s ease-in-out forwards;
 
   @media screen and (min-width: 768px) {
     height: 20px;

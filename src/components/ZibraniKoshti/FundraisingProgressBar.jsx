@@ -1,21 +1,38 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { ProgressBar, Accumulated } from './ZibraniKoshti.styled';
 import ProgressBarAmount from './ProgressBarAmount';
 
 const FundraisingProgressBar = ({ totalAmount, targetAmount }) => {
   const percentage = Math.min((totalAmount / targetAmount) * 100, 100);
-
-  const [progress, setProgress] = useState(percentage);
+  const sectionRef = useRef(null);
+  const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    setProgress(percentage);
-  }, [percentage]);
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.unobserve(entry.target);
+        }
+      });
+    });
+
+    observer.observe(sectionRef.current);
+
+    return () => {
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
+      }
+    };
+  }, []);
 
   return (
-    <ProgressBar>
+    <ProgressBar ref={sectionRef}>
       <div>
-        <Accumulated progress={percentage}>
-          <ProgressBarAmount totalAmount={125000}></ProgressBarAmount>
+        <Accumulated progress={isVisible ? percentage : 0}>
+          <ProgressBarAmount
+            totalAmount={isVisible ? totalAmount : 0}
+          ></ProgressBarAmount>
         </Accumulated>
       </div>
     </ProgressBar>
