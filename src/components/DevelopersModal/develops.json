@@ -184,9 +184,19 @@
     "name": "Вікторія Бєлінська",
     "role": "QA-тестувальник",
     "link": "http://www.linkedin.com/in/viktoriia-bielinska-95892429b/",
-    "ipg": "/src/assets/img/dev-photo/id-19.jpg",
-    "jpgx2": "/src/assets/img/dev-photo/id-19x2.jpg",
+    "ipg": "/src/assets/img/dev-photo/id-19.png",
+    "jpgx2": "/src/assets/img/dev-photo/id-19x2.png",
     "webp": "/src/assets/img/dev-photo/id-19.webp",
-    "webpx2": "/src/assets/img/dev-photo/i9-16x2.webp"
+    "webpx2": "/src/assets/img/dev-photo/id-19x2.webp"
+  },
+  {
+    "id": "id-20",
+    "name": "Катерина Драцька",
+    "role": "QA-тестувальник",
+    "link": "https://www.linkedin.com/in/kateryna-dratska/",
+    "ipg": "/src/assets/img/dev-photo/id-20.jpg",
+    "jpgx2": "/src/assets/img/dev-photo/id-20x2.jpg",
+    "webp": "/src/assets/img/dev-photo/id-20.webp",
+    "webpx2": "/src/assets/img/dev-photo/id-20x2.webp"
   }
 ]
