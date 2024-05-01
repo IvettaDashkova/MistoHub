@@ -34,6 +34,7 @@ export const ContainerWrapper = styled.section`
   background-size: cover;
   background-position: center;
   padding: 60px 0;
+  overflow: hidden;
 
   @media screen and (min-width: 768px) {
     padding: 80px 0;
@@ -56,6 +57,7 @@ export const ContainerWrapper = styled.section`
       flex-direction: column;
       gap: 24px;
       animation: ${slideInFromBottom} 3s ease forwards;
+
       backdrop-filter: blur(5px);
     }
   }
