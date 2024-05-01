@@ -76,6 +76,32 @@ export const HeroContainer = styled(Container)`
     }
   }
 
+  /* .hero-img > source {
+    min-width: 320px;
+    width: 100%;
+    height: 700px;
+    display: flex;
+    justify-content: center;
+    object-fit: cover;
+    transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+    @media only screen and (min-width: 375px) and (max-width: 812px) {
+      max-width: 375px;
+    }
+
+    @media only screen and (min-width: 768px) {
+      max-width: 768px;
+      height: 1024px;
+    }
+
+    @media only screen and (min-width: 1024px) {
+      width: 100%;
+      min-width: 1024px;
+      max-width: 1440px;
+      height: 880px;
+    }
+  } */
+
   .custom-navigation {
     position: absolute;
     bottom: 40px;

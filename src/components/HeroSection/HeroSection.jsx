@@ -37,19 +37,19 @@ const HeroSection = () => {
   return (
     <HeroSectionStyled>
       <HeroContainer>
-        <Swiper ref={swiperRef} className="my-swiper" navigation={true}>
+        <Swiper className="my-swiper" navigation={true}>
           {heroData.map((item, index) => (
             <SwiperSlide key={index}>
               <picture className="hero-img">
                 <source
-                  srcSet={`${item.imgPng1}, ${item.imgPng2}`}
-                  media="(max-width:1440px)"
-                  type="image/png"
-                />
-                <source
-                  srcSet={`${item.imgWebP1}, ${item.imgWebP2} 2x`}
+                  srcSet={`${item.imgWebP1} 1x, ${item.imgWebP2} 2x`}
                   media="(max-width:1440px)"
                   type="image/webp"
+                />
+                <source
+                  srcSet={`${item.imgPng1} 1x, ${item.imgPng2} 2x`}
+                  media="(max-width:1440px)"
+                  type="image/png"
                 />
                 <img src={item.imgPng1} alt={item.alt} />
               </picture>
