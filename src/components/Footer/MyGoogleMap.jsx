@@ -1,6 +1,13 @@
 import { GoogleMap, LoadScript, MarkerF } from '@react-google-maps/api';
+import { useState } from 'react';
 
 const MyGoogleMap = () => {
+  const [mapLoaded, setMapLoaded] = useState(false);
+
+  const handleMapLoad = () => {
+    setMapLoaded(true);
+  };
+
   const center = {
     lat: 49.5843421,
     lng: 34.5648984,
@@ -12,6 +19,7 @@ const MyGoogleMap = () => {
 
   return (
     <LoadScript googleMapsApiKey={import.meta.env.VITE_GOOGLE_MAP_API_KEY}>
+      {!mapLoaded && <div>Loading...</div>}
       <GoogleMap
         mapContainerClassName="map-wrapper"
         center={center}
@@ -39,8 +47,9 @@ const MyGoogleMap = () => {
           },
           ...mapState,
         }}
+        onLoad={handleMapLoad}
       >
-        <MarkerF position={center} />
+        {mapLoaded && <MarkerF position={center} />}
       </GoogleMap>
     </LoadScript>
   );
