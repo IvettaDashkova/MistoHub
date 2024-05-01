@@ -7,6 +7,7 @@ export const Container = styled.div`
   align-items: center;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   // padding-top: 500px;
 =======
   //padding-top: 500px;
@@ -14,6 +15,9 @@ export const Container = styled.div`
 =======
   // padding-top: 500px;
 >>>>>>> demchukv/building-svg-as-image
+=======
+  // padding-top: 500px;
+>>>>>>> demchukv/building
 
   .vector-svg {
     fill: green;
