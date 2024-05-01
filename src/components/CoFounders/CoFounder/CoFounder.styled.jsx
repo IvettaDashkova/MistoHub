@@ -49,7 +49,7 @@ export const PersonImageContainer = styled.div`
   position: relative;
 `;
 
-export const PersonImage = styled.img`
+export const PersonImage = styled.picture`
   border-radius: 50%;
   width: 100px;
   height: 100px;

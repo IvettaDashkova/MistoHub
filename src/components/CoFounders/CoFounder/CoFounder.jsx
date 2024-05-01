@@ -8,17 +8,33 @@ import {
 } from './CoFounder.styled';
 import Iconsvg from '../../Icon/Icon';
 
-const CoFounder = ({ webp, jpg, instagram, facebook, name, description }) => {
+const CoFounder = ({
+  person: {
+    webp,
+    jpg,
+    webpRetina,
+    jpgRetina,
+    instagram,
+    facebook,
+    name,
+    description,
+  },
+}) => {
   return (
     <ListItem>
       <PersonImageContainer>
-        <picture>
-          {/* WebP image */}
+        <PersonImage>
+          <source srcSet={webpRetina} type="image/webp" />
+
+          <source
+            srcSet={jpgRetina}
+            type="image/jpg"
+            alt="Co-Founder avatar."
+          />
           <source srcSet={webp} type="image/webp" />
-          {/* JPEG 2x image */}
-          {/* Fallback for older browsers */}
-          <PersonImage src={jpg} alt="Co-Founder avatar." />
-        </picture>
+          <source srcSet={jpg} type="image/jpg" alt="Co-Founder avatar." />
+          <img src={jpg} />
+        </PersonImage>
         {instagram !== null ? (
           <SocialNetworkLink href={instagram} target="blank">
             <Iconsvg

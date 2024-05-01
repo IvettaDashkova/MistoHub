@@ -22,14 +22,7 @@ const CoFounders = () => {
         <List>
           {data.map((person) => (
             <li key={person.id}>
-              <CoFounder
-                jpg={person.jpg}
-                webp={person.webp}
-                instagram={person.instagram}
-                facebook={person?.facebook}
-                name={person.name}
-                description={person.description}
-              />
+              <CoFounder person={person} />
             </li>
           ))}
         </List>
