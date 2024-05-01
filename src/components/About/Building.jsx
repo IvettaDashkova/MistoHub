@@ -1,4 +1,4 @@
-import { BuildingSection, BuildingContainer } from './Building.styled';
+import { BuildingContainer } from './Building.styled';
 
 import building from '../../assets/about/building.jpg';
 import building2x from '../../assets/about/building@2x.jpg';
@@ -18,7 +18,6 @@ import Icon from '../../components/Icon/Icon';
 
 export const Building = () => {
   return (
-    <BuildingSection id="building">
       <BuildingContainer>
         <h2 className="building-title">
           Будівля <span className="accent">МІСТОХАБ</span> це історична спадщина
@@ -99,6 +98,5 @@ export const Building = () => {
           />
         </div>
       </BuildingContainer>
-    </BuildingSection>
   );
 };

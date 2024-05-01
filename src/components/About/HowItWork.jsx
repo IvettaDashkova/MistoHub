@@ -3,12 +3,12 @@ import { Pagination } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/pagination';
 
-import { HowItWorkSection, HowItWorkContainer } from './HowItWork.styled';
+import { HowItWorkBackground, HowItWorkContainer } from './HowItWork.styled';
 
 export const HowItWork = () => {
 
   return (
-    <HowItWorkSection id="how-it-work">
+    <HowItWorkBackground id="how-it-work">
       <HowItWorkContainer>
         <div className="container-inner">
           <h2 className="how-it-work-title">Як це працює?</h2>
@@ -91,6 +91,6 @@ export const HowItWork = () => {
           </button>
         </div>
       </HowItWorkContainer>
-    </HowItWorkSection>
+    </HowItWorkBackground>
   );
 };
