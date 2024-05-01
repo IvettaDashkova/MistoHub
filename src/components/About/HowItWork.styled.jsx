@@ -4,17 +4,6 @@ import bgImageTablet from '../../assets/about/howItWorkBg-tablet.svg';
 import bgImageDesktop from '../../assets/about/howItWorkBg-desktop.svg';
 import { AboutProjectContainer } from './AboutProject.styled';
 
-export const HowItWorkContainer = styled(AboutProjectContainer)`
-  margin-bottom: 60px;
-
-  @media (min-width: 768px) {
-    margin-bottom: 120px;
-  }
-
-  @media (min-width: 1440px) {
-    margin-bottom: 150px;
-  }
-`;
 
 export const HowItWorkBackground = styled.section`
   width: 100%;
@@ -23,7 +12,20 @@ export const HowItWorkBackground = styled.section`
   background-repeat: no-repeat;
   background-size: auto 100%;
   background-position: 60% 50%;
-  
+
+  @media (min-width: 768px) {
+    background-image: url(${bgImageTablet});
+    background-position: 60% 50%;
+  }
+
+  @media (min-width: 1440px) {
+    background-image: url(${bgImageDesktop});
+    background-position: 67% 50%;
+  }
+`;
+
+export const HowItWorkContainer = styled(AboutProjectContainer)`
+  margin-bottom: 60px;
 
   .container-inner {
     padding: 104px 0 82px;
@@ -129,9 +131,7 @@ export const HowItWorkBackground = styled.section`
   }
 
   @media (min-width: 768px) {
-    background-image: url(${bgImageTablet});
-    background-size: auto 100%;
-    background-position: 60% 50%;
+    margin-bottom: 120px;
 
     .container-inner {
       padding: 200px 0 161px;
@@ -201,8 +201,7 @@ export const HowItWorkBackground = styled.section`
   }
 
   @media (min-width: 1440px) {
-    background-image: url(${bgImageDesktop});
-    background-position: 67% 50%;
+    margin-bottom: 150px;
 
     .container-inner {
       padding: 258px 0 207px;

@@ -67,7 +67,6 @@ export const Building = () => {
               alt="Будівля МІСТОХАБ"
               width="1200"
               height="753"
-              loading="lazy" decoding="async"
             />
           </picture>
           <BIconOne />
