@@ -1,5 +1,6 @@
 import Modal from 'react-modal';
 import Header from '/src/components/Header/Header';
+import AboutProject from '../../components/About/AboutProject';
 import { ZibraniKoshti } from '../../components/ZibraniKoshti/ZibraniKoshti';
 import ScrollToTopButton from '../../components/ScrollToTopButton/ScrollToTopButton';
 import BurgerMenu from '../../components/BurgerMenu/BurgerMenu';
@@ -46,6 +47,7 @@ const HomePage = () => {
       <Header />
       <BurgerMenu activeSection={activeSection} />
       <main>
+        <AboutProject />
         <ZibraniKoshti />
         <ScrollToTopButton />
         <TestSections />
