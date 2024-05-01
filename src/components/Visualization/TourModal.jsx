@@ -1,7 +1,7 @@
 import { forwardRef, useEffect, useCallback, useRef } from 'react';
 import { ReactPhotoSphereViewer } from 'react-photo-sphere-viewer';
 import Iconsvg from '../Icon/Icon';
-import { ModalWrapperTour, CloseButton } from './StyledComponents';
+import { ModalWrapperTour, CloseButton } from './Visualization.styled';
 
 const TourModal = forwardRef(({ image, onClose }, ref) => {
   const wrapperRef = useRef();

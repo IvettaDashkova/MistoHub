@@ -12,7 +12,7 @@ import {
   Arrow,
   LeftArrow,
   RightArrow,
-} from './StyledComponents';
+} from './Visualization.styled';
 import Iconsvg from '../Icon/Icon';
 
 const Visualization = () => {
