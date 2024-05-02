@@ -32,19 +32,30 @@ export const StyledNavList = styled.ul`
       font-size: 44px;
     }
 
-    &:hover {
+    /* &:hover {
       color: #f77d07;
-    }
+    } */
   }
 `;
 
 export const StyledItem = styled.li`
   width: 261px;
+  height: 50px;
   display: flex;
   flex-wrap: nowrap;
   align-items: center;
   justify-content: space-between;
   padding: 0;
+
+  &:hover a {
+    color: #f77d07;
+  }
+
+  button {
+    border: none;
+    outline: none;
+    background-color: transparent;
+  }
 
   @media screen and (min-width: 768px) {
     width: 466px;

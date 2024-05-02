@@ -39,7 +39,11 @@ const Navigation = ({ links, activeSection, onClose, onScroll }) => {
               >
                 {link.value}
               </Link>
-              {hoveredIndex === link.id && <Iconsvg iconName="hoverarrow" />}
+              {hoveredIndex === link.id && (
+                <button type="button" onClick={() => sectionScroll(link.id)}>
+                  <Iconsvg iconName="hoverarrow" />
+                </button>
+              )}
             </StyledItem>
           ))}
         </StyledNavList>
