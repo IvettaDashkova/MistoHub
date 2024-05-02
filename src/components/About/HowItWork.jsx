@@ -15,11 +15,9 @@ export const HowItWork = () => {
       let positionX = 0;
       if (width >= 1440) {
         positionX = (width - 1440)/2 - 335;
-      }
-      if(width >= 768 && width < 1440) {
+      }else if(width >= 768 && width < 1440) {
         positionX = (width - 768)/2 - 393;
-      }
-      if(width <= 768) {
+      }else{
         positionX = (width - 375)/2 - 194;
       }
       bg.current.style.backgroundPosition = `left ${positionX}px center`;
