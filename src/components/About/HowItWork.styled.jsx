@@ -164,19 +164,19 @@ export const HowItWorkContainer = styled(AboutProjectContainer)`
       border-radius: 20px;
 
       &:first-of-type {
-        width: calc(43% - 16px) !important;
+        width: 274px !important;
       }
       &:nth-of-type(2) {
-        width: 57% !important;
+        width: 414px !important;
       }
       &:nth-of-type(3) {
-        width: calc(31.5% - 16px) !important;
+        width: 203px !important;
       }
       &:nth-of-type(4) {
-        width: 37% !important;
+        width: 266px !important;
       }
       &:nth-of-type(5) {
-        width: calc(31.5% - 16px) !important;
+        width: 203px !important;
       }
     }
 
@@ -230,19 +230,19 @@ export const HowItWorkContainer = styled(AboutProjectContainer)`
     .how-it-work-item {
       padding: 40px;
       &:first-of-type {
-        width: calc(43% - 24px) !important;
+        width: 540px !important;
       }
       &:nth-of-type(2) {
-        width: 57% !important;
+        width: 636px !important;
       }
       &:nth-of-type(3) {
-        width: calc(31.5% - 24px) !important;
+        width: 384px !important;
       }
       &:nth-of-type(4) {
-        width: 37% !important;
+        width: 384px !important;
       }
       &:nth-of-type(5) {
-        width: calc(31.5% - 24px) !important;
+        width: 384px !important;
       }
     }
 
