@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { nanoid } from 'nanoid';
 
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -39,8 +40,8 @@ const HeroSection = () => {
     <HeroSectionStyled>
       <HeroContainer>
         <Swiper ref={swiperRef} className="my-swiper" navigation={true}>
-          {heroData.map((item, index) => (
-            <SwiperSlide key={index}>
+          {heroData.map((item) => (
+            <SwiperSlide key={nanoid()}>
               <picture>
                 <source
                   srcSet={`${item.imgWebP1} 1x, ${item.imgWebP2} 2x`}
@@ -60,6 +61,8 @@ const HeroSection = () => {
             className={`swiper-btn-prev ${isBeginning ? 'disabled' : ''}`}
             onClick={slidePrev}
             disabled={isBeginning}
+            type="button"
+            title="Попередній слайд"
           >
             <Icon iconName="arrow-left2" />
           </button>
@@ -67,12 +70,18 @@ const HeroSection = () => {
             className={`swiper-btn-next ${isEnd ? 'disabled' : ''}`}
             onClick={slideNext}
             disabled={isEnd}
+            type="button"
+            title="Наступний слайд"
           >
             <Icon iconName="arrow-right2" />
           </button>
         </div>
         <h1 className="hero-title">
-          <span>Містохаб -</span> створюємо простір розвитку міста
+          <span>Містохаб -</span>
+          <br />
+          створюємо простір
+          <br />
+          розвитку міста
         </h1>
       </HeroContainer>
     </HeroSectionStyled>

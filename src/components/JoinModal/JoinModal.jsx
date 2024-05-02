@@ -34,7 +34,7 @@ const JoinModal = () => {
   const [isDataPosted, setIsDataPosted] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
-  const isDesctopMax = useMediaQuery({ minWidth: 1440 });
+  const isDesctop = useMediaQuery({ minWidth: 1440 });
 
   const INITIAL_FORM_DATA = {
     name: '',
@@ -55,9 +55,8 @@ const JoinModal = () => {
 
       if (data.result.text !== '') {
         console.log(data.result.text);
+        setIsDataPosted(true);
       }
-
-      setIsDataPosted(true);
     } catch (err) {
       setIsError(true);
     } finally {
@@ -81,13 +80,14 @@ const JoinModal = () => {
       <JoinModalStyled
         isOpen={isModalOpen}
         onRequestClose={handleCloseModal}
-        style={{ overlay: { zIndex: '102' } }}
+        style={{ overlay: { zIndex: '101' } }}
         bodyOpenClassName="modal-open"
       >
         <p>Підтримати проєкт</p>
         <button
           className="joinCloseBtn"
           type="button"
+          title="Закрити вікно"
           onClick={handleCloseModal}
         >
           <span className="joinCloseText">Закрити</span>
@@ -193,7 +193,7 @@ const JoinModal = () => {
                     <button
                       className="joinSubmitBtn"
                       type="submit"
-                      title="Click to submit"
+                      title="Відправити дані"
                       aria-label="Відправити"
                     >
                       Відправити
@@ -209,7 +209,7 @@ const JoinModal = () => {
             )}
             {isError && <ErrorBlock />}
           </div>
-          {isDesctopMax && <Maska />}
+          {isDesctop && <Maska />}
         </div>
         <Info />
       </JoinModalStyled>

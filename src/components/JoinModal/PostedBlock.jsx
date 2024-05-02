@@ -1,8 +1,9 @@
 import { useMediaQuery } from 'react-responsive';
-import { PostedStyledBlock } from './JoinModal.styled.jsx';
+
+import { PostedStyledBlock } from '/src/components/JoinModal/JoinModal.styled';
 
 const PostedBlock = ({ handleCloseModal }) => {
-  const isDesctop = useMediaQuery({ minWidth: 1024 });
+  const isDesctop = useMediaQuery({ minWidth: 1440 });
   return (
     <PostedStyledBlock>
       <h2 className="joinTitle">
@@ -17,6 +18,7 @@ const PostedBlock = ({ handleCloseModal }) => {
       <button
         className="joinSuccessBtn"
         type="button"
+        title="На сторінку"
         onClick={handleCloseModal}
       >
         На сторінку

@@ -1,8 +1,7 @@
 import { useMediaQuery } from 'react-responsive';
 
-import Icon from '../Icon/Icon.jsx';
-
-import { InfoStyled } from './JoinModal.styled.jsx';
+import Icon from '/src/components/Icon/Icon';
+import { InfoStyled } from '/src/components/JoinModal/JoinModal.styled';
 
 const Info = () => {
   const isMobile = useMediaQuery({ maxWidth: 767 });
@@ -12,10 +11,15 @@ const Info = () => {
       <div className="joinProtectionBlock">
         {isMobile && <p>&copy; ГО &laquo;МІСТО ХАБ&raquo;</p>}
         <p className="joinProtection">Всі права захищені</p>
-        <p className="developers">
+        <button
+          type="button"
+          title="Розроблено студентами"
+          className="developers"
+          onClick={() => console.log('Open developers modal')}
+        >
           Розроблено студентами
           <Icon iconName="logoGoIT" />
-        </p>
+        </button>
       </div>
     </InfoStyled>
   );

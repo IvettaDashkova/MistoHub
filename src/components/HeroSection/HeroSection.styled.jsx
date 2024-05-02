@@ -11,7 +11,7 @@ export const HeroSectionStyled = styled.section`
     height: 1024px;
   }
 
-  @media only screen and (min-width: 1024px) {
+  @media only screen and (min-width: 1440px) {
     height: 880px;
   }
 `;
@@ -25,15 +25,16 @@ export const HeroContainer = styled(Container)`
 
   min-width: 320px;
   max-width: 100%;
-  width: 100%;
   height: 700px;
   margin: 0 auto;
 
   @media only screen and (min-width: 768px) {
+    min-width: 100%;
     height: 1024px;
   }
 
-  @media only screen and (min-width: 1024px) {
+  @media only screen and (min-width: 1440px) {
+    min-width: 100%;
     height: 880px;
   }
 
@@ -51,7 +52,7 @@ export const HeroContainer = styled(Container)`
       height: 1024px;
     }
 
-    @media only screen and (min-width: 1024px) {
+    @media only screen and (min-width: 1440px) {
       height: 880px;
     }
   }
@@ -70,6 +71,9 @@ export const HeroContainer = styled(Container)`
 
   .swiper-btn-prev,
   .swiper-btn-next {
+    font-size: 14px;
+    line-height: 0.5;
+    padding: 0;
     width: 44px;
     height: 44px;
     border-radius: 50%;
@@ -88,6 +92,7 @@ export const HeroContainer = styled(Container)`
     }
 
     @media only screen and (min-width: 768px) {
+      font-size: 16px;
       width: 60px;
       height: 60px;
     }
@@ -139,7 +144,7 @@ export const HeroContainer = styled(Container)`
       height: 1024px;
     }
 
-    @media only screen and (min-width: 1024px) {
+    @media only screen and (min-width: 1440px) {
       height: 880px;
     }
   }
@@ -170,7 +175,7 @@ export const HeroContainer = styled(Container)`
       height: 1024px;
     }
 
-    @media only screen and (min-width: 1024px) {
+    @media only screen and (min-width: 1440px) {
       height: 880px;
     }
   }
@@ -212,8 +217,7 @@ export const HeroContainer = styled(Container)`
       line-height: 0.9;
     }
 
-    @media only screen and (min-width: 1024px) {
-      max-width: 968px;
+    @media only screen and (min-width: 1440px) {
       font-size: 90px;
       line-height: 1;
     }

@@ -17,7 +17,6 @@ export const JoinModalStyled = styled(Modal)`
     -8px 6px 16px rgba(199, 190, 185, 0.95),
     8px 6px 16px rgba(199, 190, 185, 0.95);
 
-  font-family: 'MacPaw Fixel Display', sans-serif;
   font-size: 14px;
   line-height: 1.3;
   letter-spacing: -0.02em;
@@ -26,7 +25,7 @@ export const JoinModalStyled = styled(Modal)`
   overflow-y: auto;
   max-height: 99vh;
 
-  @media only screen and (min-width: 375px) and (max-width: 812px) {
+  @media only screen and (min-width: 375px) {
     width: 375px;
   }
 
@@ -38,22 +37,17 @@ export const JoinModalStyled = styled(Modal)`
     padding: 32px;
   }
 
-  @media only screen and (min-width: 1024px) {
-    width: 100%;
-    min-width: 1024px;
-    max-width: 1440px;
+  @media only screen and (min-width: 1440px) {
+    width: 1440px;
     height: 880px;
     padding: 40px 80px;
   }
-
-  /* body.modal-open {
-    overflow: hidden;
-  } */
 
   .joinCloseBtn {
     display: flex;
     justify-content: center;
     align-items: center;
+    line-height: 0.5;
     height: 28px;
     padding: 0px;
     position: absolute;
@@ -68,7 +62,7 @@ export const JoinModalStyled = styled(Modal)`
       right: 32px;
     }
 
-    @media only screen and (min-width: 1024px) {
+    @media only screen and (min-width: 1440px) {
       top: 40px;
       right: 80px;
     }
@@ -114,7 +108,7 @@ export const JoinModalStyled = styled(Modal)`
       gap: 30px;
     }
 
-    @media only screen and (min-width: 1024px) {
+    @media only screen and (min-width: 1440px) {
       padding: 60px 0;
       margin: auto;
     }
@@ -250,18 +244,12 @@ export const MaskaStyled = styled.div`
 export const InfoStyled = styled.div`
   position: relative;
   bottom: 0;
-  /* bottom: 20px; */
 
   @media only screen and (min-width: 768px) {
     display: flex;
     align-items: center;
     flex-wrap: wrap;
     gap: 10px;
-    /* bottom: 32px; */
-  }
-
-  @media only screen and (min-width: 768px) {
-    /* bottom: 40px; */
   }
 
   .joinProtectionBlock {
@@ -280,7 +268,7 @@ export const InfoStyled = styled.div`
       right: 32px;
     }
 
-    @media only screen and (min-width: 1024px) {
+    @media only screen and (min-width: 1440px) {
       right: 80px;
     }
   }
@@ -306,6 +294,7 @@ export const InfoStyled = styled.div`
   }
 
   .developers {
+    font-size: 14px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -316,12 +305,14 @@ export const InfoStyled = styled.div`
 
     @media only screen and (min-width: 768px) {
       margin-left: 10px;
+      font-size: 16px;
     }
 
     & svg {
       margin-left: 8px;
       width: 59px;
       height: 18px;
+      fill: #f77d07;
 
       @media only screen and (min-width: 768px) {
         margin-left: 10px;
@@ -329,6 +320,14 @@ export const InfoStyled = styled.div`
         height: 30px;
       }
     }
+  }
+
+  .developers:hover {
+    color: #0b0b0b;
+  }
+
+  .developers:hover svg {
+    fill: #0b0b0b;
   }
 `;
 
@@ -340,12 +339,12 @@ export const ErrorStyledBlock = styled.div`
   gap: 20px;
 
   @media only screen and (min-width: 768px) {
-    padding: 204px 31px 320px 31px;
+    padding: 204px 31px 292px 31px;
     gap: 30px;
   }
 
-  @media only screen and (min-width: 1024px) {
-    padding: 176px 0 194px 0;
+  @media only screen and (min-width: 1440px) {
+    padding: 164px 0 174px 0;
     margin: auto;
   }
 
@@ -396,19 +395,19 @@ export const ErrorStyledBlock = styled.div`
 `;
 
 export const PostedStyledBlock = styled.div`
-  padding-top: 199px;
-  padding-bottom: 252px;
+  padding-top: 200px;
+  padding-bottom: 268px;
   display: flex;
   flex-direction: column;
   gap: 20px;
 
   @media only screen and (min-width: 768px) {
-    padding: 244px 31px 290px 31px;
+    padding: 230px 31px 280px 31px;
     gap: 30px;
   }
 
-  @media only screen and (min-width: 1024px) {
-    padding: 178px 0 203px 0;
+  @media only screen and (min-width: 1440px) {
+    padding: 178px 0 170px 0;
   }
 
   .joinText {
@@ -424,17 +423,18 @@ export const PostedStyledBlock = styled.div`
     margin-top: 20px;
     border-radius: 30px;
     padding: 13px 20px;
-    width: 122px;
+    width: 130px;
     height: 44px;
     background-color: #f77d07;
     border: none;
     color: #fff;
     font-size: 14px;
+    font-weight: 600;
 
     @media only screen and (min-width: 768px) {
       margin-top: 30px;
       padding: 15px 40px;
-      width: 170px;
+      width: 180px;
       height: 54px;
       font-size: 16px;
     }
