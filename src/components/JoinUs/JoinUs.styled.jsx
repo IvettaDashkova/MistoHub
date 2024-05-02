@@ -6,16 +6,45 @@ export const JoinUsSection = styled.section`
   color: #ffffff;
 
   background-image: url('src/assets/JoinUs/images/jpg/blob-image-mobile.jpg');
+  background-image: -webkit-image-set(
+    url('src/assets/JoinUs/images/webp/blob-image-mobile.webp')
+  );
+
+  @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    background-image: url('src/assets/JoinUs/images/jpg/blob-image-mobile@2x.jpg');
+    background-image: -webkit-image-set(
+      url('src/assets/JoinUs/images/webp/blob-image-mobile@2x.webp')
+    );
+  }
+
   background-position: 38% center;
   background-size: auto 100%;
   background-repeat: no-repeat;
   @media screen and (min-width: 768px) {
     background-image: url('src/assets/JoinUs/images/jpg/blob-image-tablet.jpg');
+    background-image: -webkit-image-set(
+      url('src/assets/JoinUs/images/webp/blob-image-tablet.webp')
+    );
     background-position: 33% center;
+    @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+      background-image: url('src/assets/JoinUs/images/jpg/blob-image-tablet@2x.jpg');
+      background-image: -webkit-image-set(
+        url('src/assets/JoinUs/images/webp/blob-image-tablet@2x.webp')
+      );
+    }
   }
   @media screen and (min-width: 1440px) {
     background-image: url('src/assets/JoinUs/images/jpg/blob-image-dekstop.jpg');
+    background-image: -webkit-image-set(
+      url('src/assets/JoinUs/images/webp/blob-image-dekstop.webp')
+    );
     background-position: 36% center;
+    @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+      background-image: url('src/assets/JoinUs/images/jpg/blob-image-dekstop@2x.jpg');
+      background-image: -webkit-image-set(
+        url('src/assets/JoinUs/images/webp/blob-image-dekstop@2x.webp')
+      );
+    }
   }
 `;
 

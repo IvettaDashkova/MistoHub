@@ -38,8 +38,8 @@ const JoinUs = () => {
         <StatsContainer>
           <StatsTitle>До відкриття МІСТОХАБ залишилось:</StatsTitle>
           <StatsList>
-            <StatsListItem>{100 - people} імпакт-інвесторів</StatsListItem>
-            <StatsListItem>{20 - companies} компаній</StatsListItem>
+            <StatsListItem>{116 - people} імпакт-інвесторів</StatsListItem>
+            <StatsListItem>{17 - companies} компаній</StatsListItem>
           </StatsList>
         </StatsContainer>
         <JoinButton>Приєднатися</JoinButton>
