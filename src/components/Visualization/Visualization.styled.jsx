@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import cursorImage from '../../assets/images/visualization/cursor-image.png';
 
 export const ContainerVisual = styled.div`
   min-width: 320px;
@@ -211,32 +212,50 @@ export const ModalWrapperTour = styled.div`
   position: relative;
   width: 100%;
   height: 100%;
-  cursor: grab;
 
   & .psv-navbar {
     background-color: transparent;
     display: flex;
     justify-content: center;
-    bottom: 10px;
+
+    cursor: url(${cursorImage}), default;
+
+    height: 15%;
   }
 
-  & .psv--has {
-    cursor: grab;
-  }
-
-  & :active {
-    cursor: grab;
+  & .psv-canvas {
+    cursor: url(${cursorImage}), default;
   }
 
   & .psv-button {
     color: #ffffff;
-    margin-left: 20px;
+    width: 40px;
+    height: 40px;
     transition: all 300ms ease-in-out;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     &:hover,
     &:focus {
       transform: scale(1.3);
     }
+  }
+
+  & .psv-button-svg {
+    width: 24px;
+    height: 24px;
+    transform: scale(1.3);
+    transition: all 300ms ease-in-out;
+  }
+
+  & .psv-zoom-range.psv-button {
+    display: none;
+  }
+
+  & .psv-button:not(:first-child) {
+    margin-left: 20px;
   }
 `;
 
@@ -250,10 +269,14 @@ export const CloseButton = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
-
-  stroke: #ffffff;
-  padding: 5px;
   transition: all 300ms ease-in-out;
+  stroke: #ffffff;
+
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   &:hover,
   &:focus {

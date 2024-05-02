@@ -32,10 +32,9 @@ const TourModal = forwardRef(({ image, onClose }, ref) => {
         width={'100%'}
         defaultZoomLvl={10}
         navbar={true}
-       
       />
       <CloseButton onClick={onClose}>
-        <Iconsvg width="18" height="18" iconName="icon-closeX" />
+        <Iconsvg width="24" height="24" iconName="icon-closeX" />
       </CloseButton>
     </ModalWrapperTour>
   );
