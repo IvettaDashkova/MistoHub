@@ -14,7 +14,7 @@ const DevelopersModal = () => {
       shouldCloseOnOverlayClick={true}
       style={{
         overlay: {
-          zIndex: '2',
+          zIndex: '200',
         },
       }}
       bodyOpenClassName="modal-open"
