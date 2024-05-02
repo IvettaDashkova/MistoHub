@@ -3,6 +3,9 @@ import Modal from 'react-modal';
 import bgModalMobile from '../../assets/img/bg-modal/bg-modal-mob.png';
 import bgModalTablet from '../../assets/img/bg-modal/bg-modal-tabl.png';
 import bgModalDesktop from '../../assets/img/bg-modal/bg-modal-desk.png';
+import bgModalMobileWebP from '../../assets/img/bg-modal/bg-modal-mob.webp';
+import bgModalTabletWebP from '../../assets/img/bg-modal/bg-modal-tabl.webp';
+import bgModalDesktopWebP from '../../assets/img/bg-modal/bg-modal-desk.webp';
 
 export const DevelopersModalStyled = styled(Modal)`
   position: absolute;
@@ -22,6 +25,7 @@ export const DevelopersModalStyled = styled(Modal)`
     background-position: bottom right;
     background-size: auto;
     background-image: url(${bgModalMobile});
+    background-image: -webkit-image-set(url(${bgModalMobileWebP}));
   }
   .content-container {
     color: #0b0b0b80;
@@ -106,6 +110,7 @@ export const DevelopersModalStyled = styled(Modal)`
   @media (min-width: 768px) {
     .bg-container {
       background-image: url(${bgModalTablet});
+      background-image: -webkit-image-set(url(${bgModalTabletWebP}));
     }
     .content-container {
       padding: 32px 32px;
@@ -149,6 +154,7 @@ export const DevelopersModalStyled = styled(Modal)`
   @media (min-width: 1440px) {
     .bg-container {
       background-image: url(${bgModalDesktop});
+      background-image: -webkit-image-set(url(${bgModalDesktopWebP}));
     }
     .content-container {
       padding: 40px 80px;

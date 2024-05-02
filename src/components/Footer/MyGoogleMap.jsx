@@ -25,6 +25,7 @@ const MyGoogleMap = () => {
         center={center}
         zoom={19}
         options={{
+          region: 'UA',
           language: 'uk',
           gestureHandling: 'greedy',
           controlSize: 25,
