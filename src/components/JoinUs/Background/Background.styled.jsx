@@ -1,24 +1,26 @@
 import styled from 'styled-components';
 
-export const BackgroundContainer = styled.div`
-  .mainVector {
-    position: absolute;
-    top: 0;
-    left: 0;
-    fill: #f77d07;
-    width: 375px;
-    height: 740px;
-    z-index: -1;
-  }
-`;
+export const BackgroundContainer = styled.div``;
 
 export const PersonCircleImage = styled.img`
   position: absolute;
   top: 506px;
   left: 27px;
-  border-radius: 50%;
   width: 84px;
   height: 84px;
+  border-radius: 50%;
+  @media screen and (min-width: 768px) {
+    top: 808px;
+    left: 131px;
+    width: 156px;
+    height: 156px;
+  }
+  @media screen and (min-width: 1440px) {
+    top: 597px;
+    left: 746px;
+    width: 215px;
+    height: 215px;
+  }
 `;
 
 export const PersonTriangleImage = styled.img`
@@ -28,6 +30,18 @@ export const PersonTriangleImage = styled.img`
   width: 75px;
   height: 65px;
   transform: rotate(39deg);
+  @media screen and (min-width: 768px) {
+    top: 668px;
+    left: 317px;
+    width: 131px;
+    height: 114px;
+  }
+  @media screen and (min-width: 1440px) {
+    top: 514px;
+    left: 975px;
+    width: 157px;
+    height: 136px;
+  }
 `;
 
 export const PersonStarImage = styled.img`
@@ -37,6 +51,18 @@ export const PersonStarImage = styled.img`
   width: 67px;
   height: 66px;
   transform: rotate(-5deg);
+  @media screen and (min-width: 768px) {
+    top: 584px;
+    right: 26px;
+    width: 131px;
+    height: 130px;
+  }
+  @media screen and (min-width: 1440px) {
+    top: 286px;
+    right: 184px;
+    width: 175px;
+    height: 174px;
+  }
 `;
 
 export const CafeImage = styled.img`
@@ -48,6 +74,18 @@ export const CafeImage = styled.img`
   object-fit: contain;
   border-radius: 10px;
   transform: rotate(-19deg);
+  @media screen and (min-width: 768px) {
+    top: 768px;
+    right: -23px;
+    width: 252px;
+    height: 338px;
+  }
+  @media screen and (min-width: 1440px) {
+    top: 469px;
+    right: -61px;
+    width: 309px;
+    height: 415px;
+  }
 `;
 
 export const CafeOvalImage = styled.img`
@@ -56,6 +94,18 @@ export const CafeOvalImage = styled.img`
   left: 183px;
   width: 74px;
   height: 33px;
+  @media screen and (min-width: 768px) {
+    top: 569px;
+    left: 430px;
+    width: 144px;
+    height: 64px;
+  }
+  @media screen and (min-width: 1440px) {
+    top: 281px;
+    left: 811px;
+    width: 191px;
+    height: 86px;
+  }
 `;
 
 export const CafeSquareImage = styled.img`
@@ -65,4 +115,16 @@ export const CafeSquareImage = styled.img`
   width: 29px;
   height: 29px;
   transform: rotate(18deg);
+  @media screen and (min-width: 768px) {
+    top: 680px;
+    left: 497px;
+    width: 57px;
+    height: 57px;
+  }
+  @media screen and (min-width: 1440px) {
+    top: 420px;
+    left: 934px;
+    width: 76px;
+    height: 77px;
+  }
 `;

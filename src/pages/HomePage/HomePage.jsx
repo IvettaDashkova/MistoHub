@@ -11,7 +11,7 @@ const HomePage = () => {
     <>
       <Header />
       <main>
-        <AboutProject />
+        {/* <AboutProject /> */}
         <ZibraniKoshti />
         <JoinUs />
       </main>

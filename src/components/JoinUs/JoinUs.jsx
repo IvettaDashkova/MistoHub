@@ -12,8 +12,21 @@ import {
 } from './JoinUs.styled';
 
 import Background from './Background/Background';
+import { fetchCompanies, fetchPeople } from '../../services/API';
+import { useEffect, useState } from 'react';
 
 const JoinUs = () => {
+  const [companies, setCompanies] = useState(0);
+  const [people, setPeople] = useState(0);
+  useEffect(() => {
+    const fetchData = async () => {
+      const people = await fetchPeople();
+      const companies = await fetchCompanies();
+      setCompanies(companies.length);
+      setPeople(people.length);
+    };
+    fetchData();
+  }, []);
   return (
     <JoinUsSection>
       <JoinUsContainer>
@@ -25,8 +38,8 @@ const JoinUs = () => {
         <StatsContainer>
           <StatsTitle>До відкриття МІСТОХАБ залишилось:</StatsTitle>
           <StatsList>
-            <StatsListItem>19 імпакт-інвесторів</StatsListItem>
-            <StatsListItem>6 компаній</StatsListItem>
+            <StatsListItem>{100 - people} імпакт-інвесторів</StatsListItem>
+            <StatsListItem>{20 - companies} компаній</StatsListItem>
           </StatsList>
         </StatsContainer>
         <JoinButton>Приєднатися</JoinButton>
