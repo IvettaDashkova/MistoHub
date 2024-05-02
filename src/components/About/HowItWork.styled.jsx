@@ -20,6 +20,7 @@ export const HowItWorkBackground = styled.div`
 
   @media (min-width: 1440px) {
     background-image: url(${bgImageDesktop});
+    background-size: auto 100%;
     background-position: 67% 50%;
   }
 `;
