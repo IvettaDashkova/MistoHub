@@ -11,7 +11,6 @@ export const JoinModalStyled = styled(Modal)`
   left: 50%;
   transform: translate(-50%, -50%);
   padding: 23px 16px 20px 16px;
-
   box-shadow:
     0px 6px 10px rgba(123, 107, 88, 0.95),
     -8px 6px 16px rgba(199, 190, 185, 0.95),
@@ -23,14 +22,9 @@ export const JoinModalStyled = styled(Modal)`
   font-weight: 500;
   color: rgba(11, 11, 11, 0.5);
   overflow-y: auto;
-  max-height: 99vh;
-
-  @media only screen and (min-width: 375px) {
-    width: 375px;
-  }
+  max-height: 100vh;
 
   @media only screen and (min-width: 768px) {
-    width: 768px;
     height: 1024px;
     font-size: 16px;
     line-height: 1.5;
@@ -95,6 +89,14 @@ export const JoinModalStyled = styled(Modal)`
     display: flex;
     justify-content: space-between;
     gap: 90px;
+
+    @media only screen and (min-width: 425px) {
+      padding: 0 31px;
+    }
+
+    @media only screen and (min-width: 1440px) {
+      padding: 0;
+    }
   }
 
   .joinForm {
@@ -104,7 +106,7 @@ export const JoinModalStyled = styled(Modal)`
     gap: 20px;
 
     @media only screen and (min-width: 768px) {
-      padding: 140px 31px;
+      padding: 140px 0;
       gap: 30px;
     }
 
@@ -303,8 +305,11 @@ export const InfoStyled = styled.div`
     color: rgba(11, 11, 11, 0.5);
     padding: 0;
 
-    @media only screen and (min-width: 768px) {
+    @media only screen and (min-width: 548px) {
       margin-left: 10px;
+    }
+
+    @media only screen and (min-width: 768px) {
       font-size: 16px;
     }
 
@@ -339,7 +344,7 @@ export const ErrorStyledBlock = styled.div`
   gap: 20px;
 
   @media only screen and (min-width: 768px) {
-    padding: 204px 31px 292px 31px;
+    padding: 204px 0 292px 0;
     gap: 30px;
   }
 
@@ -402,7 +407,7 @@ export const PostedStyledBlock = styled.div`
   gap: 20px;
 
   @media only screen and (min-width: 768px) {
-    padding: 230px 31px 280px 31px;
+    padding: 230px 0 280px 0;
     gap: 30px;
   }
 

@@ -12,6 +12,7 @@ import PostedBlock from '/src/components/JoinModal/PostedBlock';
 import Icon from '/src/components/Icon/Icon';
 import Maska from '/src/components/JoinModal/Maska';
 import Info from '/src/components/JoinModal/Info';
+import Loader from '/src/components/Loader/Loader';
 
 const UserDataSchema = Yup.object().shape({
   name: Yup.string()
@@ -83,6 +84,7 @@ const JoinModal = () => {
         style={{ overlay: { zIndex: '101' } }}
         bodyOpenClassName="modal-open"
       >
+        {isLoading && <Loader />}
         <p>Підтримати проєкт</p>
         <button
           className="joinCloseBtn"
@@ -198,8 +200,6 @@ const JoinModal = () => {
                     >
                       Відправити
                     </button>
-
-                    {isLoading && <p>Loading data, please wait...</p>}
                   </Form>
                 )}
               </Formik>
