@@ -1,11 +1,15 @@
 import { createGlobalStyle } from 'styled-components';
 
+import fontOddvalSemiBold from '../src/assets/fonts/Oddval-SemiBold.woff2';
+import fontFixelMedium from '../src/assets/fonts/FixelDisplay-Medium.ttf';
+import fontFixelSemiBold from '../src/assets/fonts/FixelDisplay-SemiBold.ttf';
+
 const GlobalStyle = createGlobalStyle`
-  
+
 @font-face {
   font-family: "Oddval";
-  src: 
-    url("/src/assets/fonts/Oddval-SemiBold.woff2") format('woff2');
+  src: local('Oddval SemiBold'), local('Oddval-SemiBold'),
+    url(${fontOddvalSemiBold}) format('woff2');
   font-weight: 600;
   font-style: normal;
   font-display: swap;
@@ -13,8 +17,8 @@ const GlobalStyle = createGlobalStyle`
 
 @font-face {
   font-family: "FixelDisplay";
-  src: 
-    url("/src/assets/fonts/FixelDisplay-Medium.ttf") format('truetype');
+  src: local('FixelDisplay Medium'), local('FixelDisplay-Medium'),
+    url(${fontFixelMedium}) format('truetype');
   font-weight: 500;
   font-style: normal;
   font-display: swap;
@@ -22,8 +26,8 @@ const GlobalStyle = createGlobalStyle`
 
 @font-face {
   font-family: "FixelDisplay";
-  src:
-    url("/src/assets/fonts/FixelDisplay-SemiBold.ttf") format('truetype');
+  src: local('FixelDisplay SemiBold'), local('FixelDisplay-SemiBold'),
+    url(${fontFixelSemiBold}) format('truetype');
   font-weight: 600;
   font-style: normal;
   font-display: swap;
@@ -33,6 +37,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: #fff;
+  font-family: "FixelDisplay";
   font-weight: 500;
   font-style: normal;
   color:#000;

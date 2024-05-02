@@ -19,7 +19,3 @@ export const ModalProvider = ({ children }) => {
     </ModalContext.Provider>
   );
 };
-
-// export const useModal = () => {
-//   return useContext(ModalContext);
-// };
