@@ -32,7 +32,6 @@ export const JoinModalStyled = styled(Modal)`
   }
 
   @media only screen and (min-width: 1440px) {
-    width: 1440px;
     height: 880px;
     padding: 40px 80px;
   }
@@ -87,12 +86,9 @@ export const JoinModalStyled = styled(Modal)`
 
   .joinMainContainer {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     gap: 90px;
-
-    @media only screen and (min-width: 425px) {
-      padding: 0 31px;
-    }
+    margin: 0 auto;
 
     @media only screen and (min-width: 1440px) {
       padding: 0;
@@ -111,7 +107,7 @@ export const JoinModalStyled = styled(Modal)`
     }
 
     @media only screen and (min-width: 1440px) {
-      padding: 60px 0;
+      padding: 54px 0;
       margin: auto;
     }
   }
@@ -133,11 +129,13 @@ export const JoinModalStyled = styled(Modal)`
 
   .joinList {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
     gap: 14px;
 
     @media only screen and (min-width: 768px) {
       width: 642px;
+      flex-direction: row;
+      flex-wrap: wrap;
     }
   }
 
@@ -246,33 +244,25 @@ export const MaskaStyled = styled.div`
 export const InfoStyled = styled.div`
   position: relative;
   bottom: 0;
-
-  @media only screen and (min-width: 768px) {
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 10px;
-  }
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 8px;
 
   .joinProtectionBlock {
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     gap: 8px;
-    flex-direction: row;
-    flex-wrap: wrap;
 
     @media only screen and (min-width: 768px) {
-      flex-direction: row;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      position: fixed;
-      right: 32px;
+      justify-content: space-between;
     }
+  }
 
-    @media only screen and (min-width: 1440px) {
-      right: 80px;
-    }
+  .joinProtectionBig {
+    display: flex;
+    align-items: center;
+    gap: 10px;
   }
 
   .joinProtection {
@@ -282,7 +272,7 @@ export const InfoStyled = styled.div`
   .joinProtection::after {
     content: '';
     position: absolute;
-    top: 50%;
+    top: 35%;
     right: -8px;
     transform: translateY(-50%);
     display: block;
@@ -298,19 +288,15 @@ export const InfoStyled = styled.div`
   .developers {
     font-size: 14px;
     display: flex;
-    justify-content: center;
     align-items: center;
     background-color: transparent;
     border: none;
     color: rgba(11, 11, 11, 0.5);
     padding: 0;
 
-    @media only screen and (min-width: 548px) {
-      margin-left: 10px;
-    }
-
     @media only screen and (min-width: 768px) {
       font-size: 16px;
+      margin-left: 10px;
     }
 
     & svg {

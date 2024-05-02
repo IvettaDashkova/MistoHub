@@ -3,7 +3,6 @@ import { useMediaQuery } from 'react-responsive';
 import { useState } from 'react';
 import * as Yup from 'yup';
 
-import { useModal } from '/src/contexts/ModalHook';
 import { postData } from '/src/services/API.js';
 
 import { JoinModalStyled } from '/src/components/JoinModal/JoinModal.styled';
@@ -31,7 +30,7 @@ const UserDataSchema = Yup.object().shape({
 });
 
 const JoinModal = () => {
-  const { isModalOpen, openModal, closeModal } = useModal();
+  const [isModalJoinOpen, setIsModalJoinOpen] = useState(false);
   const [isDataPosted, setIsDataPosted] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
@@ -45,6 +44,17 @@ const JoinModal = () => {
     about: '',
   };
 
+  const openJoinModal = () => {
+    setIsModalJoinOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsError(false);
+    setIsLoading(false);
+    setIsDataPosted(false);
+    setIsModalJoinOpen(false);
+  };
+
   const handleSubmit = async (values, formActions) => {
     const textedData = `<b>Ім’я: ${values.name}</b>\n<b>Прізвище: ${values.lastname}</b>\nТелефон: <b>${values.phone}</b>\nІнстаграм/Фейсбук: <b>${values.link}</b>\nПро себе:${values.about}`;
     formActions.resetForm();
@@ -55,7 +65,6 @@ const JoinModal = () => {
       const data = await postData(textedData);
 
       if (data.result.text !== '') {
-        console.log(data.result.text);
         setIsDataPosted(true);
       }
     } catch (err) {
@@ -65,26 +74,28 @@ const JoinModal = () => {
     }
   };
 
-  const handleCloseModal = () => {
-    setIsError(false);
-    setIsLoading(false);
-    setIsDataPosted(false);
-    closeModal();
-  };
-
   return (
     <>
-      <button type="button" onClick={openModal}>
+      <button type="button" onClick={openJoinModal}>
         Open Modal
       </button>
 
       <JoinModalStyled
-        isOpen={isModalOpen}
+        isOpen={isModalJoinOpen}
         onRequestClose={handleCloseModal}
         style={{ overlay: { zIndex: '101' } }}
         bodyOpenClassName="modal-open"
       >
-        {isLoading && <Loader />}
+        {isLoading && (
+          <Loader
+            style={{
+              display: 'block',
+              overlay: { zIndex: '999' },
+              width: '100vw',
+              height: '100vh',
+            }}
+          />
+        )}
         <p>Підтримати проєкт</p>
         <button
           className="joinCloseBtn"
