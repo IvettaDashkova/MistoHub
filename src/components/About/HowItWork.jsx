@@ -1,3 +1,4 @@
+import { useEffect, useRef } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination } from 'swiper/modules';
 import 'swiper/css';
@@ -6,9 +7,31 @@ import 'swiper/css/pagination';
 import { HowItWorkBackground, HowItWorkContainer } from './HowItWork.styled';
 
 export const HowItWork = () => {
+  const bg = useRef(null);
 
+  useEffect(() => {
+    const setBackgroundPosition = () => {
+      const width = window.innerWidth;
+      if (width >= 1440) {
+        const positionX = (width - 1440)/2 - 335;
+        bg.current.style.backgroundPosition = `left ${positionX}px center`;
+      }
+      if(width >= 768 && width < 1440) {
+        const positionX = (width - 768)/2 - 393;
+        bg.current.style.backgroundPosition = `left ${positionX}px center`;
+      }
+      if(width <= 375) {
+        const positionX = (width - 375)/2 - 194;
+        bg.current.style.backgroundPosition = `left ${positionX}px center`;
+      }
+    }
+      window.addEventListener('resize', setBackgroundPosition);
+
+    return () => window.removeEventListener('resize', setBackgroundPosition);
+
+  }, [window.innerWidth])
   return (
-    <HowItWorkBackground>
+    <HowItWorkBackground ref={bg}>
       <HowItWorkContainer>
         <div className="container-inner">
           <h2 className="how-it-work-title">Як це працює?</h2>
