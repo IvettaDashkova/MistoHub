@@ -81,7 +81,7 @@ const JoinModal = () => {
       <JoinModalStyled
         isOpen={isModalOpen}
         onRequestClose={handleCloseModal}
-        style={{ overlay: { zIndex: '2' } }}
+        style={{ overlay: { zIndex: '102' } }}
         bodyOpenClassName="modal-open"
       >
         <p>Підтримати проєкт</p>
