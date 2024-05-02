@@ -17,7 +17,7 @@ import Iconsvg from '../Icon/Icon';
 import { useModal } from '../../contexts/ModalHook';
 import links from '../BurgerMenu/links.json';
 
-const BurgerMenu = ({ activeSection }) => {
+const BurgerMenu = ({ activeSection, onScroll }) => {
   const { isModalOpen, closeModal } = useModal();
 
   const customStyles = {
@@ -55,6 +55,7 @@ const BurgerMenu = ({ activeSection }) => {
           links={links}
           onClose={closeModal}
           activeSection={activeSection}
+          onScroll={onScroll}
         />
         <ImgContainer>
           <Iconsvg iconName="misto-hub-logo" width="357" height="121" />

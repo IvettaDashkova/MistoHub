@@ -93,7 +93,10 @@ export const BtnContainer = styled.div`
 export const ImgContainer = styled.div`
   width: 1053px;
   height: 563px;
-  background-image: url('/src/assets/menu-img/vector.png');
+  background-image: url('/src/assets/menu-img/misto.png');
+  background-image: -webkit-image-set(
+    url('/src/assets/menu-img/misto.webp') 1x
+  );
   background-repeat: no-repeat;
   padding: 0;
   display: none;
@@ -120,7 +123,10 @@ export const ImgContainer = styled.div`
   @media screen and (min-device-pixel-ratio: 2),
     (min-resolution: 192dpi),
     (min-resolution: 2dppx) {
-    background-image: url('/src/assets/menu-img/vector-x2.png');
+    background-image: url('/src/assets/menu-img/misto-x2.png');
+    background-image: -webkit-image-set(
+      url('/src/assets/menu-img/misto-x2.webp') 2x
+    );
   }
 `;
 
