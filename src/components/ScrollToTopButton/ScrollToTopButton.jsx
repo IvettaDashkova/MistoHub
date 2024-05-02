@@ -4,13 +4,13 @@ import { animateScroll as scroll } from 'react-scroll';
 import Iconsvg from '../Icon/Icon';
 
 const ScrollToTopButton = () => {
-  const [isVisible, setIsVisible] = useState(false);
+  const [isVisible, setIsVisible] = useState(0);
 
   const handleScroll = () => {
     if (window.scrollY > 250) {
-      setIsVisible(true);
+      setIsVisible(1);
     } else {
-      setIsVisible(false);
+      setIsVisible(0);
     }
   };
 
@@ -29,7 +29,7 @@ const ScrollToTopButton = () => {
   }, []);
 
   return (
-    <StyledScrollButton visible={isVisible} onClick={scrollToTop}>
+    <StyledScrollButton style={{ opacity: isVisible }} onClick={scrollToTop}>
       <Iconsvg iconName="topscroll" />
     </StyledScrollButton>
   );

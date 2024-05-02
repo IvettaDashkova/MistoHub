@@ -4,7 +4,7 @@ import AboutProject from '../../components/About/AboutProject';
 import { ZibraniKoshti } from '../../components/ZibraniKoshti/ZibraniKoshti';
 import ScrollToTopButton from '../../components/ScrollToTopButton/ScrollToTopButton';
 import BurgerMenu from '../../components/BurgerMenu/BurgerMenu';
-// import TestSections from '../../components/ScrollToTopButton/TestSections';
+import TestSections from '../../components/ScrollToTopButton/TestSections';
 import { useEffect } from 'react';
 import { useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
@@ -12,8 +12,8 @@ import { useLocation, useNavigate } from 'react-router-dom';
 Modal.setAppElement('#root');
 
 const HomePage = () => {
+  const [isMenuOpen, setMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState(null);
-
   const location = useLocation();
   const navigate = useNavigate();
 
@@ -64,15 +64,28 @@ const HomePage = () => {
     };
   }, []);
 
+  const handleMenuClose = () => {
+    setMenuOpen(false);
+  };
+
+  const handleMenuOpen = () => {
+    setMenuOpen(true);
+  };
+
   return (
     <>
-      <Header />
-      <BurgerMenu activeSection={activeSection} onScroll={scrollToSection} />
+      <Header handleMenuOpen={handleMenuOpen} />
+      <BurgerMenu
+        activeSection={activeSection}
+        onScroll={scrollToSection}
+        isMenuOpen={isMenuOpen}
+        handleMenuClose={handleMenuClose}
+      />
       <main>
         <AboutProject />
         <ZibraniKoshti />
         <ScrollToTopButton />
-        {/* <TestSections /> */}
+        <TestSections />
       </main>
     </>
   );

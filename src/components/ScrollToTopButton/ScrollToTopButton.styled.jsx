@@ -11,7 +11,6 @@ export const StyledScrollButton = styled.button`
   border: none;
   outline: none;
   transition: opacity 0.3s ease;
-  opacity: ${(props) => (props.visible ? '1' : '0')};
   @media screen and (min-width: 768px) {
     height: 60px;
     width: 60px;
