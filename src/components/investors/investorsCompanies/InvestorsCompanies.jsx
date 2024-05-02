@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { fetchCompanies } from '../../../services/API';
 import ModalCompanies from '../modalCompanies/ModalCompanies';
 import { CompanyWrapper } from './InvestorsCompanies.styled';
