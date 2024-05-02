@@ -35,7 +35,6 @@ const Navigation = ({ links, activeSection, onClose }) => {
               onMouseEnter={() => handleMouseEnter(link.id)}
               onMouseLeave={handleMouseLeave}
             >
-              {/* <HoverContainer> */}
               <Link
                 to={`//#${link.id}`}
                 onClick={() => {
@@ -46,7 +45,6 @@ const Navigation = ({ links, activeSection, onClose }) => {
                 {link.value}
               </Link>
               {hoveredIndex === link.id && <Iconsvg iconName="hoverarrow" />}
-              {/* </HoverContainer> */}
             </StyledItem>
           ))}
         </StyledNavList>

@@ -7,7 +7,6 @@ import BurgerMenu from '../../components/BurgerMenu/BurgerMenu';
 // import TestSections from '../../components/ScrollToTopButton/TestSections';
 import { useEffect } from 'react';
 import { useState } from 'react';
-// import { useNavigate } from 'react-router-dom';
 
 Modal.setAppElement('#root');
 
@@ -33,14 +32,12 @@ const HomePage = () => {
       });
     };
 
-    // Добавляем прослушивание события прокрутки при монтировании компонента
     window.addEventListener('scroll', handleScroll);
 
-    // Убираем прослушивание события при размонтировании компонента
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
-  }, []); // [] указывает, что useEffect вызывается только один раз после монтирования компонента
+  }, []);
 
   return (
     <>

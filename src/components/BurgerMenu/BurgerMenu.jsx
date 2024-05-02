@@ -75,14 +75,14 @@ const BurgerMenu = ({ activeSection }) => {
 
         <SocLincContainer>
           <Link
-            href=" https://www.instagram.com/mistohub "
+            to="https://www.instagram.com/mistohub"
             target="_blank"
             rel="noreferrer"
           >
             <Iconsvg iconName="instagram-menu" width="36" height="36" />
           </Link>
           <Link
-            href="https://www.facebook.com/mistohub/?locale=uk_UA"
+            to="https://www.facebook.com/mistohub/?locale=uk_UA"
             target="_blank"
             rel="noreferrer"
           >
