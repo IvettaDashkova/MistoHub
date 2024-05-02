@@ -3,7 +3,6 @@ import sprite from '../../../assets/investors/sprite.svg';
 
 const ModalCompanies = ({ isOpen, data, onClose }) => {
   const { name, logoURL, link, question, answer } = data;
-  console.log(isOpen);
   if (!isOpen) return null;
 
   function formImgURL(img) {
@@ -33,6 +32,7 @@ const ModalCompanies = ({ isOpen, data, onClose }) => {
                 className="main-image"
                 src={formImgURL(logoURL)}
                 alt={name}
+                loading="lazy"
               />
               {link && (
                 <div className="svgWrapper">

@@ -1,208 +1,84 @@
 import styled from 'styled-components';
 
 export const CompanyWrapper = styled.div`
-  @media screen and (min-width: 320px) and (max-width: 374.9px) {
-    div {
-      // max-width: 375px;
-      margin-bottom: 60px;
+  div {
+    margin-bottom: 60px;
+    position: relative;
+    display: flex;
+    overflow: hidden;
+  }
+  @keyframes moveRightToLeft {
+    0% {
+      transform: translateX(0);
     }
-    @keyframes moveRightToLeft {
-      0% {
-        transform: translateX(0);
-      }
-      25% {
-        transform: translateX(-25%);
-      }
-      50% {
-        transform: translateX(-50%);
-      }
-      75% {
-        transform: translateX(-75%);
-      }
-      100% {
-        transform: translateX(-100%);
-      }
+    25% {
+      transform: translateX(-25%);
     }
-
-    ul {
-      display: flex;
-      gap: 12px;
-      width: 100vw;
-      animation: moveRightToLeft 10s linear infinite;
+    50% {
+      transform: translateX(-50%);
     }
-
-    ul:hover {
-      animation-play-state: paused;
+    75% {
+      transform: translateX(-75%);
     }
-
-    li {
-      cursor: pointer;
-    }
-
-    div {
-      position: relative;
-      display: flex;
-      overflow: hidden;
-    }
-
-    img {
-      width: 80px;
-      height: 62px;
-      border-radius: 10px;
+    100% {
+      transform: translateX(-100%);
     }
   }
 
-  @media screen and (min-width: 375px) and (max-width: 767.9px) {
-    div {
-      // max-width: 375px;
-      margin-bottom: 60px;
-    }
-    @keyframes moveRightToLeft {
-      0% {
-        transform: translateX(0);
-      }
-      25% {
-        transform: translateX(-25%);
-      }
-      50% {
-        transform: translateX(-50%);
-      }
-      75% {
-        transform: translateX(-75%);
-      }
-      100% {
-        transform: translateX(-100%);
-      }
-    }
+  ul {
+    display: flex;
+    gap: 12px;
+    width: 100vw;
+    animation: moveRightToLeft 10s linear infinite;
+  }
 
-    ul {
-      display: flex;
-      gap: 12px;
-      width: 100vw;
-      animation: moveRightToLeft 10s linear infinite;
-    }
+  ul:hover {
+    animation-play-state: paused;
+  }
 
-    ul:hover {
-      animation-play-state: paused;
-    }
+  li {
+    cursor: pointer;
+  }
 
-    li {
-      cursor: pointer;
-    }
-
-    div {
-      position: relative;
-      display: flex;
-      overflow: hidden;
-    }
-
-    img {
-      width: 80px;
-      height: 62px;
-      border-radius: 10px;
-    }
+  img {
+    width: 80px;
+    height: 62px;
+    border-radius: 10px;
   }
 
   @media screen and (min-width: 768px) and (max-width: 1439.9px) {
     div {
-      // max-width: 768px;
       margin-bottom: 120px;
-    }
-
-    @keyframes moveRightToLeft {
-      0% {
-        transform: translateX(0);
-      }
-      25% {
-        transform: translateX(-25%);
-      }
-      50% {
-        transform: translateX(-50%);
-      }
-      75% {
-        transform: translateX(-75%);
-      }
-      100% {
-        transform: translateX(-100%);
-      }
     }
 
     ul {
       display: flex;
       gap: 32px;
       width: 100vw;
-      animation: moveRightToLeft 5s linear infinite;
-    }
-
-    ul:hover {
-      animation-play-state: paused;
-    }
-
-    li {
-      cursor: pointer;
-    }
-
-    div {
-      display: flex;
-      overflow: hidden;
+      animation: moveRightToLeft 10s linear infinite;
     }
 
     img {
       width: 180px;
       height: 140px;
-      border-radius: 10px;
     }
   }
 
   @media screen and (min-width: 1440px) {
     div {
-      // max-width: 1024px;
       margin-bottom: 150px;
-    }
-
-    @keyframes moveRightToLeft {
-      0% {
-        transform: translateX(0);
-      }
-      25% {
-        transform: translateX(-25%);
-      }
-      50% {
-        transform: translateX(-50%);
-      }
-      75% {
-        transform: translateX(-75%);
-      }
-      100% {
-        transform: translateX(-100%);
-      }
     }
 
     ul {
       display: flex;
       gap: 32px;
       width: 100vw;
-      animation: moveRightToLeft 5s linear infinite;
-    }
-
-    ul:hover {
-      animation-play-state: paused;
-    }
-
-    li {
-      cursor: pointer;
-    }
-
-    div {
-      // position: relative;
-      display: flex;
-      overflow: hidden;
+      animation: moveRightToLeft 10s linear infinite;
     }
 
     img {
       width: 180px;
       height: 140px;
-      border-radius: 10px;
     }
   }
 `;

@@ -31,6 +31,7 @@ export async function fetchCompanies() {
     );
     // console.log('companies', result);
     return Array(11).fill(result[0]);
+    // return result[0];
   } catch (error) {
     //    handle error by some notification
     return;

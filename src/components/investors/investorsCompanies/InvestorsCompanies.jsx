@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { fetchCompanies } from '../../../services/API';
 import ModalCompanies from '../modalCompanies/ModalCompanies';
 import { CompanyWrapper } from './InvestorsCompanies.styled';
+import { nanoid } from 'nanoid';
 
 const InvestorsCompanies = () => {
   const [companiesData, setCompaniesData] = useState(null);
@@ -18,12 +19,10 @@ const InvestorsCompanies = () => {
   }
 
   useEffect(() => {
-    console.log('useEffect');
     const fetchData = async () => {
       try {
         const companiesResponse = await fetchCompanies();
         setCompaniesData(companiesResponse);
-        console.log(companiesResponse);
       } catch (error) {
         console.error('Error fetching companies data:', error);
       }
@@ -41,13 +40,12 @@ const InvestorsCompanies = () => {
 
   if (!companiesData) return;
 
-  let randomId = () => Math.floor(Math.random() * 10000);
   return (
     <CompanyWrapper>
       <div>
         <ul>
-          {companiesData.map((company, index) => (
-            <li key={randomId()}>
+          {companiesData.map((company) => (
+            <li key={nanoid()}>
               <img
                 src={formImgURL(company.logoURL)}
                 alt={`Company ${company.id}`}
@@ -55,7 +53,6 @@ const InvestorsCompanies = () => {
               />
             </li>
           ))}
-
           {selectedCompanies && (
             <ModalCompanies
               isOpen={selectedCompanies !== null}

@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { fetchPeople } from '../../../services/API';
 import ModalInvestors from '../modalInvestors/ModalInvestors';
 import { ListWrapper } from './InvestorsPeople.styled';
+import { nanoid } from 'nanoid';
 
 const InvestorsPeople = () => {
   const [peopleData, setPeopleData] = useState(null);
@@ -10,7 +11,6 @@ const InvestorsPeople = () => {
 
   function formImgURL(img) {
     const imgData = img.asset._ref.split('-');
-
     return `https://cdn.sanity.io/images/${
       import.meta.env.VITE_ADMIN_PROJECT_ID
     }/${import.meta.env.VITE_ADMIN_DATASET}/${imgData[1]}-${imgData[2]}.${
@@ -56,12 +56,13 @@ const InvestorsPeople = () => {
           className={`group-${groupIndex} ${groupIndex % 2 === 0 ? 'odd-group' : 'even-group'}`}
         >
           <ul>
-            {group.map((investor, index) => (
-              <li key={index}>
+            {group.map((investor) => (
+              <li key={nanoid()}>
                 <img
                   src={formImgURL(investor.imageURL)}
-                  alt={`Investor ${index}`}
+                  alt={`Investor ${investor.id}`}
                   onClick={() => openModal(investor)}
+                  loading="lazy"
                 />
               </li>
             ))}
@@ -76,26 +77,6 @@ const InvestorsPeople = () => {
         />
       )}
     </ListWrapper>
-
-    // return (
-    //   <ListWrapper>
-    //     <div>
-    //       <ul>
-    //         {peopleData.map((investor, index) => (
-    //           <li key={index}>
-    //             <img
-    //               src={formImgURL(investor.imageURL)}
-    //               alt={`Investor ${index}`}
-    //               onClick={() => openModal(investor)}
-    //             />
-    //           </li>
-    //         ))}
-    //         {selectedInvestor && (
-    //           <ModalInvestors data={selectedInvestor} onClose={closeModal} />
-    //         )}
-    //       </ul>
-    //     </div>
-    //   </ListWrapper>
   );
 };
 

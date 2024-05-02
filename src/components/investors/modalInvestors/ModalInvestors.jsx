@@ -43,7 +43,17 @@ const ModalInvestors = ({ data, onClose, isOpen }) => {
                 src={formImgURL(imageURL)}
                 alt={`${firstName} ${secondName}`}
               />
-              {facebook ? (
+              <div className="svgWrapper">
+                <a href={facebook ? facebook : instagram} target="_blank">
+                  <svg className="instaIcon">
+                    <use
+                      xlinkHref={`${sprite}${facebook ? '#icon-icon' : '#icon-instagram'}`}
+                    ></use>
+                  </svg>
+                </a>
+              </div>
+
+              {/* {facebook ? (
                 <div className="svgWrapper">
                   <a href={facebook} target="_blank">
                     <svg className="instaIcon">
@@ -61,7 +71,7 @@ const ModalInvestors = ({ data, onClose, isOpen }) => {
                     </a>
                   </div>
                 )
-              )}
+              )} */}
             </div>
             <div className="main-heading-wrapper">
               <h2 className="companyName">{`${firstName} ${secondName}`}</h2>

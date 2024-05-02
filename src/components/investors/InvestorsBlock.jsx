@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import { fetchGoal, fetchCompanies, fetchPeople } from '../../services/API';
+import { useEffect, useState } from 'react';
+import { fetchCompanies, fetchPeople } from '../../services/API';
 import InvestorsPeople from './investorsPeople/InvestorsPeople';
 import InvestorsCompanies from './investorsCompanies/InvestorsCompanies';
 import ModalInvestors from './modalInvestors/ModalInvestors';
@@ -11,35 +11,24 @@ import {
 } from './InvestorsBlock.styled';
 
 const InvestorsBlock = () => {
-  const [goal, setGoal] = useState({});
   const [companies, setCompanies] = useState([]);
   const [people, setPeople] = useState([]);
   const [selectedItem, setSelectedItem] = useState(null);
 
   useEffect(() => {
     const fetchData = async () => {
-      const goalData = await fetchGoal();
       const companiesData = await fetchCompanies();
       const peopleData = await fetchPeople();
-
-      setGoal(goalData);
       setCompanies(companiesData);
-
       setPeople(peopleData);
     };
 
     fetchData();
   }, []);
 
-  const openModal = (item) => {
-    setSelectedItem(item);
-  };
-
   const closeModal = () => {
     setSelectedItem(null);
   };
-
-  console.log(companies);
   return (
     <>
       <TextWrapper>
