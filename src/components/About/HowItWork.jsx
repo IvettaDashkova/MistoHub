@@ -12,24 +12,25 @@ export const HowItWork = () => {
   useEffect(() => {
     const setBackgroundPosition = () => {
       const width = window.innerWidth;
+      let positionX = 0;
       if (width >= 1440) {
-        const positionX = (width - 1440)/2 - 335;
-        bg.current.style.backgroundPosition = `left ${positionX}px center`;
+        positionX = (width - 1440)/2 - 335;
       }
       if(width >= 768 && width < 1440) {
-        const positionX = (width - 768)/2 - 393;
-        bg.current.style.backgroundPosition = `left ${positionX}px center`;
+        positionX = (width - 768)/2 - 393;
       }
-      if(width <= 375) {
-        const positionX = (width - 375)/2 - 194;
-        bg.current.style.backgroundPosition = `left ${positionX}px center`;
+      if(width <= 768) {
+        positionX = (width - 375)/2 - 194;
       }
+      bg.current.style.backgroundPosition = `left ${positionX}px center`;
     }
       window.addEventListener('resize', setBackgroundPosition);
+      setBackgroundPosition();
 
     return () => window.removeEventListener('resize', setBackgroundPosition);
 
-  }, [window.innerWidth])
+  });
+
   return (
     <HowItWorkBackground ref={bg}>
       <HowItWorkContainer>
