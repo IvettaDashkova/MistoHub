@@ -220,8 +220,8 @@ export const ModalWrapperTour = styled.div`
 
   & .psv-button {
     color: #ffffff;
-    width: 40px;
-    height: 40px;
+    width: 35px;
+    height: 35px;
     background: transparent;
     transition: all 300ms ease-in-out;
 
@@ -232,13 +232,23 @@ export const ModalWrapperTour = styled.div`
     &:hover {
       transform: scale(1.3);
     }
+
+    @media (min-width: 768px) {
+      width: 40px;
+      height: 40px;
+    }
   }
 
   & .psv-button-svg {
-    width: 24px;
-    height: 24px;
+    width: 20px;
+    height: 20px;
     transform: scale(1.3);
     transition: all 300ms ease-in-out;
+
+    @media (min-width: 768px) {
+      width: 24px;
+      height: 24px;
+    }
   }
 
   & .psv-zoom-range.psv-button {
@@ -246,7 +256,11 @@ export const ModalWrapperTour = styled.div`
   }
 
   & .psv-button:not(:first-child) {
-    margin-left: 20px;
+    margin-left: 5px;
+
+    @media (min-width: 768px) {
+      margin-left: 20px;
+    }
   }
 `;
 
@@ -266,6 +280,16 @@ export const CloseButton = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
+
+  &svg {
+    width: 15px;
+    height: 15px;
+
+    @media (min-width: 768px) {
+      width: 24px;
+      height: 24px;
+    }
+  }
 
   &:hover,
   &:focus {
