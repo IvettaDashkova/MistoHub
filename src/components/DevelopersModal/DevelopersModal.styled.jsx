@@ -14,7 +14,7 @@ export const DevelopersModalStyled = styled(Modal)`
   transform: translate(-50%, -50%);
   transition: all 1s ease-in-out;
   width: 100%;
-  height: 100%;
+  max-height: 100%;
   background-color: #fff;
   top: 50%;
   left: 50%;
@@ -47,8 +47,6 @@ export const DevelopersModalStyled = styled(Modal)`
     background: none;
     border: none;
     padding: 0;
-    font: inherit;
-    cursor: pointer;
     outline: none;
   }
   .сloseText {
@@ -196,12 +194,10 @@ export const ModalDown = styled.div`
   }
   @media (min-width: 768px) {
     font-size: 16px;
-    flex-wrap: no-wrap;
     align-items: baseline;
 
-    .marg-right-auto {
-      width: auto;
-      margin-right: auto;
+    .after-el {
+      margin-left: auto;
     }
     .after-el::after {
       right: -10px;

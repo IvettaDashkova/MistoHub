@@ -33,9 +33,15 @@ const Developer = ({ name, role, link, jpg, jpgx2, webp, webpx2 }) => {
             alt={`${name}, ${role}`}
             width="180"
             height="180"
+            loading="lazy"
           />
         </picture>
-        <Link className='dev-link' to={link} target="blank" rel="noopener noreferrer">
+        <Link
+          className="dev-link"
+          to={link}
+          target="blank"
+          rel="noopener noreferrer"
+        >
           <Iconsvg iconName="icon-linkedin" styles="icon-linkedin"></Iconsvg>
         </Link>
       </div>

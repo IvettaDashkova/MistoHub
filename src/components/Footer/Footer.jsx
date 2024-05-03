@@ -20,7 +20,7 @@ export default function Footer() {
               iconName="main-logo"
               styles="icon-logo"
             />
-            <p className="address">м.Полтава, вул. Спаська, 10</p>
+            <p className="address-mistohub">м.Полтава, вул. Спаська, 10</p>
             <Contacts />
             <button
               className="btn-supp"
@@ -35,7 +35,7 @@ export default function Footer() {
         </div>
         <FooterDown>
           <div>
-            <p>© ГО «МІСТО ХАБ»</p>
+            <p>&copy; ГО &laquo;МІСТО ХАБ&raquo;</p>
             <p>Всі права захищені</p>
           </div>
           <button className="btn-goit" onClick={openModal}>

@@ -3,7 +3,7 @@ import { Navigation } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import Developer from './Developer';
-import data from './develops.json';
+import data from '/src/constants/develops.json';
 
 const SwiperComponent = () => {
   const shuffle = (data) => {

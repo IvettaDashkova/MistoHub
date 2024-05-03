@@ -57,7 +57,7 @@ const DevelopersModal = () => {
           </div>
 
           <ModalDown>
-            <span className="marg-right-auto">© ГО «МІСТО ХАБ»</span>
+            <span>&copy; ГО &laquo;МІСТО ХАБ&raquo;</span>
             <span className="after-el">Всі права захищені</span>
             <div>
               <span>Розроблено студентами</span>

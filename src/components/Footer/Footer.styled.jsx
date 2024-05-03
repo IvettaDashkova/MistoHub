@@ -33,7 +33,10 @@ export const FooterContainer = styled(StyledContainer)`
     fill: #ffffff;
     margin-bottom: 24px;
   }
-  .address {
+  address {
+    font-style: normal;
+  }
+  .address-mistohub {
     line-height: 1.2;
     letter-spacing: -0.02em;
     text-align: left;
@@ -109,7 +112,7 @@ export const FooterContainer = styled(StyledContainer)`
       height: 40px;
       margin-bottom: 30px;
     }
-    .address {
+    .address-mistohub {
       line-height: 1.5;
       margin-bottom: 30px;
     }
