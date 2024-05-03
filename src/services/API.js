@@ -50,3 +50,16 @@ export async function fetchPeople() {
     return;
   }
 }
+
+export async function postData(userData) {
+  const { data } = await axios.post(
+    `https://api.telegram.org/bot${import.meta.env.VITE_TELEGRAM_TOKEN}/sendMessage`,
+    {
+      chat_id: import.meta.env.VITE_CHAT_ID,
+      parse_mode: 'html',
+      text: userData,
+    }
+  );
+
+  return data;
+}
