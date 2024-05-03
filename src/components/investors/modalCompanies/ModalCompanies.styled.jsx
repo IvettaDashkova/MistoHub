@@ -70,11 +70,7 @@ export const ModalCompanyWrapper = styled.div`
   .closeButton {
     float: right;
     border: none;
-    border-radius: 10px;
-    background: #fff;
-    box-shadow:
-      4px 17px 102.1px 0px rgba(0, 0, 0, 0.19),
-      0px 25px 30.4px 0px rgba(0, 0, 0, 0.09);
+    background: transparent;
     padding: 0;
   }
 
@@ -196,19 +192,6 @@ export const ModalCompanyWrapper = styled.div`
       hieght: 24px;
       padding: 0;
       display: block;
-    }
-
-    .closeButton {
-      float: right;
-      border: none;
-      border-radius: 10px;
-      background: #fff;
-      box-shadow:
-        4px 17px 102.1px 0px rgba(0, 0, 0, 0.19),
-        0px 25px 30.4px 0px rgba(0, 0, 0, 0.09);
-      padding: 0;
-      position: relative;
-      z-index: 1;
     }
 
     .closeSvg {
