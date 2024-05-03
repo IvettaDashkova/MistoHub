@@ -1,8 +1,8 @@
 import { useMediaQuery } from 'react-responsive';
 import { useState } from 'react';
 
-import Icon from '/src/components/Icon/Icon';
 import { InfoStyled } from '/src/components/JoinModal/JoinModal.styled';
+import Icon from '/src/components/Icon/Icon';
 
 const Info = () => {
   const isMobile = useMediaQuery({ maxWidth: 767 });
