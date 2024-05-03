@@ -1,28 +1,27 @@
 import styled from 'styled-components';
 import cursorImage from '../../assets/images/visualization/cursor-image.png';
 
-export const ContainerVisual = styled.div`
+export const VisualizationSection = styled.section`
   min-width: 320px;
-  max-width: 375px;
-  margin: 0 auto;
-  padding: 26px 16px 60px;
+  padding-top: 26px;
+  padding-bottom: 60px;
+  background-color: #ffffff;
   display: flex;
   flex-direction: column;
-  background-color: #ffffff;
 
   @media (min-width: 768px) {
-    max-width: 768px;
-    padding: 54px 32px 120px;
+    padding-top: 54px;
+    padding-bottom: 120px;
     position: relative;
   }
 
   @media (min-width: 1440px) {
     max-width: 1440px;
-    padding: 54px 120px 150px;
+    padding-bottom: 150px;
   }
 `;
 
-export const TitleContainer = styled.div`
+export const Title = styled.div`
   font-family: 'Oddval', sans-serif;
   font-weight: 600;
   font-size: 24px;
@@ -79,7 +78,6 @@ export const Card = styled.div`
 
   @media (min-width: 1440px) {
     width: calc((100% - 30px) / 2);
-    height: 580px;
   }
 `;
 
@@ -96,7 +94,6 @@ export const CardTitle = styled.h2`
 
   @media (min-width: 768px) {
     margin-bottom: 30px;
-    font-weight: 600;
     font-size: 38px;
     line-height: 1.16;
   }
@@ -119,7 +116,6 @@ export const ButtonTour = styled.button`
   box-shadow: 0 1px 2px 0 rgba(16, 24, 40, 0.05);
   background: #ffffff;
   border: none;
-
   transition: all 300ms ease-in-out;
 
   &:hover,
@@ -129,14 +125,6 @@ export const ButtonTour = styled.button`
   }
 
   @media (min-width: 768px) {
-    padding: 15px 26px;
-    font-size: 16px;
-    line-height: 1.5;
-    display: block;
-    margin: 0 auto;
-  }
-
-  @media (min-width: 1440px) {
     padding: 15px 26px;
     font-size: 16px;
     line-height: 1.5;
@@ -173,6 +161,11 @@ export const LeftArrow = styled.button`
   fill: #f77d07;
   transition: all 300ms ease-in-out;
 
+  & svg {
+    width: 22px;
+    height: 22px;
+  }
+
   &.enabled {
     background: #f77d07;
     fill: #ffffff;
@@ -185,11 +178,11 @@ export const LeftArrow = styled.button`
   @media (min-width: 768px) {
     width: 60px;
     height: 60px;
-  }
 
-  @media (min-width: 1440px) {
-    width: 60px;
-    height: 60px;
+    & svg {
+      width: 30px;
+      height: 30px;
+    }
   }
 `;
 
@@ -203,8 +196,6 @@ export const CardsContainer = styled.div`
     justify-content: space-between;
   }
 `;
-
-/* ========= стилі для 3D туру ===========*/
 
 export const ModalWrapperTour = styled.div`
   border-radius: 20px;
@@ -220,7 +211,7 @@ export const ModalWrapperTour = styled.div`
 
     cursor: url(${cursorImage}), default;
 
-    height: 15%;
+    margin-bottom: 30px;
   }
 
   & .psv-canvas {
@@ -231,14 +222,14 @@ export const ModalWrapperTour = styled.div`
     color: #ffffff;
     width: 40px;
     height: 40px;
+    background: transparent;
     transition: all 300ms ease-in-out;
 
     display: flex;
     justify-content: center;
     align-items: center;
 
-    &:hover,
-    &:focus {
+    &:hover {
       transform: scale(1.3);
     }
   }
@@ -263,20 +254,18 @@ export const CloseButton = styled.button`
   position: absolute;
   top: 20px;
   right: 20px;
-  background-color: transparent;
-  border: none;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 300ms ease-in-out;
-  stroke: #ffffff;
 
   width: 40px;
   height: 40px;
+  stroke: #ffffff;
+  border-radius: 50%;
+  border: none;
+  background-color: transparent;
+  transition: all 300ms ease-in-out;
+
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
 
   &:hover,
   &:focus {
