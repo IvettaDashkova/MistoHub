@@ -1,6 +1,5 @@
 import styled, { keyframes } from 'styled-components';
 
-
 const spinner = keyframes`
   to {
     transform: rotate(360deg);
@@ -15,26 +14,24 @@ export const LoaderContainer = styled.div`
   justify-content: center;
   height: 50vh;
 
-    .house-svg{
+  .house-svg {
     margin-right: 5px;
-    fill: #F77D07;
+    fill: #f77d07;
   }
 
-  .wave-svg{
+  .wave-svg {
     margin-left: 1px;
-    fill: #F77D07;
+    fill: #f77d07;
   }
-  
 `;
 
 export const Text = styled.div`
   text-align: center;
   color: #fff;
-  margin:0;
+  margin: 0;
   margin-top: -20px;
   margin-right: 10px;
-  -webkit-text-stroke: 0.5px #0B0B0B;
+  -webkit-text-stroke: 0.5px #0b0b0b;
   font-size: 10px;
   animation: ${spinner} 2s linear infinite;
 `;
-
