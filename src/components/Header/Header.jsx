@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useMediaQuery } from 'react-responsive';
+import { useModal } from '../../contexts/ModalHook';
 
 import { HeaderContainer, StyledHeader } from './Header.styled';
 import SocialBlock from '/src/shared/SocialBlock/SocialBlock';
@@ -7,6 +8,7 @@ import Icon from '/src/components/Icon/Icon';
 
 function Header({ handleMenuOpen }) {
   const [transitionClass, setTransitionClass] = useState('');
+  const { openModal } = useModal();
 
   const isMobile = useMediaQuery({ maxWidth: 767 });
 
@@ -52,9 +54,7 @@ function Header({ handleMenuOpen }) {
             <button
               type="button"
               className="btn-clouds"
-              onClick={() =>
-                console.log('Modal for supported project is open!')
-              }
+              onClick={() => openModal('join_modal')}
             >
               <Icon
                 width="180"
