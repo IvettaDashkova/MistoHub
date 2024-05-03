@@ -5,7 +5,7 @@ import AboutProject from '../../components/About/AboutProject';
 import { ZibraniKoshti } from '../../components/ZibraniKoshti/ZibraniKoshti';
 import ScrollToTopButton from '../../components/ScrollToTopButton/ScrollToTopButton';
 import BurgerMenu from '../../components/BurgerMenu/BurgerMenu';
-import TestSections from '../../components/ScrollToTopButton/TestSections';
+// import TestSections from '../../components/ScrollToTopButton/TestSections';
 import { useEffect } from 'react';
 import { useState } from 'react';
 import { useLocation } from 'react-router-dom';
@@ -51,6 +51,7 @@ const HomePage = () => {
           setActiveSection(sectionId);
           const url = `#${sectionId}`;
           window.history.pushState(null, '', url);
+          //pushState змінює url при скролі
         }
       });
     };
@@ -83,7 +84,7 @@ const HomePage = () => {
         <AboutProject />
         <ZibraniKoshti />
         <ScrollToTopButton />
-        <TestSections />
+        {/* <TestSections /> */}
         <CoFounders />
       </main>
       <Footer />
