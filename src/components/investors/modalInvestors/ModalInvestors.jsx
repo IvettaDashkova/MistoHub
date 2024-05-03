@@ -2,7 +2,7 @@ import {
   CustomModal,
   ModalCompanyWrapper,
 } from '../modalCompanies/ModalCompanies.styled';
-import sprite from '../../../assets/investors/sprite.svg';
+import Iconsvg from '../../Icon/Icon';
 const ModalInvestors = ({ data, onClose, isOpen }) => {
   const {
     firstName,
@@ -42,36 +42,27 @@ const ModalInvestors = ({ data, onClose, isOpen }) => {
                 className="main-image"
                 src={formImgURL(imageURL)}
                 alt={`${firstName} ${secondName}`}
+                loading="lazy"
               />
               <div className="svgWrapper">
                 <a href={facebook ? facebook : instagram} target="_blank">
-                  <svg className="instaIcon">
-                    <use
-                      xlinkHref={`${sprite}${facebook ? '#icon-icon' : '#icon-instagram'}`}
-                    ></use>
-                  </svg>
+                  {facebook ? (
+                    <Iconsvg
+                      width="28"
+                      height="28"
+                      iconName="icon-icon"
+                      styles="instaIcon"
+                    />
+                  ) : (
+                    <Iconsvg
+                      width="28"
+                      height="28"
+                      iconName="icon-facebook"
+                      styles="instaIcon"
+                    />
+                  )}
                 </a>
               </div>
-
-              {/* {facebook ? (
-                <div className="svgWrapper">
-                  <a href={facebook} target="_blank">
-                    <svg className="instaIcon">
-                      <use xlinkHref={`${sprite}#icon-icon`}></use>
-                    </svg>
-                  </a>
-                </div>
-              ) : (
-                instagram && (
-                  <div className="svgWrapper">
-                    <a href={instagram} target="_blank">
-                      <svg className="instaIcon">
-                        <use xlinkHref={`${sprite}#icon-instagram`}></use>
-                      </svg>
-                    </a>
-                  </div>
-                )
-              )} */}
             </div>
             <div className="main-heading-wrapper">
               <h2 className="companyName">{`${firstName} ${secondName}`}</h2>
@@ -82,9 +73,12 @@ const ModalInvestors = ({ data, onClose, isOpen }) => {
                 Закрити
               </button>
               <button className="closeButton" onClick={onClose}>
-                <svg className="close-icon" width="28" height="28">
-                  <use xlinkHref={`${sprite}#icon-x`}></use>
-                </svg>
+                <Iconsvg
+                  width="28"
+                  height="28"
+                  iconName="icon-x"
+                  styles="close-icon"
+                />
               </button>
             </div>
           </div>

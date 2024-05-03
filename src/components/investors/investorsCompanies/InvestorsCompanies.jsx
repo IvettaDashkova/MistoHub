@@ -50,6 +50,7 @@ const InvestorsCompanies = () => {
                 src={formImgURL(company.logoURL)}
                 alt={`Company ${company.id}`}
                 onClick={() => openModal(company)}
+                loading="lazy"
               />
             </li>
           ))}

@@ -1,5 +1,5 @@
 import { CustomModal, ModalCompanyWrapper } from './ModalCompanies.styled';
-import sprite from '../../../assets/investors/sprite.svg';
+import Iconsvg from '../../Icon/Icon';
 
 const ModalCompanies = ({ isOpen, data, onClose }) => {
   const { name, logoURL, link, question, answer } = data;
@@ -37,9 +37,7 @@ const ModalCompanies = ({ isOpen, data, onClose }) => {
               {link && (
                 <div className="svgWrapper">
                   <a href={link} target="_blank" rel="noopener noreferrer">
-                    <svg className="instaIcon">
-                      <use xlinkHref={`${sprite}#icon-instagram`}></use>
-                    </svg>
+                    <Iconsvg iconName="icon-icon" styles="instaIcon" />
                   </a>
                 </div>
               )}
@@ -53,9 +51,12 @@ const ModalCompanies = ({ isOpen, data, onClose }) => {
                 Закрити
               </button>
               <button className="closeButton" onClick={onClose}>
-                <svg className="close-icon" width="28" height="28">
-                  <use xlinkHref={`${sprite}#icon-x`}></use>
-                </svg>
+                <Iconsvg
+                  iconName="icon-x"
+                  styles="close-icon"
+                  width={28}
+                  height={28}
+                />
               </button>
             </div>
           </div>

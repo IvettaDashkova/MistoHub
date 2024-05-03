@@ -46,7 +46,7 @@ export const CompanyWrapper = styled.div`
     border-radius: 10px;
   }
 
-  @media screen and (min-width: 768px) and (max-width: 1439.9px) {
+  @media screen and (min-width: 768px) {
     div {
       margin-bottom: 120px;
     }
@@ -67,18 +67,6 @@ export const CompanyWrapper = styled.div`
   @media screen and (min-width: 1440px) {
     div {
       margin-bottom: 150px;
-    }
-
-    ul {
-      display: flex;
-      gap: 32px;
-      width: 100vw;
-      animation: moveRightToLeft 10s linear infinite;
-    }
-
-    img {
-      width: 180px;
-      height: 140px;
     }
   }
 `;

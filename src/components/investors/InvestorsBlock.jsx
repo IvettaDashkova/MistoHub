@@ -30,7 +30,7 @@ const InvestorsBlock = () => {
     setSelectedItem(null);
   };
   return (
-    <>
+    <section>
       <TextWrapper>
         <InfoText>Імпакт-інвестори МІСТОХАБ</InfoText>
         <MainHeading>З нами вже</MainHeading>
@@ -47,7 +47,7 @@ const InvestorsBlock = () => {
       {selectedItem && (
         <ModalInvestors data={selectedItem} onClose={closeModal} />
       )}
-    </>
+    </section>
   );
 };
 

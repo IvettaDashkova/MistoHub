@@ -52,7 +52,7 @@ const InvestorsPeople = () => {
     <ListWrapper>
       {groupedPeople.map((group, groupIndex) => (
         <div
-          key={groupIndex}
+          key={nanoid()}
           className={`group-${groupIndex} ${groupIndex % 2 === 0 ? 'odd-group' : 'even-group'}`}
         >
           <ul>
