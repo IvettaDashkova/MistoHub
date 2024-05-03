@@ -1,5 +1,4 @@
 import Navigation from '../Navigation/Navigation';
-import { Link } from 'react-router-dom';
 import {
   BottomContainer,
   BtnClose,
@@ -14,7 +13,7 @@ import {
   TopContainer,
 } from './BurgerMenu.styled';
 import Iconsvg from '../Icon/Icon';
-import links from '../BurgerMenu/links.json';
+import { Link } from 'react-router-dom';
 
 const BurgerMenu = ({
   activeSection,
@@ -25,11 +24,10 @@ const BurgerMenu = ({
   const customStyles = {
     top: '0',
     left: '0',
-    overlay: { zIndex: '2' },
+    // z index ???
+    overlay: { zIndex: '100' },
     bodyOpenClassName: 'modal-open',
   };
-
-  StyledMenu.setAppElement('#root');
 
   return (
     <StyledMenu
@@ -54,7 +52,6 @@ const BurgerMenu = ({
 
       <FlexContainer>
         <Navigation
-          links={links}
           onClose={handleMenuClose}
           activeSection={activeSection}
           onScroll={onScroll}

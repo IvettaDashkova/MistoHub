@@ -2,15 +2,19 @@ import Iconsvg from '../Icon/Icon';
 import { StyledNavList, StyledItem } from './Navigation.styled';
 import { useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
+import links from '../../components/Navigation/links.json';
 
-const Navigation = ({ links, activeSection, onClose, onScroll }) => {
+const Navigation = ({ activeSection, onClose }) => {
   const [hoveredIndex, setHoveredIndex] = useState(null);
-
   const sectionRef = useRef(null);
 
-  const sectionScroll = (sectionId) => {
+  const scrollToSection = (sectionId) => {
+    const sectionElement = document.getElementById(sectionId);
+    window.scrollTo({
+      top: sectionElement.offsetTop - 120,
+      behavior: 'smooth',
+    });
     onClose();
-    onScroll(sectionId);
   };
 
   const handleMouseEnter = (id) => {
@@ -33,14 +37,14 @@ const Navigation = ({ links, activeSection, onClose, onScroll }) => {
             >
               <Link
                 to={`/MistoHub#${link.id}`}
-                onClick={() => sectionScroll(link.id)}
+                onClick={() => scrollToSection(link.id)}
                 className={activeSection === link.id ? 'active' : 'link'}
                 ref={sectionRef}
               >
                 {link.value}
               </Link>
               {hoveredIndex === link.id && (
-                <button type="button" onClick={() => sectionScroll(link.id)}>
+                <button type="button" onClick={() => scrollToSection(link.id)}>
                   <Iconsvg iconName="hoverarrow" />
                 </button>
               )}

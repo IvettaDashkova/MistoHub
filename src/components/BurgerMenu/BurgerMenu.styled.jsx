@@ -1,5 +1,9 @@
 import styled from 'styled-components';
 import Modal from 'react-modal';
+import sity from '../../assets/menu-img/misto.png';
+import sityx2 from '../../assets/menu-img/misto-x2.png';
+import sityWebP from '../../assets/menu-img/misto.webp';
+import sityWebPx2 from '../../assets/menu-img/misto-x2.webp';
 
 export const StyledMenu = styled(Modal)`
   background-color: #ffffff;
@@ -93,10 +97,8 @@ export const BtnContainer = styled.div`
 export const ImgContainer = styled.div`
   width: 1053px;
   height: 563px;
-  background-image: url('/src/assets/menu-img/misto.png');
-  background-image: -webkit-image-set(
-    url('/src/assets/menu-img/misto.webp') 1x
-  );
+  background-image: url(${sity});
+  background-image: -webkit-image-set(url(${sityWebP}) 1x);
   background-repeat: no-repeat;
   padding: 0;
   display: none;
@@ -123,10 +125,8 @@ export const ImgContainer = styled.div`
   @media screen and (min-device-pixel-ratio: 2),
     (min-resolution: 192dpi),
     (min-resolution: 2dppx) {
-    background-image: url('/src/assets/menu-img/misto-x2.png');
-    background-image: -webkit-image-set(
-      url('/src/assets/menu-img/misto-x2.webp') 2x
-    );
+    background-image: url(${sityx2});
+    background-image: -webkit-image-set(url(${sityWebPx2}) 2x);
   }
 `;
 
