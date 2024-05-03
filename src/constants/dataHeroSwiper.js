@@ -1,3 +1,4 @@
+
 import img1Png1 from '/src/assets/hero/hero1.png';
 import img1Png2 from '/src/assets/hero/hero1@2x.png';
 import img1WebP1 from '/src/assets/hero/hero1.webp';
@@ -38,6 +39,7 @@ export const heroData = [
     imgWebP2: img2WebP2,
     alt: 'Kitchen 2',
   },
+
   {
     imgPng1: img3Png1,
     imgPng2: img3Png2,
