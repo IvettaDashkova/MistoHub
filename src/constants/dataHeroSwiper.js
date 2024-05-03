@@ -1,14 +1,14 @@
-import imgPng1 from '/src/assets/hero/hero1.png';
-import imgPng2 from '/src/assets/hero/hero1@2x.png';
-import imgWebP1 from '/src/assets/hero/hero1.webp';
-import imgWebP2 from '/src/assets/hero/hero1@2x.webp';
+import kitchen1_png from '/src/assets/hero/hero1.png';
+import kitchen1_png2x from '/src/assets/hero/hero1@2x.png';
+import kitchen1_webp from '/src/assets/hero/hero1.webp';
+import kitchen1_webp2x from '/src/assets/hero/hero1@2x.webp';
 
 export const heroData = [
   {
-    imgPng1,
-    imgPng2,
-    imgWebP1,
-    imgWebP2,
+    kitchen1_png,
+    kitchen1_png2x,
+    kitchen1_webp,
+    kitchen1_webp2x,
     alt: 'Kitchen 1',
   },
   // {
