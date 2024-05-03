@@ -1,4 +1,4 @@
-import { MaskaStyled } from '/src/components/JoinModal/JoinModal.styled';
+import { MaskaStyled } from '/src/shared/Modals/JoinModal/JoinModal.styled';
 
 import maska_png1 from '/src/assets/join/maska.png';
 import maska_png2 from '/src/assets/join/maska@2x.png';

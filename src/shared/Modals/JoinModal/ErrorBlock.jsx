@@ -1,4 +1,4 @@
-import { ErrorStyledBlock } from '/src/components/JoinModal/JoinModal.styled';
+import { ErrorStyledBlock } from '/src/shared/Modals/JoinModal/JoinModal.styled';
 import Icon from '/src/components/Icon/Icon';
 
 const ErrorBlock = () => {
