@@ -8,6 +8,7 @@ import TestSections from '../../components/ScrollToTopButton/TestSections';
 import { useEffect } from 'react';
 import { useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
+import CoFounders from '../../components/CoFounders/CoFounders';
 
 Modal.setAppElement('#root');
 
@@ -86,6 +87,7 @@ const HomePage = () => {
         <ZibraniKoshti />
         <ScrollToTopButton />
         <TestSections />
+        <CoFounders />
       </main>
     </>
   );
