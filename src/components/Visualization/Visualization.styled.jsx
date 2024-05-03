@@ -31,7 +31,7 @@ export const Title = styled.div`
   text-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
   margin-bottom: 32px;
 
-  @media screen and (min-width: 320px) and (max-width: 374px) {
+  @media (min-width: 320px) and (max-width: 374px) {
     font-size: 20px;
     line-height: 1.5;
   }
@@ -60,7 +60,7 @@ export const Card = styled.div`
   position: relative;
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
 
-  @media screen and (min-width: 320px) and (max-width: 374px) {
+  @media (min-width: 320px) and (max-width: 374px) {
     margin: 0 auto;
     width: 288px;
     height: 288px;

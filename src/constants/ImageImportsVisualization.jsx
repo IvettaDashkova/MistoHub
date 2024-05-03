@@ -23,9 +23,9 @@ import imgD1_P from '../assets/images/visualization/event-space-desktop-2x.jpg';
 import imgD2_P from '../assets/images/visualization/cafe-desktop-2x.jpg';
 import imgD3_P from '../assets/images/visualization/city​-shop-desktop-2x.jpg';
 // Імпорт зображень для віртуального туру.
-import visualIn from '../assets/images/visualization/event-space-Viz.jpg';
-import visualK from '../assets/images/visualization/cafe-Viz.jpg';
-import visualM from '../assets/images/visualization/city​-shop-Viz.jpg';
+import visualIn from '../assets/images/visualization/event-space-Viz.webp';
+import visualK from '../assets/images/visualization/cafe-Viz.webp';
+import visualM from '../assets/images/visualization/city​-shop-Viz.webp';
 
 export const images = [
   {
