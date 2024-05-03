@@ -12,7 +12,6 @@ import Icon from '/src/components/Icon/Icon';
 import Maska from '/src/shared/Modals/JoinModal/Maska';
 import Info from '/src/shared/Modals/JoinModal/Info';
 import Loader from '/src/components/Loader/Loader';
-import { useModal } from '/src/contexts/ModalHook';
 
 const UserDataSchema = Yup.object().shape({
   name: Yup.string()
@@ -30,12 +29,11 @@ const UserDataSchema = Yup.object().shape({
   about: Yup.string().max(500, 'Про себе може містити до 500 символів.'),
 });
 
-const JoinModal = () => {
+const JoinModal = ({ isModalOpen, closeModal }) => {
   const [isDataPosted, setIsDataPosted] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
 
-  const { isModalOpen, closeModal } = useModal();
   const isDesctop = useMediaQuery({ minWidth: 1440 });
 
   const INITIAL_FORM_DATA = {
