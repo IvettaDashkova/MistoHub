@@ -15,6 +15,7 @@
     "@emotion/styled": "^11.11.0",
     "@photo-sphere-viewer/core": "^5.7.2",
     "@photo-sphere-viewer/markers-plugin": "^5.7.2-fix.1",
+    "@react-google-maps/api": "^2.19.3",
     "@vitejs/plugin-react-swc": "^3.3.2",
     "axios": "^1.6.8",
     "formik": "^2.4.6",
