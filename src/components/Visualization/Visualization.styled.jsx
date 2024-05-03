@@ -1,23 +1,27 @@
 import styled from 'styled-components';
 import cursorImage from '../../assets/images/visualization/cursor-image.png';
+import Container from '../../shared/Container/Container';
 
 export const VisualizationSection = styled.section`
-  min-width: 320px;
-  padding-top: 26px;
-  padding-bottom: 60px;
-  background-color: #ffffff;
+  width: 100%;
+`;
+
+export const VisualizationContainer = styled(Container)`
+  padding: 26px 16px 60px;
+
   display: flex;
   flex-direction: column;
 
   @media (min-width: 768px) {
-    padding-top: 54px;
-    padding-bottom: 120px;
+    max-width: 768px;
+    padding: 54px 32px 120px;
+
     position: relative;
   }
 
   @media (min-width: 1440px) {
     max-width: 1440px;
-    padding-bottom: 150px;
+    padding: 54px 120px 150px;
   }
 `;
 
@@ -281,18 +285,18 @@ export const CloseButton = styled.button`
   align-items: center;
   justify-content: center;
 
-  &svg {
-    width: 15px;
-    height: 15px;
+  --icon-size: 20px;
 
-    @media (min-width: 768px) {
-      width: 24px;
-      height: 24px;
-    }
+  @media (min-width: 768px) {
+    --icon-size: 24px;
   }
 
-  &:hover,
-  &:focus {
+  & svg {
+    width: var(--icon-size);
+    height: var(--icon-size);
+  }
+
+  &:hover {
     transform: scale(1.3);
   }
 `;

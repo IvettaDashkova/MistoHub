@@ -4,6 +4,7 @@ import TourModal from './TourModal';
 import { images } from '../../constants/ImageImportsVisualization';
 import {
   VisualizationSection,
+  VisualizationContainer,
   Title,
   CardsContainer,
   Card,
@@ -15,7 +16,6 @@ import {
 } from './Visualization.styled';
 import Iconsvg from '../Icon/Icon';
 import { nanoid } from 'nanoid';
-import Container from '../../shared/Container/Container';
 
 const Visualization = () => {
   const isDesktop = useMediaQuery({ minWidth: 1440 });
@@ -77,7 +77,7 @@ const Visualization = () => {
 
   return (
     <VisualizationSection id="visualization">
-      <Container>
+      <VisualizationContainer>
         <Title>Як виглядатиме простір?</Title>
         <CardsContainer>
           {images
@@ -129,7 +129,7 @@ const Visualization = () => {
             <Iconsvg iconName="icon-arrow-right" />
           </RightArrow>
         </Arrow>
-      </Container>
+      </VisualizationContainer>
     </VisualizationSection>
   );
 };
