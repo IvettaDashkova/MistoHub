@@ -84,7 +84,6 @@ const HomePage = () => {
         <AboutProject />
         <ZibraniKoshti />
         <ScrollToTopButton />
-        {/* <TestSections /> */}
         <CoFounders />
       </main>
       <Footer />
