@@ -6,7 +6,7 @@ export const StyledHeader = styled.header`
   width: 100%;
   position: fixed;
   top: 0;
-  z-index: 1;
+  z-index: 100;
 
   .main-logo {
     fill: #ffffff;

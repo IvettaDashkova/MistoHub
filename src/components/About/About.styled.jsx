@@ -188,6 +188,15 @@ export const AboutContainer = styled(AboutProjectContainer)`
       padding-bottom: 0px;
     }
 
+    .about-list {
+      gap: 24px;
+    }
+    .about-list-item{
+      width: 369px !important;
+      &:nth-of-type(3) {
+        width: 414px !important;
+      }
+    }
     .about-list-item-number {
       padding-top: 5px;
       width: 72px;
