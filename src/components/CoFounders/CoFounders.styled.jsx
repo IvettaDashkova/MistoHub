@@ -27,8 +27,9 @@ export const CoFoundersContainer = styled(StyledContainer)`
 `;
 
 export const SectionTitle = styled.h2`
+  font-family: 'Oddval';
   color: #0b0b0b;
-  font-weight: 700;
+  font-weight: 600;
   font-size: 24px;
   line-height: 133%;
   letter-spacing: -0.02em;
