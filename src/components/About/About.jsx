@@ -47,20 +47,14 @@ export const About = () => {
                 clickable: true,
               }
             },
-            375: {
-              slidesPerView: 1,
-              grid: {
-                row: 3,
-              },
-              initialSlide: 0,
-              slideTo: 0,
-              enabled: true,
-              pagination: {
-                enabled: false,
-                clickable: true,
-              }
-            }
           }}
+          slidesPerView={1}
+          grid={{
+            rows: 3,
+          }}
+          initialSlide={0}
+          slideTo={0}
+          enabled={true}
           pagination={{
             enabled: false,
             clickable: false,
