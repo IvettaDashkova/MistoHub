@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { AmountGif } from './ZibraniKoshti.styled';
+import { AmountGif } from './AccumulatedMoney.styled';
 
 const ProgressBarAmount = ({ totalAmount }) => {
   const [progress, setProgress] = useState(0);

@@ -1,6 +1,6 @@
 import { nanoid } from 'nanoid';
 import tasks from './MadedTasks.json';
-import { MadeListItem, SVGContainer } from './ZibraniKoshti.styled';
+import { MadeListItem, SVGContainer } from './AccumulatedMoney.styled';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';

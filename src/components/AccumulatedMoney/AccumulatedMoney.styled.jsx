@@ -1,8 +1,8 @@
 import { css, keyframes } from '@emotion/react';
 
-import backgroundImageForMobile from './Rectangle 42862.png';
-import backgroundImageForTablet from './back-for-tablet.png';
-import backgroundImageForDesktop from './back-for-desktop.png';
+import backgroundImageForMobile from '../../assets/AccumulatedMoney/back-for-mobile.png';
+import backgroundImageForTablet from '../../assets/AccumulatedMoney/back-for-tablet.png';
+import backgroundImageForDesktop from '../../assets/AccumulatedMoney/back-for-desktop.png';
 
 import styled from '@emotion/styled';
 
@@ -175,7 +175,6 @@ export const TitleContainer = styled.div`
 `;
 
 export const ProgressBar = styled.div`
-  backgound-color: #77ee7e;
   display: flex;
   margin: 0 auto 55px;
   padding: 0 30px;

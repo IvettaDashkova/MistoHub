@@ -1,4 +1,4 @@
-import { NeedToDoItem, SVGContainerForNeedItem } from './ZibraniKoshti.styled';
+import { NeedToDoItem, SVGContainerForNeedItem } from './AccumulatedMoney.styled';
 import { nanoid } from 'nanoid';
 import { useMediaQuery } from 'react-responsive';
 

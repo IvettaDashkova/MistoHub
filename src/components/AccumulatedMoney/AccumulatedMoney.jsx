@@ -1,16 +1,18 @@
 import { useState, useEffect, useRef } from 'react';
 import { Cards } from './Cards';
 import FundraisingProgressBar from './FundraisingProgressBar';
-import { ContainerWrapper, TitleContainer } from './ZibraniKoshti.styled';
+import { ContainerWrapper, TitleContainer } from './AccumulatedMoney.styled';
 import { fetchGoal } from '../../services/API';
 import { useMediaQuery } from 'react-responsive';
 import { NeedToDoCards } from './NeedToDoCards';
 import { MadeCards } from './MadeCards';
+import { useModal } from '../../contexts/ModalHook';
 
-export const ZibraniKoshti = () => {
+export const AccumulatedMoney = () => {
   const [goalData, setGoalData] = useState(null);
   const isDesktop = useMediaQuery({ minWidth: 1440 });
   const sectionRef = useRef(null);
+  const { openModal } = useModal();
 
   const [isVisible, setIsVisible] = useState(false);
 
@@ -66,7 +68,7 @@ export const ZibraniKoshti = () => {
                 targetAmount={goalData.goal}
               />
               <Cards />
-              <button onClick={() => console.log('Click')} type="button">
+              <button onClick={() => openModal('join_modal')} type="button">
                 Підтримати проєкт
               </button>
             </>
@@ -86,11 +88,12 @@ export const ZibraniKoshti = () => {
                   </p>
                 </TitleContainer>
                 <FundraisingProgressBar
+                  goAnimation={isVisible}
                   totalAmount={goalData.raised}
                   targetAmount={goalData.goal}
                 />
 
-                <button onClick={() => console.log('Click')} type="button">
+                <button onClick={() => openModal('join_modal')} type="button">
                   Підтримати проєкт
                 </button>
               </div>

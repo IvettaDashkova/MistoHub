@@ -1,17 +1,13 @@
 import { MadeCards } from './MadeCards';
 import { NeedToDoCards } from './NeedToDoCards';
 import { useMediaQuery } from 'react-responsive';
-import { CardsList } from './ZibraniKoshti.styled';
-
-import { useState, useEffect, useRef } from 'react';
+import { CardsList } from './AccumulatedMoney.styled';
 
 export const Cards = () => {
   const isDesktop = useMediaQuery({ minWidth: 1440 });
 
-  const sectionRef = useRef(null);
-
   return (
-    <CardsList ref={sectionRef}>
+    <CardsList>
       {isDesktop ? (
         <>
           <ul>
