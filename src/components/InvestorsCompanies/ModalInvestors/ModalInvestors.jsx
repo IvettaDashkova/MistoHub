@@ -45,7 +45,11 @@ const ModalInvestors = ({ data, onClose, isOpen }) => {
                 loading="lazy"
               />
               <div className="svgWrapper">
-                <a href={facebook ? facebook : instagram} target="_blank">
+                <a
+                  href={facebook ? facebook : instagram}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   {facebook ? (
                     <Iconsvg
                       width="28"
