@@ -4,7 +4,7 @@ import Modal from 'react-modal';
 
 import Header from '/src/components/Header/Header';
 import AboutProject from '../../components/About/AboutProject';
-import AccumulatedMoney from '../../components/AccumulatedMoney/AccumulatedMoney';
+import { AccumulatedMoney } from '../../components/AccumulatedMoney/AccumulatedMoney';
 
 import InvestorsBlock from '../../components/InvestorsCompanies/InvestorsBlock';
 import Visualization from '../../components/Visualization/Visualization';
