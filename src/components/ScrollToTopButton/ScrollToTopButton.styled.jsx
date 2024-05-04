@@ -11,12 +11,17 @@ export const StyledScrollButton = styled.button`
   border: none;
   outline: none;
   transition: opacity 0.3s ease;
+  /* display: flex; */
+  /* align-items: center; */
+  /* justify-content: center;  */
+  padding: 0;
   @media screen and (min-width: 768px) {
     height: 60px;
     width: 60px;
   }
 
   svg {
+    margin: 0 auto;
     width: 12px;
     height: 8px;
     stroke-width: 1.6px;
