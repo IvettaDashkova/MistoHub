@@ -1,6 +1,6 @@
 import { useMediaQuery } from 'react-responsive';
 
-import { PostedStyledBlock } from '/src/components/JoinModal/JoinModal.styled';
+import { PostedStyledBlock } from '/src/shared/Modals/JoinModal/JoinModal.styled';
 
 const PostedBlock = ({ handleCloseModal }) => {
   const isDesctop = useMediaQuery({ minWidth: 1440 });
