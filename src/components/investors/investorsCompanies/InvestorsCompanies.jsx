@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { fetchCompanies } from '../../../services/API';
-import ModalCompanies from '../modalCompanies/ModalCompanies';
+import ModalCompanies from '../ModalCompanies/ModalCompanies';
 import { CompanyWrapper } from './InvestorsCompanies.styled';
 import { nanoid } from 'nanoid';
 

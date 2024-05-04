@@ -1,20 +1,15 @@
 import styled from 'styled-components';
+import Container from '../../shared/Container/Container';
 
-export const TextWrapper = styled.div`
-  max-width: 375px;
+export const TextWrapper = styled(Container)`
   margin-bottom: 32px;
-  padding: 0 16px;
 
   @media screen and (min-width: 768px) and (max-width: 1439.9px) {
-    max-width: 768px;
     margin-bottom: 60px;
-    padding-left: 32px;
   }
 
   @media screen and (min-width: 1440px) {
-    max-width: 1024px;
     margin-bottom: 80px;
-    padding-left: 120px;
   }
 `;
 

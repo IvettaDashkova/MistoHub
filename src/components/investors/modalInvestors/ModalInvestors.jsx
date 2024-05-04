@@ -1,7 +1,7 @@
 import {
   CustomModal,
   ModalCompanyWrapper,
-} from '../modalCompanies/ModalCompanies.styled';
+} from '../ModalCompanies/ModalCompanies.styled';
 import Iconsvg from '../../Icon/Icon';
 const ModalInvestors = ({ data, onClose, isOpen }) => {
   const {

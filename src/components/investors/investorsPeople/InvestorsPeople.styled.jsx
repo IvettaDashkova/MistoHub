@@ -57,8 +57,7 @@ export const ListWrapper = styled.div`
     animation: moveToLeft 10s linear infinite;
   }
 
-  .group-0.odd-group::before,
-  .group-0.odd-group::after {
+  .group-0.odd-group::before {
     content: '';
     position: absolute;
     top: 0;
@@ -72,18 +71,19 @@ export const ListWrapper = styled.div`
     z-index: 2;
   }
 
-  // .group-0.odd-group::after {
-  //   content: '';
-  //   position: absolute;
-  //   top: 0;
-  //   bottom: 0;
-  //   right: 0;
-  //   border-radius: 10px;
-  //   width: 80px;
-  //   height: 62px;
-  //   opacity: 0.3;
-  //   background: lightgray;
-  // }
+  .group-0.odd-group::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    border-radius: 10px;
+    width: 80px;
+    height: 62px;
+    opacity: 0.3;
+    background: lightgray;
+    z-index: 2;
+  }
 
   .group-3.even-group::before {
     content: '';
@@ -254,7 +254,20 @@ export const ListWrapper = styled.div`
       animation: moveToLeft 10s linear infinite;
     }
 
-    .odd-group::before {
+    .group-0.odd-group::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      border-radius: 10px;
+      width: 180px;
+      height: 140px;
+      opacity: 0.3;
+      background: lightgray;
+    }
+
+    .group-0.odd-group::before {
       content: '';
       position: absolute;
       top: 0;
@@ -268,20 +281,7 @@ export const ListWrapper = styled.div`
       z-index: 2;
     }
 
-    .odd-group::after {
-      content: '';
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      right: 0;
-      border-radius: 10px;
-      width: 180px;
-      height: 140px;
-      opacity: 0.3;
-      background: lightgray;
-    }
-
-    .even-group::before {
+    .group-1.even-group::before {
       content: '';
       position: absolute;
       top: 0;
@@ -295,7 +295,7 @@ export const ListWrapper = styled.div`
       z-index: 2;
     }
 
-    .even-group::after {
+    .group-1.even-group::after {
       content: '';
       position: absolute;
       top: 0;
@@ -307,6 +307,60 @@ export const ListWrapper = styled.div`
       opacity: 0.3;
       background: lightgray;
       z-index: 2;
+    }
+
+    .group-2.odd-group::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      border-radius: 10px;
+      width: 180px;
+      height: 140px;
+      opacity: 0.3;
+      background: lightgray;
+    }
+
+    .group-2.odd-group::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      border-radius: 10px;
+      width: 180px;
+      height: 140px;
+      opacity: 0.3;
+      background: lightgray;
+      z-index: 2;
+    }
+
+    .group-3.even-group::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      border-radius: 10px;
+      width: 180px;
+      height: 140px;
+      opacity: 0.3;
+      background: lightgray;
+      z-index: 2;
+    }
+
+    .group-3.even-group::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      border-radius: 10px;
+      width: 180px;
+      height: 140px;
+      opacity: 0.3;
+      background: lightgray;
     }
 
     ul:hover {

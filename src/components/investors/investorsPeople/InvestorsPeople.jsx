@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { fetchPeople } from '../../../services/API';
-import ModalInvestors from '../modalInvestors/ModalInvestors';
+import ModalInvestors from '../ModalInvestors/ModalInvestors';
 import { ListWrapper } from './InvestorsPeople.styled';
 import { nanoid } from 'nanoid';
 

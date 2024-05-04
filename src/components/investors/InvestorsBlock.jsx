@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
 import { fetchCompanies, fetchPeople } from '../../services/API';
-import InvestorsPeople from './investorsPeople/InvestorsPeople';
-import InvestorsCompanies from './investorsCompanies/InvestorsCompanies';
-import ModalInvestors from './modalInvestors/ModalInvestors';
+import InvestorsPeople from './InvestorsPeople/InvestorsPeople';
+import InvestorsCompanies from './InvestorsCompanies/InvestorsCompanies';
+import ModalInvestors from './ModalInvestors/ModalInvestors';
 import {
   InfoText,
   MainHeading,
@@ -36,7 +36,7 @@ const InvestorsBlock = () => {
         <MainHeading>З нами вже</MainHeading>
         <SecondHeading>{people.length} людини</SecondHeading>
       </TextWrapper>
-      <div>
+      <div style={{ width: '100%', maxWidth: '1440px', margin: '0 auto' }}>
         <InvestorsPeople />
 
         <TextWrapper>
