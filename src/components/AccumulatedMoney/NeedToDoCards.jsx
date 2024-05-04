@@ -1,14 +1,12 @@
-import { NeedToDoItem, SVGContainerForNeedItem } from './AccumulatedMoney.styled';
+import {
+  NeedToDoItem,
+  SVGContainerForNeedItem,
+} from './AccumulatedMoney.styled';
 import { nanoid } from 'nanoid';
 import { useMediaQuery } from 'react-responsive';
+import tasks from '../../constants/NeedToDoTasks.json';
 
 export const NeedToDoCards = () => {
-  const tasks = [
-    'Закупівля й встановлення меблів, обладнання для кухні та сантехніки для вбиралень',
-    'Встановлення системи кондиціонування',
-    'Освітлення простору',
-  ];
-
   const isDesktop = useMediaQuery({ minWidth: 1440 });
 
   return tasks.map((task) => (

@@ -1,5 +1,6 @@
 import { nanoid } from 'nanoid';
-import tasks from './MadedTasks.json';
+
+import tasks from '../../constants/MadedTasks.json';
 import { MadeListItem, SVGContainer } from './AccumulatedMoney.styled';
 import 'swiper/css';
 import 'swiper/css/navigation';
