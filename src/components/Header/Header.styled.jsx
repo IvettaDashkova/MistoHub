@@ -12,51 +12,35 @@ export const StyledHeader = styled.header`
 
   .main-logo {
     fill: #ffffff;
-    transition: fill 0.7s;
+    transition: fill 1s;
   }
 
   .burger-menu-icon {
     stroke: #ffffff;
-    transition: fill 0.7s;
+    transition: fill 1s;
   }
 
-  .burger-menu-icon.short-header {
+  .burger-menu-icon.dark-header {
     stroke: #0b0b0b;
   }
 
-  .main-logo.short-header {
+  .main-logo.dark-header {
     fill: #0b0b0b;
   }
 `;
 
 export const HeaderContainer = styled(Container)`
-  max-width: 343px;
-  padding: 20px 0 0;
+  padding: 16px 18px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  transition: max-width 0.7s ease-in-out;
-
-  &.short-header {
-    max-width: 291px;
-  }
 
   @media screen and (min-width: 768px) and (max-width: 1439px) {
-    max-width: 704px;
-    padding: 30px 0 0;
-
-    &.short-header {
-      max-width: 600px;
-    }
+    padding: 16px 32px;
   }
 
   @media screen and (min-width: 1440px) {
-    max-width: 1200px;
-    padding: 30px 0 0;
-
-    &.short-header {
-      max-width: 1199px;
-    }
+    padding: 20px 120px;
   }
 
   .menu-wrapper {
