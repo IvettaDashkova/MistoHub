@@ -1,0 +1,202 @@
+[
+  {
+    "id": "id-1",
+    "name": "Шевцов Єгор",
+    "role": "Project Manager",
+    "link": "https://www.linkedin.com/in/yehor-shevtsov/",
+    "ipg": "/src/assets/img/dev-photo/id-1.jpg",
+    "jpgx2": "/src/assets/img/dev-photo/id-1x2.jpg",
+    "webp": "/src/assets/img/dev-photo/id-1.webp",
+    "webpx2": "/src/assets/img/dev-photo/id-1x2.webp"
+  },
+  {
+    "id": "id-2",
+    "name": "Юрій Шукан",
+    "role": "Front-end розробник",
+    "link": "https://www.linkedin.com/in/yuriy-shukan/",
+    "ipg": "/src/assets/img/dev-photo/id-2.jpg",
+    "jpgx2": "/src/assets/img/dev-photo/id-2x2.jpg",
+    "webp": "/src/assets/img/dev-photo/id-2.webp",
+    "webpx2": "/src/assets/img/dev-photo/id-2x2.webp"
+  },
+  {
+    "id": "id-3",
+    "name": "Дуднік Анна",
+    "role": "Front-end розробник",
+    "link": "http://www.linkedin.com/in/anna-dudnik-dev/",
+    "ipg": "/src/assets/img/dev-photo/id-3.jpg",
+    "jpgx2": "/src/assets/img/dev-photo/id-3x2.jpg",
+    "webp": "/src/assets/img/dev-photo/id-3.webp",
+    "webpx2": "/src/assets/img/dev-photo/id-3x2.webp"
+  },
+  {
+    "id": "id-4",
+    "name": "Ратушняк Ілона",
+    "role": "UI/UX Designer ",
+    "link": "http://linkedin.com/in/ilona-ratushniak-3a678624b/",
+    "ipg": "/src/assets/img/dev-photo/id-4.jpg",
+    "jpgx2": "/src/assets/img/dev-photo/id-4x2.jpg",
+    "webp": "/src/assets/img/dev-photo/id-4.webp",
+    "webpx2": "/src/assets/img/dev-photo/id-4x2.webp"
+  },
+  {
+    "id": "id-5",
+    "name": "Анна Ричкова",
+    "role": "Front-end розробник",
+    "link": "https://www.linkedin.com/in/annarychkova1/",
+    "ipg": "/src/assets/img/dev-photo/id-5.jpg",
+    "jpgx2": "/src/assets/img/dev-photo/id-5x2.jpg",
+    "webp": "/src/assets/img/dev-photo/id-5.webp",
+    "webpx2": "/src/assets/img/dev-photo/id-5x2.webp"
+  },
+  {
+    "id": "id-6",
+    "name": "Дудка Анастасія",
+    "role": "Front-end розробник",
+    "link": "https://www.linkedin.com/in/anastasiia-dudka-/",
+    "ipg": "/src/assets/img/dev-photo/id-6.jpg",
+    "jpgx2": "/src/assets/img/dev-photo/id-6x2.jpg",
+    "webp": "/src/assets/img/dev-photo/id-6.webp",
+    "webpx2": "/src/assets/img/dev-photo/id-6x2.webp"
+  },
+  {
+    "id": "id-7",
+    "name": "Демчук Володимир",
+    "role": "Front-end розробник",
+    "link": "https://www.linkedin.com/in/demchuk-volodymyr/",
+    "ipg": "/src/assets/img/dev-photo/id-7.jpg",
+    "jpgx2": "/src/assets/img/dev-photo/id-7x2.jpg",
+    "webp": "/src/assets/img/dev-photo/id-7.webp",
+    "webpx2": "/src/assets/img/dev-photo/id-7x2.webp"
+  },
+  {
+    "id": "id-8",
+    "name": "Савченко Сергій",
+    "role": "Front-end розробник",
+    "link": "https://www.linkedin.com/in/serhiy-savchenko/",
+    "ipg": "/src/assets/img/dev-photo/id-8.png",
+    "jpgx2": "/src/assets/img/dev-photo/id-8x2.png",
+    "webp": "/src/assets/img/dev-photo/id-8.webp",
+    "webpx2": "/src/assets/img/dev-photo/id-8x2.webp"
+  },
+  {
+    "id": "id-9",
+    "name": "Кудлай Микита",
+    "role": "Front-end розробник",
+    "link": "https://www.linkedin.com/in/mykytakudlai/",
+    "ipg": "/src/assets/img/dev-photo/id-9.jpg",
+    "jpgx2": "/src/assets/img/dev-photo/id-9x2.jpg",
+    "webp": "/src/assets/img/dev-photo/id-9.webp",
+    "webpx2": "/src/assets/img/dev-photo/id-9x2.webp"
+  },
+  {
+    "id": "id-10",
+    "name": "Кароліна Таран",
+    "role": "Front-end розробник",
+    "link": "http://www.linkedin.com/in/karolina-taran-developer/",
+    "ipg": "/src/assets/img/dev-photo/id-10.jpg",
+    "jpgx2": "/src/assets/img/dev-photo/id-10x2.jpg",
+    "webp": "/src/assets/img/dev-photo/id-10.webp",
+    "webpx2": "/src/assets/img/dev-photo/id-10x2.webp"
+  },
+  {
+    "id": "id-11",
+    "name": "Сергій Монжелесов",
+    "role": "Front-end розробник",
+    "link": "http://www.linkedin.com/in/serhii-monzhelesov/",
+    "ipg": "/src/assets/img/dev-photo/id-11.jpg",
+    "jpgx2": "/src/assets/img/dev-photo/id-11x2.jpg",
+    "webp": "/src/assets/img/dev-photo/id-11.webp",
+    "webpx2": "/src/assets/img/dev-photo/id-11x2.webp"
+  },
+  {
+    "id": "id-12",
+    "name": "Людмила Пасєка",
+    "role": "QA-тестувальник",
+    "link": "https://www.linkedin.com/in/liudmyla-pasieka-112a6429b/",
+    "ipg": "/src/assets/img/dev-photo/id-12.jpg",
+    "jpgx2": "/src/assets/img/dev-photo/id-12x2.jpg",
+    "webp": "/src/assets/img/dev-photo/id-12.webp",
+    "webpx2": "/src/assets/img/dev-photo/id-12x2.webp"
+  },
+  {
+    "id": "id-13",
+    "name": "Олена Салобай",
+    "role": "QA-тестувальник",
+    "link": "http://www.linkedin.com/in/olena-salobai/",
+    "ipg": "/src/assets/img/dev-photo/id-13.jpg",
+    "jpgx2": "/src/assets/img/dev-photo/id-13x2.jpg",
+    "webp": "/src/assets/img/dev-photo/id-13.webp",
+    "webpx2": "/src/assets/img/dev-photo/id-13x2.webp"
+  },
+  {
+    "id": "id-14",
+    "name": "Сенчишин Любомир",
+    "role": "QA-тестувальник",
+    "link": "https://www.linkedin.com/in/liubomyr-senchyshyn-691596298/",
+    "ipg": "/src/assets/img/dev-photo/id-14.jpg",
+    "jpgx2": "/src/assets/img/dev-photo/id-14x2.jpg",
+    "webp": "/src/assets/img/dev-photo/id-14.webp",
+    "webpx2": "/src/assets/img/dev-photo/id-14x2.webp"
+  },
+  {
+    "id": "id-15",
+    "name": "Анна Олійник",
+    "role": "QA-тестувальник",
+    "link": "https://www.linkedin.com/in/hanna-oliinyk-66835715a/",
+    "ipg": "/src/assets/img/dev-photo/id-15.jpg",
+    "jpgx2": "/src/assets/img/dev-photo/id-15x2.jpg",
+    "webp": "/src/assets/img/dev-photo/id-15.webp",
+    "webpx2": "/src/assets/img/dev-photo/id-15x2.webp"
+  },
+  {
+    "id": "id-16",
+    "name": "Нікіта Яцухно",
+    "role": "QA-тестувальник",
+    "link": "http://www.linkedin.com/in/nikita-yatsukhno/",
+    "ipg": "/src/assets/img/dev-photo/id-16.jpg",
+    "jpgx2": "/src/assets/img/dev-photo/id-16x2.jpg",
+    "webp": "/src/assets/img/dev-photo/id-16.webp",
+    "webpx2": "/src/assets/img/dev-photo/id-16x2.webp"
+  },
+  {
+    "id": "id-17",
+    "name": "Іветта Дашкова",
+    "role": "Tech Lead",
+    "link": "https://www.linkedin.com/in/ivettadashkova/",
+    "ipg": "/src/assets/img/dev-photo/id-17.jpg",
+    "jpgx2": "/src/assets/img/dev-photo/id-17x2.jpg",
+    "webp": "/src/assets/img/dev-photo/id-17.webp",
+    "webpx2": "/src/assets/img/dev-photo/id-17x2.webp"
+  },
+  {
+    "id": "id-18",
+    "name": "Піляєв Ігор",
+    "role": "Front-end розробник",
+    "link": "https://www.linkedin.com/in/igor-piliaiev/",
+    "ipg": "/src/assets/img/dev-photo/id-18.jpg",
+    "jpgx2": "/src/assets/img/dev-photo/id-18x2.jpg",
+    "webp": "/src/assets/img/dev-photo/id-18.webp",
+    "webpx2": "/src/assets/img/dev-photo/id-18x2.webp"
+  },
+  {
+    "id": "id-19",
+    "name": "Вікторія Бєлінська",
+    "role": "QA-тестувальник",
+    "link": "http://www.linkedin.com/in/viktoriia-bielinska-95892429b/",
+    "ipg": "/src/assets/img/dev-photo/id-19.png",
+    "jpgx2": "/src/assets/img/dev-photo/id-19x2.png",
+    "webp": "/src/assets/img/dev-photo/id-19.webp",
+    "webpx2": "/src/assets/img/dev-photo/id-19x2.webp"
+  },
+  {
+    "id": "id-20",
+    "name": "Катерина Драцька",
+    "role": "QA-тестувальник",
+    "link": "https://www.linkedin.com/in/kateryna-dratska/",
+    "ipg": "/src/assets/img/dev-photo/id-20.jpg",
+    "jpgx2": "/src/assets/img/dev-photo/id-20x2.jpg",
+    "webp": "/src/assets/img/dev-photo/id-20.webp",
+    "webpx2": "/src/assets/img/dev-photo/id-20x2.webp"
+  }
+]

@@ -1,3 +1,4 @@
+import { useEffect, useRef } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination } from 'swiper/modules';
 import 'swiper/css';
@@ -6,9 +7,30 @@ import 'swiper/css/pagination';
 import { HowItWorkBackground, HowItWorkContainer } from './HowItWork.styled';
 
 export const HowItWork = () => {
+  const bg = useRef(null);
+
+  useEffect(() => {
+    const setBackgroundPosition = () => {
+      const width = window.innerWidth;
+      let positionX = 0;
+      if (width >= 1440) {
+        positionX = (width - 1440)/2 - 335;
+      }else if(width >= 768 && width < 1440) {
+        positionX = (width - 768)/2 - 393;
+      }else{
+        positionX = (width - 375)/2 - 194;
+      }
+      bg.current.style.backgroundPosition = `left ${positionX}px center`;
+    }
+      window.addEventListener('resize', setBackgroundPosition);
+      setBackgroundPosition();
+
+    return () => window.removeEventListener('resize', setBackgroundPosition);
+
+  });
 
   return (
-    <HowItWorkBackground>
+    <HowItWorkBackground ref={bg}>
       <HowItWorkContainer>
         <div className="container-inner">
           <h2 className="how-it-work-title">Як це працює?</h2>
@@ -23,6 +45,7 @@ export const HowItWork = () => {
               }}
               breakpoints={{
                 768: {
+                  slidesPerView: 5,
                   enabled: true,
                   initialSlide: 0,
                   slideTo: 0,
@@ -55,7 +78,7 @@ export const HowItWork = () => {
               <SwiperSlide tag="li" className="how-it-work-item">
                 <div className="how-it-work-number">2</div>
                 <p className="how-it-work-text">
-                  У відновленій будівлі відкривається МІСТОХАБ в якому
+                  У відновленій будівлі відкривається МІСТОХАБ, в якому
                   функціонують:{' '}
                   <span className="accent">
                     Кафе, Крамниця локальних виробників Містошоп, Івент-простір
