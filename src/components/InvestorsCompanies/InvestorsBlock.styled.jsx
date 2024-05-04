@@ -2,13 +2,16 @@ import styled from 'styled-components';
 import Container from '../../shared/Container/Container';
 
 export const TextWrapper = styled(Container)`
+  padding-top: 60px;
   margin-bottom: 32px;
 
   @media screen and (min-width: 768px) and (max-width: 1439.9px) {
+    padding-top: 120px;
     margin-bottom: 60px;
   }
 
   @media screen and (min-width: 1440px) {
+    padding-top: 150px;
     margin-bottom: 80px;
   }
 `;
