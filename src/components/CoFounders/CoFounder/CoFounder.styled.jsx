@@ -14,7 +14,8 @@ export const ListItem = styled.div`
 `;
 
 export const PersonName = styled.h3`
-  font-weight: 700;
+  font-family: 'Oddval';
+  font-weight: 600;
   font-size: 18px;
   line-height: 122%;
   letter-spacing: -0.02em;

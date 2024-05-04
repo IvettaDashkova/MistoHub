@@ -9,10 +9,9 @@ export async function fetchGoal() {
       }/data/query/${import.meta.env.VITE_ADMIN_DATASET
       }?query=*[_type=="goal"]{ _id, goal, raised }`
     );
-    console.log('goal', result[0]);
+
     return result[0];
   } catch (error) {
-    //    handle error by some notification
     return;
   }
 }
@@ -25,10 +24,9 @@ export async function fetchCompanies() {
       }/data/query/${import.meta.env.VITE_ADMIN_DATASET
       }?query=*[_type=="companies"]{ _id, id, name, logoURL, link, question, answer } | order(id asc)`
     );
-    console.log('companies', result);
-    return result;
+
+    return Array(11).fill(result[0]);
   } catch (error) {
-    //    handle error by some notification
     return;
   }
 }
@@ -41,10 +39,8 @@ export async function fetchPeople() {
       }/data/query/${import.meta.env.VITE_ADMIN_DATASET
       }?query=*[_type=="people"]{ _id, id,firstName,secondName,type, imageURL, facebook, instagram, otherLink, question, answer  } | order(id asc)`
     );
-    console.log('people', result);
-    return result;
+    return Array(93).fill(result[0]);
   } catch (error) {
-    //    handle error by some notification
     return;
   }
 }
