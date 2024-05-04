@@ -8,34 +8,34 @@ export const spinner = keyframes`
 `;
 
 export const LoaderContainer = styled.div`
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 50vh;
+display: flex;
+flex-direction: column;
+align-items: center;
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
 
-  .house-svg{
-    margin-right: 15px;
-    fill: #F77D07;
-    
-  }
+.house-svg{
+  margin-right: 20px;
+  fill: #F77D07;
+  
+}
 
-  .wave-svg{
-    margin-left: 1px;
-    fill: #F77D07;
- 
-  }
+.wave-svg{
+  fill: #F77D07;
+margin-left: 3px;
+}
 `;
 
 export const Text = styled.div`
   text-align: center;
   color: #fff;
   margin:0;
-  margin-top: -30px;
-  margin-right: 30px;
+  margin-top: -60px;
+  margin-right: 40px;
   -webkit-text-stroke: 0.5px #0B0B0B;
-  font-size: 20px;
+  font-size: 25px;
   animation: ${spinner} 2s linear infinite;
 `;
 
