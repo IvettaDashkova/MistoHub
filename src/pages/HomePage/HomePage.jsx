@@ -1,4 +1,4 @@
-import InvestorsBlock from '../../components/investors/InvestorsBlock';
+import InvestorsBlock from '../../components/InvestorsCompanies/InvestorsBlock';
 import Modal from 'react-modal';
 import Header from '/src/components/Header/Header';
 import AboutProject from '../../components/About/AboutProject';
