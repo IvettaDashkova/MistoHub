@@ -48,6 +48,12 @@ export const BtnClose = styled.button`
   svg {
     stroke-width: 2px;
     stroke: rgba(11, 11, 11, 0.5);
+    fill: rgba(11, 11, 11, 0.5);
+    color: rgba(11, 11, 11, 0.5);
+
+    &:hover {
+      fill: #0b0b0b;
+    }
   }
 `;
 
@@ -91,7 +97,11 @@ export const TopContainer = styled.div`
 export const BtnContainer = styled.div`
   display: flex;
   gap: 10px;
+  max-width: 283px;
   padding: 0;
+  @media screen and (min-width: 768px) {
+    max-width: 100%;
+  }
 `;
 
 export const ImgContainer = styled.div`
@@ -161,9 +171,14 @@ export const BtnGoIt = styled.button`
   padding: 0;
   background-color: transparent;
 
-  &:hover {
+  &:hover svg {
     border: none;
     outline: none;
+    fill: #0b0b0b;
+  }
+
+  svg {
+    fill: #f77d07;
   }
 `;
 
