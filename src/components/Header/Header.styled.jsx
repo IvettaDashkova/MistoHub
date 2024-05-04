@@ -7,6 +7,8 @@ export const StyledHeader = styled.header`
   position: fixed;
   top: 0;
   z-index: 100;
+  background-color: rgba(255, 255, 255, 0.07);
+  backdrop-filter: blur(17.4px);
 
   .main-logo {
     fill: #ffffff;
@@ -53,7 +55,7 @@ export const HeaderContainer = styled(Container)`
     padding: 30px 0 0;
 
     &.short-header {
-      max-width: 874px;
+      max-width: 1199px;
     }
   }
 
