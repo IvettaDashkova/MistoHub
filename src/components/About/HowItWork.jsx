@@ -3,11 +3,13 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/pagination';
+import { useModal } from '../../contexts/ModalHook';
 
 import { HowItWorkBackground, HowItWorkContainer } from './HowItWork.styled';
 
 export const HowItWork = () => {
   const bg = useRef(null);
+  const { openModal } = useModal();
 
   useEffect(() => {
     const setBackgroundPosition = () => {
@@ -109,7 +111,10 @@ export const HowItWork = () => {
                 </p>
               </SwiperSlide>
             </Swiper>
-          <button className="how-it-work-btn" type="button">
+          <button className="how-it-work-btn" 
+          type="button"
+          onClick={() => openModal('join_modal')}
+          >
             Приєднатися
           </button>
         </div>

@@ -1,14 +1,25 @@
 import styled from 'styled-components';
 
+import zigzagIcon from 'src/assets/CoFoundersImages/svg/zigzag-icon.svg';
+import octagonIcon from 'src/assets/CoFoundersImages/svg/octagon-icon.svg';
+import ovalIcon from 'src/assets/CoFoundersImages/svg/oval-icon.svg';
+import blobIcon from 'src/assets/CoFoundersImages/svg/blob-icon.svg';
+import sliceIcon from 'src/assets/CoFoundersImages/svg/slice-icon.svg';
+import treeIcon from 'src/assets/CoFoundersImages/svg/tree-icon.svg';
+
 export const BackgroundVectorsContainer = styled.div`
   width: 100%;
   height: 100%;
+
   .zigzagIcon {
     width: 25px;
     height: 29px;
     position: absolute;
     top: 216px;
     left: 2px;
+    background-image: url(${zigzagIcon});
+    background-size: contain;
+    background-repeat: no-repeat;
   }
 
   .octagonIcon {
@@ -17,6 +28,9 @@ export const BackgroundVectorsContainer = styled.div`
     position: absolute;
     left: -15px;
     top: 417px;
+    background-image: url(${octagonIcon});
+    background-size: contain;
+    background-repeat: no-repeat;
   }
 
   .ovalIcon {
@@ -25,6 +39,9 @@ export const BackgroundVectorsContainer = styled.div`
     position: absolute;
     left: 1px;
     top: 628px;
+    background-image: url(${ovalIcon});
+    background-size: contain;
+    background-repeat: no-repeat;
   }
 
   .blobIcon {
@@ -33,22 +50,32 @@ export const BackgroundVectorsContainer = styled.div`
     position: absolute;
     right: 5px;
     top: 381px;
+    background-image: url(${blobIcon});
+    background-size: contain;
+    background-repeat: no-repeat;
   }
 
   .sliceIcon {
-    width: 87px;
-    height: 62px;
+    width: 90px;
+    height: 66px;
     position: absolute;
-    top: 595px;
-    right: -37px;
+    top: 583px;
+    right: -45px;
+    background-image: url(${sliceIcon});
+    background-size: contain;
+    background-repeat: no-repeat;
   }
 
   .treeIcon {
     width: 116px;
-    height: 53px;
+    height: 80px;
     position: absolute;
-    right: -41px;
-    top: 895px;
+    right: -44px;
+    top: 856px;
+
+    background-image: url(${treeIcon});
+    background-size: contain;
+    background-repeat: no-repeat;
   }
 
   @media (max-width: 374px) {
@@ -58,11 +85,18 @@ export const BackgroundVectorsContainer = styled.div`
 
     .ovalIcon {
       height: 20px;
+      top: 654px;
     }
 
     .sliceIcon {
-      top: 610px;
-      right: -47px;
+      top: 616px;
+      right: -52px;
+      width: 89px;
+      height: 62px;
+    }
+
+    .treeIcon {
+      top: 906px;
     }
   }
 
@@ -88,28 +122,28 @@ export const BackgroundVectorsContainer = styled.div`
     .ovalIcon {
       width: 106px;
       height: 71px;
-      left: 6px;
-      top: 1138px;
+      left: 20px;
+      top: 1154px;
     }
 
     .blobIcon {
       width: 70px;
       height: 71px;
       right: 10px;
-      top: 494px;
+      top: 511px;
     }
 
     .sliceIcon {
       width: 226px;
       height: 159px;
-      top: 760px;
-      right: -96px;
+      top: 853px;
+      right: -130px;
     }
 
     .treeIcon {
       width: 238px;
       height: 132px;
-      right: -98px;
+      right: -130px;
       top: 1344px;
     }
   }
