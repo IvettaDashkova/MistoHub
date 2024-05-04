@@ -14,6 +14,7 @@ import {
 } from './BurgerMenu.styled';
 import Iconsvg from '../Icon/Icon';
 import { Link } from 'react-router-dom';
+import { useModal } from '../../contexts/ModalHook';
 
 const BurgerMenu = ({
   activeSection,
@@ -29,6 +30,8 @@ const BurgerMenu = ({
     bodyOpenClassName: 'modal-open',
   };
 
+  const { openModal } = useModal();
+
   return (
     <StyledMenu
       style={customStyles}
@@ -40,7 +43,9 @@ const BurgerMenu = ({
       <TopContainer>
         <StyledText>Меню</StyledText>
         <BtnContainer>
-          <BtnSupport>Підтримати проєкт</BtnSupport>
+          <BtnSupport onClick={() => openModal('join_modal')}>
+            Підтримати проєкт
+          </BtnSupport>
           <StyledText>
             <span>Закрити</span>
           </StyledText>
@@ -68,8 +73,8 @@ const BurgerMenu = ({
           <StyledText>Всі права захищені</StyledText>
           <StyledText>|</StyledText>
           <StyledText>Poзроблено студентами</StyledText>
-          <BtnGoIt>
-            <Iconsvg iconName="go-it" width="100" height="30" />
+          <BtnGoIt onClick={() => openModal('team_modal')}>
+            <Iconsvg iconName="logoGoIT" width="100" height="30" />
           </BtnGoIt>
         </BottomContainer>
 
@@ -77,14 +82,14 @@ const BurgerMenu = ({
           <Link
             to="https://www.instagram.com/mistohub"
             target="_blank"
-            rel="noreferrer"
+            rel="noopener noreferrer"
           >
             <Iconsvg iconName="instagram-menu" width="36" height="36" />
           </Link>
           <Link
             to="https://www.facebook.com/mistohub/?locale=uk_UA"
             target="_blank"
-            rel="noreferrer"
+            rel="noopener noreferrer"
           >
             <Iconsvg iconName="facebook-menu" width="36" height="36" />
           </Link>
