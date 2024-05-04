@@ -2,11 +2,10 @@ import Modal from 'react-modal';
 
 import Header from '/src/components/Header/Header';
 import AboutProject from '../../components/About/AboutProject';
-import { ZibraniKoshti } from '../../components/ZibraniKoshti/ZibraniKoshti';
+
 import Visualization from '../../components/Visualization/Visualization';
 import ScrollToTopButton from '../../components/ScrollToTopButton/ScrollToTopButton';
 import BurgerMenu from '../../components/BurgerMenu/BurgerMenu';
-// import TestSections from '../../components/ScrollToTopButton/TestSections';
 import { useEffect } from 'react';
 import { useState } from 'react';
 import { useLocation } from 'react-router-dom';
@@ -15,6 +14,7 @@ import DevelopersModal from '../../components/DevelopersModal/DevelopersModal';
 import HeroSection from '/src/components/HeroSection/HeroSection';
 import CoFounders from '../../components/CoFounders/CoFounders';
 import ModalsManager from '/src/shared/Modals/ModalsManager';
+import { AccumulatedMoney } from '../../components/AccumulatedMoney/AccumulatedMoney';
 
 Modal.setAppElement('#root');
 
@@ -83,8 +83,8 @@ const HomePage = () => {
       <main>
         <HeroSection />
         <AboutProject />
+        <AccumulatedMoney />
         <Visualization />
-        <ZibraniKoshti />
         <ScrollToTopButton />
         <CoFounders />
       </main>
