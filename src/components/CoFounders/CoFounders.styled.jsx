@@ -11,8 +11,15 @@ export const CoFoundersContainer = styled(StyledContainer)`
   @media (max-width: 374px) {
     padding: 60px 0;
   }
+  @media screen and (min-width: 430px) {
+    overflow: unset;
+  }
   @media (min-width: 768px) {
     padding: 120px 32px;
+    overflow: hidden;
+  }
+  @media screen and (min-width: 950px) {
+    overflow: unset;
   }
   @media (min-width: 1440px) {
     padding: 150px 120px;

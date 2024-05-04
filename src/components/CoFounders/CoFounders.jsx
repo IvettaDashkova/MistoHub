@@ -8,7 +8,7 @@ import {
   SectionTitle,
   CoFoundersContainer,
 } from './CoFounders.styled';
-import data from './cofounders.json';
+import data from './cofoundersData.js';
 
 const CoFounders = () => {
   return (
