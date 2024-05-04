@@ -2,9 +2,10 @@ import Modal from 'react-modal';
 
 import Header from '/src/components/Header/Header';
 import AboutProject from '../../components/About/AboutProject';
+
+import Visualization from '../../components/Visualization/Visualization';
 import ScrollToTopButton from '../../components/ScrollToTopButton/ScrollToTopButton';
 import BurgerMenu from '../../components/BurgerMenu/BurgerMenu';
-// import TestSections from '../../components/ScrollToTopButton/TestSections';
 import { useEffect } from 'react';
 import { useState } from 'react';
 import { useLocation } from 'react-router-dom';
@@ -83,6 +84,7 @@ const HomePage = () => {
         <HeroSection />
         <AboutProject />
         <AccumulatedMoney />
+        <Visualization />
         <ScrollToTopButton />
         <CoFounders />
       </main>
