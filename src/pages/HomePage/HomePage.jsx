@@ -1,21 +1,21 @@
+import { useEffect, useState } from 'react';
+import { useLocation } from 'react-router-dom';
 import Modal from 'react-modal';
 
 import Header from '/src/components/Header/Header';
 import AboutProject from '../../components/About/AboutProject';
+import { AccumulatedMoney } from '../../components/AccumulatedMoney/AccumulatedMoney';
 
+import InvestorsBlock from '../../components/InvestorsCompanies/InvestorsBlock';
 import Visualization from '../../components/Visualization/Visualization';
 import ScrollToTopButton from '../../components/ScrollToTopButton/ScrollToTopButton';
 import BurgerMenu from '../../components/BurgerMenu/BurgerMenu';
-import { useEffect } from 'react';
-import { useState } from 'react';
-import { useLocation } from 'react-router-dom';
 import Footer from '../../components/Footer/Footer';
 import DevelopersModal from '../../components/DevelopersModal/DevelopersModal';
 import HeroSection from '/src/components/HeroSection/HeroSection';
 import CoFounders from '../../components/CoFounders/CoFounders';
 import JoinUs from '../../components/JoinUs/JoinUs';
 import ModalsManager from '/src/shared/Modals/ModalsManager';
-import { AccumulatedMoney } from '../../components/AccumulatedMoney/AccumulatedMoney';
 
 Modal.setAppElement('#root');
 
@@ -88,8 +88,10 @@ const HomePage = () => {
         <JoinUs />
         <AccumulatedMoney />
         <Visualization />
-        <ScrollToTopButton />
+        <AccumulatedMoney />
+        <InvestorsBlock />
         <CoFounders />
+        <ScrollToTopButton />
       </main>
       <Footer />
       <DevelopersModal />
