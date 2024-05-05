@@ -13,11 +13,18 @@ function Header({ handleMenuOpen }) {
   const isMobile = useMediaQuery({ maxWidth: 767 });
 
   useEffect(() => {
+    const footerEl = document.getElementById('footer');
+    const headerEl = document.querySelector('header');
+
     const handleScroll = () => {
-      if (window.scrollY !== 0) {
+      if (window.scrollY !== 0 && footerEl.offsetTop - 150 >= window.scrollY) {
+        headerEl.classList.value.includes('hidden') &&
+          headerEl.classList.remove('hidden');
         setDarkStyle('dark-header');
-      } else {
+      } else if (window.scrollY === 0) {
         setDarkStyle('');
+      } else {
+        headerEl.classList.add('hidden');
       }
     };
 

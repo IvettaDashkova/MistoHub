@@ -10,9 +10,13 @@ export const StyledHeader = styled.header`
   background-color: rgba(255, 255, 255, 0.07);
   backdrop-filter: blur(17.4px);
 
+  &.hidden {
+    display: none;
+  }
+
   .main-logo {
     fill: #ffffff;
-    transition: fill 1s;
+    transition: fill 0.5s;
   }
 
   .burger-menu-icon {
