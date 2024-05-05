@@ -4,11 +4,14 @@ export const BackgroundContainer = styled.div``;
 
 export const PersonCircleImage = styled.img`
   position: absolute;
-  top: 506px;
+  top: 484px;
   left: 27px;
   width: 84px;
   height: 84px;
   border-radius: 50%;
+  @media screen and (min-width: 375px) {
+    top: 506px;
+  }
   @media screen and (min-width: 768px) {
     top: 808px;
     left: 131px;
@@ -25,11 +28,15 @@ export const PersonCircleImage = styled.img`
 
 export const PersonTriangleImage = styled.img`
   position: absolute;
-  top: 451px;
+  top: 441px;
   left: 121px;
   width: 75px;
   height: 65px;
   transform: rotate(39deg);
+  @media screen and (min-width: 375px) {
+    top: 451px;
+    left: 121px;
+  }
   @media screen and (min-width: 768px) {
     top: 668px;
     left: 317px;
@@ -46,11 +53,17 @@ export const PersonTriangleImage = styled.img`
 
 export const PersonStarImage = styled.img`
   position: absolute;
-  top: 400px;
-  right: 21px;
-  width: 67px;
-  height: 66px;
+  top: 414px;
+  right: 8px;
+  width: 51px;
+  height: 50 px;
   transform: rotate(-5deg);
+  @media screen and (min-width: 375px) {
+    top: 400px;
+    right: 21px;
+    width: 67px;
+    height: 66px;
+  }
   @media screen and (min-width: 768px) {
     top: 584px;
     right: 26px;
@@ -67,13 +80,19 @@ export const PersonStarImage = styled.img`
 
 export const CafeImage = styled.img`
   position: absolute;
-  width: 149px;
-  height: 200px;
-  top: 520px;
-  right: -20px;
+  width: 121px;
+  height: 163px;
+  top: 505px;
+  right: -11px;
   object-fit: contain;
   border-radius: 10px;
   transform: rotate(-19deg);
+  @media screen and (min-width: 375px) {
+    width: 149px;
+    height: 200px;
+    top: 520px;
+    right: -20px;
+  }
   @media screen and (min-width: 768px) {
     top: 768px;
     right: -23px;
@@ -90,10 +109,14 @@ export const CafeImage = styled.img`
 
 export const CafeOvalImage = styled.img`
   position: absolute;
-  top: 400px;
-  left: 183px;
+  top: 393px;
+  left: 178px;
   width: 74px;
   height: 33px;
+  @media screen and (min-width: 375px) {
+    top: 400px;
+    left: 183px;
+  }
   @media screen and (min-width: 768px) {
     top: 569px;
     left: 430px;
@@ -111,10 +134,13 @@ export const CafeOvalImage = styled.img`
 export const CafeSquareImage = styled.img`
   position: absolute;
   top: 462px;
-  left: 230px;
+  left: 204px;
   width: 29px;
   height: 29px;
   transform: rotate(18deg);
+  @media screen and (min-width: 375px) {
+    left: 230px;
+  }
   @media screen and (min-width: 768px) {
     top: 680px;
     left: 497px;
