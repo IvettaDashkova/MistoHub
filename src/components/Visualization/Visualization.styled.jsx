@@ -176,21 +176,20 @@ export const LeftArrow = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
-  fill: #f77d07;
   transition: all 300ms ease-in-out;
 
   & svg {
     width: 22px;
     height: 22px;
+    fill: #f77d07;
   }
 
   &.enabled {
     background: #f77d07;
-    fill: #ffffff;
-  }
 
-  &:hover {
-    transform: scale(1.1);
+    & svg {
+      fill: #ffffff;
+    }
   }
 
   @media (min-width: 768px) {
@@ -200,6 +199,12 @@ export const LeftArrow = styled.button`
     & svg {
       width: 30px;
       height: 30px;
+    }
+  }
+
+  @media (min-width: 1440px) {
+    &:hover {
+      transform: scale(1.1);
     }
   }
 `;
@@ -299,18 +304,21 @@ export const CloseButton = styled.button`
   align-items: center;
   justify-content: center;
 
-  --icon-size: 20px;
+  & svg {
+    width: 20px;
+    height: 20px;
+  }
 
   @media (min-width: 768px) {
-    --icon-size: 24px;
+    & svg {
+      width: 24px;
+      height: 24px;
+    }
   }
 
-  & svg {
-    width: var(--icon-size);
-    height: var(--icon-size);
-  }
-
-  &:hover {
-    transform: scale(1.3);
+  @media (min-width: 1440px) {
+    &:hover {
+      transform: scale(1.3);
+    }
   }
 `;
