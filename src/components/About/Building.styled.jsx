@@ -8,6 +8,7 @@ import { AboutProjectContainer } from './AboutProject.styled';
 export const BuildingContainer = styled(AboutProjectContainer)`
   margin-bottom: 60px;
   width: 100%;
+  overflow: hidden;
 
   .building-title {
     font-family: 'Oddval';
@@ -33,14 +34,13 @@ export const BuildingContainer = styled(AboutProjectContainer)`
     color: #0b0b0bcc;
     margin-bottom: 40px;
   }
+  .building-img-container {
+    position: relative;
+  }
   .building-img {
     max-width: 100%;
     object-fit: contain;
     border-radius: 20px;
-  }
-
-  .building-img-container {
-    position: relative;
   }
 
   @media (min-width: 768px) {
@@ -83,23 +83,22 @@ export const Bicon = styled.div`
 
 export const BIconOne = styled(Bicon)`
   background-image: url(${buildingOne});
-  top: 93px;
-  left: -50px;
-  width: 91px;
-  height: 45px;
-  transform: rotate(-59deg);
+  top: 106px;
+  left: -21px;
+  width: 61px;
+  height: 84px;
 
   @media (min-width: 768px) {
-    top: 123px;
-    left: -80px;
-    width: 151px;
-    height: 75px;
+    top: 141px;
+    left: -44px;
+    width: 114px;
+    height: 139px;
   }
   @media (min-width: 1440px) {
-    top: 190px;
-    left: -150px;
-    width: 182px;
-    height: 91px;
+    top: 174px;
+    left: -103px;
+    width: 136px;
+    height: 168px;
   }
 `;
 export const BIconTwo = styled(Bicon)`
@@ -126,41 +125,39 @@ export const BIconThree = styled(Bicon)`
   background-image: url(${buildingThree});
   top: 49%;
   left: 94%;
-  width: 27px;
-  height: 59px;
-  transform: rotate(-154deg);
+  width: 40px;
+  height: 55px;
 
   @media (min-width: 768px) {
-    top: 169px;
-    left: 687px;
-    width: 55px;
-    height: 118px;
+    top: 168px;
+    left: 678px;
+    width: 79px;
+    height: 111px;
   }
   @media (min-width: 1440px) {
-    top: 340px;
-    left: 1230px;
-    width: 56px;
-    height: 119px;
+    top: 349px;
+    left: 1222px;
+    width: 81px;
+    height: 112px;
   }
 `;
 export const BIconFour = styled(Bicon)`
   background-image: url(${buildingFour});
-  top: 80%;
-  left: 78%;
-  width: 100px;
-  height: 69px;
-  transform: rotate(-68.59deg);
+  top: 77%;
+  left: 85%;
+  width: 73px;
+  height: 101px;
   
   @media (min-width: 768px) {
-    top: 400px;
-    left: 580px;
-    width: 199px;
-    height: 137px;
+    top: 352px;
+    left: 614px;
+    width: 143px;
+    height: 201px;
   }
   @media (min-width: 1440px) {
-    top: 570px;
-    left: 1084px;
-    width: 266px;
-    height: 183px;
+    top: 527px;
+    left: 1128px;
+    width: 186px;
+    height: 257px;
     }
 `;
