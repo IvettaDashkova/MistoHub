@@ -179,8 +179,10 @@ export const LeftArrow = styled.button`
   transition: all 300ms ease-in-out;
 
   & svg {
-    width: 22px;
-    height: 22px;
+    /* width: 22px;
+    height: 22px; */
+    width: 18px;
+    height: 18px;
     fill: #f77d07;
   }
 
@@ -197,8 +199,10 @@ export const LeftArrow = styled.button`
     height: 60px;
 
     & svg {
-      width: 30px;
-      height: 30px;
+      /* width: 30px;
+      height: 30px; */
+      width: 22px;
+      height: 22px;
     }
   }
 
