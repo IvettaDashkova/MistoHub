@@ -9,7 +9,7 @@ export default function Footer() {
   const { openModal } = useModal();
 
   return (
-    <StyledFooter>
+    <StyledFooter id="footer">
       <FooterContainer>
         <div className="footer-up">
           <MyGoogleMap />

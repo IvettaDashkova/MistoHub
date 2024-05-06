@@ -54,6 +54,7 @@ export const AccumulatedMoney = () => {
       ref={sectionRef}
       isDesktop={isDesktop}
       goAnimation={isVisible}
+      id="funds"
     >
       {goalData && (
         <>
