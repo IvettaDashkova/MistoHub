@@ -83,8 +83,8 @@ const HomePage = () => {
       <main>
         <HeroSection />
         <AboutProject />
-        <AccumulatedMoney />
         <Visualization />
+        <AccumulatedMoney />
         <InvestorsBlock />
         <JoinUs />
         <CoFounders />
