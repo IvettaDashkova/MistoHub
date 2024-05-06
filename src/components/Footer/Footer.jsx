@@ -27,7 +27,7 @@ export default function Footer() {
               type="button"
               onClick={() => openModal('join_modal')}
             >
-              <span>Підтримати проект</span>
+              <span>Підтримати проєкт</span>
             </button>
           </div>
         </div>

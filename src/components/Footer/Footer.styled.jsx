@@ -84,8 +84,7 @@ export const FooterContainer = styled(StyledContainer)`
     transition: background 0.25s ease-in-out;
     transition: color 0.25s ease-in-out;
 
-    &:hover,
-    &:focus {
+    &:hover {
       background: #e97200;
     }
     &:active {
@@ -195,8 +194,7 @@ export const FooterDown = styled.div`
     margin-bottom: 20px;
     transition: color 0.25s ease-in-out;
 
-    &:hover,
-    &:focus {
+    &:hover {
       color: #ffffff;
       .icon-goit-white {
         fill: #ffffff;
