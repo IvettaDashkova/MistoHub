@@ -14,6 +14,7 @@ import Footer from '../../components/Footer/Footer';
 import DevelopersModal from '../../components/DevelopersModal/DevelopersModal';
 import HeroSection from '/src/components/HeroSection/HeroSection';
 import CoFounders from '../../components/CoFounders/CoFounders';
+import JoinUs from '../../components/JoinUs/JoinUs';
 import ModalsManager from '/src/shared/Modals/ModalsManager';
 
 Modal.setAppElement('#root');
@@ -85,6 +86,7 @@ const HomePage = () => {
         <Visualization />
         <AccumulatedMoney />
         <InvestorsBlock />
+        <JoinUs />
         <CoFounders />
         <ScrollToTopButton />
       </main>
