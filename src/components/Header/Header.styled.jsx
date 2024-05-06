@@ -16,7 +16,7 @@ export const StyledHeader = styled.header`
     width: 100%;
     background-color: rgba(255, 255, 255, 0.07);
     backdrop-filter: blur(17.4px);
-    height: 125px;
+    height: 70px;
 
     transition:
       opacity 1s ease-in-out,
@@ -50,6 +50,18 @@ export const StyledHeader = styled.header`
 
   .main-logo.dark-header {
     fill: #0b0b0b;
+  }
+
+  @media screen and (min-width: 768px) {
+    .hidden-wrap {
+      height: 117px;
+    }
+  }
+
+  @media screen and (min-width: 1440px) {
+    .hidden-wrap {
+      height: 125px;
+    }
   }
 `;
 
