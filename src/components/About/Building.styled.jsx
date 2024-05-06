@@ -7,6 +7,7 @@ import { AboutProjectContainer } from './AboutProject.styled';
 
 export const BuildingContainer = styled(AboutProjectContainer)`
   margin-bottom: 60px;
+  padding-bottom:21px;
   width: 100%;
   overflow: hidden;
 
@@ -45,6 +46,7 @@ export const BuildingContainer = styled(AboutProjectContainer)`
 
   @media (min-width: 768px) {
     margin-bottom: 78px;
+    padding-bottom:21px;
 
     .building-title {
       font-size: 45px;
@@ -59,6 +61,7 @@ export const BuildingContainer = styled(AboutProjectContainer)`
 
   @media (min-width: 1440px) {
     margin-bottom: 181px;
+    padding-bottom:31px;
 
     .building-title {
       font-size: 60px;
