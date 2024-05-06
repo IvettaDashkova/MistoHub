@@ -1,42 +1,52 @@
-import {
-  BackgroundContainer,
-  PersonCircleImage,
-  PersonTriangleImage,
-  CafeImage,
-  CafeOvalImage,
-  CafeSquareImage,
-  PersonStarImage,
-} from './Background.styled';
-import personCircleJpg from '/src/assets/JoinUs/images/jpg/person-circle.jpg';
-import personCircleRetinaJpg from '/src/assets/JoinUs/images/jpg/person-circle@2x.jpg';
-import personTriangleJpg from '/src/assets/JoinUs/images/jpg/person-triangle.png';
-import personTriangleRetinaJpg from '/src/assets/JoinUs/images/jpg/person-triangle@2x.png';
-import personStarJpg from '/src/assets/JoinUs/images/jpg/person-star.png';
-import personStarRetinaJpg from '/src/assets/JoinUs/images/jpg/person-star@2x.png';
-import cafeJpg from '/src/assets/JoinUs/images/jpg/cafe.jpg';
-import cafeRetinaJpg from '/src/assets/JoinUs/images/jpg/cafe@2x.jpg';
-import cafeOvalJpg from '/src/assets/JoinUs/images/jpg/cafe-oval.png';
-import cafeOvalRetinaJpg from '/src/assets/JoinUs/images/jpg/cafe-oval@2x.png';
-import cafeSquareJpg from '/src/assets/JoinUs/images/jpg/cafe-square.png';
-import cafeSquareRetinaJpg from '/src/assets/JoinUs/images/jpg/cafe-square@2x.png';
+import { BackgroundContainer } from './Background.styled';
+import { images } from '../../../constants/JoinUsBackground';
+// import personCircleJpg from '/src/assets/JoinUs/images/jpg/person-circle.jpg';
+// import personCircleRetinaJpg from '/src/assets/JoinUs/images/jpg/person-circle@2x.jpg';
+// import personTriangleJpg from '/src/assets/JoinUs/images/jpg/person-triangle.png';
+// import personTriangleRetinaJpg from '/src/assets/JoinUs/images/jpg/person-triangle@2x.png';
+// import personStarJpg from '/src/assets/JoinUs/images/jpg/person-star.png';
+// import personStarRetinaJpg from '/src/assets/JoinUs/images/jpg/person-star@2x.png';
+// import cafeJpg from '/src/assets/JoinUs/images/jpg/cafe.jpg';
+// import cafeRetinaJpg from '/src/assets/JoinUs/images/jpg/cafe@2x.jpg';
+// import cafeOvalJpg from '/src/assets/JoinUs/images/jpg/cafe-oval.png';
+// import cafeOvalRetinaJpg from '/src/assets/JoinUs/images/jpg/cafe-oval@2x.png';
+// import cafeSquareJpg from '/src/assets/JoinUs/images/jpg/cafe-square.png';
+// import cafeSquareRetinaJpg from '/src/assets/JoinUs/images/jpg/cafe-square@2x.png';
 
-import personCircleWebP from '/src/assets/JoinUs/images/webp/person-circle.webp';
-import personCircleRetinaWebP from '/src/assets/JoinUs/images/webp/person-circle@2x.webp';
-import personTriangleWebP from '/src/assets/JoinUs/images/webp/person-triangle.webp';
-import personTriangleRetinaWebP from '/src/assets/JoinUs/images/webp/person-triangle@2x.webp';
-import personStarWebP from '/src/assets/JoinUs/images/webp/person-star.webp';
-import personStarRetinaWebP from '/src/assets/JoinUs/images/webp/person-star@2x.webp';
-import cafeWebP from '/src/assets/JoinUs/images/webp/cafe.webp';
-import cafeRetinaWebP from '/src/assets/JoinUs/images/webp/cafe@2x.webp';
-import cafeOvalWebP from '/src/assets/JoinUs/images/webp/cafe-oval.webp';
-import cafeOvalRetinaWebP from '/src/assets/JoinUs/images/webp/cafe-oval@2x.webp';
-import cafeSquareWebP from '/src/assets/JoinUs/images/webp/cafe-square.webp';
-import cafeSquareRetinaWebP from '/src/assets/JoinUs/images/webp/cafe-square@2x.webp';
+// import personCircleWebP from '/src/assets/JoinUs/images/webp/person-circle.webp';
+// import personCircleRetinaWebP from '/src/assets/JoinUs/images/webp/person-circle@2x.webp';
+// import personTriangleWebP from '/src/assets/JoinUs/images/webp/person-triangle.webp';
+// import personTriangleRetinaWebP from '/src/assets/JoinUs/images/webp/person-triangle@2x.webp';
+// import personStarWebP from '/src/assets/JoinUs/images/webp/person-star.webp';
+// import personStarRetinaWebP from '/src/assets/JoinUs/images/webp/person-star@2x.webp';
+// import cafeWebP from '/src/assets/JoinUs/images/webp/cafe.webp';
+// import cafeRetinaWebP from '/src/assets/JoinUs/images/webp/cafe@2x.webp';
+// import cafeOvalWebP from '/src/assets/JoinUs/images/webp/cafe-oval.webp';
+// import cafeOvalRetinaWebP from '/src/assets/JoinUs/images/webp/cafe-oval@2x.webp';
+// import cafeSquareWebP from '/src/assets/JoinUs/images/webp/cafe-square.webp';
+// import cafeSquareRetinaWebP from '/src/assets/JoinUs/images/webp/cafe-square@2x.webp';
 
 const Background = () => {
   return (
     <BackgroundContainer>
-      <picture>
+      {images.map((image, idx) => (
+        <picture key={idx}>
+          <source
+            srcSet={image.webpRetina}
+            type="image/webp"
+            media="(min-resolution: 192dpi)"
+          />
+          <source srcSet={image.webp} type="image/webp" />
+          <source
+            srcSet={image.jpgRetina}
+            type="image/jpg"
+            media="(min-resolution: 192dpi)"
+          />
+          <source srcSet={image.jpg} type="image/jpg" />
+          <image.className src={image.jpg} />
+        </picture>
+      ))}
+      {/* <picture>
         <source
           srcSet={personCircleRetinaWebP}
           type="image/webp"
@@ -125,141 +135,9 @@ const Background = () => {
         />
         <source srcSet={cafeSquareJpg} type="image/jpg" />
         <CafeSquareImage src={cafeSquareJpg} />
-      </picture>
+      </picture> */}
     </BackgroundContainer>
   );
 };
 
 export default Background;
-// import {
-//   BackgroundContainer,
-//   PersonCircleImage,
-//   PersonTriangleImage,
-//   CafeImage,
-//   CafeOvalImage,
-//   CafeSquareImage,
-//   PersonStarImage,
-// } from './Background.styled';
-
-// const Background = () => {
-//   return (
-//     <BackgroundContainer>
-//       <picture>
-//         <source
-//           srcSet="/src/assets/JoinUs/images/webp/person-circle@2x.webp"
-//           type="image/webp"
-//         />
-//         <source
-//           srcSet="/src/assets/JoinUs/images/webp/person-circle.webp"
-//           type="image/webp"
-//         />
-//         <source
-//           srcSet="/src/assets/JoinUs/images/jpg/person-circle@2x.jpg"
-//           type="image/jpg"
-//         />
-//         <source
-//           srcSet="/src/assets/JoinUs/images/jpg/person-circle@.jpg"
-//           type="image/jpg"
-//         />
-//         <PersonCircleImage src="/src/assets/JoinUs/images/jpg/person-circle.jpg" />
-//       </picture>
-//       <picture>
-//         <source
-//           srcSet="/src/assets/JoinUs/images/webp/person-triangle@2x.webp"
-//           type="image/webp"
-//         />
-//         <source
-//           srcSet="/src/assets/JoinUs/images/webp/person-triangle.webp"
-//           type="image/wep"
-//         />
-//         <source
-//           srcSet="/src/assets/JoinUs/images/jpg/person-triangle@2x.png"
-//           type="image/png"
-//         />
-//         <source
-//           srcSet="/src/assets/JoinUs/images/jpg/person-triangle.png"
-//           type="image/png"
-//         />
-//         <PersonTriangleImage src="/src/assets/JoinUs/images/jpg/person-triangle.png" />
-//       </picture>
-//       <picture>
-//         <source
-//           srcSet="/src/assets/JoinUs/images/webp/person-star@2x.webp"
-//           type="image/webp"
-//         />
-//         <source
-//           srcSet="/src/assets/JoinUs/images/webp/person-star.webp"
-//           type="image/webp"
-//         />
-//         <source
-//           srcSet="/src/assets/JoinUs/images/jpg/person-star@2x.png"
-//           type="image/png"
-//         />
-//         <source
-//           srcSet="/src/assets/JoinUs/images/jpg/person-star.png"
-//           type="image/png"
-//         />
-//         <PersonStarImage src="/src/assets/JoinUs/images/jpg/person-star.png" />
-//       </picture>
-//       <picture>
-//         <source
-//           srcSet="/src/assets/JoinUs/images/webp/cafe@2x.webp"
-//           type="image/webp"
-//         />
-//         <source
-//           srcSet="/src/assets/JoinUs/images/webp/cafe.webp"
-//           type="image/webp"
-//         />
-//         <source
-//           srcSet="/src/assets/JoinUs/images/jpg/cafe@2x.jpg"
-//           type="image/jpg"
-//         />
-//         <source
-//           srcSet="/src/assets/JoinUs/images/jpg/cafe.jpg"
-//           type="image/jpg"
-//         />
-//         <CafeImage src="/src/assets/JoinUs/images/jpg/cafe.jpg" />
-//       </picture>
-//       <picture>
-//         <source
-//           srcSet="/src/assets/JoinUs/images/webp/cafe-oval@2x.webp"
-//           type="image/webp"
-//         />
-//         <source
-//           srcSet="/src/assets/JoinUs/images/webp/cafe-oval.webp"
-//           type="image/webp"
-//         />
-//         <source
-//           srcSet="/src/assets/JoinUs/images/jpg/cafe-oval@2x.png"
-//           type="image/png"
-//         />
-//         <source
-//           srcSet="/src/assets/JoinUs/images/jpg/cafe-oval.png"
-//           type="image/png"
-//         />
-//         <CafeOvalImage src="/src/assets/JoinUs/images/jpg/cafe-oval.png" />
-//       </picture>
-//       <picture>
-//         <source
-//           srcSet="/src/assets/JoinUs/images/webp/cafe-square@2x.webp"
-//           type="image/webp"
-//         />
-//         <source
-//           srcSet="/src/assets/JoinUs/images/webp/cafe-square.webp"
-//           type="image/webp"
-//         />
-//         <source
-//           srcSet="/src/assets/JoinUs/images/jpg/cafe-square@2x.png"
-//           type="image/png"
-//         />
-//         <source
-//           srcSet="/src/assets/JoinUs/images/jpg/cafe-square.png"
-//           type="image/png"
-//         />
-//         <CafeSquareImage src="/src/assets/JoinUs/images/jpg/cafe-square.png" />
-//       </picture>
-//     </BackgroundContainer>
-//   );
-// };
-
-// export default Background;

@@ -27,6 +27,7 @@ const JoinUs = () => {
     };
     fetchData();
   }, []);
+
   return (
     <JoinUsSection>
       <JoinUsContainer>
@@ -44,7 +45,7 @@ const JoinUs = () => {
         </StatsContainer>
         <JoinButton>Приєднатися</JoinButton>
         <AlreadyJoined>
-          <span>+ 90 людей</span>
+          <span>+{Math.round(people / 10) * 10} людей</span>
           вже приєдналися
         </AlreadyJoined>
         <Background />
