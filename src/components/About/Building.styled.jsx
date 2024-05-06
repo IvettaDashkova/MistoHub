@@ -74,7 +74,7 @@ export const BuildingContainer = styled(AboutProjectContainer)`
   }
 `;
 
-export const Bicon = styled.span`
+export const Bicon = styled.div`
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
@@ -125,7 +125,7 @@ export const BIconTwo = styled(Bicon)`
 export const BIconThree = styled(Bicon)`
   background-image: url(${buildingThree});
   top: 49%;
-  left: 96%;
+  left: 94%;
   width: 27px;
   height: 59px;
   transform: rotate(-154deg);
@@ -146,7 +146,7 @@ export const BIconThree = styled(Bicon)`
 export const BIconFour = styled(Bicon)`
   background-image: url(${buildingFour});
   top: 80%;
-  left: 80%;
+  left: 78%;
   width: 100px;
   height: 69px;
   transform: rotate(-68.59deg);
