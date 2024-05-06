@@ -52,7 +52,6 @@ const HomePage = () => {
           setActiveSection(sectionId);
           const url = `#${sectionId}`;
           window.history.pushState(null, '', url);
-          //pushState змінює url при скролі
         }
       });
     };

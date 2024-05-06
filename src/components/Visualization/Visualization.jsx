@@ -76,7 +76,7 @@ const Visualization = () => {
   };
 
   return (
-    <VisualizationSection id="visualization">
+    <VisualizationSection id="design">
       <VisualizationContainer>
         <Title>Як виглядатиме простір?</Title>
         <CardsContainer>

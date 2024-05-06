@@ -12,7 +12,7 @@ import data from '../../constants/cofoundersData';
 
 const CoFounders = () => {
   return (
-    <SectionContainer>
+    <SectionContainer id="founders">
       <CoFoundersContainer>
         <SectionTitle>
           Співзасновники <br />
