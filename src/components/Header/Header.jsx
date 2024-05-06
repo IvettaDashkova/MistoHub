@@ -58,7 +58,7 @@ function Header({ handleMenuOpen }) {
             </>
           ) : (
             <div className="menu-wrapper">
-              <SocialBlock darkStyle={darkStyle} />
+              <SocialBlock darkStyle={darkStyle} sectionName="header" />
               <button
                 type="button"
                 className="btn-clouds"

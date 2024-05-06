@@ -3,11 +3,25 @@ import { Link } from 'react-router-dom';
 import { SocialWrapper } from './SocialBlock.styled';
 import Icon from '../../components/Icon/Icon';
 
-function SocialBlock({ darkStyle }) {
+function SocialBlock({ darkStyle, sectionName }) {
+  let sections = {};
+  switch (sectionName) {
+    case 'header':
+      sections[sectionName] = true;
+      break;
+    case 'footer':
+      sections[sectionName] = true;
+      break;
+    case 'menu':
+      sections[sectionName] = true;
+      break;
+  }
+
+  console.log('sections: ', sections);
   return (
-    <SocialWrapper>
+    <SocialWrapper sections={sections}>
       <Link
-        className={`${darkStyle} link-instagram`}
+        className={`link-instagram ${sections.header ? darkStyle : ''}`}
         to="https://www.instagram.com/mistohub"
         target="_blank"
         rel="noopener noreferrer"
@@ -21,7 +35,7 @@ function SocialBlock({ darkStyle }) {
         />
       </Link>
       <Link
-        className={`${darkStyle} link-facebook`}
+        className={`link-facebook ${sections.header ? darkStyle : ''}`}
         to="https://www.facebook.com/mistohub/?locale=uk_UA"
         target="_blank"
         rel="noopener noreferrer"
