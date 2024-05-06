@@ -14,17 +14,17 @@ function Header({ handleMenuOpen }) {
 
   useEffect(() => {
     const footerEl = document.getElementById('footer');
-    const headerEl = document.querySelector('header');
+    const hiddenEl = document.querySelector('.hidden-wrap');
 
     const handleScroll = () => {
-      if (window.scrollY !== 0 && footerEl.offsetTop - 150 >= window.scrollY) {
-        headerEl.classList.value.includes('hidden') &&
-          headerEl.classList.remove('hidden');
+      if (window.scrollY !== 0 && footerEl.offsetTop - 375 >= window.scrollY) {
+        hiddenEl.classList.value.includes('hidden') &&
+          hiddenEl.classList.remove('hidden');
         setDarkStyle('dark-header');
       } else if (window.scrollY === 0) {
         setDarkStyle('');
       } else {
-        headerEl.classList.add('hidden');
+        hiddenEl.classList.add('hidden');
       }
     };
 
@@ -37,51 +37,53 @@ function Header({ handleMenuOpen }) {
 
   return (
     <StyledHeader>
-      <HeaderContainer>
-        <Icon
-          width={isMobile ? '99' : '118'}
-          height={isMobile ? '34' : '40'}
-          iconName="main-logo"
-          styles={`${darkStyle} main-logo`}
-        />
-        {isMobile ? (
-          <>
-            <button type="button" onClick={handleMenuOpen}>
-              <Icon
-                width="44"
-                height="38"
-                iconName="burger-menu"
-                styles={`${darkStyle} burger-menu-icon`}
-              />
-            </button>
-          </>
-        ) : (
-          <div className="menu-wrapper">
-            <SocialBlock darkStyle={darkStyle} />
-            <button
-              type="button"
-              className="btn-clouds"
-              onClick={() => openModal('join_modal')}
-            >
-              <Icon
-                width="180"
-                height="85"
-                iconName="cloud"
-                styles={`${darkStyle} cloud-icon`}
-              />
-              <span>Підтримати проект</span>
-            </button>
-            <button type="button" onClick={handleMenuOpen}>
-              <Icon
-                width="54"
-                height="47"
-                iconName="burger-menu"
-                styles={`${darkStyle} burger-menu-icon`}
-              />
-            </button>
-          </div>
-        )}
-      </HeaderContainer>
+      <div className="hidden-wrap">
+        <HeaderContainer>
+          <Icon
+            width={isMobile ? '99' : '118'}
+            height={isMobile ? '34' : '40'}
+            iconName="main-logo"
+            styles={`main-logo ${darkStyle} `}
+          />
+          {isMobile ? (
+            <>
+              <button type="button" onClick={handleMenuOpen}>
+                <Icon
+                  width="44"
+                  height="38"
+                  iconName="burger-menu"
+                  styles={`${darkStyle} burger-menu-icon`}
+                />
+              </button>
+            </>
+          ) : (
+            <div className="menu-wrapper">
+              <SocialBlock darkStyle={darkStyle} />
+              <button
+                type="button"
+                className="btn-clouds"
+                onClick={() => openModal('join_modal')}
+              >
+                <Icon
+                  width="180"
+                  height="85"
+                  iconName="cloud"
+                  styles={`${darkStyle} cloud-icon`}
+                />
+                <span>Підтримати проект</span>
+              </button>
+              <button type="button" onClick={handleMenuOpen}>
+                <Icon
+                  width="54"
+                  height="47"
+                  iconName="burger-menu"
+                  styles={`${darkStyle} burger-menu-icon`}
+                />
+              </button>
+            </div>
+          )}
+        </HeaderContainer>
+      </div>
     </StyledHeader>
   );
 }
