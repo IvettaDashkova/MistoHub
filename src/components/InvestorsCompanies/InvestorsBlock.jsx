@@ -30,7 +30,7 @@ const InvestorsBlock = () => {
     setSelectedItem(null);
   };
   return (
-    <section>
+    <section id="investors">
       <TextWrapper>
         <InfoText>Імпакт-інвестори МІСТОХАБ</InfoText>
         <MainHeading>З нами вже</MainHeading>

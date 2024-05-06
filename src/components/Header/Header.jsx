@@ -7,17 +7,24 @@ import SocialBlock from '/src/shared/SocialBlock/SocialBlock';
 import Icon from '/src/components/Icon/Icon';
 
 function Header({ handleMenuOpen }) {
-  const [transitionClass, setTransitionClass] = useState('');
+  const [darkStyle, setDarkStyle] = useState('');
   const { openModal } = useModal();
 
   const isMobile = useMediaQuery({ maxWidth: 767 });
 
   useEffect(() => {
+    const footerEl = document.getElementById('footer');
+    const headerEl = document.querySelector('header');
+
     const handleScroll = () => {
-      if (window.scrollY !== 0) {
-        setTransitionClass('short-header');
+      if (window.scrollY !== 0 && footerEl.offsetTop - 150 >= window.scrollY) {
+        headerEl.classList.value.includes('hidden') &&
+          headerEl.classList.remove('hidden');
+        setDarkStyle('dark-header');
+      } else if (window.scrollY === 0) {
+        setDarkStyle('');
       } else {
-        setTransitionClass('');
+        headerEl.classList.add('hidden');
       }
     };
 
@@ -30,12 +37,12 @@ function Header({ handleMenuOpen }) {
 
   return (
     <StyledHeader>
-      <HeaderContainer className={transitionClass}>
+      <HeaderContainer>
         <Icon
           width={isMobile ? '99' : '118'}
           height={isMobile ? '34' : '40'}
           iconName="main-logo"
-          styles={`${transitionClass} main-logo`}
+          styles={`${darkStyle} main-logo`}
         />
         {isMobile ? (
           <>
@@ -44,13 +51,13 @@ function Header({ handleMenuOpen }) {
                 width="44"
                 height="38"
                 iconName="burger-menu"
-                styles={`${transitionClass} burger-menu-icon`}
+                styles={`${darkStyle} burger-menu-icon`}
               />
             </button>
           </>
         ) : (
           <div className="menu-wrapper">
-            <SocialBlock transitionClass={transitionClass} />
+            <SocialBlock darkStyle={darkStyle} />
             <button
               type="button"
               className="btn-clouds"
@@ -60,7 +67,7 @@ function Header({ handleMenuOpen }) {
                 width="180"
                 height="85"
                 iconName="cloud"
-                styles={`${transitionClass} cloud-icon`}
+                styles={`${darkStyle} cloud-icon`}
               />
               <span>Підтримати проект</span>
             </button>
@@ -69,7 +76,7 @@ function Header({ handleMenuOpen }) {
                 width="54"
                 height="47"
                 iconName="burger-menu"
-                styles={`${transitionClass} burger-menu-icon`}
+                styles={`${darkStyle} burger-menu-icon`}
               />
             </button>
           </div>

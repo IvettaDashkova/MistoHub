@@ -8,8 +8,9 @@ export const StyledFooter = styled.footer`
   font-size: 14px;
   display: flex;
   justify-content: center;
-   @media (min-width: 375px) {
-   font-size: 16px;
+  @media (min-width: 375px) {
+    font-size: 16px;
+  }
 `;
 export const FooterContainer = styled(StyledContainer)`
   min-width: 320px;
@@ -193,7 +194,8 @@ export const FooterDown = styled.div`
     outline: none;
     margin-bottom: 20px;
     transition: color 0.25s ease-in-out;
-    &: hover,
+
+    &:hover,
     &:focus {
       color: #ffffff;
       .icon-goit-white {
@@ -201,6 +203,7 @@ export const FooterDown = styled.div`
       }
     }
   }
+
   .icon-goit-white {
     width: 59px;
     height: 18px;
@@ -298,6 +301,7 @@ export const FooterDown = styled.div`
       height: 40px;
     }
   }
+
   @media (min-width: 1440px) {
     .social-block {
       margin-left: auto;
