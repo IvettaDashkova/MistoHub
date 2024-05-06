@@ -7,21 +7,35 @@ export const VisualizationSection = styled.section`
 `;
 
 export const VisualizationContainer = styled(Container)`
-  padding: 26px 16px 60px;
-
+  padding-bottom: 60px;
   display: flex;
   flex-direction: column;
 
   @media (min-width: 768px) {
     max-width: 768px;
-    padding: 54px 32px 120px;
-
+    padding-bottom: 120px;
     position: relative;
   }
 
   @media (min-width: 1440px) {
     max-width: 1440px;
-    padding: 54px 120px 150px;
+    padding-bottom: 150px;
+  }
+`;
+
+export const BlockName = styled.p`
+  /* font-family: 'MacPaw Fixel Display', sans-serif; */
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.29;
+  letter-spacing: -0.02em;
+  color: rgba(11, 11, 11, 0.5);
+  margin-bottom: 8px;
+
+  @media (min-width: 768px) {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 30px;
   }
 `;
 
@@ -149,7 +163,7 @@ export const Arrow = styled.div`
   @media (min-width: 1440px) {
     position: absolute;
     right: 120px;
-    top: 5px;
+    top: 0;
   }
 `;
 

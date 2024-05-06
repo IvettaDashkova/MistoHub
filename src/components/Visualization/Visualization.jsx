@@ -5,6 +5,7 @@ import { images } from '../../constants/ImageImportsVisualization';
 import {
   VisualizationSection,
   VisualizationContainer,
+  BlockName,
   Title,
   CardsContainer,
   Card,
@@ -78,6 +79,7 @@ const Visualization = () => {
   return (
     <VisualizationSection id="design">
       <VisualizationContainer>
+        <BlockName>Візуалізація</BlockName>
         <Title>Як виглядатиме простір?</Title>
         <CardsContainer>
           {images
