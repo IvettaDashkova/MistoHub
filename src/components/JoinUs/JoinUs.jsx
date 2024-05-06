@@ -1,3 +1,7 @@
+import { useEffect, useState } from 'react';
+import { useModal } from '../../contexts/ModalHook';
+
+import Background from './Background/Background';
 import {
   JoinUsSection,
   JoinUsContainer,
@@ -10,14 +14,13 @@ import {
   JoinButton,
   AlreadyJoined,
 } from './JoinUs.styled';
-
-import Background from './Background/Background';
 import { fetchCompanies, fetchPeople } from '../../services/API';
-import { useEffect, useState } from 'react';
 
 const JoinUs = () => {
   const [companies, setCompanies] = useState(0);
   const [people, setPeople] = useState(0);
+  const { openModal } = useModal();
+
   useEffect(() => {
     const fetchData = async () => {
       const people = await fetchPeople();
@@ -43,7 +46,9 @@ const JoinUs = () => {
             <StatsListItem>{17 - companies} компаній</StatsListItem>
           </StatsList>
         </StatsContainer>
-        <JoinButton>Приєднатися</JoinButton>
+        <JoinButton type="button" onClick={() => openModal('join_modal')}>
+          Приєднатися
+        </JoinButton>
         <AlreadyJoined>
           <span>+{Math.round(people / 10) * 10} людей</span>
           вже приєдналися
