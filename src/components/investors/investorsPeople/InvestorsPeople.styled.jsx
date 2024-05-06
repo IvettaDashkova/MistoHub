@@ -9,19 +9,10 @@ export const ListWrapper = styled.div`
 
   @keyframes moveToLeft {
     0% {
-      transform: translateX(0);
-    }
-    25% {
-      transform: translateX(-25%);
-    }
-    50% {
-      transform: translateX(-50%);
-    }
-    75% {
-      transform: translateX(-75%);
+      transform: translateX(20%);
     }
     100% {
-      transform: translateX(-100%);
+      transform: translateX(-250%);
     }
   }
 
@@ -47,7 +38,7 @@ export const ListWrapper = styled.div`
     display: flex;
     gap: 13px;
     margin-bottom: 16px;
-    animation: moveToRight 10s linear infinite;
+    animation: moveToRight 50s linear infinite;
   }
 
   .odd-group ul {
@@ -126,6 +117,7 @@ export const ListWrapper = styled.div`
     width: 80px;
     height: 62px;
     border-radius: 10px;
+    object-fit: cover;
   }
 
   @media screen and (min-width: 768px) and (max-width: 1439.9px) {

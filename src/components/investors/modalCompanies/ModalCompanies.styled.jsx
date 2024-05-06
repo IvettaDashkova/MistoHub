@@ -235,6 +235,7 @@ export const ModalCompanyWrapper = styled.div`
     .main-image {
       width: 100px;
       height: 100px;
+      object-fit: cover;
     }
   }
 `;
