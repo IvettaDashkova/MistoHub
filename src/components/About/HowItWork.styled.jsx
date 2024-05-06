@@ -11,17 +11,16 @@ export const HowItWorkBackground = styled.div`
   background-image: url(${bgImage});
   background-repeat: no-repeat;
   background-size: auto 100%;
-  background-position: 60% 50%;
+  background-position: 60% center;
 
   @media (min-width: 768px) {
     background-image: url(${bgImageTablet});
-    background-position: 60% 50%;
+    background-position: 60% center;
   }
 
   @media (min-width: 1440px) {
     background-image: url(${bgImageDesktop});
-    background-size: auto 100%;
-    background-position: left -335px center;
+    background-position: 67% center;
   }
 `;
 
