@@ -85,7 +85,6 @@ const HomePage = () => {
         <AboutProject />
         <AccumulatedMoney />
         <Visualization />
-        <AccumulatedMoney />
         <InvestorsBlock />
         <JoinUs />
         <CoFounders />
