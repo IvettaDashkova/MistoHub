@@ -11,7 +11,6 @@ export async function fetchGoal() {
         import.meta.env.VITE_ADMIN_DATASET
       }?query=*[_type=="goal"]{ _id, goal, raised }`
     );
-
     return result[0];
   } catch (error) {
     return;

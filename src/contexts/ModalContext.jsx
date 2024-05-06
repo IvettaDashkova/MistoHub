@@ -3,14 +3,19 @@ import { createContext, useState } from 'react';
 export const ModalContext = createContext();
 
 export const ModalProvider = ({ children }) => {
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState({
+    join_modal: false,
+    menu_modal: false,
+    team_modal: false,
+  });
+  console.log('isModalOpen: ', isModalOpen);
 
-  const openModal = () => {
-    setIsModalOpen(true);
+  const openModal = (modalName) => {
+    setIsModalOpen((prevState) => ({ ...prevState, [modalName]: true }));
   };
 
-  const closeModal = () => {
-    setIsModalOpen(false);
+  const closeModal = (modalName) => {
+    setIsModalOpen((prevState) => ({ ...prevState, [modalName]: false }));
   };
 
   return (

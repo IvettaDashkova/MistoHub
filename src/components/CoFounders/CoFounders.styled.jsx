@@ -11,8 +11,15 @@ export const CoFoundersContainer = styled(StyledContainer)`
   @media (max-width: 374px) {
     padding: 60px 0;
   }
+  @media screen and (min-width: 430px) {
+    overflow: unset;
+  }
   @media (min-width: 768px) {
     padding: 120px 32px;
+    overflow: hidden;
+  }
+  @media screen and (min-width: 950px) {
+    overflow: unset;
   }
   @media (min-width: 1440px) {
     padding: 150px 120px;
@@ -20,8 +27,9 @@ export const CoFoundersContainer = styled(StyledContainer)`
 `;
 
 export const SectionTitle = styled.h2`
+  font-family: 'Oddval';
   color: #0b0b0b;
-  font-weight: 700;
+  font-weight: 600;
   font-size: 24px;
   line-height: 133%;
   letter-spacing: -0.02em;

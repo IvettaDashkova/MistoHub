@@ -1,32 +1,33 @@
 import { Link } from 'react-router-dom';
-import { useMediaQuery } from 'react-responsive';
 
-import InstagramIcon from '/src/assets/icons/header/InstagramIcon';
-import FacebookIcon from '/src/assets/icons/header/FacebookIcon';
 import { SocialWrapper } from './SocialBlock.styled';
+import Icon from '../../components/Icon/Icon';
 
-function SocialBlock({ transitionClass }) {
-  const isMobile = useMediaQuery({ maxWidth: 767 });
-
+function SocialBlock({ darkStyle }) {
   return (
     <SocialWrapper>
       <Link
-        className="instagram-link"
+        className={`${darkStyle} link-instagram`}
         to="https://www.instagram.com/mistohub"
         target="_blank"
         rel="noopener noreferrer"
         aria-label="go and view the Mistohub Instagram account"
       >
-        <InstagramIcon transitionClass={transitionClass} mobile={isMobile} />
+        <Icon
+          width="20"
+          height="20"
+          iconName="icon-instagram"
+          styles={darkStyle}
+        />
       </Link>
       <Link
-        className="facebook-link"
+        className={`${darkStyle} link-facebook`}
         to="https://www.facebook.com/mistohub/?locale=uk_UA"
         target="_blank"
         rel="noopener noreferrer"
         aria-label="go to the Mistohub Facebook page"
       >
-        <FacebookIcon transitionClass={transitionClass} mobile={isMobile} />
+        <Icon width="20" height="20" iconName="icon-faceb" styles={darkStyle} />
       </Link>
     </SocialWrapper>
   );
