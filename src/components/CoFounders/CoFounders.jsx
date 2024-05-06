@@ -8,11 +8,11 @@ import {
   SectionTitle,
   CoFoundersContainer,
 } from './CoFounders.styled';
-import data from './cofounders.json';
+import data from '../../constants/cofoundersData';
 
 const CoFounders = () => {
   return (
-    <SectionContainer>
+    <SectionContainer id="founders">
       <CoFoundersContainer>
         <SectionTitle>
           Співзасновники <br />

@@ -7,54 +7,76 @@ export const StyledHeader = styled.header`
   position: fixed;
   top: 0;
   z-index: 100;
+  background-color: transparent;
+
+  .hidden-wrap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.07);
+    backdrop-filter: blur(17.4px);
+    height: 70px;
+
+    transition:
+      opacity 1s ease-in-out,
+      height 1ms ease-in-out 0.1s,
+      overflow 1ms ease-in-out 0.1s;
+  }
+
+  .hidden-wrap.hidden {
+    height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition:
+      opacity 1s ease-in-out,
+      height 1ms ease-in-out 1s,
+      overflow 1ms ease-in-out 1s;
+  }
 
   .main-logo {
     fill: #ffffff;
-    transition: fill 0.7s;
+    transition: fill 0.5s;
   }
 
   .burger-menu-icon {
     stroke: #ffffff;
-    transition: fill 0.7s;
+    transition: fill 1s;
   }
 
-  .burger-menu-icon.short-header {
+  .burger-menu-icon.dark-header {
     stroke: #0b0b0b;
   }
 
-  .main-logo.short-header {
+  .main-logo.dark-header {
     fill: #0b0b0b;
   }
-`;
 
-export const HeaderContainer = styled(Container)`
-  max-width: 343px;
-  padding: 20px 0 0;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  transition: max-width 0.7s ease-in-out;
-
-  &.short-header {
-    max-width: 291px;
-  }
-
-  @media screen and (min-width: 768px) and (max-width: 1439px) {
-    max-width: 704px;
-    padding: 30px 0 0;
-
-    &.short-header {
-      max-width: 600px;
+  @media screen and (min-width: 768px) {
+    .hidden-wrap {
+      height: 117px;
     }
   }
 
   @media screen and (min-width: 1440px) {
-    max-width: 1200px;
-    padding: 30px 0 0;
-
-    &.short-header {
-      max-width: 874px;
+    .hidden-wrap {
+      height: 125px;
     }
+  }
+`;
+
+export const HeaderContainer = styled(Container)`
+  padding: 16px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  @media screen and (min-width: 768px) and (max-width: 1439px) {
+    padding: 16px 32px;
+  }
+
+  @media screen and (min-width: 1440px) {
+    padding: 20px 120px;
   }
 
   .menu-wrapper {

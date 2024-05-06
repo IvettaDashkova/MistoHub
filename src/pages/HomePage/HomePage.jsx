@@ -1,18 +1,20 @@
+import { useEffect, useState } from 'react';
+import { useLocation } from 'react-router-dom';
 import Modal from 'react-modal';
 
 import Header from '/src/components/Header/Header';
 import AboutProject from '../../components/About/AboutProject';
-import { ZibraniKoshti } from '../../components/ZibraniKoshti/ZibraniKoshti';
+import { AccumulatedMoney } from '../../components/AccumulatedMoney/AccumulatedMoney';
+
+import InvestorsBlock from '../../components/InvestorsCompanies/InvestorsBlock';
+import Visualization from '../../components/Visualization/Visualization';
 import ScrollToTopButton from '../../components/ScrollToTopButton/ScrollToTopButton';
 import BurgerMenu from '../../components/BurgerMenu/BurgerMenu';
-// import TestSections from '../../components/ScrollToTopButton/TestSections';
-import { useEffect } from 'react';
-import { useState } from 'react';
-import { useLocation } from 'react-router-dom';
 import Footer from '../../components/Footer/Footer';
 import DevelopersModal from '../../components/DevelopersModal/DevelopersModal';
 import HeroSection from '/src/components/HeroSection/HeroSection';
 import CoFounders from '../../components/CoFounders/CoFounders';
+import JoinUs from '../../components/JoinUs/JoinUs';
 import ModalsManager from '/src/shared/Modals/ModalsManager';
 
 Modal.setAppElement('#root');
@@ -51,7 +53,6 @@ const HomePage = () => {
           setActiveSection(sectionId);
           const url = `#${sectionId}`;
           window.history.pushState(null, '', url);
-          //pushState змінює url при скролі
         }
       });
     };
@@ -82,9 +83,12 @@ const HomePage = () => {
       <main>
         <HeroSection />
         <AboutProject />
-        <ZibraniKoshti />
-        <ScrollToTopButton />
+        <Visualization />
+        <AccumulatedMoney />
+        <InvestorsBlock />
+        <JoinUs />
         <CoFounders />
+        <ScrollToTopButton />
       </main>
       <Footer />
       <DevelopersModal />

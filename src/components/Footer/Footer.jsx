@@ -9,7 +9,7 @@ export default function Footer() {
   const { openModal } = useModal();
 
   return (
-    <StyledFooter>
+    <StyledFooter id="footer">
       <FooterContainer>
         <div className="footer-up">
           <MyGoogleMap />
@@ -27,7 +27,7 @@ export default function Footer() {
               type="button"
               onClick={() => openModal('join_modal')}
             >
-              <span>Підтримати проект</span>
+              <span>Підтримати проєкт</span>
             </button>
           </div>
         </div>
@@ -36,10 +36,7 @@ export default function Footer() {
             <p>&copy; ГО &laquo;МІСТО ХАБ&raquo;</p>
             <p>Всі права захищені</p>
           </div>
-          <button
-            className="btn-goit"
-            onClick={() => console.log('Open TeamDev Modal!! ')}
-          >
+          <button className="btn-goit" onClick={() => openModal('team_modal')}>
             Розроблено студентами{' '}
             <Iconsvg
               width="59"
