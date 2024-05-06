@@ -55,11 +55,10 @@ export const About = () => {
             rows: 3,
           }}
           initialSlide={0}
-          slideTo={0}
           enabled={true}
           pagination={{
             enabled: false,
-            clickable: false,
+            clickable: true,
           }}
           modules={[Pagination]}
         >
