@@ -5,11 +5,12 @@ export async function fetchGoal() {
     const {
       data: { result },
     } = await axios.get(
-      `https://${import.meta.env.VITE_ADMIN_PROJECT_ID}.api.sanity.io/${import.meta.env.VITE_ADMIN_API_VERSION
-      }/data/query/${import.meta.env.VITE_ADMIN_DATASET
+      `https://${import.meta.env.VITE_ADMIN_PROJECT_ID}.api.sanity.io/${
+        import.meta.env.VITE_ADMIN_API_VERSION
+      }/data/query/${
+        import.meta.env.VITE_ADMIN_DATASET
       }?query=*[_type=="goal"]{ _id, goal, raised }`
     );
-
     return result[0];
   } catch (error) {
     return;
@@ -20,8 +21,10 @@ export async function fetchCompanies() {
     const {
       data: { result },
     } = await axios.get(
-      `https://${import.meta.env.VITE_ADMIN_PROJECT_ID}.api.sanity.io/${import.meta.env.VITE_ADMIN_API_VERSION
-      }/data/query/${import.meta.env.VITE_ADMIN_DATASET
+      `https://${import.meta.env.VITE_ADMIN_PROJECT_ID}.api.sanity.io/${
+        import.meta.env.VITE_ADMIN_API_VERSION
+      }/data/query/${
+        import.meta.env.VITE_ADMIN_DATASET
       }?query=*[_type=="companies"]{ _id, id, name, logoURL, link, question, answer } | order(id asc)`
     );
 
@@ -35,8 +38,10 @@ export async function fetchPeople() {
     const {
       data: { result },
     } = await axios.get(
-      `https://${import.meta.env.VITE_ADMIN_PROJECT_ID}.api.sanity.io/${import.meta.env.VITE_ADMIN_API_VERSION
-      }/data/query/${import.meta.env.VITE_ADMIN_DATASET
+      `https://${import.meta.env.VITE_ADMIN_PROJECT_ID}.api.sanity.io/${
+        import.meta.env.VITE_ADMIN_API_VERSION
+      }/data/query/${
+        import.meta.env.VITE_ADMIN_DATASET
       }?query=*[_type=="people"]{ _id, id,firstName,secondName,type, imageURL, facebook, instagram, otherLink, question, answer  } | order(id asc)`
     );
     return Array(93).fill(result[0]);
