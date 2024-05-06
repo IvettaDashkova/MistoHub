@@ -8,7 +8,6 @@ export const ModalProvider = ({ children }) => {
     menu_modal: false,
     team_modal: false,
   });
-  console.log('isModalOpen: ', isModalOpen);
 
   const openModal = (modalName) => {
     setIsModalOpen((prevState) => ({ ...prevState, [modalName]: true }));
