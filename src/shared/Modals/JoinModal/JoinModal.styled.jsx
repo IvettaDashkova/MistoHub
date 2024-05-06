@@ -65,6 +65,7 @@ export const JoinModalStyled = styled(Modal)`
       width: 14px;
       height: 14px;
       fill: rgba(11, 11, 11, 0.5);
+      margin-top: 6px;
     }
   }
 
@@ -175,6 +176,13 @@ export const JoinModalStyled = styled(Modal)`
     }
   }
 
+  .joinInput:hover,
+  .joinInput:active,
+  .joinInput:focus,
+  .joinInput:focus-visible {
+    border: 2px solid #f77d07;
+  }
+
   ::placeholder {
     color: rgba(11, 11, 11, 0.5);
     font-size: 14px;
@@ -251,7 +259,7 @@ export const InfoStyled = styled.div`
 
   .joinProtectionBlock {
     display: flex;
-    align-items: center;
+    align-items: flex-end;
     gap: 8px;
 
     @media only screen and (min-width: 768px) {
