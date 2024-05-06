@@ -8,9 +8,9 @@ const DevelopersModal = () => {
 
   return (
     <DevelopersModalStyled
-      onRequestClose={closeModal}
-      isOpen={isModalOpen}
-      onClose={closeModal}
+      onRequestClose={() => closeModal('team_modal')}
+      isOpen={isModalOpen.team_modal}
+      onClose={() => closeModal('team_modal')}
       shouldCloseOnOverlayClick={true}
       style={{
         overlay: {
@@ -23,7 +23,11 @@ const DevelopersModal = () => {
         <div className="content-container">
           <div className="dev-modal-up">
             <span>Команда</span>
-            <button className="сloseBtn" type="button" onClick={closeModal}>
+            <button
+              className="сloseBtn"
+              type="button"
+              onClick={() => closeModal('team_modal')}
+            >
               <span className="сloseText">Закрити</span>
               <Iconsvg
                 width="12"
