@@ -1,4 +1,22 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
+
+const animToLeft = keyframes`
+  0% {
+    transform: translateX(0)
+  }
+  100% {
+    transform: translateX(-100%)
+  }
+  `;
+
+const animToRight = keyframes`
+  0% {
+    transform: translateX(-100%)
+  }
+  100% {
+    transform: translateX(0)
+  }
+  `;
 
 export const ListWrapper = styled.div`
   div {
@@ -9,10 +27,19 @@ export const ListWrapper = styled.div`
 
   @keyframes moveToLeft {
     0% {
-      transform: translateX(20%);
+      transform: translateX(0);
+    }
+    25% {
+      transform: translateX(-25%);
+    }
+    50% {
+      transform: translateX(-50%);
+    }
+    75% {
+      transform: translateX(-75%);
     }
     100% {
-      transform: translateX(-250%);
+      transform: translateX(-100%);
     }
   }
 
@@ -34,11 +61,55 @@ export const ListWrapper = styled.div`
     }
   }
 
+  ul {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+  }
+
+  .item-list {
+    width: 80px;
+    height: 62px;
+    margin: 0;
+    border-radius: 10px;
+    background-color: transparent;
+    border: none;
+  }
+
+  .item-list img,
+  .item-list img,
+  .item-list img,
+  .item-list img {
+    filter: blur(0px);
+    transition: filter 700ms linear;
+  }
+
+  .item-list.on-blur img,
+  .item-list.on-blur img,
+  .item-list.on-blur img,
+  .item-list.on-blur img {
+    filter: opacity(40%);
+  }
+  .group-0 ul {
+    animation: ${animToLeft} 40s linear infinite;
+  }
+
+  .group-2 ul {
+    animation: ${animToLeft} 80s linear infinite;
+  }
+  .group-1 ul {
+    animation: ${animToRight} 80s linear infinite;
+  }
+
+  .group-3 ul {
+    animation: ${animToRight} 40s linear infinite;
+  }
+
   .even-group ul {
     display: flex;
     gap: 13px;
     margin-bottom: 16px;
-    animation: moveToRight 50s linear infinite;
+    animation: moveToRight 10s linear infinite;
   }
 
   .odd-group ul {
@@ -46,61 +117,6 @@ export const ListWrapper = styled.div`
     gap: 13px;
     margin-bottom: 16px;
     animation: moveToLeft 10s linear infinite;
-  }
-
-  .group-0.odd-group::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    border-radius: 10px;
-    width: 80px;
-    height: 62px;
-    opacity: 0.3;
-    background: lightgray;
-    z-index: 2;
-  }
-
-  .group-0.odd-group::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    border-radius: 10px;
-    width: 80px;
-    height: 62px;
-    opacity: 0.3;
-    background: lightgray;
-    z-index: 2;
-  }
-
-  .group-3.even-group::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    border-radius: 10px;
-    width: 80px;
-    height: 62px;
-    opacity: 0.3;
-    background: lightgray;
-    z-index: 2;
-  }
-
-  .group-3.even-group::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    border-radius: 10px;
-    width: 80px;
-    height: 62px;
-    opacity: 0.3;
-    background: lightgray;
   }
 
   ul:hover {
@@ -122,98 +138,35 @@ export const ListWrapper = styled.div`
 
   @media screen and (min-width: 768px) and (max-width: 1439.9px) {
     .even-group ul {
-      display: flex;
       gap: 30px;
       margin-bottom: 30px;
-      animation: moveToRight 10s linear infinite;
+      animation: moveToRight 140s linear infinite;
     }
 
     .odd-group ul {
-      display: flex;
       gap: 30px;
       margin-bottom: 30px;
-      animation: moveToLeft 10s linear infinite;
+      animation: moveToLeft 140s linear infinite;
     }
 
-    .group-0.odd-group::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      left: 0;
-      border-radius: 10px;
+    .item-list {
       width: 180px;
       height: 140px;
-      opacity: 0.3;
-      background: lightgray;
-      z-index: 2;
     }
 
-    .group-0.odd-group::after {
-      content: '';
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      right: 0;
-      border-radius: 10px;
-      width: 180px;
-      height: 140px;
-      opacity: 0.3;
-      background: lightgray;
+    .group-0 ul {
+      animation: ${animToLeft} 10s linear infinite;
     }
 
-    .group-1.even-group::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      left: 0;
-      border-radius: 10px;
-      width: 180px;
-      height: 140px;
-      opacity: 0.3;
-      background: lightgray;
-      z-index: 2;
+    .group-2 ul {
+      animation: ${animToLeft} 30s linear infinite;
+    }
+    .group-1 ul {
+      animation: ${animToRight} 30s linear infinite;
     }
 
-    .group-2.odd-group::after {
-      content: '';
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      right: 0;
-      border-radius: 10px;
-      width: 180px;
-      height: 140px;
-      opacity: 0.3;
-      background: lightgray;
-    }
-
-    .group-3.even-group::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      left: 0;
-      border-radius: 10px;
-      width: 180px;
-      height: 140px;
-      opacity: 0.3;
-      background: lightgray;
-      z-index: 2;
-    }
-
-    .group-3.even-group::after {
-      content: '';
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      right: 0;
-      border-radius: 10px;
-      width: 180px;
-      height: 140px;
-      opacity: 0.3;
-      background: lightgray;
+    .group-3 ul {
+      animation: ${animToRight} 10s linear infinite;
     }
 
     ul:hover {
@@ -233,130 +186,39 @@ export const ListWrapper = styled.div`
 
   @media screen and (min-width: 1440px) {
     .even-group ul {
-      display: flex;
       gap: 32px;
       margin-bottom: 32px;
       animation: moveToRight 10s linear infinite;
     }
 
     .odd-group ul {
-      display: flex;
       gap: 32px;
       margin-bottom: 32px;
       animation: moveToLeft 10s linear infinite;
     }
 
-    .group-0.odd-group::after {
-      content: '';
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      right: 0;
-      border-radius: 10px;
-      width: 180px;
-      height: 140px;
-      opacity: 0.3;
-      background: lightgray;
-    }
-
-    .group-0.odd-group::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      left: 0;
-      border-radius: 10px;
-      width: 180px;
-      height: 140px;
-      opacity: 0.3;
-      background: lightgray;
-      z-index: 2;
-    }
-
-    .group-1.even-group::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      left: 0;
-      border-radius: 10px;
-      width: 180px;
-      height: 140px;
-      opacity: 0.3;
-      background: lightgray;
-      z-index: 2;
-    }
-
-    .group-1.even-group::after {
-      content: '';
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      right: 0;
-      border-radius: 10px;
-      width: 180px;
-      height: 140px;
-      opacity: 0.3;
-      background: lightgray;
-      z-index: 2;
-    }
-
-    .group-2.odd-group::after {
-      content: '';
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      right: 0;
-      border-radius: 10px;
-      width: 180px;
-      height: 140px;
-      opacity: 0.3;
-      background: lightgray;
-    }
-
-    .group-2.odd-group::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      left: 0;
-      border-radius: 10px;
-      width: 180px;
-      height: 140px;
-      opacity: 0.3;
-      background: lightgray;
-      z-index: 2;
-    }
-
-    .group-3.even-group::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      left: 0;
-      border-radius: 10px;
-      width: 180px;
-      height: 140px;
-      opacity: 0.3;
-      background: lightgray;
-      z-index: 2;
-    }
-
-    .group-3.even-group::after {
-      content: '';
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      right: 0;
-      border-radius: 10px;
-      width: 180px;
-      height: 140px;
-      opacity: 0.3;
-      background: lightgray;
-    }
-
     ul:hover {
       animation-play-state: paused;
+    }
+
+    .item-list {
+      width: 180px;
+      height: 140px;
+    }
+
+    .group-0 ul {
+      animation: ${animToLeft} 30s linear infinite;
+    }
+
+    .group-2 ul {
+      animation: ${animToLeft} 80s linear infinite;
+    }
+    .group-1 ul {
+      animation: ${animToRight} 80s linear infinite;
+    }
+
+    .group-3 ul {
+      animation: ${animToRight} 30s linear infinite;
     }
 
     li {

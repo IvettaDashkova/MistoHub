@@ -36,7 +36,13 @@ const InvestorsBlock = () => {
         <MainHeading>З нами вже</MainHeading>
         <SecondHeading>{people.length} людини</SecondHeading>
       </TextWrapper>
-      <div style={{ width: '100%', maxWidth: '1440px', margin: '0 auto' }}>
+      <div
+        style={{
+          width: '100%',
+          maxWidth: '1440px',
+          margin: '0 auto',
+        }}
+      >
         <InvestorsPeople />
 
         <TextWrapper>
