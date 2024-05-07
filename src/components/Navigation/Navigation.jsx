@@ -9,12 +9,19 @@ const Navigation = ({ activeSection, onClose }) => {
   const sectionRef = useRef(null);
 
   const scrollToSection = (sectionId) => {
-    const sectionElement = document.getElementById(sectionId);
-    window.scrollTo({
-      top: sectionElement.offsetTop - 120,
-      behavior: 'smooth',
-    });
     onClose();
+    if (sectionId !== 'main') {
+      const sectionElement = document.getElementById(sectionId);
+      window.scrollTo({
+        top: sectionElement.offsetTop - 120,
+        behavior: 'smooth',
+      });
+    } else {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth',
+      });
+    }
   };
 
   const handleMouseEnter = (id) => {
@@ -36,7 +43,7 @@ const Navigation = ({ activeSection, onClose }) => {
               onMouseLeave={handleMouseLeave}
             >
               <Link
-                to={`/MistoHub#${link.id}`}
+                to={link.id !== 'main' ? `#${link.id}` : '/'}
                 onClick={() => scrollToSection(link.id)}
                 className={activeSection === link.id ? 'active' : 'link'}
                 ref={sectionRef}

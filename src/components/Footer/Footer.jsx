@@ -27,7 +27,7 @@ export default function Footer() {
               type="button"
               onClick={() => openModal('join_modal')}
             >
-              <span>Підтримати проект</span>
+              <span>Підтримати проєкт</span>
             </button>
           </div>
         </div>
@@ -37,8 +37,9 @@ export default function Footer() {
             <p>Всі права захищені</p>
           </div>
           <button
+            type="button"
             className="btn-goit"
-            onClick={() => console.log('Open TeamDev Modal!! ')}
+            onClick={() => openModal('team_modal')}
           >
             Розроблено студентами{' '}
             <Iconsvg

@@ -29,7 +29,7 @@ export const StyledText = styled.p`
   letter-spacing: -0.02em;
   color: rgba(11, 11, 11, 0.5);
   @media screen and (min-width: 768px) {
-    font-size: 14px;
+    font-size: 16px;
   }
 
   span {
@@ -72,16 +72,6 @@ export const BtnSupport = styled.button`
   background-size: contain;
   background-image: url('/src/assets/menu-img/support.svg');
   background-color: transparent;
-
-  &:hover,
-  &:focus {
-    border: none;
-    outline: none;
-
-    svg {
-      fill: #e97200;
-    }
-  }
 
   @media screen and (min-width: 768px) {
     display: none;

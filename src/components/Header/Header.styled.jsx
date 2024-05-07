@@ -7,11 +7,31 @@ export const StyledHeader = styled.header`
   position: fixed;
   top: 0;
   z-index: 100;
-  background-color: rgba(255, 255, 255, 0.07);
-  backdrop-filter: blur(17.4px);
+  background-color: transparent;
 
-  &.hidden {
-    display: none;
+  .hidden-wrap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.07);
+    backdrop-filter: blur(17.4px);
+    height: 70px;
+
+    transition:
+      opacity 1s ease-in-out,
+      height 1ms ease-in-out 0.1s,
+      overflow 1ms ease-in-out 0.1s;
+  }
+
+  .hidden-wrap.hidden {
+    height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition:
+      opacity 1s ease-in-out,
+      height 1ms ease-in-out 1s,
+      overflow 1ms ease-in-out 1s;
   }
 
   .main-logo {
@@ -30,6 +50,18 @@ export const StyledHeader = styled.header`
 
   .main-logo.dark-header {
     fill: #0b0b0b;
+  }
+
+  @media screen and (min-width: 768px) {
+    .hidden-wrap {
+      height: 117px;
+    }
+  }
+
+  @media screen and (min-width: 1440px) {
+    .hidden-wrap {
+      height: 125px;
+    }
   }
 `;
 

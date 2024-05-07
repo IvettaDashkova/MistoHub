@@ -14,6 +14,7 @@ import Footer from '../../components/Footer/Footer';
 import DevelopersModal from '../../components/DevelopersModal/DevelopersModal';
 import HeroSection from '/src/components/HeroSection/HeroSection';
 import CoFounders from '../../components/CoFounders/CoFounders';
+import JoinUs from '../../components/JoinUs/JoinUs';
 import ModalsManager from '/src/shared/Modals/ModalsManager';
 
 Modal.setAppElement('#root');
@@ -40,7 +41,6 @@ const HomePage = () => {
   useEffect(() => {
     const handleScroll = () => {
       const sectionElements = document.querySelectorAll('section');
-
       sectionElements.forEach((section) => {
         const sectionTop = section.offsetTop;
         const sectionHeight = section.clientHeight;
@@ -51,7 +51,12 @@ const HomePage = () => {
         ) {
           setActiveSection(sectionId);
           const url = `#${sectionId}`;
-          window.history.pushState(null, '', url);
+
+          if (sectionId !== null) {
+            window.history.pushState(null, '', url);
+          } else {
+            window.history.pushState(null, '', window.location.pathname);
+          }
         }
       });
     };
@@ -65,10 +70,12 @@ const HomePage = () => {
 
   const handleMenuClose = () => {
     setMenuOpen(false);
+    document.body.classList.remove('modal-open');
   };
 
   const handleMenuOpen = () => {
     setMenuOpen(true);
+    document.body.classList.add('modal-open');
   };
 
   return (
@@ -85,6 +92,7 @@ const HomePage = () => {
         <Visualization />
         <AccumulatedMoney />
         <InvestorsBlock />
+        <JoinUs />
         <CoFounders />
         <ScrollToTopButton />
       </main>
