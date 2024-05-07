@@ -121,14 +121,16 @@ const Visualization = () => {
             className={`${currentCard > 0 ? 'enabled' : ''}`}
             onClick={prevCard}
           >
-            <Iconsvg iconName="icon-arrow-left" />
+            {/* <Iconsvg iconName="icon-arrow-left" /> */}
+            <Iconsvg iconName="arrow-left2" />
           </LeftArrow>
           <RightArrow
             type="button"
             className={`${currentCard < images.length - (isDesktop ? 2 : 1) ? 'enabled' : ''}`}
             onClick={nextCard}
           >
-            <Iconsvg iconName="icon-arrow-right" />
+            {/* <Iconsvg iconName="icon-arrow-right" /> */}
+            <Iconsvg iconName="arrow-right2" />
           </RightArrow>
         </Arrow>
       </VisualizationContainer>
