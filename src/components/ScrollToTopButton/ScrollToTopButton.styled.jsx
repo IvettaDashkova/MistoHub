@@ -11,9 +11,7 @@ export const StyledScrollButton = styled.button`
   border: none;
   outline: none;
   transition: opacity 0.3s ease;
-  /* display: flex; */
-  /* align-items: center; */
-  /* justify-content: center;  */
+  z-index: 90;
   padding: 0;
   @media screen and (min-width: 768px) {
     height: 60px;
