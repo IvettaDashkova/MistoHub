@@ -196,8 +196,8 @@ export const LeftArrow = styled.button`
     height: 60px;
 
     & svg {
-      width: 26px;
-      height: 26px;
+      width: 28px;
+      height: 28px;
     }
   }
 
