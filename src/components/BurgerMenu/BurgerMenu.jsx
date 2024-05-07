@@ -25,9 +25,7 @@ const BurgerMenu = ({
   const customStyles = {
     top: '0',
     left: '0',
-    // z index ???
     overlay: { zIndex: '100' },
-    bodyOpenClassName: 'modal-open',
   };
 
   const { openModal } = useModal();
@@ -43,13 +41,13 @@ const BurgerMenu = ({
       <TopContainer>
         <StyledText>Меню</StyledText>
         <BtnContainer>
-          <BtnSupport onClick={() => openModal('join_modal')}>
+          <BtnSupport type="button" onClick={() => openModal('join_modal')}>
             Підтримати проєкт
           </BtnSupport>
           <StyledText>
             <span>Закрити</span>
           </StyledText>
-          <BtnClose onClick={handleMenuClose}>
+          <BtnClose type="button" onClick={handleMenuClose}>
             <Iconsvg iconName="close" width="14" height="15" />
           </BtnClose>
         </BtnContainer>
@@ -73,7 +71,7 @@ const BurgerMenu = ({
           <StyledText>Всі права захищені</StyledText>
           <StyledText>|</StyledText>
           <StyledText>Poзроблено студентами</StyledText>
-          <BtnGoIt onClick={() => openModal('team_modal')}>
+          <BtnGoIt type="button" onClick={() => openModal('team_modal')}>
             <Iconsvg iconName="logoGoIT" width="100" height="30" />
           </BtnGoIt>
         </BottomContainer>
