@@ -4,7 +4,6 @@ import bgImageTablet from '../../assets/about/howItWorkBg-tablet.svg';
 import bgImageDesktop from '../../assets/about/howItWorkBg-desktop.svg';
 import { AboutProjectContainer } from './AboutProject.styled';
 
-
 export const HowItWorkBackground = styled.div`
   width: 100%;
 
@@ -62,8 +61,8 @@ export const HowItWorkContainer = styled(AboutProjectContainer)`
     text-align: center;
     color: #0b0b0b;
 
-    &:hover {
-      color: #F77D07;
+    &:active {
+      color: #f77d07;
     }
   }
 
@@ -89,7 +88,7 @@ export const HowItWorkContainer = styled(AboutProjectContainer)`
   }
 
   .how-it-work-number {
-    padding-top:3px;
+    padding-top: 3px;
     width: 44px;
     height: 44px;
     display: flex;
@@ -181,7 +180,7 @@ export const HowItWorkContainer = styled(AboutProjectContainer)`
     }
 
     .how-it-work-number {
-      padding-top:4px;
+      padding-top: 4px;
       width: 60px;
       height: 60px;
       margin-bottom: 16px;
@@ -219,6 +218,10 @@ export const HowItWorkContainer = styled(AboutProjectContainer)`
 
       font-size: 18px;
       line-height: 1.33;
+
+      &:hover {
+        color: #f77d07;
+      }
     }
 
     .how-it-work-list {
@@ -247,7 +250,7 @@ export const HowItWorkContainer = styled(AboutProjectContainer)`
     }
 
     .how-it-work-number {
-      padding-top:5px;
+      padding-top: 5px;
       width: 72px;
       height: 72px;
       margin-bottom: 30px;

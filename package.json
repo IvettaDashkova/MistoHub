@@ -13,7 +13,7 @@
   "dependencies": {
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
-    "@photo-sphere-viewer/core": "^5.7.3",
+    "@photo-sphere-viewer/core": "^5.7.2",
     "@photo-sphere-viewer/markers-plugin": "^5.7.2-fix.1",
     "@react-google-maps/api": "^2.19.3",
     "@types/styled-components": "^5.1.34",

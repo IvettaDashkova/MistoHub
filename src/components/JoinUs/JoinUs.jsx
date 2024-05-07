@@ -32,7 +32,7 @@ const JoinUs = () => {
   }, []);
 
   return (
-    <JoinUsSection>
+    <JoinUsSection id="how">
       <JoinUsContainer>
         <Title>Приєднуйся до спільноти людей, які змінюють Полтаву!</Title>
         <Description>
