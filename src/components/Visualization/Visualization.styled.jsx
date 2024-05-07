@@ -24,7 +24,6 @@ export const VisualizationContainer = styled(Container)`
 `;
 
 export const BlockName = styled.p`
-  /* font-family: 'MacPaw Fixel Display', sans-serif; */
   font-weight: 500;
   font-size: 14px;
   line-height: 1.29;
