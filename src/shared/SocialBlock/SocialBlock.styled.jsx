@@ -11,10 +11,11 @@ export const SocialWrapper = styled.div`
     width: 36px;
     height: 36px;
     border-radius: 50%;
-    background: #fff;
+    /* background: #fff; */
+    background: ${({ sections }) => (sections.menu ? '#f77d07' : '#fff')};
     transition: background 0.25s ease-in-out;
     svg {
-      fill: #0b0b0b;
+      fill: ${({ sections }) => (sections.menu ? '#fff' : '#0b0b0b')};
       transition: fill 0.25s ease-in-out;
     }
   }

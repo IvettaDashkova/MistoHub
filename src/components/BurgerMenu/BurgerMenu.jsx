@@ -1,4 +1,9 @@
+import MediaQuery from 'react-responsive';
+import { useModal } from '../../contexts/ModalHook';
+
 import Navigation from '../Navigation/Navigation';
+import Iconsvg from '../Icon/Icon';
+import SocialBlock from '../../shared/SocialBlock/SocialBlock';
 import {
   BottomContainer,
   BtnClose,
@@ -7,21 +12,12 @@ import {
   BtnSupport,
   FlexContainer,
   ImgContainer,
-  SocLincContainer,
   StyledMenu,
   StyledText,
   TopContainer,
 } from './BurgerMenu.styled';
-import Iconsvg from '../Icon/Icon';
-import { Link } from 'react-router-dom';
-import { useModal } from '../../contexts/ModalHook';
 
-const BurgerMenu = ({
-  activeSection,
-  onScroll,
-  isMenuOpen,
-  handleMenuClose,
-}) => {
+const BurgerMenu = ({ activeSection, isMenuOpen, handleMenuClose }) => {
   const customStyles = {
     top: '0',
     left: '0',
@@ -54,11 +50,7 @@ const BurgerMenu = ({
       </TopContainer>
 
       <FlexContainer>
-        <Navigation
-          onClose={handleMenuClose}
-          activeSection={activeSection}
-          onScroll={onScroll}
-        />
+        <Navigation onClose={handleMenuClose} activeSection={activeSection} />
         <ImgContainer>
           <Iconsvg iconName="misto-hub-logo" width="357" height="121" />
         </ImgContainer>
@@ -76,22 +68,9 @@ const BurgerMenu = ({
           </BtnGoIt>
         </BottomContainer>
 
-        <SocLincContainer>
-          <Link
-            to="https://www.instagram.com/mistohub"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Iconsvg iconName="instagram-menu" width="36" height="36" />
-          </Link>
-          <Link
-            to="https://www.facebook.com/mistohub/?locale=uk_UA"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Iconsvg iconName="facebook-menu" width="36" height="36" />
-          </Link>
-        </SocLincContainer>
+        <MediaQuery maxWidth={767}>
+          <SocialBlock sectionName="menu" />
+        </MediaQuery>
       </div>
     </StyledMenu>
   );

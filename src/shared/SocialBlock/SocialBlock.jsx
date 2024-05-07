@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 
-import { SocialWrapper } from './SocialBlock.styled';
 import Icon from '../../components/Icon/Icon';
+import { SocialWrapper } from './SocialBlock.styled';
 
 function SocialBlock({ darkStyle, sectionName }) {
   let sections = {};
@@ -17,7 +17,6 @@ function SocialBlock({ darkStyle, sectionName }) {
       break;
   }
 
-  console.log('sections: ', sections);
   return (
     <SocialWrapper sections={sections}>
       <Link
