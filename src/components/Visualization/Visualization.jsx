@@ -101,7 +101,7 @@ const Visualization = () => {
                 {!isTourOpen[index] ? (
                   <div>
                     <CardTitle>{image.title}</CardTitle>
-                    <ButtonTour onClick={() => toggleTour(index)}>
+                    <ButtonTour onClick={() => toggleTour(index)} type="button">
                       Віртуальний тур
                     </ButtonTour>
                   </div>
