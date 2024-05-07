@@ -36,25 +36,6 @@ const Navigation = ({ activeSection, onClose }) => {
     <>
       <nav>
         <StyledNavList>
-          <StyledItem
-            key="main"
-            onMouseEnter={() => handleMouseEnter('main')}
-            onMouseLeave={handleMouseLeave}
-          >
-            <Link
-              to={'/'}
-              onClick={() => scrollToSection('main')}
-              className={activeSection === 'main' ? 'active' : 'link'}
-              ref={sectionRef}
-            >
-              Головна
-            </Link>
-            {hoveredIndex === 'main' && (
-              <button type="button" onClick={() => scrollToSection('main')}>
-                <Iconsvg iconName="hoverarrow" />
-              </button>
-            )}
-          </StyledItem>
           {links.map((link) => (
             <StyledItem
               key={link.id}
@@ -62,7 +43,7 @@ const Navigation = ({ activeSection, onClose }) => {
               onMouseLeave={handleMouseLeave}
             >
               <Link
-                to={`#${link.id}`}
+                to={link.id !== 'main' ? `#${link.id}` : '/'}
                 onClick={() => scrollToSection(link.id)}
                 className={activeSection === link.id ? 'active' : 'link'}
                 ref={sectionRef}
