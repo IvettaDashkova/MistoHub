@@ -66,10 +66,12 @@ const HomePage = () => {
 
   const handleMenuClose = () => {
     setMenuOpen(false);
+    document.body.classList.remove('modal-open');
   };
 
   const handleMenuOpen = () => {
     setMenuOpen(true);
+    document.body.classList.add('modal-open');
   };
 
   return (
