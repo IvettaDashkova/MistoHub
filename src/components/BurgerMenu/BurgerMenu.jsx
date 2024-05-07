@@ -25,9 +25,7 @@ const BurgerMenu = ({
   const customStyles = {
     top: '0',
     left: '0',
-    // z index ???
     overlay: { zIndex: '100' },
-    bodyOpenClassName: 'modal-open',
   };
 
   const { openModal } = useModal();
