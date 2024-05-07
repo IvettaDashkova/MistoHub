@@ -10,11 +10,18 @@ const Navigation = ({ activeSection, onClose }) => {
 
   const scrollToSection = (sectionId) => {
     onClose();
-    const sectionElement = document.getElementById(sectionId);
-    window.scrollTo({
-      top: sectionElement.offsetTop - 120,
-      behavior: 'smooth',
-    });
+    if (sectionId !== 'main') {
+      const sectionElement = document.getElementById(sectionId);
+      window.scrollTo({
+        top: sectionElement.offsetTop - 120,
+        behavior: 'smooth',
+      });
+    } else {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth',
+      });
+    }
   };
 
   const handleMouseEnter = (id) => {
@@ -29,6 +36,25 @@ const Navigation = ({ activeSection, onClose }) => {
     <>
       <nav>
         <StyledNavList>
+          <StyledItem
+            key="main"
+            onMouseEnter={() => handleMouseEnter('main')}
+            onMouseLeave={handleMouseLeave}
+          >
+            <Link
+              to={'/'}
+              onClick={() => scrollToSection('main')}
+              className={activeSection === 'main' ? 'active' : 'link'}
+              ref={sectionRef}
+            >
+              Головна
+            </Link>
+            {hoveredIndex === 'main' && (
+              <button type="button" onClick={() => scrollToSection('main')}>
+                <Iconsvg iconName="hoverarrow" />
+              </button>
+            )}
+          </StyledItem>
           {links.map((link) => (
             <StyledItem
               key={link.id}
@@ -36,7 +62,7 @@ const Navigation = ({ activeSection, onClose }) => {
               onMouseLeave={handleMouseLeave}
             >
               <Link
-                to={`/MistoHub#${link.id}`}
+                to={`#${link.id}`}
                 onClick={() => scrollToSection(link.id)}
                 className={activeSection === link.id ? 'active' : 'link'}
                 ref={sectionRef}

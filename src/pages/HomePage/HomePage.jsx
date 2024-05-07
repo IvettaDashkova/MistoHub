@@ -41,7 +41,6 @@ const HomePage = () => {
   useEffect(() => {
     const handleScroll = () => {
       const sectionElements = document.querySelectorAll('section');
-
       sectionElements.forEach((section) => {
         const sectionTop = section.offsetTop;
         const sectionHeight = section.clientHeight;
@@ -52,7 +51,12 @@ const HomePage = () => {
         ) {
           setActiveSection(sectionId);
           const url = `#${sectionId}`;
-          window.history.pushState(null, '', url);
+
+          if (sectionId !== null) {
+            window.history.pushState(null, '', url);
+          } else {
+            window.history.pushState(null, '', window.location.pathname);
+          }
         }
       });
     };
