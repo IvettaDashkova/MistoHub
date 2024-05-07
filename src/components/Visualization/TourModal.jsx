@@ -34,7 +34,7 @@ const TourModal = forwardRef(({ image, onClose }, ref) => {
         navbar={true}
         loading="lazy"
       />
-      <CloseButton onClick={onClose} type='button'>
+      <CloseButton onClick={onClose} type="button">
         <Iconsvg iconName="icon-closeX" />
       </CloseButton>
     </ModalWrapperTour>
