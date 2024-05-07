@@ -36,7 +36,11 @@ export default function Footer() {
             <p>&copy; ГО &laquo;МІСТО ХАБ&raquo;</p>
             <p>Всі права захищені</p>
           </div>
-          <button className="btn-goit" onClick={() => openModal('team_modal')}>
+          <button
+            type="button"
+            className="btn-goit"
+            onClick={() => openModal('team_modal')}
+          >
             Розроблено студентами{' '}
             <Iconsvg
               width="59"
