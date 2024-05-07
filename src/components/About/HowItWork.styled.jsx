@@ -65,6 +65,9 @@ export const HowItWorkContainer = styled(AboutProjectContainer)`
     &:hover {
       color: #F77D07;
     }
+    &:active {
+      color: #F77D07;
+    }
   }
 
   .swiper {
