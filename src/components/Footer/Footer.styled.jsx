@@ -65,8 +65,7 @@ export const FooterContainer = styled(StyledContainer)`
     outline: none;
     font-size: 20px;
     transition: color 0.25s ease-in-out;
-    &:hover,
-    &:focus {
+    &:active {
       color: #f77d07;
     }
   }
@@ -83,10 +82,6 @@ export const FooterContainer = styled(StyledContainer)`
     outline: none;
     transition: background 0.25s ease-in-out;
     transition: color 0.25s ease-in-out;
-
-    &:hover {
-      background: #e97200;
-    }
     &:active {
       color: #898b90;
       background: #e3e3e3;
@@ -151,8 +146,14 @@ export const FooterContainer = styled(StyledContainer)`
     ul {
       margin-bottom: 60px;
     }
+    a:hover {
+      color: #f77d07;
+    }
     .btn-supp {
       margin-bottom: 0px;
+      &:hover {
+        background: #e97200;
+      }
     }
   }
 `;
@@ -194,7 +195,7 @@ export const FooterDown = styled.div`
     margin-bottom: 20px;
     transition: color 0.25s ease-in-out;
 
-    &:hover {
+    &:active {
       color: #ffffff;
       .icon-goit-white {
         fill: #ffffff;
@@ -304,6 +305,12 @@ export const FooterDown = styled.div`
     .social-block {
       margin-left: auto;
       align-self: center;
+    }
+    .btn-goit:hover {
+      color: #ffffff;
+      .icon-goit-white {
+        fill: #ffffff;
+      }
     }
   }
 `;

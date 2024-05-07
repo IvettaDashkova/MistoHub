@@ -176,21 +176,20 @@ export const LeftArrow = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
-  fill: #f77d07;
   transition: all 300ms ease-in-out;
 
   & svg {
     width: 22px;
     height: 22px;
+    fill: #f77d07;
   }
 
   &.enabled {
     background: #f77d07;
-    fill: #ffffff;
-  }
 
-  &:hover {
-    transform: scale(1.1);
+    & svg {
+      fill: #ffffff;
+    }
   }
 
   @media (min-width: 768px) {
@@ -198,8 +197,14 @@ export const LeftArrow = styled.button`
     height: 60px;
 
     & svg {
-      width: 30px;
-      height: 30px;
+      width: 26px;
+      height: 26px;
+    }
+  }
+
+  @media (min-width: 1440px) {
+    &:hover {
+      transform: scale(1.1);
     }
   }
 `;
@@ -226,10 +231,12 @@ export const ModalWrapperTour = styled.div`
     background-color: transparent;
     display: flex;
     justify-content: center;
-
+    margin-bottom: 30px;
     cursor: url(${cursorImage}), default;
 
-    margin-bottom: 30px;
+    @media (min-width: 768px) {
+      margin-bottom: 40px;
+    }
   }
 
   & .psv-canvas {
@@ -237,9 +244,9 @@ export const ModalWrapperTour = styled.div`
   }
 
   & .psv-button {
+    width: 44px;
+    height: 44px;
     color: #ffffff;
-    width: 35px;
-    height: 35px;
     background: transparent;
     transition: all 300ms ease-in-out;
 
@@ -247,13 +254,14 @@ export const ModalWrapperTour = styled.div`
     justify-content: center;
     align-items: center;
 
-    &:hover {
-      transform: scale(1.3);
-    }
-
     @media (min-width: 768px) {
-      width: 40px;
-      height: 40px;
+      width: 52px;
+      height: 52px;
+    }
+    @media (min-width: 1440px) {
+      &:hover {
+        transform: scale(1.3);
+      }
     }
   }
 
@@ -272,45 +280,33 @@ export const ModalWrapperTour = styled.div`
   & .psv-zoom-range.psv-button {
     display: none;
   }
-
-  & .psv-button:not(:first-child) {
-    margin-left: 5px;
-
-    @media (min-width: 768px) {
-      margin-left: 20px;
-    }
-  }
 `;
 
 export const CloseButton = styled.button`
   position: absolute;
-  top: 20px;
-  right: 20px;
-
-  width: 40px;
-  height: 40px;
+  top: 5px;
+  right: 5px;
+  width: 60px;
+  height: 60px;
   stroke: #ffffff;
   border-radius: 50%;
   border: none;
   background-color: transparent;
   transition: all 300ms ease-in-out;
-
   display: flex;
   align-items: center;
   justify-content: center;
 
-  --icon-size: 20px;
-
   @media (min-width: 768px) {
-    --icon-size: 24px;
+    & svg {
+      width: 24px;
+      height: 24px;
+    }
   }
 
-  & svg {
-    width: var(--icon-size);
-    height: var(--icon-size);
-  }
-
-  &:hover {
-    transform: scale(1.3);
+  @media (min-width: 1440px) {
+    &:hover {
+      transform: scale(1.3);
+    }
   }
 `;
