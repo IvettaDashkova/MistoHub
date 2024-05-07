@@ -4,9 +4,10 @@ import FundraisingProgressBar from './FundraisingProgressBar';
 import { ContainerWrapper, TitleContainer } from './AccumulatedMoney.styled';
 import { fetchGoal } from '../../services/API';
 import { useMediaQuery } from 'react-responsive';
-import { NeedToDoCards } from './NeedToDoCards';
-import { MadeCards } from './MadeCards';
 import { useModal } from '../../contexts/ModalHook';
+import needToDoTasks from '../../constants/NeedToDoTasks.json';
+import madedTasks from '../../constants/MadedTasks.json';
+import { CardsList } from './AccumulatedMoney.styled';
 
 export const AccumulatedMoney = () => {
   const [goalData, setGoalData] = useState(null);
@@ -68,7 +69,10 @@ export const AccumulatedMoney = () => {
                 totalAmount={goalData.raised}
                 targetAmount={goalData.goal}
               />
-              <Cards />
+              <CardsList>
+                <Cards needToDoTasks={needToDoTasks} />
+                <Cards madedTasks={madedTasks} />
+              </CardsList>
               <button onClick={() => openModal('join_modal')} type="button">
                 Підтримати проєкт
               </button>
@@ -76,7 +80,7 @@ export const AccumulatedMoney = () => {
           ) : (
             <>
               <ul>
-                <MadeCards />
+                <Cards madedTasks={madedTasks} />
               </ul>
               <div>
                 <TitleContainer>
@@ -99,7 +103,7 @@ export const AccumulatedMoney = () => {
                 </button>
               </div>
               <ul>
-                <NeedToDoCards />
+                <Cards needToDoTasks={needToDoTasks} />
               </ul>
             </>
           )}
