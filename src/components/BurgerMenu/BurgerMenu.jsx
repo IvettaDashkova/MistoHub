@@ -1,4 +1,9 @@
+import MediaQuery from 'react-responsive';
+import { useModal } from '../../contexts/ModalHook';
+
 import Navigation from '../Navigation/Navigation';
+import Iconsvg from '../Icon/Icon';
+import SocialBlock from '../../shared/SocialBlock/SocialBlock';
 import {
   BottomContainer,
   BtnClose,
@@ -7,14 +12,10 @@ import {
   BtnSupport,
   FlexContainer,
   ImgContainer,
-  SocLincContainer,
   StyledMenu,
   StyledText,
   TopContainer,
 } from './BurgerMenu.styled';
-import Iconsvg from '../Icon/Icon';
-import { Link } from 'react-router-dom';
-import { useModal } from '../../contexts/ModalHook';
 
 const BurgerMenu = ({ activeSection, isMenuOpen, handleMenuClose }) => {
   const customStyles = {
@@ -67,22 +68,9 @@ const BurgerMenu = ({ activeSection, isMenuOpen, handleMenuClose }) => {
           </BtnGoIt>
         </BottomContainer>
 
-        <SocLincContainer>
-          <Link
-            to="https://www.instagram.com/mistohub"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Iconsvg iconName="instagram-menu" width="36" height="36" />
-          </Link>
-          <Link
-            to="https://www.facebook.com/mistohub/?locale=uk_UA"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Iconsvg iconName="facebook-menu" width="36" height="36" />
-          </Link>
-        </SocLincContainer>
+        <MediaQuery maxWidth={767}>
+          <SocialBlock sectionName="menu" />
+        </MediaQuery>
       </div>
     </StyledMenu>
   );

@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import Modal from 'react-modal';
+
 import sity from '../../assets/menu-img/misto.png';
 import sityx2 from '../../assets/menu-img/misto-x2.png';
 import sityWebP from '../../assets/menu-img/misto.webp';
@@ -170,19 +171,5 @@ export const BtnGoIt = styled.button`
 
   svg {
     fill: #f77d07;
-  }
-`;
-
-export const SocLincContainer = styled.div`
-  margin: 0;
-  padding: 0;
-  display: flex;
-  gap: 8px;
-  @media screen and (min-width: 768px) {
-    display: none;
-  }
-
-  svg:hover {
-    fill: #e97200;
   }
 `;

@@ -58,7 +58,7 @@ function Header({ handleMenuOpen }) {
             </>
           ) : (
             <div className="menu-wrapper">
-              <SocialBlock darkStyle={darkStyle} />
+              <SocialBlock darkStyle={darkStyle} sectionName="header" />
               <button
                 type="button"
                 className="btn-clouds"
@@ -70,7 +70,7 @@ function Header({ handleMenuOpen }) {
                   iconName="cloud"
                   styles={`${darkStyle} cloud-icon`}
                 />
-                <span>Підтримати проект</span>
+                <span>Підтримати проєкт</span>
               </button>
               <button type="button" onClick={handleMenuOpen}>
                 <Icon

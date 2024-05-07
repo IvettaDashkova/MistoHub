@@ -1,7 +1,8 @@
-import Iconsvg from '../Icon/Icon';
-import { StyledNavList, StyledItem } from './Navigation.styled';
 import { useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
+
+import Iconsvg from '../Icon/Icon';
+import { StyledNavList, StyledItem } from './Navigation.styled';
 import links from '../../components/Navigation/links.json';
 
 const Navigation = ({ activeSection, onClose }) => {
