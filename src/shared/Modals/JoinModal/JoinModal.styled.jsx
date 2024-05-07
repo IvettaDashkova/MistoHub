@@ -77,19 +77,31 @@ export const JoinModalStyled = styled(Modal)`
     }
   }
 
-  .joinCloseBtn:hover .joinCloseText {
-    color: #0b0b0b;
-  }
-
   .joinCloseBtn:active .joinCloseText {
     color: #0b0b0b;
   }
 
-  .joinCloseBtn:hover svg {
-    fill: #0b0b0b;
-  }
   .joinCloseBtn:active svg {
     fill: #0b0b0b;
+  }
+
+  @media only screen and (min-width: 1440px) {
+    .joinCloseBtn:hover .joinCloseText {
+      color: #0b0b0b;
+    }
+
+    .joinCloseBtn:hover svg {
+      fill: #0b0b0b;
+    }
+
+    .joinInput:hover {
+      border: 2px solid #f77d07;
+    }
+
+    .joinSubmitBtn:hover,
+    .joinSuccessBtn:hover {
+      background-color: #e97200;
+    }
   }
 
   .joinMainContainer {
@@ -183,7 +195,6 @@ export const JoinModalStyled = styled(Modal)`
     }
   }
 
-  .joinInput:hover,
   .joinInput:active,
   .joinInput:focus,
   .joinInput:focus-visible {
@@ -218,9 +229,7 @@ export const JoinModalStyled = styled(Modal)`
     }
   }
 
-  .joinSubmitBtn:hover,
   .joinSubmitBtn:focus-visible,
-  .joinSuccessBtn:hover,
   .joinSuccessBtn:focus-visible {
     background-color: #e97200;
   }
@@ -327,17 +336,22 @@ export const InfoStyled = styled.div`
     }
   }
 
-  .developers:hover,
   .developers:active {
     color: #0b0b0b;
   }
 
-  .developers:hover svg {
+  .developers:active svg {
     fill: #0b0b0b;
   }
 
-  .developers:active svg {
-    fill: #0b0b0b;
+  @media only screen and (min-width: 1440px) {
+    .developers:hover {
+      color: #0b0b0b;
+    }
+
+    .developers:hover svg {
+      fill: #0b0b0b;
+    }
   }
 `;
 
@@ -395,10 +409,15 @@ export const ErrorStyledBlock = styled.div`
     }
   }
 
-  .joinItemContact:hover,
   .joinItemContact:focus-visible,
   .joinItemContact:active {
     color: #f77d07;
+  }
+
+  @media only screen and (min-width: 1440px) {
+    .joinItemContact:hover {
+      color: #f77d07;
+    }
   }
 `;
 
