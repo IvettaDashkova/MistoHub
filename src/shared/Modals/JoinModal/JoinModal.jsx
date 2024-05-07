@@ -92,16 +92,18 @@ const JoinModal = ({ isModalOpen, closeModal }) => {
           }}
         />
       )}
-      <p>Підтримати проєкт</p>
-      <button
-        className="joinCloseBtn"
-        type="button"
-        title="Закрити вікно"
-        onClick={handleCloseModal}
-      >
-        <span className="joinCloseText">Закрити</span>
-        <Icon iconName="close" />
-      </button>
+      <div>
+        <p>Підтримати проєкт</p>
+        <button
+          className="joinCloseBtn"
+          type="button"
+          title="Закрити вікно"
+          onClick={handleCloseModal}
+        >
+          <span className="joinCloseText">Закрити</span>
+          <Icon iconName="close" />
+        </button>
+      </div>
       <div className="joinMainContainer">
         <div>
           {!isDataPosted && !isError && (
