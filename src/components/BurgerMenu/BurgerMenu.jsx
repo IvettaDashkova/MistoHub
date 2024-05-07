@@ -16,12 +16,7 @@ import Iconsvg from '../Icon/Icon';
 import { Link } from 'react-router-dom';
 import { useModal } from '../../contexts/ModalHook';
 
-const BurgerMenu = ({
-  activeSection,
-  onScroll,
-  isMenuOpen,
-  handleMenuClose,
-}) => {
+const BurgerMenu = ({ activeSection, isMenuOpen, handleMenuClose }) => {
   const customStyles = {
     top: '0',
     left: '0',
@@ -54,11 +49,7 @@ const BurgerMenu = ({
       </TopContainer>
 
       <FlexContainer>
-        <Navigation
-          onClose={handleMenuClose}
-          activeSection={activeSection}
-          onScroll={onScroll}
-        />
+        <Navigation onClose={handleMenuClose} activeSection={activeSection} />
         <ImgContainer>
           <Iconsvg iconName="misto-hub-logo" width="357" height="121" />
         </ImgContainer>

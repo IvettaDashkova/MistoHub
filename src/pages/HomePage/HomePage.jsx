@@ -98,7 +98,7 @@ const HomePage = () => {
       </main>
       <Footer />
       <DevelopersModal />
-      <ModalsManager />
+      <ModalsManager activeSection={activeSection} />
     </>
   );
 };
