@@ -4,12 +4,15 @@ import Modal from 'react-modal';
 export const JoinModalStyled = styled(Modal)`
   min-width: 320px;
   width: 100%;
-  height: 812px;
+  height: 100%;
   background-color: #fff;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   padding: 23px 16px 20px 16px;
   box-shadow:
     0px 6px 10px rgba(123, 107, 88, 0.95),
@@ -22,17 +25,14 @@ export const JoinModalStyled = styled(Modal)`
   font-weight: 500;
   color: rgba(11, 11, 11, 0.5);
   overflow-y: auto;
-  max-height: 100vh;
 
   @media only screen and (min-width: 768px) {
-    height: 1024px;
     font-size: 16px;
     line-height: 1.5;
     padding: 32px;
   }
 
   @media only screen and (min-width: 1440px) {
-    height: 880px;
     padding: 40px 80px;
   }
 
@@ -65,6 +65,7 @@ export const JoinModalStyled = styled(Modal)`
       width: 14px;
       height: 14px;
       fill: rgba(11, 11, 11, 0.5);
+      margin-top: 6px;
     }
   }
 
@@ -80,7 +81,14 @@ export const JoinModalStyled = styled(Modal)`
     color: #0b0b0b;
   }
 
+  .joinCloseBtn:active .joinCloseText {
+    color: #0b0b0b;
+  }
+
   .joinCloseBtn:hover svg {
+    fill: #0b0b0b;
+  }
+  .joinCloseBtn:active svg {
     fill: #0b0b0b;
   }
 
@@ -175,6 +183,13 @@ export const JoinModalStyled = styled(Modal)`
     }
   }
 
+  .joinInput:hover,
+  .joinInput:active,
+  .joinInput:focus,
+  .joinInput:focus-visible {
+    border: 2px solid #f77d07;
+  }
+
   ::placeholder {
     color: rgba(11, 11, 11, 0.5);
     font-size: 14px;
@@ -242,8 +257,6 @@ export const MaskaStyled = styled.div`
 `;
 
 export const InfoStyled = styled.div`
-  position: relative;
-  bottom: 0;
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -289,6 +302,7 @@ export const InfoStyled = styled.div`
     font-size: 14px;
     display: flex;
     align-items: center;
+    line-height: 1;
     background-color: transparent;
     border: none;
     color: rgba(11, 11, 11, 0.5);
@@ -313,30 +327,32 @@ export const InfoStyled = styled.div`
     }
   }
 
-  .developers:hover {
+  .developers:hover,
+  .developers:active {
     color: #0b0b0b;
   }
 
   .developers:hover svg {
     fill: #0b0b0b;
   }
+
+  .developers:active svg {
+    fill: #0b0b0b;
+  }
 `;
 
 export const ErrorStyledBlock = styled.div`
-  padding-top: 199px;
-  padding-bottom: 220px;
   display: flex;
   flex-direction: column;
   gap: 20px;
+  margin-bottom: 20px;
 
   @media only screen and (min-width: 768px) {
-    padding: 204px 0 292px 0;
     gap: 30px;
   }
 
   @media only screen and (min-width: 1440px) {
     padding: 164px 0 174px 0;
-    margin: auto;
   }
 
   & svg {
@@ -380,20 +396,18 @@ export const ErrorStyledBlock = styled.div`
   }
 
   .joinItemContact:hover,
-  .joinItemContact:focus-visible {
+  .joinItemContact:focus-visible,
+  .joinItemContact:active {
     color: #f77d07;
   }
 `;
 
 export const PostedStyledBlock = styled.div`
-  padding-top: 200px;
-  padding-bottom: 268px;
   display: flex;
   flex-direction: column;
   gap: 20px;
 
   @media only screen and (min-width: 768px) {
-    padding: 230px 0 280px 0;
     gap: 30px;
   }
 
@@ -428,10 +442,6 @@ export const PostedStyledBlock = styled.div`
       width: 180px;
       height: 54px;
       font-size: 16px;
-    }
-
-    & :hover {
-      color: #e97200;
     }
   }
 `;

@@ -5,6 +5,7 @@ import { images } from '../../constants/ImageImportsVisualization';
 import {
   VisualizationSection,
   VisualizationContainer,
+  BlockName,
   Title,
   CardsContainer,
   Card,
@@ -78,6 +79,7 @@ const Visualization = () => {
   return (
     <VisualizationSection id="design">
       <VisualizationContainer>
+        <BlockName>Візуалізація</BlockName>
         <Title>Як виглядатиме простір?</Title>
         <CardsContainer>
           {images
@@ -99,7 +101,7 @@ const Visualization = () => {
                 {!isTourOpen[index] ? (
                   <div>
                     <CardTitle>{image.title}</CardTitle>
-                    <ButtonTour onClick={() => toggleTour(index)}>
+                    <ButtonTour onClick={() => toggleTour(index)} type="button">
                       Віртуальний тур
                     </ButtonTour>
                   </div>
@@ -119,14 +121,14 @@ const Visualization = () => {
             className={`${currentCard > 0 ? 'enabled' : ''}`}
             onClick={prevCard}
           >
-            <Iconsvg iconName="icon-arrow-left" />
+            <Iconsvg width="22" height="22" iconName="icon-arrow-left" />
           </LeftArrow>
           <RightArrow
             type="button"
             className={`${currentCard < images.length - (isDesktop ? 2 : 1) ? 'enabled' : ''}`}
             onClick={nextCard}
           >
-            <Iconsvg iconName="icon-arrow-right" />
+            <Iconsvg width="22" height="22" iconName="icon-arrow-right" />
           </RightArrow>
         </Arrow>
       </VisualizationContainer>
