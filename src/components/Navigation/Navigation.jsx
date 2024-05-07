@@ -9,12 +9,12 @@ const Navigation = ({ activeSection, onClose }) => {
   const sectionRef = useRef(null);
 
   const scrollToSection = (sectionId) => {
+    onClose();
     const sectionElement = document.getElementById(sectionId);
     window.scrollTo({
       top: sectionElement.offsetTop - 120,
       behavior: 'smooth',
     });
-    onClose();
   };
 
   const handleMouseEnter = (id) => {
