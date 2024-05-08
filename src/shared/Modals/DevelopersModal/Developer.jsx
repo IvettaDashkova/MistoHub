@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
+
 import { ListItem } from './Developer.styled';
-import Iconsvg from '../Icon/Icon';
+import Iconsvg from '../../../components/Icon/Icon';
 
 const Developer = ({ name, role, link, jpg, jpgx2, webp, webpx2 }) => {
   return (

@@ -1,13 +1,17 @@
 import { useModal } from '/src/contexts/ModalHook';
 
-import JoinModal from '/src/shared/Modals/JoinModal/JoinModal';
+import JoinModal from './JoinModal/JoinModal';
+import BurgerMenu from './MenuModal/BurgerMenu';
+import DevelopersModal from './DevelopersModal/DevelopersModal';
 
-const ModalsManager = () => {
-  const { isModalOpen, closeModal } = useModal();
+const ModalsManager = (props) => {
+  const controlsModal = useModal();
 
   return (
     <>
-      <JoinModal isModalOpen={isModalOpen} closeModal={closeModal} />
+      <JoinModal controlsModal={controlsModal} />
+      <BurgerMenu controlsMenuModal={{ ...controlsModal, ...props }} />
+      <DevelopersModal controlsModal={controlsModal} />
     </>
   );
 };

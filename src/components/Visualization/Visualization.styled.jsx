@@ -141,12 +141,20 @@ export const ButtonTour = styled.button`
     color: #ffffff;
   }
 
+  &:active {
+    background: #e3e3e3;
+    color: #898b90;
+  }
+
   @media (min-width: 768px) {
     padding: 15px 26px;
     font-size: 16px;
     line-height: 1.5;
     display: block;
     margin: 0 auto;
+  }
+
+  @media (min-width: 1440px) {
   }
 `;
 
@@ -178,6 +186,7 @@ export const LeftArrow = styled.button`
   transition: all 300ms ease-in-out;
 
   & svg {
+    display: block;
     width: 22px;
     height: 22px;
     fill: #f77d07;
@@ -191,19 +200,39 @@ export const LeftArrow = styled.button`
     }
   }
 
+  &:active {
+    background: #e3e3e3;
+
+    & svg {
+      fill: #898b90;
+    }
+  }
+
   @media (min-width: 768px) {
     width: 60px;
     height: 60px;
 
     & svg {
-      width: 26px;
-      height: 26px;
+      width: 30px;
+      height: 30px;
     }
   }
 
   @media (min-width: 1440px) {
     &:hover {
-      transform: scale(1.1);
+      background: #f77d07;
+
+      & svg {
+        fill: #ffffff;
+      }
+    }
+
+    &.enabled:hover {
+      background: #ffffff;
+
+      & svg {
+        fill: #f77d07;
+      }
     }
   }
 `;
@@ -279,6 +308,10 @@ export const ModalWrapperTour = styled.div`
   & .psv-zoom-range.psv-button {
     display: none;
   }
+
+  .psv-zoom-button {
+    display: flex !important;
+  }
 `;
 
 export const CloseButton = styled.button`
@@ -295,6 +328,12 @@ export const CloseButton = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
+
+  & svg {
+    display: block;
+    width: 20px;
+    height: 20px;
+  }
 
   @media (min-width: 768px) {
     & svg {
