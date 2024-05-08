@@ -62,6 +62,10 @@ export const ContainerWrapper = styled.section`
 
       backdrop-filter: blur(5px);
     }
+
+    button:hover {
+      background-color: #e97200;
+    }
   }
 
   h4 {
