@@ -1,5 +1,4 @@
 import MediaQuery from 'react-responsive';
-
 import Navigation from './Navigation';
 import Iconsvg from '../../../components/Icon/Icon';
 import SocialBlock from '../../../shared/SocialBlock/SocialBlock';
@@ -64,8 +63,8 @@ const BurgerMenu = ({ controlsMenuModal }) => {
           </span>
           <StyledText>Всі права захищені</StyledText>
           <StyledText>|</StyledText>
-          <StyledText>Poзроблено студентами</StyledText>
           <BtnGoIt type="button" onClick={() => openModal('team_modal')}>
+            <span>Poзроблено студентами</span>
             <Iconsvg iconName="logoGoIT" width="100" height="30" />
           </BtnGoIt>
         </BottomContainer>
