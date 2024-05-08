@@ -35,6 +35,7 @@ const TourModal = forwardRef(({ image, onClose }, ref) => {
         width={'100%'}
         defaultZoomLvl={10}
         // navbar={['zoom', 'fullscreen']}
+        // navbar={['move']}
         navbar={isIOS ? ['move'] : ['zoom', 'fullscreen']}
         loading="lazy"
       />
