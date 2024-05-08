@@ -178,6 +178,7 @@ export const LeftArrow = styled.button`
   transition: all 300ms ease-in-out;
 
   & svg {
+    display: block;
     width: 22px;
     height: 22px;
     fill: #f77d07;
@@ -295,6 +296,12 @@ export const CloseButton = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
+
+  & svg {
+    display: block;
+    width: 20px;
+    height: 20px;
+  }
 
   @media (min-width: 768px) {
     & svg {
