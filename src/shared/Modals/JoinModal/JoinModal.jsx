@@ -34,7 +34,7 @@ const UserDataSchema = Yup.object().shape({
   about: Yup.string().max(500, 'Про себе може містити до 500 символів.'),
 });
 
-const JoinModal = ({ isModalOpen, closeModal }) => {
+const JoinModal = ({ controlsModal: { isModalOpen, closeModal } }) => {
   const [isDataPosted, setIsDataPosted] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
