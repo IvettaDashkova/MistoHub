@@ -66,6 +66,7 @@ export const AccumulatedMoney = () => {
                 <p>{`$ ${goalData.goal - goalData.raised}`}</p>
               </TitleContainer>
               <FundraisingProgressBar
+                goAnimation={isVisible}
                 totalAmount={goalData.raised}
                 targetAmount={goalData.goal}
               />
