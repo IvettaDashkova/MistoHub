@@ -197,8 +197,8 @@ export const LeftArrow = styled.button`
     height: 60px;
 
     & svg {
-      width: 28px;
-      height: 28px;
+      width: 30px;
+      height: 30px;
     }
   }
 
@@ -279,6 +279,10 @@ export const ModalWrapperTour = styled.div`
 
   & .psv-zoom-range.psv-button {
     display: none;
+  }
+
+  .psv-zoom-button {
+    display: flex !important;
   }
 `;
 
