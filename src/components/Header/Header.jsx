@@ -6,7 +6,7 @@ import { HeaderContainer, StyledHeader } from './Header.styled';
 import SocialBlock from '/src/shared/SocialBlock/SocialBlock';
 import Icon from '/src/components/Icon/Icon';
 
-function Header({ handleMenuOpen }) {
+function Header() {
   const [darkStyle, setDarkStyle] = useState('');
   const { openModal } = useModal();
 
@@ -47,7 +47,7 @@ function Header({ handleMenuOpen }) {
           />
           {isMobile ? (
             <>
-              <button type="button" onClick={handleMenuOpen}>
+              <button type="button" onClick={() => openModal('menu_modal')}>
                 <Icon
                   width="44"
                   height="38"
@@ -72,7 +72,7 @@ function Header({ handleMenuOpen }) {
                 />
                 <span>Підтримати проєкт</span>
               </button>
-              <button type="button" onClick={handleMenuOpen}>
+              <button type="button" onClick={() => openModal('menu_modal')}>
                 <Icon
                   width="54"
                   height="47"

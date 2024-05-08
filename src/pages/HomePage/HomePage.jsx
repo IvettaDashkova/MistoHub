@@ -9,9 +9,7 @@ import { AccumulatedMoney } from '../../components/AccumulatedMoney/AccumulatedM
 import InvestorsBlock from '../../components/InvestorsCompanies/InvestorsBlock';
 import Visualization from '../../components/Visualization/Visualization';
 import ScrollToTopButton from '../../components/ScrollToTopButton/ScrollToTopButton';
-import BurgerMenu from '../../components/BurgerMenu/BurgerMenu';
 import Footer from '../../components/Footer/Footer';
-import DevelopersModal from '../../components/DevelopersModal/DevelopersModal';
 import HeroSection from '/src/components/HeroSection/HeroSection';
 import CoFounders from '../../components/CoFounders/CoFounders';
 import JoinUs from '../../components/JoinUs/JoinUs';
@@ -20,7 +18,6 @@ import ModalsManager from '/src/shared/Modals/ModalsManager';
 Modal.setAppElement('#root');
 
 const HomePage = () => {
-  const [isMenuOpen, setMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState(null);
   const location = useLocation();
 
@@ -68,24 +65,9 @@ const HomePage = () => {
     };
   }, []);
 
-  const handleMenuClose = () => {
-    setMenuOpen(false);
-    document.body.classList.remove('modal-open');
-  };
-
-  const handleMenuOpen = () => {
-    setMenuOpen(true);
-    document.body.classList.add('modal-open');
-  };
-
   return (
     <>
-      <Header handleMenuOpen={handleMenuOpen} />
-      <BurgerMenu
-        activeSection={activeSection}
-        isMenuOpen={isMenuOpen}
-        handleMenuClose={handleMenuClose}
-      />
+      <Header />
       <main>
         <HeroSection />
         <AboutProject />
@@ -97,7 +79,6 @@ const HomePage = () => {
         <ScrollToTopButton />
       </main>
       <Footer />
-      <DevelopersModal />
       <ModalsManager activeSection={activeSection} />
     </>
   );

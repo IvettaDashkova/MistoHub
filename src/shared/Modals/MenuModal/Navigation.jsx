@@ -1,16 +1,17 @@
 import { useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 
-import Iconsvg from '../Icon/Icon';
+import Iconsvg from '../../../components/Icon/Icon';
 import { StyledNavList, StyledItem } from './Navigation.styled';
-import links from '../../components/Navigation/links.json';
+import links from '../../../constants/links_menu.json';
 
-const Navigation = ({ activeSection, onClose }) => {
+const Navigation = ({ activeSection, closeModal }) => {
   const [hoveredIndex, setHoveredIndex] = useState(null);
   const sectionRef = useRef(null);
 
   const scrollToSection = (sectionId) => {
-    onClose();
+    closeModal('menu_modal');
+
     if (sectionId !== 'main') {
       const sectionElement = document.getElementById(sectionId);
       window.scrollTo({

@@ -3,6 +3,7 @@ import Iconsvg from '../../Icon/Icon';
 
 const ModalCompanies = ({ isOpen, data, onClose }) => {
   const { name, logoURL, link, question, answer } = data;
+  console.log('data: ', data);
   if (!isOpen) return null;
 
   function formImgURL(img) {

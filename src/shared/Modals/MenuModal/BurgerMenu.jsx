@@ -1,9 +1,8 @@
 import MediaQuery from 'react-responsive';
-import { useModal } from '../../contexts/ModalHook';
 
-import Navigation from '../Navigation/Navigation';
-import Iconsvg from '../Icon/Icon';
-import SocialBlock from '../../shared/SocialBlock/SocialBlock';
+import Navigation from './Navigation';
+import Iconsvg from '../../../components/Icon/Icon';
+import SocialBlock from '../../../shared/SocialBlock/SocialBlock';
 import {
   BottomContainer,
   BtnClose,
@@ -17,20 +16,21 @@ import {
   TopContainer,
 } from './BurgerMenu.styled';
 
-const BurgerMenu = ({ activeSection, isMenuOpen, handleMenuClose }) => {
+const BurgerMenu = ({ controlsMenuModal }) => {
+  const { activeSection, isModalOpen, openModal, closeModal } =
+    controlsMenuModal;
+  
   const customStyles = {
     top: '0',
     left: '0',
     overlay: { zIndex: '100' },
   };
 
-  const { openModal } = useModal();
-
   return (
     <StyledMenu
       style={customStyles}
-      isOpen={isMenuOpen}
-      onRequestClose={handleMenuClose}
+      isOpen={isModalOpen.menu_modal}
+      onRequestClose={closeModal}
       shouldCloseOnEsc={true}
       shouldCloseOnOverlayClick={false}
     >
@@ -43,14 +43,14 @@ const BurgerMenu = ({ activeSection, isMenuOpen, handleMenuClose }) => {
           <StyledText>
             <span>Закрити</span>
           </StyledText>
-          <BtnClose type="button" onClick={handleMenuClose}>
+          <BtnClose type="button" onClick={() => closeModal('menu_modal')}>
             <Iconsvg iconName="close" width="14" height="15" />
           </BtnClose>
         </BtnContainer>
       </TopContainer>
 
       <FlexContainer>
-        <Navigation onClose={handleMenuClose} activeSection={activeSection} />
+        <Navigation closeModal={closeModal} activeSection={activeSection} />
         <ImgContainer>
           <Iconsvg iconName="misto-hub-logo" width="357" height="121" />
         </ImgContainer>
