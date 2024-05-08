@@ -122,7 +122,12 @@ const Visualization = () => {
             onClick={prevCard}
             title="Попередній слайд"
           >
-            <Iconsvg iconName="icon-arrow-left" />
+            <Iconsvg
+              width="18"
+              height="14"
+              styles="icon-arrow"
+              iconName="icon-arrow-back"
+            />
           </LeftArrow>
           <RightArrow
             type="button"
@@ -130,7 +135,12 @@ const Visualization = () => {
             onClick={nextCard}
             title="Наступний слайд"
           >
-            <Iconsvg iconName="icon-arrow-right" />
+            <Iconsvg
+              width="18"
+              height="14"
+              styles="icon-arrow"
+              iconName="icon-arrow-next"
+            />
           </RightArrow>
         </Arrow>
       </VisualizationContainer>
