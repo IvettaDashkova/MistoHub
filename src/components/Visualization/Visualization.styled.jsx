@@ -200,6 +200,14 @@ export const LeftArrow = styled.button`
     }
   }
 
+  &:active {
+    background: #e3e3e3;
+
+    & svg {
+      fill: #898b90;
+    }
+  }
+
   @media (min-width: 768px) {
     width: 60px;
     height: 60px;
@@ -209,7 +217,7 @@ export const LeftArrow = styled.button`
       height: 30px;
     }
   }
-  
+
   @media (min-width: 1440px) {
     &:hover {
       background: #f77d07;
