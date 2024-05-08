@@ -1,9 +1,10 @@
-import { StyledFooter, FooterContainer, FooterDown } from './Footer.styled';
-import Contacts from './Contacts';
 import MyGoogleMap from './MyGoogleMap';
-import Iconsvg from '../Icon/Icon';
-import { Link } from 'react-router-dom';
 import { useModal } from '../../contexts/ModalHook';
+
+import Contacts from './Contacts';
+import Iconsvg from '../Icon/Icon';
+import SocialBlock from '../../shared/SocialBlock/SocialBlock';
+import { StyledFooter, FooterContainer, FooterDown } from './Footer.styled';
 
 export default function Footer() {
   const { openModal } = useModal();
@@ -49,34 +50,7 @@ export default function Footer() {
               styles="icon-goit-white"
             />
           </button>
-          <div className="social-block">
-            <Link
-              className="link-inst"
-              to={`https://www.instagram.com/mistohub `}
-              target="blank"
-              rel="noopener noreferrer"
-            >
-              <Iconsvg
-                width="59"
-                height="18"
-                iconName="icon-instagram"
-                styles="icon-instagram"
-              />
-            </Link>
-            <Link
-              className="link-fb"
-              to={`https://www.facebook.com/mistohub/?locale=uk_UA`}
-              target="blank"
-              rel="noopener noreferrer"
-            >
-              <Iconsvg
-                width="59"
-                height="18"
-                iconName="icon-faceb"
-                styles="icon-faceb"
-              />
-            </Link>
-          </div>
+          <SocialBlock sectionName="footer" />
         </FooterDown>
       </FooterContainer>
     </StyledFooter>
