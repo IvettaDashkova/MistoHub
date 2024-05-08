@@ -184,13 +184,15 @@ export const LeftArrow = styled.button`
   justify-content: center;
   align-items: center;
   transition: all 300ms ease-in-out;
+  padding: 8px; /** */
 
-  & svg {
-    display: block;
-    width: 22px;
-    height: 22px;
+  /* & svg {
     fill: #f77d07;
-  }
+  } */
+
+  .icon-arrow {
+    fill: #f77d07;
+  } /** */
 
   &.enabled {
     background: #f77d07;
@@ -200,22 +202,19 @@ export const LeftArrow = styled.button`
     }
   }
 
-  &:active {
-    background: #e3e3e3;
-
-    & svg {
-      fill: #898b90;
-    }
-  }
-
   @media (min-width: 768px) {
     width: 60px;
     height: 60px;
 
-    & svg {
-      width: 30px;
-      height: 30px;
-    }
+    /* & svg {
+      width: 24px;
+      height: 20px;
+    } */
+
+    .icon-arrow {
+      width: 24px;
+      height: 24px;
+    }/** */
   }
 
   @media (min-width: 1440px) {
