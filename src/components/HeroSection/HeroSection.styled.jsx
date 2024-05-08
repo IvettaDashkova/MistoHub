@@ -82,7 +82,6 @@ export const HeroContainer = styled(Container)`
     box-shadow: 0 14px 44px 0 rgba(14, 20, 34, 0.08);
     transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
-    &:hover,
     &:focus-visible,
     &:active {
       background-color: #f77d07;
@@ -99,6 +98,17 @@ export const HeroContainer = styled(Container)`
     }
   }
 
+  @media only screen and (min-width: 1440px) {
+    .swiper-btn-prev:hover,
+    .swiper-btn-next:hover {
+      background-color: #f77d07;
+
+      & svg {
+        fill: white;
+      }
+    }
+  }
+
   .disabled {
     background-color: rgba(230, 230, 230, 0.15);
     backdrop-filter: blur(17px);
@@ -109,13 +119,24 @@ export const HeroContainer = styled(Container)`
       fill: #fff;
     }
 
-    &:hover,
-    &:focus-visible {
+    &:focus-visible,
+    &:active {
       background-color: rgba(230, 230, 230, 0.15);
       border: 2px solid rgba(247, 125, 7);
 
       & svg {
         fill: #f77d07;
+      }
+    }
+
+    @media only screen and (min-width: 1440px) {
+      &:hover {
+        background-color: rgba(230, 230, 230, 0.15);
+        border: 2px solid rgba(247, 125, 7);
+
+        & svg {
+          fill: #f77d07;
+        }
       }
     }
   }
