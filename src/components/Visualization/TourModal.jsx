@@ -3,12 +3,8 @@ import { ReactPhotoSphereViewer } from 'react-photo-sphere-viewer';
 import Iconsvg from '../Icon/Icon';
 import { ModalWrapperTour, CloseButton } from './Visualization.styled';
 
-// import { useMediaQuery } from 'react-responsive';
-
 const TourModal = forwardRef(({ image, onClose }, ref) => {
   const wrapperRef = useRef();
-
-  // const isDesktop = useMediaQuery({ minWidth: 1440 }); 
 
   const closeTourOnClickOutside = useCallback(
     (event) => {
@@ -26,6 +22,9 @@ const TourModal = forwardRef(({ image, onClose }, ref) => {
     };
   }, [closeTourOnClickOutside]);
 
+  const isIOS =
+    /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+
   return (
     <ModalWrapperTour ref={wrapperRef}>
       <ReactPhotoSphereViewer
@@ -35,7 +34,9 @@ const TourModal = forwardRef(({ image, onClose }, ref) => {
         height={'100%'}
         width={'100%'}
         defaultZoomLvl={10}
-        navbar={['zoom', 'fullscreen']}
+        // navbar={['zoom', 'fullscreen']}
+        // navbar={['move']}
+        navbar={isIOS ? ['move'] : ['zoom', 'fullscreen']}
         loading="lazy"
       />
       <CloseButton onClick={onClose} type="button">
