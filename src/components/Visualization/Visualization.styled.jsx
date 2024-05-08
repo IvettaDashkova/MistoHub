@@ -311,6 +311,11 @@ export const ModalWrapperTour = styled.div`
   .psv-zoom-button {
     display: flex !important;
   }
+
+  .psv-move-button {
+    display: flex !important;
+  }
+
 `;
 
 export const CloseButton = styled.button`
