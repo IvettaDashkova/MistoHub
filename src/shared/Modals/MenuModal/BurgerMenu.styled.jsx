@@ -22,6 +22,53 @@ export const StyledMenu = styled(Modal)`
   @media screen and (min-width: 1440px) {
     padding: 40px 80px;
   }
+
+  .close-button {
+    border: none;
+    outline: none;
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: self-start;
+    gap: 12px;
+
+    span {
+      display: none;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 1.29;
+      letter-spacing: -0.02em;
+      color: rgba(11, 11, 11, 0.5);
+
+      @media screen and (min-width: 768px) {
+        display: inline;
+        font-size: 16px;
+      }
+    }
+
+    svg {
+      stroke-width: 2px;
+      stroke: rgba(11, 11, 11, 0.5);
+      fill: rgba(11, 11, 11, 0.5);
+    }
+  }
+
+  .close-button:hover span {
+    color: #0b0b0b;
+  }
+
+  .close-button:active span {
+    color: #0b0b0b;
+  }
+
+  .close-button:hover svg {
+    fill: #0b0b0b;
+    stroke: #0b0b0b;
+  }
+  .close-button:active svg {
+    fill: #0b0b0b;
+    stroke: #0b0b0b;
+  }
 `;
 
 export const StyledText = styled.p`
@@ -33,31 +80,35 @@ export const StyledText = styled.p`
   @media screen and (min-width: 768px) {
     font-size: 16px;
   }
-
-  span {
-    display: none;
-    @media screen and (min-width: 768px) {
-      display: inline;
-    }
-  }
 `;
 
-export const BtnClose = styled.button`
-  border: none;
-  outline: none;
-  background-color: transparent;
+// export const BtnClose = styled.button`
+//   border: none;
+//   outline: none;
+//   background-color: transparent;
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   gap: 4px;
 
-  svg {
-    stroke-width: 2px;
-    stroke: rgba(11, 11, 11, 0.5);
-    fill: rgba(11, 11, 11, 0.5);
-    color: rgba(11, 11, 11, 0.5);
+//   span {
+//     display: none;
+//     @media screen and (min-width: 768px) {
+//       display: inline;
+//     }
+//   }
 
-    &:hover {
-      fill: #0b0b0b;
-    }
-  }
-`;
+//   svg {
+//     stroke-width: 2px;
+//     stroke: rgba(11, 11, 11, 0.5);
+//     fill: rgba(11, 11, 11, 0.5);
+//     color: rgba(11, 11, 11, 0.5);
+
+//     &:hover {
+//       fill: #0b0b0b;
+//     }
+//   }
+// `;
 
 export const BtnSupport = styled.button`
   width: 129px;
