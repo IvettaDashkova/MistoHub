@@ -29,7 +29,12 @@ const ScrollToTopButton = () => {
   }, []);
 
   return (
-    <StyledScrollButton style={{ opacity: isVisible }} onClick={scrollToTop}>
+    <StyledScrollButton
+      style={{ opacity: isVisible }}
+      type="button"
+      title="Вгору"
+      onClick={scrollToTop}
+    >
       <Iconsvg iconName="topscroll" />
     </StyledScrollButton>
   );
