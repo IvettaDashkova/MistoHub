@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react';
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 import Iconsvg from '../../../components/Icon/Icon';
@@ -7,7 +7,6 @@ import links from '../../../constants/links_menu.json';
 
 const Navigation = ({ activeSection, closeModal }) => {
   const [hoveredIndex, setHoveredIndex] = useState(null);
-  const sectionRef = useRef(null);
 
   const scrollToSection = (sectionId) => {
     closeModal('menu_modal');
@@ -15,7 +14,7 @@ const Navigation = ({ activeSection, closeModal }) => {
     if (sectionId !== 'main') {
       const sectionElement = document.getElementById(sectionId);
       window.scrollTo({
-        top: sectionElement.offsetTop - 70,
+        top: sectionElement.offsetTop - 100,
         behavior: 'smooth',
       });
     } else {
@@ -45,10 +44,8 @@ const Navigation = ({ activeSection, closeModal }) => {
               onMouseLeave={handleMouseLeave}
             >
               <Link
-                // to={link.id !== 'main' ? `#${link.id}` : '/'}
                 onClick={() => scrollToSection(link.id)}
                 className={activeSection === link.id ? 'active' : 'link'}
-                // ref={sectionRef}
               >
                 {link.value}
               </Link>

@@ -23,13 +23,12 @@ const HomePage = () => {
 
   useEffect(() => {
     const { hash } = location;
-    console.log(hash);
     if (hash) {
       const sectionId = hash.substring(1);
       const sectionElement = document.getElementById(sectionId);
       if (sectionElement) {
         window.scrollTo({
-          top: sectionElement.offsetTop,
+          top: sectionElement.offsetTop - 100,
           behavior: 'smooth',
         });
       }
@@ -40,18 +39,14 @@ const HomePage = () => {
     const handleScroll = () => {
       const sectionElements = document.querySelectorAll('section');
       sectionElements.forEach((section) => {
-        const sectionTop = section.offsetTop;
-        const sectionHeight = section.clientHeight;
-        const sectionId = section.getAttribute('id');
         const firstSection = document.getElementById('about');
         const firstSectionTop = firstSection.offsetTop;
-        if (window.scrollY < firstSectionTop - 100) {
-          // const currentPath = window.location.pathname;
-          // const basePath = currentPath.split('/').filter((part) => !!part)[0];
-          // const newUrl = `${basePath}`;
-          // window.history.pushState(null, '', newUrl);
+        if (window.scrollY < firstSectionTop - 110) {
           setActiveSection('main');
         }
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.offsetHeight;
+        const sectionId = section.getAttribute('id');
         if (
           window.scrollY >= sectionTop - 100 &&
           window.scrollY < sectionTop + sectionHeight - 100

@@ -5,7 +5,6 @@ import Iconsvg from '../../../components/Icon/Icon';
 import SocialBlock from '../../../shared/SocialBlock/SocialBlock';
 import {
   BottomContainer,
-  BtnClose,
   BtnContainer,
   BtnGoIt,
   BtnSupport,
@@ -40,16 +39,15 @@ const BurgerMenu = ({ controlsMenuModal }) => {
           <BtnSupport type="button" onClick={() => openModal('join_modal')}>
             Підтримати проєкт
           </BtnSupport>
-          <BtnClose
+          <button
             type="button"
             title="Закрити вікно"
             onClick={() => closeModal('menu_modal')}
+            className="close-button"
           >
-            <StyledText>
-              <span>Закрити</span>
-            </StyledText>
-            <Iconsvg iconName="close" width="14" height="15" />
-          </BtnClose>
+            <span>Закрити</span>
+            <Iconsvg iconName="close" width="14" height="14" />
+          </button>
         </BtnContainer>
       </TopContainer>
 

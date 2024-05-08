@@ -6,6 +6,7 @@ export const StyledNavList = styled.ul`
   list-style: none;
 
   .active {
+    font-family: 'Oddval', 'Inter', sans-serif;
     font-weight: 600;
     font-size: 24px;
     line-height: 1.17;
