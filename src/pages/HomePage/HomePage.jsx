@@ -9,9 +9,7 @@ import { AccumulatedMoney } from '../../components/AccumulatedMoney/AccumulatedM
 import InvestorsBlock from '../../components/InvestorsCompanies/InvestorsBlock';
 import Visualization from '../../components/Visualization/Visualization';
 import ScrollToTopButton from '../../components/ScrollToTopButton/ScrollToTopButton';
-import BurgerMenu from '../../components/BurgerMenu/BurgerMenu';
 import Footer from '../../components/Footer/Footer';
-import DevelopersModal from '../../components/DevelopersModal/DevelopersModal';
 import HeroSection from '/src/components/HeroSection/HeroSection';
 import CoFounders from '../../components/CoFounders/CoFounders';
 import JoinUs from '../../components/JoinUs/JoinUs';
@@ -20,7 +18,6 @@ import ModalsManager from '/src/shared/Modals/ModalsManager';
 Modal.setAppElement('#root');
 
 const HomePage = () => {
-  const [isMenuOpen, setMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState(null);
   const location = useLocation();
 
@@ -41,7 +38,6 @@ const HomePage = () => {
   useEffect(() => {
     const handleScroll = () => {
       const sectionElements = document.querySelectorAll('section');
-
       sectionElements.forEach((section) => {
         const sectionTop = section.offsetTop;
         const sectionHeight = section.clientHeight;
@@ -52,7 +48,12 @@ const HomePage = () => {
         ) {
           setActiveSection(sectionId);
           const url = `#${sectionId}`;
-          window.history.pushState(null, '', url);
+
+          if (sectionId !== null) {
+            window.history.pushState(null, '', url);
+          } else {
+            window.history.pushState(null, '', window.location.pathname);
+          }
         }
       });
     };
@@ -64,22 +65,9 @@ const HomePage = () => {
     };
   }, []);
 
-  const handleMenuClose = () => {
-    setMenuOpen(false);
-  };
-
-  const handleMenuOpen = () => {
-    setMenuOpen(true);
-  };
-
   return (
     <>
-      <Header handleMenuOpen={handleMenuOpen} />
-      <BurgerMenu
-        activeSection={activeSection}
-        isMenuOpen={isMenuOpen}
-        handleMenuClose={handleMenuClose}
-      />
+      <Header />
       <main>
         <HeroSection />
         <AboutProject />
@@ -91,8 +79,7 @@ const HomePage = () => {
         <ScrollToTopButton />
       </main>
       <Footer />
-      <DevelopersModal />
-      <ModalsManager />
+      <ModalsManager activeSection={activeSection} />
     </>
   );
 };

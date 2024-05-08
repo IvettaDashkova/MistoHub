@@ -1,4 +1,8 @@
-import Navigation from '../Navigation/Navigation';
+import MediaQuery from 'react-responsive';
+
+import Navigation from './Navigation';
+import Iconsvg from '../../../components/Icon/Icon';
+import SocialBlock from '../../../shared/SocialBlock/SocialBlock';
 import {
   BottomContainer,
   BtnClose,
@@ -7,60 +11,46 @@ import {
   BtnSupport,
   FlexContainer,
   ImgContainer,
-  SocLincContainer,
   StyledMenu,
   StyledText,
   TopContainer,
 } from './BurgerMenu.styled';
-import Iconsvg from '../Icon/Icon';
-import { Link } from 'react-router-dom';
-import { useModal } from '../../contexts/ModalHook';
 
-const BurgerMenu = ({
-  activeSection,
-  onScroll,
-  isMenuOpen,
-  handleMenuClose,
-}) => {
+const BurgerMenu = ({ controlsMenuModal }) => {
+  const { activeSection, isModalOpen, openModal, closeModal } =
+    controlsMenuModal;
+  
   const customStyles = {
     top: '0',
     left: '0',
-    // z index ???
     overlay: { zIndex: '100' },
-    bodyOpenClassName: 'modal-open',
   };
-
-  const { openModal } = useModal();
 
   return (
     <StyledMenu
       style={customStyles}
-      isOpen={isMenuOpen}
-      onRequestClose={handleMenuClose}
+      isOpen={isModalOpen.menu_modal}
+      onRequestClose={closeModal}
       shouldCloseOnEsc={true}
       shouldCloseOnOverlayClick={false}
     >
       <TopContainer>
         <StyledText>Меню</StyledText>
         <BtnContainer>
-          <BtnSupport onClick={() => openModal('join_modal')}>
+          <BtnSupport type="button" onClick={() => openModal('join_modal')}>
             Підтримати проєкт
           </BtnSupport>
           <StyledText>
             <span>Закрити</span>
           </StyledText>
-          <BtnClose onClick={handleMenuClose}>
+          <BtnClose type="button" onClick={() => closeModal('menu_modal')}>
             <Iconsvg iconName="close" width="14" height="15" />
           </BtnClose>
         </BtnContainer>
       </TopContainer>
 
       <FlexContainer>
-        <Navigation
-          onClose={handleMenuClose}
-          activeSection={activeSection}
-          onScroll={onScroll}
-        />
+        <Navigation closeModal={closeModal} activeSection={activeSection} />
         <ImgContainer>
           <Iconsvg iconName="misto-hub-logo" width="357" height="121" />
         </ImgContainer>
@@ -73,27 +63,14 @@ const BurgerMenu = ({
           <StyledText>Всі права захищені</StyledText>
           <StyledText>|</StyledText>
           <StyledText>Poзроблено студентами</StyledText>
-          <BtnGoIt onClick={() => openModal('team_modal')}>
+          <BtnGoIt type="button" onClick={() => openModal('team_modal')}>
             <Iconsvg iconName="logoGoIT" width="100" height="30" />
           </BtnGoIt>
         </BottomContainer>
 
-        <SocLincContainer>
-          <Link
-            to="https://www.instagram.com/mistohub"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Iconsvg iconName="instagram-menu" width="36" height="36" />
-          </Link>
-          <Link
-            to="https://www.facebook.com/mistohub/?locale=uk_UA"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Iconsvg iconName="facebook-menu" width="36" height="36" />
-          </Link>
-        </SocLincContainer>
+        <MediaQuery maxWidth={767}>
+          <SocialBlock sectionName="menu" />
+        </MediaQuery>
       </div>
     </StyledMenu>
   );

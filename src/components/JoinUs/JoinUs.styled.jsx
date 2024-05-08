@@ -51,6 +51,9 @@ export const JoinUsSection = styled.section`
       background-image: -webkit-image-set(url(${blobImageDesktop2xWebp}));
     }
   }
+  @media screen and (min-width: 1680px) {
+    background-position: center;
+  }
 `;
 
 export const JoinUsContainer = styled(StyledContainer)`
