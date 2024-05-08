@@ -15,6 +15,7 @@ export const StyledMenu = styled(Modal)`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  overflow-y: auto;
 
   @media screen and (min-width: 768px) {
     padding: 32px;
@@ -48,7 +49,6 @@ export const StyledMenu = styled(Modal)`
 
     svg {
       stroke-width: 2px;
-      stroke: rgba(11, 11, 11, 0.5);
       fill: rgba(11, 11, 11, 0.5);
     }
   }
@@ -63,11 +63,9 @@ export const StyledMenu = styled(Modal)`
 
   .close-button:hover svg {
     fill: #0b0b0b;
-    stroke: #0b0b0b;
   }
   .close-button:active svg {
     fill: #0b0b0b;
-    stroke: #0b0b0b;
   }
 `;
 
@@ -81,34 +79,6 @@ export const StyledText = styled.p`
     font-size: 16px;
   }
 `;
-
-// export const BtnClose = styled.button`
-//   border: none;
-//   outline: none;
-//   background-color: transparent;
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-//   gap: 4px;
-
-//   span {
-//     display: none;
-//     @media screen and (min-width: 768px) {
-//       display: inline;
-//     }
-//   }
-
-//   svg {
-//     stroke-width: 2px;
-//     stroke: rgba(11, 11, 11, 0.5);
-//     fill: rgba(11, 11, 11, 0.5);
-//     color: rgba(11, 11, 11, 0.5);
-
-//     &:hover {
-//       fill: #0b0b0b;
-//     }
-//   }
-// `;
 
 export const BtnSupport = styled.button`
   width: 129px;
@@ -148,7 +118,7 @@ export const BtnContainer = styled.div`
 `;
 
 export const ImgContainer = styled.div`
-  width: 1053px;
+  width: 845px;
   height: 563px;
   background-image: url(${sity});
   background-image: -webkit-image-set(url(${sityWebP}) 1x);
@@ -156,9 +126,8 @@ export const ImgContainer = styled.div`
   padding: 0;
   display: none;
   position: relative;
-  left: 128px;
+  left: 80px;
   background-size: contain;
-  position: relative;
 
   svg {
     position: absolute;
@@ -190,7 +159,6 @@ export const FlexContainer = styled.div`
   justify-content: center;
   justify-content: space-between;
   padding: 0;
-  position: relative;
 `;
 
 export const BottomContainer = styled.div`
@@ -213,6 +181,23 @@ export const BtnGoIt = styled.button`
   outline: none;
   padding: 0;
   background-color: transparent;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
+
+  span {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 1.29;
+    letter-spacing: -0.02em;
+    color: rgba(11, 11, 11, 0.5);
+
+    @media screen and (min-width: 768px) {
+      display: inline;
+      font-size: 16px;
+    }
+  }
 
   &:hover svg {
     border: none;
@@ -222,5 +207,13 @@ export const BtnGoIt = styled.button`
 
   svg {
     fill: #f77d07;
+  }
+
+  &:hover span {
+    color: #0b0b0b;
+  }
+
+  &:active span {
+    color: #0b0b0b;
   }
 `;
