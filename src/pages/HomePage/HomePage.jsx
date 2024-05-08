@@ -18,17 +18,18 @@ import ModalsManager from '/src/shared/Modals/ModalsManager';
 Modal.setAppElement('#root');
 
 const HomePage = () => {
-  const [activeSection, setActiveSection] = useState(null);
+  const [activeSection, setActiveSection] = useState('main');
   const location = useLocation();
 
   useEffect(() => {
     const { hash } = location;
+    console.log(hash);
     if (hash) {
       const sectionId = hash.substring(1);
       const sectionElement = document.getElementById(sectionId);
       if (sectionElement) {
         window.scrollTo({
-          top: sectionElement.offsetTop - 120,
+          top: sectionElement.offsetTop,
           behavior: 'smooth',
         });
       }
@@ -42,12 +43,21 @@ const HomePage = () => {
         const sectionTop = section.offsetTop;
         const sectionHeight = section.clientHeight;
         const sectionId = section.getAttribute('id');
+        const firstSection = document.getElementById('about');
+        const firstSectionTop = firstSection.offsetTop;
+        if (window.scrollY < firstSectionTop - 100) {
+          // const currentPath = window.location.pathname;
+          // const basePath = currentPath.split('/').filter((part) => !!part)[0];
+          // const newUrl = `${basePath}`;
+          // window.history.pushState(null, '', newUrl);
+          setActiveSection('main');
+        }
         if (
-          window.scrollY >= sectionTop - 120 &&
-          window.scrollY < sectionTop + sectionHeight - 120
+          window.scrollY >= sectionTop - 100 &&
+          window.scrollY < sectionTop + sectionHeight - 100
         ) {
           setActiveSection(sectionId);
-          const url = `#${sectionId}`;
+          const url = `/MistoHub/#${sectionId}`;
 
           if (sectionId !== null) {
             window.history.pushState(null, '', url);

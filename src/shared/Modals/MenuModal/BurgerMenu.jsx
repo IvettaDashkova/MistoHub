@@ -19,7 +19,7 @@ import {
 const BurgerMenu = ({ controlsMenuModal }) => {
   const { activeSection, isModalOpen, openModal, closeModal } =
     controlsMenuModal;
-  
+
   const customStyles = {
     top: '0',
     left: '0',
@@ -40,10 +40,14 @@ const BurgerMenu = ({ controlsMenuModal }) => {
           <BtnSupport type="button" onClick={() => openModal('join_modal')}>
             Підтримати проєкт
           </BtnSupport>
-          <StyledText>
-            <span>Закрити</span>
-          </StyledText>
-          <BtnClose type="button" onClick={() => closeModal('menu_modal')}>
+          <BtnClose
+            type="button"
+            title="Закрити вікно"
+            onClick={() => closeModal('menu_modal')}
+          >
+            <StyledText>
+              <span>Закрити</span>
+            </StyledText>
             <Iconsvg iconName="close" width="14" height="15" />
           </BtnClose>
         </BtnContainer>

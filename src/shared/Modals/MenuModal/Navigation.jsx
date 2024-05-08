@@ -15,7 +15,7 @@ const Navigation = ({ activeSection, closeModal }) => {
     if (sectionId !== 'main') {
       const sectionElement = document.getElementById(sectionId);
       window.scrollTo({
-        top: sectionElement.offsetTop - 120,
+        top: sectionElement.offsetTop - 70,
         behavior: 'smooth',
       });
     } else {
@@ -45,10 +45,10 @@ const Navigation = ({ activeSection, closeModal }) => {
               onMouseLeave={handleMouseLeave}
             >
               <Link
-                to={link.id !== 'main' ? `#${link.id}` : '/'}
+                // to={link.id !== 'main' ? `#${link.id}` : '/'}
                 onClick={() => scrollToSection(link.id)}
                 className={activeSection === link.id ? 'active' : 'link'}
-                ref={sectionRef}
+                // ref={sectionRef}
               >
                 {link.value}
               </Link>
