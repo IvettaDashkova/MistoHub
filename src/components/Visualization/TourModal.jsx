@@ -3,8 +3,12 @@ import { ReactPhotoSphereViewer } from 'react-photo-sphere-viewer';
 import Iconsvg from '../Icon/Icon';
 import { ModalWrapperTour, CloseButton } from './Visualization.styled';
 
+// import { useMediaQuery } from 'react-responsive';
+
 const TourModal = forwardRef(({ image, onClose }, ref) => {
   const wrapperRef = useRef();
+
+  // const isDesktop = useMediaQuery({ minWidth: 1440 }); 
 
   const closeTourOnClickOutside = useCallback(
     (event) => {
