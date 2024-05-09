@@ -77,19 +77,31 @@ export const JoinModalStyled = styled(Modal)`
     }
   }
 
-  .joinCloseBtn:hover .joinCloseText {
-    color: #0b0b0b;
-  }
-
   .joinCloseBtn:active .joinCloseText {
     color: #0b0b0b;
   }
 
-  .joinCloseBtn:hover svg {
-    fill: #0b0b0b;
-  }
   .joinCloseBtn:active svg {
     fill: #0b0b0b;
+  }
+
+  @media only screen and (min-width: 1440px) {
+    .joinCloseBtn:hover .joinCloseText {
+      color: #0b0b0b;
+    }
+
+    .joinCloseBtn:hover svg {
+      fill: #0b0b0b;
+    }
+
+    .joinInput:hover {
+      border: 2px solid #f77d07;
+    }
+
+    .joinSubmitBtn:hover,
+    .joinSuccessBtn:hover {
+      background-color: #e97200;
+    }
   }
 
   .joinMainContainer {
@@ -104,18 +116,18 @@ export const JoinModalStyled = styled(Modal)`
   }
 
   .joinForm {
-    padding: 49px 0 46px 0;
+    padding: 40px 0;
     display: flex;
     flex-direction: column;
     gap: 20px;
 
     @media only screen and (min-width: 768px) {
-      padding: 140px 0;
+      padding: 86px 0;
       gap: 30px;
     }
 
     @media only screen and (min-width: 1440px) {
-      padding: 54px 0;
+      padding: 60px 0 66px 0;
       margin: auto;
     }
   }
@@ -147,6 +159,30 @@ export const JoinModalStyled = styled(Modal)`
     }
   }
 
+  .joinFields {
+    height: 82px;
+
+    @media only screen and (min-width: 768px) {
+      height: 108px;
+    }
+
+    @media only screen and (min-width: 1440px) {
+      height: 108px;
+    }
+  }
+
+  .joinFields:last-child {
+    height: 148px;
+
+    @media only screen and (min-width: 768px) {
+      height: 230px;
+    }
+
+    @media only screen and (min-width: 1440px) {
+      height: 230px;
+    }
+  }
+
   .joinLabel {
     display: flex;
     flex-direction: column;
@@ -167,6 +203,7 @@ export const JoinModalStyled = styled(Modal)`
     border: 1px solid rgba(11, 11, 11, 0.15);
     border-radius: 16px;
     padding: 14px;
+    padding-bottom: 10px;
     width: 100%;
     min-width: 302px;
     height: 44px;
@@ -178,12 +215,12 @@ export const JoinModalStyled = styled(Modal)`
 
     @media only screen and (min-width: 768px) {
       padding: 15px;
+      padding-bottom: 12px;
       font-size: 16px;
       width: 314px;
     }
   }
 
-  .joinInput:hover,
   .joinInput:active,
   .joinInput:focus,
   .joinInput:focus-visible {
@@ -209,26 +246,29 @@ export const JoinModalStyled = styled(Modal)`
     color: #fff;
     font-size: 14px;
     font-weight: 600;
+    line-height: 1;
 
     @media only screen and (min-width: 768px) {
       padding: 15px 40px;
-      width: 170px;
+      width: 174px;
       height: 54px;
       font-size: 16px;
     }
   }
 
-  .joinSubmitBtn:hover,
   .joinSubmitBtn:focus-visible,
-  .joinSuccessBtn:hover,
-  .joinSuccessBtn:focus-visible {
+  .joinSuccessBtn:focus-visible,
+  .joinSubmitBtn:active,
+  .joinSuccessBtn:active {
     background-color: #e97200;
   }
 
-  .joinSubmitBtn:active,
-  .joinSuccessBtn:active {
-    color: #898b90;
-    background-color: #e3e3e3;
+  @media only screen and (min-width: 1440px) {
+    .joinSubmitBtn:active,
+    .joinSuccessBtn:active {
+      color: #898b90;
+      background-color: #e3e3e3;
+    }
   }
 
   .hidden {
@@ -238,6 +278,10 @@ export const JoinModalStyled = styled(Modal)`
   .error {
     color: red;
     font-size: 14px;
+
+    @media only screen and (min-width: 768px) {
+      font-size: 16px;
+    }
   }
 
   .errorInput {
@@ -327,17 +371,22 @@ export const InfoStyled = styled.div`
     }
   }
 
-  .developers:hover,
   .developers:active {
     color: #0b0b0b;
   }
 
-  .developers:hover svg {
+  .developers:active svg {
     fill: #0b0b0b;
   }
 
-  .developers:active svg {
-    fill: #0b0b0b;
+  @media only screen and (min-width: 1440px) {
+    .developers:hover {
+      color: #0b0b0b;
+    }
+
+    .developers:hover svg {
+      fill: #0b0b0b;
+    }
   }
 `;
 
@@ -395,10 +444,15 @@ export const ErrorStyledBlock = styled.div`
     }
   }
 
-  .joinItemContact:hover,
   .joinItemContact:focus-visible,
   .joinItemContact:active {
     color: #f77d07;
+  }
+
+  @media only screen and (min-width: 1440px) {
+    .joinItemContact:hover {
+      color: #f77d07;
+    }
   }
 `;
 
@@ -435,6 +489,7 @@ export const PostedStyledBlock = styled.div`
     color: #fff;
     font-size: 14px;
     font-weight: 600;
+    line-height: 1;
 
     @media only screen and (min-width: 768px) {
       margin-top: 30px;

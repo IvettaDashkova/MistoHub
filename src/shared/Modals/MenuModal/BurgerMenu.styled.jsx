@@ -15,12 +15,57 @@ export const StyledMenu = styled(Modal)`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  overflow-y: auto;
 
   @media screen and (min-width: 768px) {
     padding: 32px;
   }
   @media screen and (min-width: 1440px) {
     padding: 40px 80px;
+  }
+
+  .close-button {
+    border: none;
+    outline: none;
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: self-start;
+    gap: 12px;
+
+    span {
+      display: none;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 1.29;
+      letter-spacing: -0.02em;
+      color: rgba(11, 11, 11, 0.5);
+
+      @media screen and (min-width: 768px) {
+        display: inline;
+        font-size: 16px;
+      }
+    }
+
+    svg {
+      stroke-width: 2px;
+      fill: rgba(11, 11, 11, 0.5);
+    }
+  }
+
+  .close-button:hover span {
+    color: #0b0b0b;
+  }
+
+  .close-button:active span {
+    color: #0b0b0b;
+  }
+
+  .close-button:hover svg {
+    fill: #0b0b0b;
+  }
+  .close-button:active svg {
+    fill: #0b0b0b;
   }
 `;
 
@@ -32,30 +77,6 @@ export const StyledText = styled.p`
   color: rgba(11, 11, 11, 0.5);
   @media screen and (min-width: 768px) {
     font-size: 16px;
-  }
-
-  span {
-    display: none;
-    @media screen and (min-width: 768px) {
-      display: inline;
-    }
-  }
-`;
-
-export const BtnClose = styled.button`
-  border: none;
-  outline: none;
-  background-color: transparent;
-
-  svg {
-    stroke-width: 2px;
-    stroke: rgba(11, 11, 11, 0.5);
-    fill: rgba(11, 11, 11, 0.5);
-    color: rgba(11, 11, 11, 0.5);
-
-    &:hover {
-      fill: #0b0b0b;
-    }
   }
 `;
 
@@ -97,7 +118,7 @@ export const BtnContainer = styled.div`
 `;
 
 export const ImgContainer = styled.div`
-  width: 1053px;
+  width: 845px;
   height: 563px;
   background-image: url(${sity});
   background-image: -webkit-image-set(url(${sityWebP}) 1x);
@@ -105,9 +126,8 @@ export const ImgContainer = styled.div`
   padding: 0;
   display: none;
   position: relative;
-  left: 128px;
+  left: 80px;
   background-size: contain;
-  position: relative;
 
   svg {
     position: absolute;
@@ -139,7 +159,6 @@ export const FlexContainer = styled.div`
   justify-content: center;
   justify-content: space-between;
   padding: 0;
-  position: relative;
 `;
 
 export const BottomContainer = styled.div`
@@ -162,6 +181,23 @@ export const BtnGoIt = styled.button`
   outline: none;
   padding: 0;
   background-color: transparent;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
+
+  span {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 1.29;
+    letter-spacing: -0.02em;
+    color: rgba(11, 11, 11, 0.5);
+
+    @media screen and (min-width: 768px) {
+      display: inline;
+      font-size: 16px;
+    }
+  }
 
   &:hover svg {
     border: none;
@@ -171,5 +207,13 @@ export const BtnGoIt = styled.button`
 
   svg {
     fill: #f77d07;
+  }
+
+  &:hover span {
+    color: #0b0b0b;
+  }
+
+  &:active span {
+    color: #0b0b0b;
   }
 `;
