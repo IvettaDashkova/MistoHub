@@ -14,14 +14,19 @@ export const StyledHeader = styled.header`
     top: 0;
     left: 0;
     width: 100%;
-    background-color: rgba(255, 255, 255, 0.07);
-    backdrop-filter: blur(17.4px);
     height: 70px;
 
     transition:
       opacity 1s ease-in-out,
       height 1ms ease-in-out 0.1s,
-      overflow 1ms ease-in-out 0.1s;
+      overflow 1ms ease-in-out 0.1s,
+      background-color 700ms ease-in-out,
+      backdrop-filter 700ms ease-in-out;
+  }
+
+  .dark-header.hidden-wrap {
+    background-color: rgba(255, 255, 255, 0.07);
+    backdrop-filter: blur(17.4px);
   }
 
   .hidden-wrap.hidden {
