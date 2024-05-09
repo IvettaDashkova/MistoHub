@@ -37,7 +37,7 @@ function Header() {
 
   return (
     <StyledHeader>
-      <div className="hidden-wrap">
+      <div className={`hidden-wrap ${darkStyle}`}>
         <HeaderContainer>
           <Icon
             width={isMobile ? '99' : '118'}
