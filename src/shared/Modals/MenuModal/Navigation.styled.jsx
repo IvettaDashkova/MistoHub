@@ -46,8 +46,14 @@ export const StyledItem = styled.li`
   justify-content: space-between;
   padding: 0;
 
-  &:hover a {
+  &:active a {
     color: #f77d07;
+  }
+
+  @media screen and (min-width: 1440px) {
+    &:hover a {
+      color: #f77d07;
+    }
   }
 
   button {
@@ -73,7 +79,7 @@ export const StyledItem = styled.li`
 `;
 
 export const HoverContainer = styled.div`
-  width: 261px;
+  width: 265px;
   display: flex;
   align-items: center;
   justify-content: space-between;

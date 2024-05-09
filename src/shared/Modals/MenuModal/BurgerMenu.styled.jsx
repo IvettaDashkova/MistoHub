@@ -53,19 +53,21 @@ export const StyledMenu = styled(Modal)`
     }
   }
 
-  .close-button:hover span {
-    color: #0b0b0b;
-  }
-
   .close-button:active span {
     color: #0b0b0b;
   }
 
-  .close-button:hover svg {
-    fill: #0b0b0b;
-  }
   .close-button:active svg {
     fill: #0b0b0b;
+  }
+
+  @media screen and (min-width: 1440px) {
+    .close-button:hover span {
+      color: #0b0b0b;
+    }
+    .close-button:hover svg {
+      fill: #0b0b0b;
+    }
   }
 `;
 
@@ -199,21 +201,24 @@ export const BtnGoIt = styled.button`
     }
   }
 
-  &:hover svg {
-    border: none;
-    outline: none;
-    fill: #0b0b0b;
-  }
-
   svg {
     fill: #f77d07;
   }
 
-  &:hover span {
+  &:active span {
     color: #0b0b0b;
   }
 
-  &:active span {
-    color: #0b0b0b;
+  &:active svg {
+    fill: #0b0b0b;
+  }
+
+  @media screen and (min-width: 1440px) {
+    &:hover span {
+      color: #0b0b0b;
+    }
+    &:hover svg {
+      fill: #0b0b0b;
+    }
   }
 `;
