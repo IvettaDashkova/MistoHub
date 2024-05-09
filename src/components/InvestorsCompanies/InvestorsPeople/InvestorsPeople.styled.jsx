@@ -139,7 +139,7 @@ export const ListWrapper = styled.div`
       animation: ${animToLeft} 80s linear infinite;
     }
 
-    .group-0 ul {
+    .group-3 ul {
       animation: ${animToRight} 30s linear infinite;
     }
 

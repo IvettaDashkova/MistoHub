@@ -75,10 +75,10 @@ export const ModalCompanyWrapper = styled.div`
   }
 
   .close-icon {
-    stroke: rgba(11, 11, 11, 0.5);
+    fill: rgba(11, 11, 11, 0.5);
   }
 
-  .close-icon:hover {
+  .close-icon:active {
     stroke: #0b0b0b;
   }
 
@@ -103,6 +103,7 @@ export const ModalCompanyWrapper = styled.div`
 
   a {
     padding: 0;
+    height: 16px;
   }
 
   .svgBackground {
@@ -132,6 +133,7 @@ export const ModalCompanyWrapper = styled.div`
   .main-image {
     width: 70px;
     height: 70px;
+    object-fit: contain;
   }
 
   @media screen and (min-width: 768px) {
@@ -202,6 +204,10 @@ export const ModalCompanyWrapper = styled.div`
       color: #0b0b0b;
     }
 
+    .close-icon:hover {
+      stroke: #0b0b0b;
+    }
+
     .closeSvg {
       width: 28px;
       height: 28px;
@@ -243,7 +249,6 @@ export const ModalCompanyWrapper = styled.div`
     .main-image {
       width: 100px;
       height: 100px;
-      object-fit: cover;
     }
   }
 `;
