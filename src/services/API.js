@@ -28,7 +28,7 @@ export async function fetchCompanies() {
       }?query=*[_type=="companies"]{ _id, id, name, logoURL, link, question, answer } | order(id asc)`
     );
 
-    return Array(11).fill(result[0]);
+    return result;
   } catch (error) {
     return;
   }

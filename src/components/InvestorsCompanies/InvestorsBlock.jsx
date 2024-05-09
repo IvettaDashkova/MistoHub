@@ -6,6 +6,7 @@ import ModalInvestors from './ModalInvestors/ModalInvestors';
 import {
   InfoText,
   MainHeading,
+  PeopleContainer,
   SecondHeading,
   TextWrapper,
 } from './InvestorsBlock.styled';
@@ -36,14 +37,14 @@ const InvestorsBlock = () => {
         <MainHeading>З нами вже</MainHeading>
         <SecondHeading>{people.length} людини</SecondHeading>
       </TextWrapper>
-      <div style={{ width: '100%', maxWidth: '1440px', margin: '0 auto' }}>
+      <PeopleContainer>
         <InvestorsPeople />
 
         <TextWrapper>
           <SecondHeading>{companies.length} компаній</SecondHeading>
         </TextWrapper>
         <InvestorsCompanies />
-      </div>
+      </PeopleContainer>
       {selectedItem && (
         <ModalInvestors data={selectedItem} onClose={closeModal} />
       )}

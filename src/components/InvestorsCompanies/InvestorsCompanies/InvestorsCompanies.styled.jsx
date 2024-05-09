@@ -9,7 +9,7 @@ export const CompanyWrapper = styled.div`
   }
   @keyframes moveRightToLeft {
     0% {
-      transform: translateX(0);
+      transform: translateX(0%);
     }
     25% {
       transform: translateX(-25%);
@@ -44,6 +44,7 @@ export const CompanyWrapper = styled.div`
     width: 80px;
     height: 62px;
     border-radius: 10px;
+    object-fit: cover;
   }
 
   @media screen and (min-width: 768px) {
