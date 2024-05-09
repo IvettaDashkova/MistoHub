@@ -3,6 +3,8 @@ import { fetchCompanies, fetchPeople } from '../../services/API';
 import InvestorsPeople from './InvestorsPeople/InvestorsPeople';
 import InvestorsCompanies from './InvestorsCompanies/InvestorsCompanies';
 import ModalInvestors from './ModalInvestors/ModalInvestors';
+import { getWordForCount } from '../../helpers/semantic';
+
 import {
   InfoText,
   MainHeading,
@@ -35,13 +37,13 @@ const InvestorsBlock = () => {
       <TextWrapper>
         <InfoText>Імпакт-інвестори МІСТОХАБ</InfoText>
         <MainHeading>З нами вже</MainHeading>
-        <SecondHeading>{people.length} людини</SecondHeading>
+        <SecondHeading>{people.length} {getWordForCount(people.length, 'p')}</SecondHeading>
       </TextWrapper>
       <PeopleContainer>
         <InvestorsPeople />
 
         <TextWrapper>
-          <SecondHeading>{companies.length} компаній</SecondHeading>
+          <SecondHeading>{companies.length} {getWordForCount(companies.length, 'k')}</SecondHeading>
         </TextWrapper>
         <InvestorsCompanies />
       </PeopleContainer>
