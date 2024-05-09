@@ -1,12 +1,16 @@
-import { forwardRef, useEffect, useCallback, useRef } from 'react';
+import { forwardRef, useEffect, useCallback, useRef, useState } from 'react';
 import { ReactPhotoSphereViewer } from 'react-photo-sphere-viewer';
 import Iconsvg from '../Icon/Icon';
-import { ModalWrapperTour, CloseButton } from './Visualization.styled';
-
+import {
+  ModalWrapperTour,
+  CloseButton,
+  Performance,
+} from './Visualization.styled';
 import { useMediaQuery } from 'react-responsive';
 
 const TourModal = forwardRef(({ image, onClose }, ref) => {
   const wrapperRef = useRef();
+  const [showPerformance, setShowPerformance] = useState(true);
 
   const closeTourOnClickOutside = useCallback(
     (event) => {
@@ -24,28 +28,44 @@ const TourModal = forwardRef(({ image, onClose }, ref) => {
     };
   }, [closeTourOnClickOutside]);
 
-  const isIOS =
-    /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
   const isDesktop = useMediaQuery({ minWidth: 1440 });
 
   return (
-    <ModalWrapperTour ref={wrapperRef}>
+    <ModalWrapperTour
+      ref={wrapperRef}
+      onClick={() => setShowPerformance(false)}
+    >
       <ReactPhotoSphereViewer
         ref={ref}
         src={image}
-        hideNavbarButton={false}
+        hideNavbarButton={!isDesktop}
         height={'100%'}
         width={'100%'}
         defaultZoomLvl={10}
-        navbar={
-          isDesktop
-            ? ['zoom', 'fullscreen']
-            : isIOS
-              ? ['zoom', 'moveLeft', 'moveRight']
-              : ['zoom', 'fullscreen']
-        }
+        navbar={isDesktop ? ['zoom', 'fullscreen'] : false}
         loading="lazy"
       />
+      {!isDesktop && showPerformance && (
+        <Performance
+          onClick={(e) => {
+            e.stopPropagation();
+            setShowPerformance(false);
+          }}
+        >
+          <Iconsvg
+            width="40"
+            height="40"
+            styles="icon-performance"
+            iconName="arrows-top"
+          />
+          <Iconsvg
+            width="40"
+            height="40"
+            styles="icon-performance"
+            iconName="arrows-bottom"
+          />
+        </Performance>
+      )}
       <CloseButton onClick={onClose} type="button">
         <Iconsvg iconName="icon-closeX" />
       </CloseButton>

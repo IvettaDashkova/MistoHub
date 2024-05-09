@@ -341,3 +341,26 @@ export const CloseButton = styled.button`
     }
   }
 `;
+export const Performance = styled.div`
+  cursor: url(${cursorImage}), default;
+  position: absolute;
+  left: 20px;
+  bottom: 20px;
+
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 8px;
+
+  @media (min-width: 768px) {
+    left: 40px;
+    bottom: 40px;
+
+    gap: 16px;
+
+    .icon-performance {
+      width: 60px;
+      height: 60px;
+    }
+  }
+`;
