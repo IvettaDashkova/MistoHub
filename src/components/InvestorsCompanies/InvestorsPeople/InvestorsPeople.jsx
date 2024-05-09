@@ -4,6 +4,7 @@ import ModalInvestors from '../ModalInvestors/ModalInvestors';
 import { ListWrapper } from './InvestorsPeople.styled';
 import { nanoid } from 'nanoid';
 import { useMediaQuery } from 'react-responsive';
+import { confirmTriggerZone } from '../../../helpers/confirmTriggerZone';
 
 const InvestorsPeople = () => {
   const [peopleData, setPeopleData] = useState(null);
@@ -36,44 +37,25 @@ const InvestorsPeople = () => {
     };
     fetchData();
   }, []);
+
   const checkPosition = useMemo(() => {
     return (containerIndex) => {
       const container = document.getElementById(`container-${containerIndex}`);
       const elements = container.getElementsByClassName('item-list');
 
       for (const element of elements) {
-        const rect = element.getBoundingClientRect();
-        const longTriggerZoneOddgroup =
-          containerIndex === 0 &&
-          (rect.left >=
-            container.offsetWidth - (isMobile ? 100 : isTablet ? 350 : 150) ||
-            rect.left <=
-              container.offsetWidth - (isMobile ? 350 : isTablet ? 850 : 900));
+        const rectEl = element.getBoundingClientRect();
+        const rectContainer = container.getBoundingClientRect();
 
-        const shortTriggerZoneEvenGroup =
-          containerIndex === 1 &&
-          (rect.right >=
-            container.offsetWidth + (isMobile ? 20 : isTablet ? 80 : 150) ||
-            rect.right <=
-              container.offsetWidth - (isMobile ? 360 : isTablet ? 900 : 1000));
+        const isDisabledEl = confirmTriggerZone(
+          containerIndex,
+          rectEl,
+          rectContainer,
+          isMobile,
+          isTablet
+        );
 
-        const shortTriggerZoneOddGroup =
-          containerIndex === 2 &&
-          (rect.left >=
-            container.offsetWidth - (isMobile ? 50 : isTablet ? 150 : 50) ||
-            rect.left <= container.offsetWidth - (isMobile ? 450 : 1150));
-
-        const longTriggerZoneEvenGroup =
-          containerIndex === 3 &&
-          (rect.left >= container.offsetWidth - (isMobile ? 100 : 250) ||
-            rect.left <= container.offsetWidth - (isMobile ? 450 : 1000));
-
-        if (
-          longTriggerZoneOddgroup ||
-          shortTriggerZoneOddGroup ||
-          longTriggerZoneEvenGroup ||
-          shortTriggerZoneEvenGroup
-        ) {
+        if (isDisabledEl) {
           element.classList.add('on-blur');
           element.disabled = true;
         } else {
@@ -82,12 +64,14 @@ const InvestorsPeople = () => {
         }
       }
     };
-  }, []);
+  }, [isMobile, isTablet]);
 
   useEffect(() => {
     if (!peopleData) return;
     const intervalId = setInterval(() => {
-      peopleData.forEach((_, index) => checkPosition(index));
+      peopleData.forEach((_, index) => {
+        checkPosition(index);
+      });
     }, 10);
     return () => clearInterval(intervalId);
   }, [peopleData, checkPosition]);
