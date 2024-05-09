@@ -213,7 +213,7 @@ const JoinModal = ({ controlsModal: { isModalOpen, closeModal } }) => {
             </Formik>
           )}
           {isDataPosted && <PostedBlock handleCloseModal={handleCloseModal} />}
-          {isError && <ErrorBlock />}
+          {isError && <ErrorBlock handleCloseModal={handleCloseModal} />}
         </div>
         {isDesctop && <Maska />}
       </div>
