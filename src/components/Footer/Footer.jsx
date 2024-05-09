@@ -1,4 +1,3 @@
-import MyGoogleMap from './MyGoogleMap';
 import { useModal } from '../../contexts/ModalHook';
 
 import Contacts from './Contacts';
@@ -13,7 +12,11 @@ export default function Footer() {
     <StyledFooter id="footer">
       <FooterContainer>
         <div className="footer-up">
-          <MyGoogleMap />
+          <iframe
+            className="map-wrapper"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2586.710898082731!2d34.5648984!3d49.5843421!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d825941b73909d%3A0xc6c99d30efb9fc4a!2z0JzQhtCh0KLQntCl0JDQkQ!5e0!3m2!1sru!2sua!4v1715196007146!5m2!1sua!2sua"
+            loading="lazy"
+          ></iframe>
           <div>
             <Iconsvg
               width="81"

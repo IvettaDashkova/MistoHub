@@ -75,7 +75,11 @@ export const ModalCompanyWrapper = styled.div`
   }
 
   .close-icon {
-    stroke: rgba(11, 11, 11, 0.5);
+    fill: rgba(11, 11, 11, 0.5);
+  }
+
+  .close-icon:active {
+    stroke: #0b0b0b;
   }
 
   .instaIcon {
@@ -99,6 +103,7 @@ export const ModalCompanyWrapper = styled.div`
 
   a {
     padding: 0;
+    height: 16px;
   }
 
   .svgBackground {
@@ -128,6 +133,7 @@ export const ModalCompanyWrapper = styled.div`
   .main-image {
     width: 70px;
     height: 70px;
+    object-fit: contain;
   }
 
   @media screen and (min-width: 768px) {
@@ -186,12 +192,20 @@ export const ModalCompanyWrapper = styled.div`
       font-weight: 500;
       line-height: 24px;
       letter-spacing: -0.32px;
-      background: #fff;
+      background: transparent;
       border: none;
       width: 65px;
       hieght: 24px;
       padding: 0;
       display: block;
+    }
+
+    .closeWord:hover {
+      color: #0b0b0b;
+    }
+
+    .close-icon:hover {
+      stroke: #0b0b0b;
     }
 
     .closeSvg {

@@ -16,17 +16,17 @@ export const FooterContainer = styled(StyledContainer)`
   min-width: 320px;
   max-width: 375px;
   padding: 32px 16px 20px;
-  .footer-up {
-    > div:first-child {
-      display: none;
-    }
-  }
+
   .map-wrapper {
-    min-width: 288px;
-    max-width: 343px;
+    width: 343px;
     height: 370px;
     border-radius: 20px;
     margin-bottom: 32px;
+  }
+  @media (max-width: 374px) {
+    .map-wrapper {
+      width: 288px;
+    }
   }
   .icon-logo {
     width: 81px;
@@ -95,9 +95,8 @@ export const FooterContainer = styled(StyledContainer)`
     min-width: unset;
     max-width: unset;
     padding: 64px 32px 32px;
+
     .map-wrapper {
-      min-width: unset;
-      max-width: unset;
       width: 704px;
       height: 486px;
       margin-bottom: 64px;

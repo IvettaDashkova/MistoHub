@@ -16,6 +16,10 @@ export const TextWrapper = styled(Container)`
   }
 `;
 
+export const PeopleContainer = styled(Container)`
+  padding: 0;
+`;
+
 export const InfoText = styled.p`
   color: rgba(11, 11, 11, 0.5);
   font-size: 14px;

@@ -75,7 +75,6 @@ export const Card = styled.div`
   justify-content: center;
   align-items: center;
   position: relative;
-  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
 
   @media (min-width: 320px) and (max-width: 374px) {
     margin: 0 auto;
@@ -184,11 +183,9 @@ export const LeftArrow = styled.button`
   justify-content: center;
   align-items: center;
   transition: all 300ms ease-in-out;
+  padding: 8px;
 
   & svg {
-    display: block;
-    width: 22px;
-    height: 22px;
     fill: #f77d07;
   }
 
@@ -200,21 +197,13 @@ export const LeftArrow = styled.button`
     }
   }
 
-  &:active {
-    background: #e3e3e3;
-
-    & svg {
-      fill: #898b90;
-    }
-  }
-
   @media (min-width: 768px) {
     width: 60px;
     height: 60px;
 
-    & svg {
-      width: 30px;
-      height: 30px;
+    .icon-arrow {
+      width: 24px;
+      height: 24px;
     }
   }
 
@@ -310,6 +299,10 @@ export const ModalWrapperTour = styled.div`
   }
 
   .psv-zoom-button {
+    display: flex !important;
+  }
+
+  .psv-move-button {
     display: flex !important;
   }
 `;
