@@ -53,19 +53,21 @@ export const StyledMenu = styled(Modal)`
     }
   }
 
-  .close-button:hover span {
-    color: #0b0b0b;
-  }
-
   .close-button:active span {
     color: #0b0b0b;
   }
 
-  .close-button:hover svg {
-    fill: #0b0b0b;
-  }
   .close-button:active svg {
     fill: #0b0b0b;
+  }
+
+  @media screen and (min-width: 1440px) {
+    .close-button:hover span {
+      color: #0b0b0b;
+    }
+    .close-button:hover svg {
+      fill: #0b0b0b;
+    }
   }
 `;
 
@@ -109,6 +111,7 @@ export const TopContainer = styled.div`
 
 export const BtnContainer = styled.div`
   display: flex;
+  align-items: center;
   gap: 10px;
   max-width: 283px;
   padding: 0;
@@ -167,8 +170,9 @@ export const BottomContainer = styled.div`
   flex-wrap: wrap;
   padding: 0;
   align-items: center;
-
+  margin-bottom: 16px;
   @media screen and (min-width: 768px) {
+    margin-bottom: 0;
     justify-content: end;
     span {
       margin-right: auto;
@@ -199,21 +203,24 @@ export const BtnGoIt = styled.button`
     }
   }
 
-  &:hover svg {
-    border: none;
-    outline: none;
-    fill: #0b0b0b;
-  }
-
   svg {
     fill: #f77d07;
   }
 
-  &:hover span {
+  &:active span {
     color: #0b0b0b;
   }
 
-  &:active span {
-    color: #0b0b0b;
+  &:active svg {
+    fill: #0b0b0b;
+  }
+
+  @media screen and (min-width: 1440px) {
+    &:hover span {
+      color: #0b0b0b;
+    }
+    &:hover svg {
+      fill: #0b0b0b;
+    }
   }
 `;

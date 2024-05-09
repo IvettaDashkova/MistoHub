@@ -28,7 +28,7 @@ const BurgerMenu = ({ controlsMenuModal }) => {
     <StyledMenu
       style={customStyles}
       isOpen={isModalOpen.menu_modal}
-      onRequestClose={closeModal}
+      onRequestClose={() => closeModal('menu_modal')}
       shouldCloseOnEsc={true}
       shouldCloseOnOverlayClick={false}
     >
