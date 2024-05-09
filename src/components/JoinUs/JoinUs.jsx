@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useModal } from '../../contexts/ModalHook';
+import { getWordForCount } from '../../helpers/semantic';
 
 import Background from './Background/Background';
 import {
@@ -42,8 +43,8 @@ const JoinUs = () => {
         <StatsContainer>
           <StatsTitle>До відкриття МІСТОХАБ залишилось:</StatsTitle>
           <StatsList>
-            <StatsListItem>{116 - people} імпакт-інвесторів</StatsListItem>
-            <StatsListItem>{17 - companies} компаній</StatsListItem>
+            <StatsListItem>{116 - people} {getWordForCount(116 - people, 'i')}</StatsListItem>
+            <StatsListItem>{17 - companies} {getWordForCount(17 - companies, 'k')}</StatsListItem>
           </StatsList>
         </StatsContainer>
         <JoinButton type="button" onClick={() => openModal('join_modal')}>

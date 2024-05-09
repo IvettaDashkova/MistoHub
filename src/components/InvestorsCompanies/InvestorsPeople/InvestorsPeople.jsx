@@ -1,13 +1,17 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { fetchPeople } from '../../../services/API';
 import ModalInvestors from '../ModalInvestors/ModalInvestors';
 import { ListWrapper } from './InvestorsPeople.styled';
 import { nanoid } from 'nanoid';
+import { useMediaQuery } from 'react-responsive';
+import { confirmTriggerZone } from '../../../helpers/confirmTriggerZone';
 
 const InvestorsPeople = () => {
   const [peopleData, setPeopleData] = useState(null);
   const [selectedInvestor, setSelectedInvestor] = useState(null);
   const [isOpen, setIsOpen] = useState(false);
+  const isMobile = useMediaQuery({ maxWidth: 767 });
+  const isTablet = useMediaQuery({ maxWidth: 1440 });
 
   function formImgURL(img) {
     const imgData = img.asset._ref.split('-');
@@ -22,7 +26,11 @@ const InvestorsPeople = () => {
     const fetchData = async () => {
       try {
         const peopleResponse = await fetchPeople();
-        setPeopleData(peopleResponse);
+        const newGroups = [];
+        for (let i = 0; i < peopleResponse.length; i += 25) {
+          newGroups.push(peopleResponse.slice(i, i + 25));
+        }
+        setPeopleData(newGroups);
       } catch (error) {
         console.error('Error fetching people data:', error);
       }
@@ -30,7 +38,43 @@ const InvestorsPeople = () => {
     fetchData();
   }, []);
 
-  if (!peopleData) return null;
+  const checkPosition = useMemo(() => {
+    return (containerIndex) => {
+      const container = document.getElementById(`container-${containerIndex}`);
+      const elements = container.getElementsByClassName('item-list');
+
+      for (const element of elements) {
+        const rectEl = element.getBoundingClientRect();
+        const rectContainer = container.getBoundingClientRect();
+
+        const isDisabledEl = confirmTriggerZone(
+          containerIndex,
+          rectEl,
+          rectContainer,
+          isMobile,
+          isTablet
+        );
+
+        if (isDisabledEl) {
+          element.classList.add('on-blur');
+          element.disabled = true;
+        } else {
+          element.classList.remove('on-blur');
+          element.disabled = false;
+        }
+      }
+    };
+  }, [isMobile, isTablet]);
+
+  useEffect(() => {
+    if (!peopleData) return;
+    const intervalId = setInterval(() => {
+      peopleData.forEach((_, index) => {
+        checkPosition(index);
+      });
+    }, 10);
+    return () => clearInterval(intervalId);
+  }, [peopleData, checkPosition]);
 
   const openModal = (investor) => {
     setSelectedInvestor(investor);
@@ -42,28 +86,28 @@ const InvestorsPeople = () => {
     setIsOpen(false);
   };
 
-  const groupedPeople = peopleData.reduce((acc, person, index) => {
-    const groupIndex = Math.floor(index / 25);
-    acc[groupIndex] = [...(acc[groupIndex] || []), person];
-    return acc;
-  }, []);
-
   return (
     <ListWrapper>
-      {groupedPeople.map((group, groupIndex) => (
+      {peopleData?.map((group, index) => (
         <div
+          id={`container-${index}`}
           key={nanoid()}
-          className={`group-${groupIndex} ${groupIndex % 2 === 0 ? 'odd-group' : 'even-group'}`}
+          className={`group-${index} ${index % 2 === 0 ? 'odd-group' : 'even-group'}`}
         >
           <ul>
             {group.map((investor) => (
               <li key={nanoid()}>
-                <img
-                  src={formImgURL(investor.imageURL)}
-                  alt={`Investor ${investor.id}`}
+                <button
+                  className="item-list"
+                  type="button"
                   onClick={() => openModal(investor)}
-                  loading="lazy"
-                />
+                >
+                  <img
+                    src={formImgURL(investor.imageURL)}
+                    alt={`Investor ${investor.id}`}
+                    loading="lazy"
+                  />
+                </button>
               </li>
             ))}
           </ul>

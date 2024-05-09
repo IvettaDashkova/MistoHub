@@ -1,11 +1,9 @@
 import MediaQuery from 'react-responsive';
-
 import Navigation from './Navigation';
 import Iconsvg from '../../../components/Icon/Icon';
 import SocialBlock from '../../../shared/SocialBlock/SocialBlock';
 import {
   BottomContainer,
-  BtnClose,
   BtnContainer,
   BtnGoIt,
   BtnSupport,
@@ -19,7 +17,7 @@ import {
 const BurgerMenu = ({ controlsMenuModal }) => {
   const { activeSection, isModalOpen, openModal, closeModal } =
     controlsMenuModal;
-  
+
   const customStyles = {
     top: '0',
     left: '0',
@@ -30,7 +28,7 @@ const BurgerMenu = ({ controlsMenuModal }) => {
     <StyledMenu
       style={customStyles}
       isOpen={isModalOpen.menu_modal}
-      onRequestClose={closeModal}
+      onRequestClose={() => closeModal('menu_modal')}
       shouldCloseOnEsc={true}
       shouldCloseOnOverlayClick={false}
     >
@@ -40,12 +38,15 @@ const BurgerMenu = ({ controlsMenuModal }) => {
           <BtnSupport type="button" onClick={() => openModal('join_modal')}>
             Підтримати проєкт
           </BtnSupport>
-          <StyledText>
+          <button
+            type="button"
+            title="Закрити вікно"
+            onClick={() => closeModal('menu_modal')}
+            className="close-button"
+          >
             <span>Закрити</span>
-          </StyledText>
-          <BtnClose type="button" onClick={() => closeModal('menu_modal')}>
-            <Iconsvg iconName="close" width="14" height="15" />
-          </BtnClose>
+            <Iconsvg iconName="close" width="14" height="14" />
+          </button>
         </BtnContainer>
       </TopContainer>
 
@@ -62,8 +63,8 @@ const BurgerMenu = ({ controlsMenuModal }) => {
           </span>
           <StyledText>Всі права захищені</StyledText>
           <StyledText>|</StyledText>
-          <StyledText>Poзроблено студентами</StyledText>
           <BtnGoIt type="button" onClick={() => openModal('team_modal')}>
+            <span>Poзроблено студентами</span>
             <Iconsvg iconName="logoGoIT" width="100" height="30" />
           </BtnGoIt>
         </BottomContainer>

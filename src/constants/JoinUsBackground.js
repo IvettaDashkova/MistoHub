@@ -41,6 +41,7 @@ export const images = [
     jpgRetina: personCircleRetinaJpg,
     webp: personCircleWebP,
     webpRetina: personCircleRetinaWebP,
+    description: 'Person Image',
   },
   {
     name: 'PersonTriangle',
@@ -49,6 +50,7 @@ export const images = [
     jpgRetina: personTriangleRetinaJpg,
     webp: personTriangleWebP,
     webpRetina: personTriangleRetinaWebP,
+    description: 'Person Image',
   },
   {
     name: 'PersonStar',
@@ -57,6 +59,7 @@ export const images = [
     jpgRetina: personStarRetinaJpg,
     webp: personStarWebP,
     webpRetina: personStarRetinaWebP,
+    description: 'Person Image',
   },
   {
     name: 'Cafe',
@@ -65,6 +68,7 @@ export const images = [
     jpgRetina: cafeRetinaJpg,
     webp: cafeWebP,
     webpRetina: cafeRetinaWebP,
+    description: 'Cafe Image',
   },
   {
     name: 'CafeOval',
@@ -73,6 +77,7 @@ export const images = [
     jpgRetina: cafeOvalRetinaJpg,
     webp: cafeOvalWebP,
     webpRetina: cafeOvalRetinaWebP,
+    description: 'Cafe Image',
   },
   {
     name: 'CafeSquare',
@@ -81,5 +86,6 @@ export const images = [
     jpgRetina: cafeSquareRetinaJpg,
     webp: cafeSquareWebP,
     webpRetina: cafeSquareRetinaWebP,
+    description: 'Cafe Image',
   },
 ];

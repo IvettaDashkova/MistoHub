@@ -120,7 +120,7 @@ const JoinModal = ({ controlsModal: { isModalOpen, closeModal } }) => {
                   </h2>
 
                   <ul className="joinList">
-                    <li>
+                    <li className="joinFields">
                       <label className="joinLabel">
                         <span>Ім’я*</span>
                         <Field
@@ -135,7 +135,7 @@ const JoinModal = ({ controlsModal: { isModalOpen, closeModal } }) => {
                         />
                       </label>
                     </li>
-                    <li>
+                    <li className="joinFields">
                       <label className="joinLabel">
                         <span>Прізвище*</span>
                         <Field
@@ -150,7 +150,7 @@ const JoinModal = ({ controlsModal: { isModalOpen, closeModal } }) => {
                         />
                       </label>
                     </li>
-                    <li>
+                    <li className="joinFields">
                       <label className="joinLabel">
                         <span>Телефон*</span>
                         <Field
@@ -166,7 +166,7 @@ const JoinModal = ({ controlsModal: { isModalOpen, closeModal } }) => {
                         />
                       </label>
                     </li>
-                    <li>
+                    <li className="joinFields">
                       <label className="joinLabel">
                         <span>Інстаграм/Фейсбук</span>
                         <Field
@@ -182,7 +182,7 @@ const JoinModal = ({ controlsModal: { isModalOpen, closeModal } }) => {
                         />
                       </label>
                     </li>
-                    <li>
+                    <li className="joinFields">
                       <label className="joinLabel">
                         <span>Коротко про себе</span>
                         <Field
@@ -213,7 +213,7 @@ const JoinModal = ({ controlsModal: { isModalOpen, closeModal } }) => {
             </Formik>
           )}
           {isDataPosted && <PostedBlock handleCloseModal={handleCloseModal} />}
-          {isError && <ErrorBlock />}
+          {isError && <ErrorBlock handleCloseModal={handleCloseModal} />}
         </div>
         {isDesctop && <Maska />}
       </div>

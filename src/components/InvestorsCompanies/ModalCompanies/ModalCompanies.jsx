@@ -38,7 +38,7 @@ const ModalCompanies = ({ isOpen, data, onClose }) => {
               {link && (
                 <div className="svgWrapper">
                   <a href={link} target="_blank" rel="noopener noreferrer">
-                    <Iconsvg iconName="icon-icon" styles="instaIcon" />
+                    <Iconsvg iconName="icon-instagram" styles="instaIcon" />
                   </a>
                 </div>
               )}
@@ -53,10 +53,10 @@ const ModalCompanies = ({ isOpen, data, onClose }) => {
               </button>
               <button className="closeButton" onClick={onClose}>
                 <Iconsvg
-                  iconName="icon-x"
+                  iconName="close"
                   styles="close-icon"
-                  width={28}
-                  height={28}
+                  width={12}
+                  height={12}
                 />
               </button>
             </div>
