@@ -88,9 +88,9 @@ import id18Webp from '/src/assets/img/dev-photo/id-18.webp';
 import id18JpgRetina from '/src/assets/img/dev-photo/id-18x2.jpg';
 import id18WebpRetina from '/src/assets/img/dev-photo/id-18x2.webp';
 
-import id19Jpg from '/src/assets/img/dev-photo/id-19.png';
+import id19Jpg from '/src/assets/img/dev-photo/id-19.jpg';
 import id19Webp from '/src/assets/img/dev-photo/id-19.webp';
-import id19JpgRetina from '/src/assets/img/dev-photo/id-19x2.png';
+import id19JpgRetina from '/src/assets/img/dev-photo/id-19x2.jpg';
 import id19WebpRetina from '/src/assets/img/dev-photo/id-19x2.webp';
 
 import id20Jpg from '/src/assets/img/dev-photo/id-20.jpg';
