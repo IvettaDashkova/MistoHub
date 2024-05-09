@@ -1,13 +1,13 @@
-import { useState } from 'react';
+// import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Iconsvg from '../../../components/Icon/Icon';
 import { StyledNavList, StyledItem } from './Navigation.styled';
 import links from '../../../constants/links_menu.json';
-import { useMediaQuery } from 'react-responsive';
+// import { useMediaQuery } from 'react-responsive';
 
 const Navigation = ({ activeSection, closeModal }) => {
-  const [hoveredIndex, setHoveredIndex] = useState(null);
-  const isDesctop = useMediaQuery({ minWidth: 1440 });
+  // const [hoveredIndex, setHoveredIndex] = useState(null);
+  // const isDesctop = useMediaQuery({ minWidth: 1440 });
 
   const scrollToSection = (sectionId) => {
     closeModal('menu_modal');
