@@ -33,10 +33,6 @@ export const StyledNavList = styled.ul`
     @media screen and (min-width: 768px) {
       font-size: 44px;
     }
-
-    /* &:hover {
-      color: #f77d07;
-    } */
   }
 `;
 
