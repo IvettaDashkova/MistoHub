@@ -101,7 +101,7 @@ import id20WebpRetina from '/src/assets/img/dev-photo/id-20x2.webp';
 const data = [
   {
     id: 'id-1',
-    name: 'Шевцов Єгор',
+    name: 'Єгор Шевцов',
     role: 'Project Manager',
     link: 'https://www.linkedin.com/in/yehor-shevtsov/',
     jpg: id1Jpg,
@@ -121,7 +121,7 @@ const data = [
   },
   {
     id: 'id-3',
-    name: 'Дуднік Анна',
+    name: 'Анна Дуднік',
     role: 'Front-end розробник',
     link: 'http://www.linkedin.com/in/anna-dudnik-dev/',
     jpg: id3Jpg,
@@ -131,7 +131,7 @@ const data = [
   },
   {
     id: 'id-4',
-    name: 'Ратушняк Ілона',
+    name: 'Ілона Ратушняк',
     role: 'UI/UX Designer ',
     link: 'http://linkedin.com/in/ilona-ratushniak-3a678624b/',
     jpg: id4Jpg,
@@ -151,7 +151,7 @@ const data = [
   },
   {
     id: 'id-6',
-    name: 'Дудка Анастасія',
+    name: 'Анастасія Дудка',
     role: 'Front-end розробник',
     link: 'https://www.linkedin.com/in/anastasiia-dudka-/',
     jpg: id6Jpg,
@@ -161,7 +161,7 @@ const data = [
   },
   {
     id: 'id-7',
-    name: 'Демчук Володимир',
+    name: 'Володимир Демчук',
     role: 'Front-end розробник',
     link: 'https://www.linkedin.com/in/demchuk-volodymyr/',
     jpg: id7Jpg,
@@ -171,7 +171,7 @@ const data = [
   },
   {
     id: 'id-8',
-    name: 'Савченко Сергій',
+    name: 'Сергій Савченко',
     role: 'Front-end розробник',
     link: 'https://www.linkedin.com/in/serhiy-savchenko/',
     jpg: id8Jpg,
@@ -181,7 +181,7 @@ const data = [
   },
   {
     id: 'id-9',
-    name: 'Кудлай Микита',
+    name: 'Микита Кудлай',
     role: 'Front-end розробник',
     link: 'https://www.linkedin.com/in/mykytakudlai/',
     jpg: id9Jpg,
@@ -202,7 +202,7 @@ const data = [
   {
     id: 'id-11',
     name: 'Сергій Монжелесов',
-    role: 'Front-end розробник',
+    role: 'Team Lead',
     link: 'http://www.linkedin.com/in/serhii-monzhelesov/',
     jpg: id11Jpg,
     jpgx2: id11Webp,
@@ -231,7 +231,7 @@ const data = [
   },
   {
     id: 'id-14',
-    name: 'Сенчишин Любомир',
+    name: 'Любомир Сенчишин',
     role: 'QA-тестувальник',
     link: 'https://www.linkedin.com/in/liubomyr-senchyshyn-691596298/',
     jpg: id14Jpg,
@@ -271,7 +271,7 @@ const data = [
   },
   {
     id: 'id-18',
-    name: 'Піляєв Ігор',
+    name: 'Ігор Піляєв',
     role: 'Front-end розробник',
     link: 'https://www.linkedin.com/in/igor-piliaiev/',
     jpg: id18Jpg,

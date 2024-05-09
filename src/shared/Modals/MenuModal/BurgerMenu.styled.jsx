@@ -1,10 +1,10 @@
 import styled from 'styled-components';
 import Modal from 'react-modal';
 
-import sity from '../../../assets/menu-img/misto.png';
-import sityx2 from '../../../assets/menu-img/misto-x2.png';
-import sityWebP from '../../../assets/menu-img/misto.webp';
-import sityWebPx2 from '../../../assets/menu-img/misto-x2.webp';
+import sity from '../../../assets/menu-img/menu-cloud-x1.png';
+import sityx2 from '../../../assets/menu-img/menu-cloud-x2.png';
+import sityWebP from '../../../assets/menu-img/menu-cloud-x1.webp';
+import sityWebPx2 from '../../../assets/menu-img/menu-cloud-x2.webp';
 import support from '../../../assets/menu-img/support.svg';
 
 export const StyledMenu = styled(Modal)`
@@ -30,7 +30,7 @@ export const StyledMenu = styled(Modal)`
     background-color: transparent;
     display: flex;
     justify-content: center;
-    align-items: self-start;
+    align-items: center;
     gap: 12px;
 
     span {
@@ -50,6 +50,7 @@ export const StyledMenu = styled(Modal)`
     svg {
       stroke-width: 2px;
       fill: rgba(11, 11, 11, 0.5);
+      margin-bottom: 0;
     }
   }
 
@@ -116,12 +117,13 @@ export const BtnContainer = styled.div`
   max-width: 283px;
   padding: 0;
   @media screen and (min-width: 768px) {
+    align-items: start;
     max-width: 100%;
   }
 `;
 
 export const ImgContainer = styled.div`
-  width: 845px;
+  width: 1053px;
   height: 563px;
   background-image: url(${sity});
   background-image: -webkit-image-set(url(${sityWebP}) 1x);
@@ -130,7 +132,7 @@ export const ImgContainer = styled.div`
   display: none;
   position: relative;
   left: 80px;
-  background-size: contain;
+  background-size: cover;
 
   svg {
     position: absolute;
@@ -162,6 +164,8 @@ export const FlexContainer = styled.div`
   justify-content: center;
   justify-content: space-between;
   padding: 0;
+  max-width: 2160px;
+  overflow: visible;
 `;
 
 export const BottomContainer = styled.div`
