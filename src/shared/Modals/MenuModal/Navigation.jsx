@@ -1,12 +1,13 @@
-import { useState } from 'react';
+// import { useState } from 'react';
 import { Link } from 'react-router-dom';
-
 import Iconsvg from '../../../components/Icon/Icon';
 import { StyledNavList, StyledItem } from './Navigation.styled';
 import links from '../../../constants/links_menu.json';
+// import { useMediaQuery } from 'react-responsive';
 
 const Navigation = ({ activeSection, closeModal }) => {
-  const [hoveredIndex, setHoveredIndex] = useState(null);
+  // const [hoveredIndex, setHoveredIndex] = useState(null);
+  // const isDesctop = useMediaQuery({ minWidth: 1440 });
 
   const scrollToSection = (sectionId) => {
     closeModal('menu_modal');
@@ -25,13 +26,13 @@ const Navigation = ({ activeSection, closeModal }) => {
     }
   };
 
-  const handleMouseEnter = (id) => {
-    setHoveredIndex(id);
-  };
+  // const handleMouseEnter = (id) => {
+  //   setHoveredIndex(id);
+  // };
 
-  const handleMouseLeave = () => {
-    setHoveredIndex(null);
-  };
+  // const handleMouseLeave = () => {
+  //   setHoveredIndex(null);
+  // };
 
   return (
     <>
@@ -40,20 +41,21 @@ const Navigation = ({ activeSection, closeModal }) => {
           {links.map((link) => (
             <StyledItem
               key={link.id}
-              onMouseEnter={() => handleMouseEnter(link.id)}
-              onMouseLeave={handleMouseLeave}
+              // onMouseEnter={() => handleMouseEnter(link.id)}
+              // onMouseLeave={handleMouseLeave}
             >
               <Link
                 onClick={() => scrollToSection(link.id)}
                 className={activeSection === link.id ? 'active' : 'link'}
               >
-                {link.value}
+                {link.value} <Iconsvg iconName="hoverarrow" />
               </Link>
-              {hoveredIndex === link.id && (
-                <button type="button" onClick={() => scrollToSection(link.id)}>
-                  <Iconsvg iconName="hoverarrow" />
-                </button>
-              )}
+              {/* {hoveredIndex === link.id && isDesctop && (
+                <button
+                  type="button"
+                  onClick={() => scrollToSection(link.id)}
+                ></button>
+              )} */}
             </StyledItem>
           ))}
         </StyledNavList>
