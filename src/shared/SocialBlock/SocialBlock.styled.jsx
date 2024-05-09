@@ -12,10 +12,10 @@ export const SocialWrapper = styled.div`
     height: 36px;
     border-radius: 50%;
     /* background: #fff; */
-    background: ${({ sections }) => (sections.menu ? '#f77d07' : '#fff')};
+    background: ${({ $sections }) => ($sections.menu ? '#f77d07' : '#fff')};
     transition: background 0.25s ease-in-out;
     svg {
-      fill: ${({ sections }) => (sections.menu ? '#fff' : '#0b0b0b')};
+      fill: ${({ $sections }) => ($sections.menu ? '#fff' : '#0b0b0b')};
       transition: fill 0.25s ease-in-out;
     }
   }
@@ -59,8 +59,8 @@ export const SocialWrapper = styled.div`
   }
 
   @media screen and (min-width: 1440px) {
-    margin-left: ${({ sections }) => sections.footer && 'auto'};
-    align-self: ${({ sections }) => sections.footer && 'center'};
+    margin-left: ${({ $sections }) => $sections.footer && 'auto'};
+    align-self: ${({ $sections }) => $sections.footer && 'center'};
 
     .link-instagram:hover {
       background: radial-gradient(

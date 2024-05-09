@@ -18,7 +18,7 @@ function SocialBlock({ darkStyle, sectionName }) {
   }
 
   return (
-    <SocialWrapper sections={sections}>
+    <SocialWrapper $sections={sections}>
       <Link
         className={`link-instagram ${sections.header ? darkStyle : ''}`}
         to="https://www.instagram.com/mistohub"
