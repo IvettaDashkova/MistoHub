@@ -187,15 +187,6 @@ export const JoinModalStyled = styled(Modal)`
     display: flex;
     flex-direction: column;
     gap: 8px;
-
-    & > textarea {
-      height: 110px;
-
-      @media only screen and (min-width: 768px) {
-        height: 186px;
-        width: 642px;
-      }
-    }
   }
 
   .joinInput {
@@ -221,6 +212,15 @@ export const JoinModalStyled = styled(Modal)`
     }
   }
 
+  .area {
+    height: 110px;
+
+    @media only screen and (min-width: 768px) {
+      height: 186px;
+      width: 642px;
+    }
+  }
+
   .joinInput:active,
   .joinInput:focus,
   .joinInput:focus-visible {
@@ -230,6 +230,7 @@ export const JoinModalStyled = styled(Modal)`
   ::placeholder {
     color: rgba(11, 11, 11, 0.5);
     font-size: 14px;
+    letter-spacing: -0.02em;
 
     @media only screen and (min-width: 768px) {
       font-size: 16px;

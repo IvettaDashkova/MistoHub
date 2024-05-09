@@ -1,4 +1,4 @@
-import { ErrorMessage, Field, Form, Formik } from 'formik';
+import { useFormik } from 'formik';
 import { useMediaQuery } from 'react-responsive';
 import { useState } from 'react';
 import * as Yup from 'yup';
@@ -35,12 +35,6 @@ const UserDataSchema = Yup.object().shape({
 });
 
 const JoinModal = ({ controlsModal: { isModalOpen, closeModal } }) => {
-  const [isDataPosted, setIsDataPosted] = useState(false);
-  const [isLoading, setIsLoading] = useState(false);
-  const [isError, setIsError] = useState(false);
-
-  const isDesctop = useMediaQuery({ minWidth: 1440 });
-
   const INITIAL_FORM_DATA = {
     name: '',
     lastname: '',
@@ -49,6 +43,12 @@ const JoinModal = ({ controlsModal: { isModalOpen, closeModal } }) => {
     about: '',
   };
 
+  const [isDataPosted, setIsDataPosted] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const [isError, setIsError] = useState(false);
+
+  const isDesctop = useMediaQuery({ minWidth: 1440 });
+
   const handleCloseModal = () => {
     setIsError(false);
     setIsLoading(false);
@@ -56,9 +56,23 @@ const JoinModal = ({ controlsModal: { isModalOpen, closeModal } }) => {
     closeModal('join_modal');
   };
 
-  const handleSubmit = async (values, formActions) => {
+  const MyHandleChange = (e) => {
+    formik.handleChange(e);
+    const { name, value } = e.target;
+
+    formik.setValues((prevValues) => ({
+      ...prevValues,
+      [name]: value,
+    }));
+
+    sessionStorage.setItem(
+      'formData',
+      JSON.stringify({ ...formik.values, [name]: value })
+    );
+  };
+
+  const handleSubmit = async (values) => {
     const textedData = `<b>Ім’я: ${values.name}</b>\n<b>Прізвище: ${values.lastname}</b>\nТелефон: <b>${values.phone}</b>\nІнстаграм/Фейсбук: <b>${values.link}</b>\nПро себе:${values.about}`;
-    formActions.resetForm();
 
     try {
       setIsLoading(true);
@@ -67,6 +81,8 @@ const JoinModal = ({ controlsModal: { isModalOpen, closeModal } }) => {
 
       if (data.result.text !== '') {
         setIsDataPosted(true);
+        formik.resetForm();
+        sessionStorage.removeItem('formData');
       }
     } catch (err) {
       setIsError(true);
@@ -74,6 +90,16 @@ const JoinModal = ({ controlsModal: { isModalOpen, closeModal } }) => {
       setIsLoading(false);
     }
   };
+
+  const formik = useFormik({
+    initialValues: sessionStorage.getItem('formData')
+      ? JSON.parse(sessionStorage.getItem('formData'))
+      : INITIAL_FORM_DATA,
+    validateOnBlur: true,
+    validateOnChange: true,
+    validationSchema: UserDataSchema,
+    onSubmit: handleSubmit,
+  });
 
   return (
     <JoinModalStyled
@@ -107,110 +133,124 @@ const JoinModal = ({ controlsModal: { isModalOpen, closeModal } }) => {
       <div className="joinMainContainer">
         <div>
           {!isDataPosted && !isError && (
-            <Formik
-              validationSchema={UserDataSchema}
-              initialValues={INITIAL_FORM_DATA}
-              onSubmit={handleSubmit}
-            >
-              {({ errors, touched }) => (
-                <Form className="joinForm">
-                  <h2 className="joinTitle">
-                    Приєднуйся до спільноти <br />
-                    <span className="joinTitleAccent">супергероїв</span> міста!
-                  </h2>
-
-                  <ul className="joinList">
-                    <li className="joinFields">
-                      <label className="joinLabel">
-                        <span>Ім’я*</span>
-                        <Field
-                          className={`joinInput ${errors.name && touched.name ? 'errorInput' : ''}`}
-                          type="text"
-                          name="name"
-                        />
-                        <ErrorMessage
-                          className="error"
-                          name="name"
-                          component="span"
-                        />
-                      </label>
-                    </li>
-                    <li className="joinFields">
-                      <label className="joinLabel">
-                        <span>Прізвище*</span>
-                        <Field
-                          className={`joinInput ${errors.lastname && touched.lastname ? 'errorInput' : ''}`}
-                          type="text"
-                          name="lastname"
-                        />
-                        <ErrorMessage
-                          className="error"
-                          name="lastname"
-                          component="span"
-                        />
-                      </label>
-                    </li>
-                    <li className="joinFields">
-                      <label className="joinLabel">
-                        <span>Телефон*</span>
-                        <Field
-                          className={`joinInput ${errors.phone && touched.phone ? 'errorInput' : ''}`}
-                          placeholder="+380"
-                          type="text"
-                          name="phone"
-                        />
-                        <ErrorMessage
-                          className="error"
-                          name="phone"
-                          component="span"
-                        />
-                      </label>
-                    </li>
-                    <li className="joinFields">
-                      <label className="joinLabel">
-                        <span>Інстаграм/Фейсбук</span>
-                        <Field
-                          className={`joinInput ${errors.link && touched.link ? 'errorInput' : ''}`}
-                          placeholder="Вставити посилання"
-                          type="text"
-                          name="link"
-                        />
-                        <ErrorMessage
-                          className="error"
-                          name="link"
-                          component="span"
-                        />
-                      </label>
-                    </li>
-                    <li className="joinFields">
-                      <label className="joinLabel">
-                        <span>Коротко про себе</span>
-                        <Field
-                          as="textarea"
-                          className={`joinInput ${errors.about && touched.about ? 'errorInput' : ''}`}
-                          type="text"
-                          name="about"
-                        />
-                        <ErrorMessage
-                          className="error"
-                          name="about"
-                          component="span"
-                        />
-                      </label>
-                    </li>
-                  </ul>
-
-                  <button
-                    className="joinSubmitBtn"
-                    type="submit"
-                    title="Відправити дані"
-                    aria-label="Відправити"
-                  >
-                    Відправити
-                  </button>
-                </Form>
-              )}
-            </Formik>
+            <form className="joinForm" onSubmit={formik.handleSubmit}>
+              <h2 className="joinTitle">
+                Приєднуйся до спільноти <br />
+                <span className="joinTitleAccent">супергероїв</span> міста!
+              </h2>
+              <ul className="joinList">
+                <li className="joinFields">
+                  <label className="joinLabel" htmlFor="name">
+                    Ім’я*
+                  </label>
+                  <input
+                    className={`joinInput ${formik.errors.name && formik.touched.name ? 'errorInput' : ''}`}
+                    id="name"
+                    name="name"
+                    type="text"
+                    onBlur={formik.handleBlur}
+                    onChange={(e) => {
+                      formik.handleChange(e);
+                      MyHandleChange(e);
+                    }}
+                    value={formik.values.name}
+                  />
+                  {formik.errors.name && formik.touched.name && (
+                    <div className="error">{formik.errors.name}</div>
+                  )}
+                </li>
+                <li className="joinFields">
+                  <label className="joinLabel" htmlFor="lastname">
+                    Прізвище*
+                  </label>
+                  <input
+                    className={`joinInput ${formik.errors.lastname && formik.touched.lastname ? 'errorInput' : ''}`}
+                    id="lastname"
+                    name="lastname"
+                    type="text"
+                    onBlur={formik.handleBlur}
+                    onChange={(e) => {
+                      formik.handleChange(e);
+                      MyHandleChange(e);
+                    }}
+                    value={formik.values.lastname}
+                  />
+                  {formik.errors.lastname && formik.touched.lastname && (
+                    <div className="error">{formik.errors.lastname}</div>
+                  )}
+                </li>
+                <li className="joinFields">
+                  <label className="joinLabel" htmlFor="phone">
+                    Телефон*
+                  </label>
+                  <input
+                    className={`joinInput ${formik.errors.phone && formik.touched.phone ? 'errorInput' : ''}`}
+                    id="phone"
+                    name="phone"
+                    type="text"
+                    placeholder="+380"
+                    onBlur={formik.handleBlur}
+                    onChange={(e) => {
+                      formik.handleChange(e);
+                      MyHandleChange(e);
+                    }}
+                    value={formik.values.phone}
+                  />
+                  {formik.errors.phone && formik.touched.phone && (
+                    <div className="error">{formik.errors.phone}</div>
+                  )}
+                </li>
+                <li className="joinFields">
+                  <label className="joinLabel" htmlFor="link">
+                    Інстаграм/Фейсбук
+                  </label>
+                  <input
+                    className={`joinInput ${formik.errors.link && formik.touched.link ? 'errorInput' : ''}`}
+                    id="link"
+                    name="link"
+                    type="text"
+                    placeholder="Вставити посилання"
+                    onBlur={formik.handleBlur}
+                    onChange={(e) => {
+                      formik.handleChange(e);
+                      MyHandleChange(e);
+                    }}
+                    value={formik.values.link}
+                  />
+                  {formik.errors.link && formik.touched.link && (
+                    <div className="error">{formik.errors.link}</div>
+                  )}
+                </li>
+                <li className="joinFields">
+                  <label className="joinLabel" htmlFor="about">
+                    Коротко про себе
+                  </label>
+                  <textarea
+                    className={`joinInput ${formik.errors.about && formik.touched.about ? 'errorInput' : ''} area`}
+                    id="about"
+                    name="about"
+                    type="text"
+                    onBlur={formik.handleBlur}
+                    onChange={(e) => {
+                      formik.handleChange(e);
+                      MyHandleChange(e);
+                    }}
+                    value={formik.values.about}
+                  ></textarea>
+                  {formik.errors.about && formik.touched.about && (
+                    <div className="error">{formik.errors.about}</div>
+                  )}
+                </li>
+              </ul>
+              <button
+                className="joinSubmitBtn"
+                type="submit"
+                title="Відправити дані"
+                aria-label="Відправити"
+              >
+                Відправити
+              </button>
+            </form>
           )}
           {isDataPosted && <PostedBlock handleCloseModal={handleCloseModal} />}
           {isError && <ErrorBlock handleCloseModal={handleCloseModal} />}
