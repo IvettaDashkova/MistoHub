@@ -27,6 +27,7 @@ const TourModal = forwardRef(({ image, onClose }, ref) => {
   const isIOS =
     /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
   const isDesktop = useMediaQuery({ minWidth: 1440 });
+
   return (
     <ModalWrapperTour ref={wrapperRef}>
       <ReactPhotoSphereViewer
@@ -36,14 +37,11 @@ const TourModal = forwardRef(({ image, onClose }, ref) => {
         height={'100%'}
         width={'100%'}
         defaultZoomLvl={10}
-        // navbar={['zoom', 'fullscreen']}
-        // navbar={['move']}
-        // navbar={isIOS ? ['move'] : ['zoom', 'fullscreen']}
         navbar={
           isDesktop
             ? ['zoom', 'fullscreen']
             : isIOS
-              ? ['move']
+              ? ['moveLeft', 'moveRight']
               : ['zoom', 'fullscreen']
         }
         loading="lazy"
@@ -58,3 +56,4 @@ const TourModal = forwardRef(({ image, onClose }, ref) => {
 TourModal.displayName = 'TourModal';
 
 export default TourModal;
+
