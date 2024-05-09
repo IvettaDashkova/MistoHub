@@ -20,7 +20,11 @@ const Background = () => {
             media="(min-resolution: 192dpi)"
           />
           <source srcSet={image.jpg} type="image/jpg" />
-          <image.className src={image.jpg} loading="lazy" />
+          <image.className
+            src={image.jpg}
+            loading="lazy"
+            alt={image.description}
+          />
         </picture>
       ))}
     </BackgroundContainer>
