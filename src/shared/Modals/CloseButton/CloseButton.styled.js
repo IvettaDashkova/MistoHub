@@ -1,10 +1,10 @@
 import styled from 'styled-components';
 
 export const StyledButton = styled.button`
-  width: 97px;
+  padding: 0;
   display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
+  gap: 12px;
+  align-items: baseline;
   background: none;
   border: none;
 
@@ -38,7 +38,6 @@ export const StyledButton = styled.button`
     }
   }
   svg {
-    margin-top: 3px;
     stroke-width: 2px;
     fill: rgba(11, 11, 11, 0.5);
   }

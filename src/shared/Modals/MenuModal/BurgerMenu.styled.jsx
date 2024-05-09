@@ -107,7 +107,7 @@ export const BtnSupport = styled.button`
 export const TopContainer = styled.div`
   display: flex;
   justify-content: space-between;
-  padding: 0;
+  /* padding: 0; */
 `;
 
 export const BtnContainer = styled.div`
@@ -115,9 +115,10 @@ export const BtnContainer = styled.div`
   align-items: center;
   gap: 10px;
   max-width: 283px;
-  padding: 0;
+  /* padding: 0; */
+
   @media screen and (min-width: 768px) {
-    align-items: start;
+    align-items: flex-start;
     max-width: 100%;
   }
 `;
@@ -131,8 +132,8 @@ export const ImgContainer = styled.div`
   padding: 0;
   display: none;
   position: relative;
-  left: 80px;
   background-size: cover;
+  left: 80px;
 
   svg {
     position: absolute;
@@ -171,6 +172,7 @@ export const FlexContainer = styled.div`
 export const BottomContainer = styled.div`
   display: flex;
   gap: 8px;
+  max-width: 283px;
   flex-wrap: wrap;
   padding: 0;
   align-items: center;
@@ -178,6 +180,8 @@ export const BottomContainer = styled.div`
   @media screen and (min-width: 768px) {
     margin-bottom: 0;
     justify-content: end;
+    max-width: 100%;
+
     span {
       margin-right: auto;
     }
