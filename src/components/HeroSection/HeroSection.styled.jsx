@@ -5,7 +5,6 @@ export const HeroSectionStyled = styled.section`
   min-width: 320px;
   width: 100%;
   height: 700px;
-  margin: 0 auto 150px auto;
 
   @media only screen and (min-width: 768px) {
     height: 1024px;

@@ -3,7 +3,7 @@ import ProgressBarAmount from './ProgressBarAmount';
 
 const FundraisingProgressBar = ({ totalAmount, targetAmount, goAnimation }) => {
   const percentage = Math.min((totalAmount / targetAmount) * 100, 100);
-console.log(goAnimation)
+
   return (
     <ProgressBar>
       <div>

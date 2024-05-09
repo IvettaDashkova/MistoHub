@@ -7,6 +7,8 @@ export const ModalProvider = ({ children }) => {
     join_modal: false,
     menu_modal: false,
     team_modal: false,
+    investor_modal: false,
+    company_modal: false,
   });
 
   const openModal = (modalName) => {
