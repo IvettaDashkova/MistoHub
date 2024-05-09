@@ -40,15 +40,6 @@ const BurgerMenu = ({ controlsMenuModal }) => {
             Підтримати проєкт
           </BtnSupport>
           <CloseButton onClose={() => closeModal('menu_modal')} />
-          {/* <button
-            type="button"
-            title="Закрити вікно"
-            onClick={() => closeModal('menu_modal')}
-            className="close-button"
-          >
-            <span>Закрити</span>
-            <Iconsvg iconName="close" width="14" height="14" />
-          </button> */}
         </BtnContainer>
       </TopContainer>
 

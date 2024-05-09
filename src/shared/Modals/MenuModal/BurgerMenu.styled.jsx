@@ -107,7 +107,7 @@ export const BtnSupport = styled.button`
 export const TopContainer = styled.div`
   display: flex;
   justify-content: space-between;
-  /* padding: 0; */
+  align-items: flex-start;
 `;
 
 export const BtnContainer = styled.div`
@@ -115,7 +115,6 @@ export const BtnContainer = styled.div`
   align-items: center;
   gap: 10px;
   max-width: 283px;
-  /* padding: 0; */
 
   @media screen and (min-width: 768px) {
     align-items: flex-start;

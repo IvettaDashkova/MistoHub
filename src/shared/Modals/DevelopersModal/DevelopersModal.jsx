@@ -22,19 +22,6 @@ const DevelopersModal = ({ controlsModal: { isModalOpen, closeModal } }) => {
           <div className="dev-modal-up">
             <span>Команда</span>
             <CloseButton onClose={() => closeModal('team_modal')} />
-            {/* <button
-              className="сloseBtn"
-              type="button"
-              onClick={() => closeModal('team_modal')}
-            >
-              <span className="сloseText">Закрити</span>
-              <Iconsvg
-                width="12"
-                height="12"
-                iconName="icon-close"
-                styles="icon-close"
-              />
-            </button> */}
           </div>
           <h2>
             <span className="orange-el">Команда</span>, що створила сайт

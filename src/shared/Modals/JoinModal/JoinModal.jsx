@@ -8,7 +8,6 @@ import { postData } from '/src/services/API.js';
 import { JoinModalStyled } from '/src/shared/Modals/JoinModal/JoinModal.styled';
 import ErrorBlock from '/src/shared/Modals/JoinModal/ErrorBlock';
 import PostedBlock from '/src/shared/Modals/JoinModal/PostedBlock';
-import Icon from '/src/components/Icon/Icon';
 import Maska from '/src/shared/Modals/JoinModal/Maska';
 import Info from '/src/shared/Modals/JoinModal/Info';
 import Loader from '/src/components/Loader/Loader';
@@ -93,18 +92,9 @@ const JoinModal = ({ controlsModal: { isModalOpen, closeModal } }) => {
           }}
         />
       )}
-      <div>
+      <div className="headerContainer">
         <p>Підтримати проєкт</p>
-        <CloseButton onClose={handleCloseModal} styles={'joinCloseBtn'} />
-        {/* <button
-          className="joinCloseBtn"
-          type="button"
-          title="Закрити вікно"
-          onClick={handleCloseModal}
-        >
-          <span className="joinCloseText">Закрити</span>
-          <Icon iconName="close" />
-        </button> */}
+        <CloseButton onClose={handleCloseModal} />
       </div>
       <div className="joinMainContainer">
         <div>

@@ -37,25 +37,10 @@ export const DevelopersModalStyled = styled(Modal)`
   .dev-modal-up {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
     margin-bottom: 65px;
   }
-  .сloseBtn {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    color: inherit;
-    background: none;
-    border: none;
-    padding: 0;
-    outline: none;
-  }
-  .сloseText {
-    display: none;
-  }
-  .icon-close {
-    stroke: rgba(11, 11, 11, 0.5);
-  }
+
   h2 {
     font-family: Oddval;
     color: #0b0b0b;
