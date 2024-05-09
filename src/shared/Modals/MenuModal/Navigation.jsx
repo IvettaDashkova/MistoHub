@@ -26,13 +26,13 @@ const Navigation = ({ activeSection, closeModal }) => {
     }
   };
 
-  const handleMouseEnter = (id) => {
-    setHoveredIndex(id);
-  };
+  // const handleMouseEnter = (id) => {
+  //   setHoveredIndex(id);
+  // };
 
-  const handleMouseLeave = () => {
-    setHoveredIndex(null);
-  };
+  // const handleMouseLeave = () => {
+  //   setHoveredIndex(null);
+  // };
 
   return (
     <>
@@ -41,20 +41,21 @@ const Navigation = ({ activeSection, closeModal }) => {
           {links.map((link) => (
             <StyledItem
               key={link.id}
-              onMouseEnter={() => handleMouseEnter(link.id)}
-              onMouseLeave={handleMouseLeave}
+              // onMouseEnter={() => handleMouseEnter(link.id)}
+              // onMouseLeave={handleMouseLeave}
             >
               <Link
                 onClick={() => scrollToSection(link.id)}
                 className={activeSection === link.id ? 'active' : 'link'}
               >
-                {link.value}
+                {link.value} <Iconsvg iconName="hoverarrow" />
               </Link>
-              {hoveredIndex === link.id && isDesctop && (
-                <button type="button" onClick={() => scrollToSection(link.id)}>
-                  <Iconsvg iconName="hoverarrow" />
-                </button>
-              )}
+              {/* {hoveredIndex === link.id && isDesctop && (
+                <button
+                  type="button"
+                  onClick={() => scrollToSection(link.id)}
+                ></button>
+              )} */}
             </StyledItem>
           ))}
         </StyledNavList>

@@ -111,6 +111,7 @@ export const TopContainer = styled.div`
 
 export const BtnContainer = styled.div`
   display: flex;
+  align-items: center;
   gap: 10px;
   max-width: 283px;
   padding: 0;
@@ -169,8 +170,9 @@ export const BottomContainer = styled.div`
   flex-wrap: wrap;
   padding: 0;
   align-items: center;
-
+  margin-bottom: 16px;
   @media screen and (min-width: 768px) {
+    margin-bottom: 0;
     justify-content: end;
     span {
       margin-right: auto;

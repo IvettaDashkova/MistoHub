@@ -5,7 +5,7 @@ export const StyledNavList = styled.ul`
   flex-direction: column;
   list-style: none;
 
-  .active {
+  a {
     font-family: 'Oddval', 'Inter', sans-serif;
     font-weight: 600;
     font-size: 24px;
@@ -14,7 +14,37 @@ export const StyledNavList = styled.ul`
     color: #0b0b0b;
     outline: none;
     border: none;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .active {
+    /* font-family: 'Oddval', 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 1.17;
+    letter-spacing: -0.02em; */
+    /* color: #0b0b0b; */
+    /* outline: none;
+    border: none; */
     color: #f77d07;
+
+    svg {
+      display: none;
+    }
+
+    &:active svg {
+      display: block;
+    }
+
+    @media screen and (min-width: 1440px) {
+      &:hover svg {
+        display: block;
+      }
+    }
 
     @media screen and (min-width: 768px) {
       font-size: 44px;
@@ -22,7 +52,7 @@ export const StyledNavList = styled.ul`
   }
 
   .link {
-    font-family: 'Oddval', 'Inter', sans-serif;
+    /* font-family: 'Oddval', 'Inter', sans-serif;
     font-weight: 600;
     font-size: 24px;
     line-height: 1.17;
@@ -30,10 +60,37 @@ export const StyledNavList = styled.ul`
     color: #0b0b0b;
     outline: none;
     border: none;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-between; */
+
+    svg {
+      display: none;
+    }
+
+    &:active svg {
+      display: block;
+    }
+
+    @media screen and (min-width: 1440px) {
+      &:hover svg {
+        display: block;
+      }
+    }
+
     @media screen and (min-width: 768px) {
       font-size: 44px;
     }
   }
+
+  /* a svg {
+    display: none;
+  } */
+
+  /* a:hover svg {
+    display: block;
+  } */
 `;
 
 export const StyledItem = styled.li`
