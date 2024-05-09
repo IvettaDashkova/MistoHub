@@ -37,18 +37,18 @@ export const JoinModalStyled = styled(Modal)`
   }
 
   .joinCloseBtn {
-    display: flex;
+    /* display: flex;
     justify-content: center;
     align-items: center;
     line-height: 0.5;
     height: 28px;
-    padding: 0px;
+    padding: 0px; */
     position: absolute;
     top: 18px;
     right: 16px;
-    background-color: transparent;
+    /* background-color: transparent;
     border: none;
-    color: rgba(11, 11, 11, 0.5);
+    color: rgba(11, 11, 11, 0.5); */
 
     @media only screen and (min-width: 768px) {
       top: 32px;
@@ -60,13 +60,13 @@ export const JoinModalStyled = styled(Modal)`
       right: 80px;
     }
 
-    & svg {
+    /* & svg {
       margin: 8px;
       width: 14px;
       height: 14px;
       fill: rgba(11, 11, 11, 0.5);
       margin-top: 6px;
-    }
+    } */
   }
 
   .joinCloseText {

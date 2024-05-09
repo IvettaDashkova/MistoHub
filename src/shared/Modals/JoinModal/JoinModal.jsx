@@ -12,6 +12,7 @@ import Icon from '/src/components/Icon/Icon';
 import Maska from '/src/shared/Modals/JoinModal/Maska';
 import Info from '/src/shared/Modals/JoinModal/Info';
 import Loader from '/src/components/Loader/Loader';
+import CloseButton from '../CloseButton/CloseButton';
 
 const UserDataSchema = Yup.object().shape({
   name: Yup.string()
@@ -94,7 +95,8 @@ const JoinModal = ({ controlsModal: { isModalOpen, closeModal } }) => {
       )}
       <div>
         <p>Підтримати проєкт</p>
-        <button
+        <CloseButton onClose={handleCloseModal} styles={'joinCloseBtn'} />
+        {/* <button
           className="joinCloseBtn"
           type="button"
           title="Закрити вікно"
@@ -102,7 +104,7 @@ const JoinModal = ({ controlsModal: { isModalOpen, closeModal } }) => {
         >
           <span className="joinCloseText">Закрити</span>
           <Icon iconName="close" />
-        </button>
+        </button> */}
       </div>
       <div className="joinMainContainer">
         <div>

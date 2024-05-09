@@ -1,6 +1,7 @@
 import Iconsvg from '../../../components/Icon/Icon';
 import SwiperComponent from './SwiperComponent';
 import { DevelopersModalStyled, ModalDown } from './DevelopersModal.styled';
+import CloseButton from '../CloseButton/CloseButton';
 
 const DevelopersModal = ({ controlsModal: { isModalOpen, closeModal } }) => {
   return (
@@ -20,7 +21,8 @@ const DevelopersModal = ({ controlsModal: { isModalOpen, closeModal } }) => {
         <div className="content-container">
           <div className="dev-modal-up">
             <span>Команда</span>
-            <button
+            <CloseButton onClose={() => closeModal('team_modal')} />
+            {/* <button
               className="сloseBtn"
               type="button"
               onClick={() => closeModal('team_modal')}
@@ -32,7 +34,7 @@ const DevelopersModal = ({ controlsModal: { isModalOpen, closeModal } }) => {
                 iconName="icon-close"
                 styles="icon-close"
               />
-            </button>
+            </button> */}
           </div>
           <h2>
             <span className="orange-el">Команда</span>, що створила сайт
