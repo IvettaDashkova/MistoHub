@@ -41,7 +41,7 @@ const TourModal = forwardRef(({ image, onClose }, ref) => {
           isDesktop
             ? ['zoom', 'fullscreen']
             : isIOS
-              ? ['moveLeft', 'moveRight']
+              ? ['zoom', 'moveLeft', 'moveRight']
               : ['zoom', 'fullscreen']
         }
         loading="lazy"
@@ -56,4 +56,3 @@ const TourModal = forwardRef(({ image, onClose }, ref) => {
 TourModal.displayName = 'TourModal';
 
 export default TourModal;
-
