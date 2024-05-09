@@ -75,7 +75,6 @@ export const Card = styled.div`
   justify-content: center;
   align-items: center;
   position: relative;
-  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
 
   @media (min-width: 320px) and (max-width: 374px) {
     margin: 0 auto;
@@ -184,15 +183,11 @@ export const LeftArrow = styled.button`
   justify-content: center;
   align-items: center;
   transition: all 300ms ease-in-out;
-  padding: 8px; /** */
+  padding: 8px;
 
-  /* & svg {
+  & svg {
     fill: #f77d07;
-  } */
-
-  .icon-arrow {
-    fill: #f77d07;
-  } /** */
+  }
 
   &.enabled {
     background: #f77d07;
@@ -206,15 +201,10 @@ export const LeftArrow = styled.button`
     width: 60px;
     height: 60px;
 
-    /* & svg {
-      width: 24px;
-      height: 20px;
-    } */
-
     .icon-arrow {
       width: 24px;
       height: 24px;
-    }/** */
+    }
   }
 
   @media (min-width: 1440px) {
@@ -315,7 +305,6 @@ export const ModalWrapperTour = styled.div`
   .psv-move-button {
     display: flex !important;
   }
-
 `;
 
 export const CloseButton = styled.button`
