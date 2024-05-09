@@ -39,7 +39,7 @@ const TourModal = forwardRef(({ image, onClose }, ref) => {
     <ModalWrapperTour
       ref={wrapperRef}
       onClick={handleEvent}
-      onTouchEnd={handleEvent}
+      onTouchStart={handleEvent}
     >
       <ReactPhotoSphereViewer
         ref={ref}
@@ -53,7 +53,7 @@ const TourModal = forwardRef(({ image, onClose }, ref) => {
       />
       {!isDesktop && showPerformance && (
         <Performance
-          onTouchEnd={(e) => {
+          onTouchStart={(e) => {
             e.stopPropagation();
             setShowPerformance(false);
           }}
