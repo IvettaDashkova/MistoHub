@@ -62,6 +62,10 @@ export const ContainerWrapper = styled.section`
 
       backdrop-filter: blur(5px);
     }
+
+    button:hover {
+      background-color: #e97200;
+    }
   }
 
   h4 {
@@ -301,7 +305,7 @@ export const CardsList = styled.ul`
   color: #fff;
   gap: 8px;
   overflow-x: auto;
-  padding: 13px 16px 28px;
+  padding: 14px 16px 28px;
 
   margin-bottom: 32px;
   width: 100%;
