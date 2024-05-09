@@ -24,7 +24,6 @@ export const VisualizationContainer = styled(Container)`
 `;
 
 export const BlockName = styled.p`
-  /* font-family: 'MacPaw Fixel Display', sans-serif; */
   font-weight: 500;
   font-size: 14px;
   line-height: 1.29;
@@ -142,12 +141,20 @@ export const ButtonTour = styled.button`
     color: #ffffff;
   }
 
+  &:active {
+    background: #e3e3e3;
+    color: #898b90;
+  }
+
   @media (min-width: 768px) {
     padding: 15px 26px;
     font-size: 16px;
     line-height: 1.5;
     display: block;
     margin: 0 auto;
+  }
+
+  @media (min-width: 1440px) {
   }
 `;
 
@@ -177,12 +184,15 @@ export const LeftArrow = styled.button`
   justify-content: center;
   align-items: center;
   transition: all 300ms ease-in-out;
+  padding: 8px; /** */
 
-  & svg {
-    width: 22px;
-    height: 22px;
+  /* & svg {
     fill: #f77d07;
-  }
+  } */
+
+  .icon-arrow {
+    fill: #f77d07;
+  } /** */
 
   &.enabled {
     background: #f77d07;
@@ -196,15 +206,32 @@ export const LeftArrow = styled.button`
     width: 60px;
     height: 60px;
 
-    & svg {
-      width: 26px;
-      height: 26px;
-    }
+    /* & svg {
+      width: 24px;
+      height: 20px;
+    } */
+
+    .icon-arrow {
+      width: 24px;
+      height: 24px;
+    }/** */
   }
 
   @media (min-width: 1440px) {
     &:hover {
-      transform: scale(1.1);
+      background: #f77d07;
+
+      & svg {
+        fill: #ffffff;
+      }
+    }
+
+    &.enabled:hover {
+      background: #ffffff;
+
+      & svg {
+        fill: #f77d07;
+      }
     }
   }
 `;
@@ -280,6 +307,15 @@ export const ModalWrapperTour = styled.div`
   & .psv-zoom-range.psv-button {
     display: none;
   }
+
+  .psv-zoom-button {
+    display: flex !important;
+  }
+
+  .psv-move-button {
+    display: flex !important;
+  }
+
 `;
 
 export const CloseButton = styled.button`
@@ -296,6 +332,12 @@ export const CloseButton = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
+
+  & svg {
+    display: block;
+    width: 20px;
+    height: 20px;
+  }
 
   @media (min-width: 768px) {
     & svg {

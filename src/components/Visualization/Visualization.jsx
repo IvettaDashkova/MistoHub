@@ -120,15 +120,27 @@ const Visualization = () => {
             type="button"
             className={`${currentCard > 0 ? 'enabled' : ''}`}
             onClick={prevCard}
+            title="Попередній слайд"
           >
-            <Iconsvg width="22" height="22" iconName="icon-arrow-left" />
+            <Iconsvg
+              width="18"
+              height="14"
+              styles="icon-arrow"
+              iconName="icon-arrow-back"
+            />
           </LeftArrow>
           <RightArrow
             type="button"
             className={`${currentCard < images.length - (isDesktop ? 2 : 1) ? 'enabled' : ''}`}
             onClick={nextCard}
+            title="Наступний слайд"
           >
-            <Iconsvg width="22" height="22" iconName="icon-arrow-right" />
+            <Iconsvg
+              width="18"
+              height="14"
+              styles="icon-arrow"
+              iconName="icon-arrow-next"
+            />
           </RightArrow>
         </Arrow>
       </VisualizationContainer>

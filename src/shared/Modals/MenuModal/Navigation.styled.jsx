@@ -6,6 +6,7 @@ export const StyledNavList = styled.ul`
   list-style: none;
 
   .active {
+    font-family: 'Oddval', 'Inter', sans-serif;
     font-weight: 600;
     font-size: 24px;
     line-height: 1.17;
@@ -21,6 +22,7 @@ export const StyledNavList = styled.ul`
   }
 
   .link {
+    font-family: 'Oddval', 'Inter', sans-serif;
     font-weight: 600;
     font-size: 24px;
     line-height: 1.17;
@@ -40,7 +42,8 @@ export const StyledNavList = styled.ul`
 
 export const StyledItem = styled.li`
   width: 261px;
-  height: 50px;
+  height: 28px;
+  margin-bottom: 10px;
   display: flex;
   flex-wrap: nowrap;
   align-items: center;
@@ -58,6 +61,7 @@ export const StyledItem = styled.li`
   }
 
   @media screen and (min-width: 768px) {
+    height: 50px;
     width: 466px;
   }
 

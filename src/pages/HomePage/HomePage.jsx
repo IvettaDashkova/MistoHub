@@ -9,9 +9,7 @@ import { AccumulatedMoney } from '../../components/AccumulatedMoney/AccumulatedM
 import InvestorsBlock from '../../components/InvestorsCompanies/InvestorsBlock';
 import Visualization from '../../components/Visualization/Visualization';
 import ScrollToTopButton from '../../components/ScrollToTopButton/ScrollToTopButton';
-import BurgerMenu from '../../components/BurgerMenu/BurgerMenu';
 import Footer from '../../components/Footer/Footer';
-import DevelopersModal from '../../components/DevelopersModal/DevelopersModal';
 import HeroSection from '/src/components/HeroSection/HeroSection';
 import CoFounders from '../../components/CoFounders/CoFounders';
 import JoinUs from '../../components/JoinUs/JoinUs';
@@ -20,8 +18,7 @@ import ModalsManager from '/src/shared/Modals/ModalsManager';
 Modal.setAppElement('#root');
 
 const HomePage = () => {
-  const [isMenuOpen, setMenuOpen] = useState(false);
-  const [activeSection, setActiveSection] = useState(null);
+  const [activeSection, setActiveSection] = useState('main');
   const location = useLocation();
 
   useEffect(() => {
@@ -31,7 +28,7 @@ const HomePage = () => {
       const sectionElement = document.getElementById(sectionId);
       if (sectionElement) {
         window.scrollTo({
-          top: sectionElement.offsetTop - 120,
+          top: sectionElement.offsetTop - 100,
           behavior: 'smooth',
         });
       }
@@ -41,18 +38,27 @@ const HomePage = () => {
   useEffect(() => {
     const handleScroll = () => {
       const sectionElements = document.querySelectorAll('section');
-
       sectionElements.forEach((section) => {
+        const firstSection = document.getElementById('about');
+        const firstSectionTop = firstSection.offsetTop;
+        if (window.scrollY < firstSectionTop - 110) {
+          setActiveSection('main');
+        }
         const sectionTop = section.offsetTop;
-        const sectionHeight = section.clientHeight;
+        const sectionHeight = section.offsetHeight;
         const sectionId = section.getAttribute('id');
         if (
-          window.scrollY >= sectionTop - 120 &&
-          window.scrollY < sectionTop + sectionHeight - 120
+          window.scrollY >= sectionTop - 100 &&
+          window.scrollY < sectionTop + sectionHeight - 100
         ) {
           setActiveSection(sectionId);
-          const url = `#${sectionId}`;
-          window.history.pushState(null, '', url);
+          const url = `/MistoHub/#${sectionId}`;
+
+          if (sectionId !== null) {
+            window.history.pushState(null, '', url);
+          } else {
+            window.history.pushState(null, '', window.location.pathname);
+          }
         }
       });
     };
@@ -64,22 +70,9 @@ const HomePage = () => {
     };
   }, []);
 
-  const handleMenuClose = () => {
-    setMenuOpen(false);
-  };
-
-  const handleMenuOpen = () => {
-    setMenuOpen(true);
-  };
-
   return (
     <>
-      <Header handleMenuOpen={handleMenuOpen} />
-      <BurgerMenu
-        activeSection={activeSection}
-        isMenuOpen={isMenuOpen}
-        handleMenuClose={handleMenuClose}
-      />
+      <Header />
       <main>
         <HeroSection />
         <AboutProject />
@@ -91,8 +84,7 @@ const HomePage = () => {
         <ScrollToTopButton />
       </main>
       <Footer />
-      <DevelopersModal />
-      <ModalsManager />
+      <ModalsManager activeSection={activeSection} />
     </>
   );
 };

@@ -1,9 +1,11 @@
 import styled from 'styled-components';
 import Modal from 'react-modal';
-import sity from '../../assets/menu-img/misto.png';
-import sityx2 from '../../assets/menu-img/misto-x2.png';
-import sityWebP from '../../assets/menu-img/misto.webp';
-import sityWebPx2 from '../../assets/menu-img/misto-x2.webp';
+
+import sity from '../../../assets/menu-img/misto.png';
+import sityx2 from '../../../assets/menu-img/misto-x2.png';
+import sityWebP from '../../../assets/menu-img/misto.webp';
+import sityWebPx2 from '../../../assets/menu-img/misto-x2.webp';
+import support from '../../../assets/menu-img/support.svg';
 
 export const StyledMenu = styled(Modal)`
   background-color: #ffffff;
@@ -20,6 +22,53 @@ export const StyledMenu = styled(Modal)`
   @media screen and (min-width: 1440px) {
     padding: 40px 80px;
   }
+
+  .close-button {
+    border: none;
+    outline: none;
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: self-start;
+    gap: 12px;
+
+    span {
+      display: none;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 1.29;
+      letter-spacing: -0.02em;
+      color: rgba(11, 11, 11, 0.5);
+
+      @media screen and (min-width: 768px) {
+        display: inline;
+        font-size: 16px;
+      }
+    }
+
+    svg {
+      stroke-width: 2px;
+      stroke: rgba(11, 11, 11, 0.5);
+      fill: rgba(11, 11, 11, 0.5);
+    }
+  }
+
+  .close-button:hover span {
+    color: #0b0b0b;
+  }
+
+  .close-button:active span {
+    color: #0b0b0b;
+  }
+
+  .close-button:hover svg {
+    fill: #0b0b0b;
+    stroke: #0b0b0b;
+  }
+  .close-button:active svg {
+    fill: #0b0b0b;
+    stroke: #0b0b0b;
+  }
 `;
 
 export const StyledText = styled.p`
@@ -29,33 +78,37 @@ export const StyledText = styled.p`
   letter-spacing: -0.02em;
   color: rgba(11, 11, 11, 0.5);
   @media screen and (min-width: 768px) {
-    font-size: 14px;
-  }
-
-  span {
-    display: none;
-    @media screen and (min-width: 768px) {
-      display: inline;
-    }
+    font-size: 16px;
   }
 `;
 
-export const BtnClose = styled.button`
-  border: none;
-  outline: none;
-  background-color: transparent;
+// export const BtnClose = styled.button`
+//   border: none;
+//   outline: none;
+//   background-color: transparent;
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   gap: 4px;
 
-  svg {
-    stroke-width: 2px;
-    stroke: rgba(11, 11, 11, 0.5);
-    fill: rgba(11, 11, 11, 0.5);
-    color: rgba(11, 11, 11, 0.5);
+//   span {
+//     display: none;
+//     @media screen and (min-width: 768px) {
+//       display: inline;
+//     }
+//   }
 
-    &:hover {
-      fill: #0b0b0b;
-    }
-  }
-`;
+//   svg {
+//     stroke-width: 2px;
+//     stroke: rgba(11, 11, 11, 0.5);
+//     fill: rgba(11, 11, 11, 0.5);
+//     color: rgba(11, 11, 11, 0.5);
+
+//     &:hover {
+//       fill: #0b0b0b;
+//     }
+//   }
+// `;
 
 export const BtnSupport = styled.button`
   width: 129px;
@@ -70,18 +123,8 @@ export const BtnSupport = styled.button`
   color: #fff;
   background-repeat: no-repeat;
   background-size: contain;
-  background-image: url('/src/assets/menu-img/support.svg');
+  background-image: url(${support});
   background-color: transparent;
-
-  &:hover,
-  &:focus {
-    border: none;
-    outline: none;
-
-    svg {
-      fill: #e97200;
-    }
-  }
 
   @media screen and (min-width: 768px) {
     display: none;
@@ -179,19 +222,5 @@ export const BtnGoIt = styled.button`
 
   svg {
     fill: #f77d07;
-  }
-`;
-
-export const SocLincContainer = styled.div`
-  margin: 0;
-  padding: 0;
-  display: flex;
-  gap: 8px;
-  @media screen and (min-width: 768px) {
-    display: none;
-  }
-
-  svg:hover {
-    fill: #e97200;
   }
 `;

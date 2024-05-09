@@ -1,9 +1,9 @@
-import { StyledFooter, FooterContainer, FooterDown } from './Footer.styled';
-import Contacts from './Contacts';
-import MyGoogleMap from './MyGoogleMap';
-import Iconsvg from '../Icon/Icon';
-import { Link } from 'react-router-dom';
 import { useModal } from '../../contexts/ModalHook';
+
+import Contacts from './Contacts';
+import Iconsvg from '../Icon/Icon';
+import SocialBlock from '../../shared/SocialBlock/SocialBlock';
+import { StyledFooter, FooterContainer, FooterDown } from './Footer.styled';
 
 export default function Footer() {
   const { openModal } = useModal();
@@ -12,7 +12,11 @@ export default function Footer() {
     <StyledFooter id="footer">
       <FooterContainer>
         <div className="footer-up">
-          <MyGoogleMap />
+          <iframe
+            className="map-wrapper"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2586.710898082731!2d34.5648984!3d49.5843421!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d825941b73909d%3A0xc6c99d30efb9fc4a!2z0JzQhtCh0KLQntCl0JDQkQ!5e0!3m2!1sru!2sua!4v1715196007146!5m2!1sua!2sua"
+            loading="lazy"
+          ></iframe>
           <div>
             <Iconsvg
               width="81"
@@ -49,34 +53,7 @@ export default function Footer() {
               styles="icon-goit-white"
             />
           </button>
-          <div className="social-block">
-            <Link
-              className="link-inst"
-              to={`https://www.instagram.com/mistohub `}
-              target="blank"
-              rel="noopener noreferrer"
-            >
-              <Iconsvg
-                width="59"
-                height="18"
-                iconName="icon-instagram"
-                styles="icon-instagram"
-              />
-            </Link>
-            <Link
-              className="link-fb"
-              to={`https://www.facebook.com/mistohub/?locale=uk_UA`}
-              target="blank"
-              rel="noopener noreferrer"
-            >
-              <Iconsvg
-                width="59"
-                height="18"
-                iconName="icon-faceb"
-                styles="icon-faceb"
-              />
-            </Link>
-          </div>
+          <SocialBlock sectionName="footer" />
         </FooterDown>
       </FooterContainer>
     </StyledFooter>

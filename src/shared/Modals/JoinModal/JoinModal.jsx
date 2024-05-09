@@ -24,12 +24,17 @@ const UserDataSchema = Yup.object().shape({
     .max(50, `Прізвище занадто довге!`),
   phone: Yup.string()
     .required(`Номер телефону обов'язковий!`)
-    .matches(/^\+3\d{11}$/, 'Невірний формат'),
-  link: Yup.string().url('Невірна адреса'),
+    .matches(/^\+380\d{9}$/, 'Невірний формат'),
+  link: Yup.string()
+    .matches(
+      /(https?:\/\/)?(www\.)?(facebook|instagram)\.com\/.+/,
+      'Посилання на Facebook або Instagram'
+    )
+    .url('Невірна адреса'),
   about: Yup.string().max(500, 'Про себе може містити до 500 символів.'),
 });
 
-const JoinModal = ({ isModalOpen, closeModal }) => {
+const JoinModal = ({ controlsModal: { isModalOpen, closeModal } }) => {
   const [isDataPosted, setIsDataPosted] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
@@ -87,16 +92,18 @@ const JoinModal = ({ isModalOpen, closeModal }) => {
           }}
         />
       )}
-      <p>Підтримати проєкт</p>
-      <button
-        className="joinCloseBtn"
-        type="button"
-        title="Закрити вікно"
-        onClick={handleCloseModal}
-      >
-        <span className="joinCloseText">Закрити</span>
-        <Icon iconName="close" />
-      </button>
+      <div>
+        <p>Підтримати проєкт</p>
+        <button
+          className="joinCloseBtn"
+          type="button"
+          title="Закрити вікно"
+          onClick={handleCloseModal}
+        >
+          <span className="joinCloseText">Закрити</span>
+          <Icon iconName="close" />
+        </button>
+      </div>
       <div className="joinMainContainer">
         <div>
           {!isDataPosted && !isError && (
@@ -113,7 +120,7 @@ const JoinModal = ({ isModalOpen, closeModal }) => {
                   </h2>
 
                   <ul className="joinList">
-                    <li>
+                    <li className="joinFields">
                       <label className="joinLabel">
                         <span>Ім’я*</span>
                         <Field
@@ -128,7 +135,7 @@ const JoinModal = ({ isModalOpen, closeModal }) => {
                         />
                       </label>
                     </li>
-                    <li>
+                    <li className="joinFields">
                       <label className="joinLabel">
                         <span>Прізвище*</span>
                         <Field
@@ -143,7 +150,7 @@ const JoinModal = ({ isModalOpen, closeModal }) => {
                         />
                       </label>
                     </li>
-                    <li>
+                    <li className="joinFields">
                       <label className="joinLabel">
                         <span>Телефон*</span>
                         <Field
@@ -159,7 +166,7 @@ const JoinModal = ({ isModalOpen, closeModal }) => {
                         />
                       </label>
                     </li>
-                    <li>
+                    <li className="joinFields">
                       <label className="joinLabel">
                         <span>Інстаграм/Фейсбук</span>
                         <Field
@@ -175,7 +182,7 @@ const JoinModal = ({ isModalOpen, closeModal }) => {
                         />
                       </label>
                     </li>
-                    <li>
+                    <li className="joinFields">
                       <label className="joinLabel">
                         <span>Коротко про себе</span>
                         <Field

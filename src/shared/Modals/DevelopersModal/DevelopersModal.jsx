@@ -1,11 +1,8 @@
-import { DevelopersModalStyled, ModalDown } from './DevelopersModal.styled';
-import Iconsvg from '../Icon/Icon';
-import { useModal } from '/src/contexts/ModalHook';
+import Iconsvg from '../../../components/Icon/Icon';
 import SwiperComponent from './SwiperComponent';
+import { DevelopersModalStyled, ModalDown } from './DevelopersModal.styled';
 
-const DevelopersModal = () => {
-  const { isModalOpen, closeModal } = useModal();
-
+const DevelopersModal = ({ controlsModal: { isModalOpen, closeModal } }) => {
   return (
     <DevelopersModalStyled
       onRequestClose={() => closeModal('team_modal')}

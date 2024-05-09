@@ -1,20 +1,28 @@
-import Iconsvg from '../Icon/Icon';
-import { StyledNavList, StyledItem } from './Navigation.styled';
-import { useRef, useState } from 'react';
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import links from '../../components/Navigation/links.json';
 
-const Navigation = ({ activeSection, onClose }) => {
+import Iconsvg from '../../../components/Icon/Icon';
+import { StyledNavList, StyledItem } from './Navigation.styled';
+import links from '../../../constants/links_menu.json';
+
+const Navigation = ({ activeSection, closeModal }) => {
   const [hoveredIndex, setHoveredIndex] = useState(null);
-  const sectionRef = useRef(null);
 
   const scrollToSection = (sectionId) => {
-    const sectionElement = document.getElementById(sectionId);
-    window.scrollTo({
-      top: sectionElement.offsetTop - 120,
-      behavior: 'smooth',
-    });
-    onClose();
+    closeModal('menu_modal');
+
+    if (sectionId !== 'main') {
+      const sectionElement = document.getElementById(sectionId);
+      window.scrollTo({
+        top: sectionElement.offsetTop - 100,
+        behavior: 'smooth',
+      });
+    } else {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth',
+      });
+    }
   };
 
   const handleMouseEnter = (id) => {
@@ -36,10 +44,8 @@ const Navigation = ({ activeSection, onClose }) => {
               onMouseLeave={handleMouseLeave}
             >
               <Link
-                to={`/MistoHub#${link.id}`}
                 onClick={() => scrollToSection(link.id)}
                 className={activeSection === link.id ? 'active' : 'link'}
-                ref={sectionRef}
               >
                 {link.value}
               </Link>

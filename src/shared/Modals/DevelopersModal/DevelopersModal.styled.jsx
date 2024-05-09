@@ -1,11 +1,12 @@
 import { styled } from 'styled-components';
 import Modal from 'react-modal';
-import bgModalMobile from '../../assets/img/bg-modal/bg-modal-mob.png';
-import bgModalTablet from '../../assets/img/bg-modal/bg-modal-tabl.png';
-import bgModalDesktop from '../../assets/img/bg-modal/bg-modal-desk.png';
-import bgModalMobileWebP from '../../assets/img/bg-modal/bg-modal-mob.webp';
-import bgModalTabletWebP from '../../assets/img/bg-modal/bg-modal-tabl.webp';
-import bgModalDesktopWebP from '../../assets/img/bg-modal/bg-modal-desk.webp';
+
+import bgModalMobile from '../../../assets/img/bg-modal/bg-modal-mob.png';
+import bgModalTablet from '../../../assets/img/bg-modal/bg-modal-tabl.png';
+import bgModalDesktop from '../../../assets/img/bg-modal/bg-modal-desk.png';
+import bgModalMobileWebP from '../../../assets/img/bg-modal/bg-modal-mob.webp';
+import bgModalTabletWebP from '../../../assets/img/bg-modal/bg-modal-tabl.webp';
+import bgModalDesktopWebP from '../../../assets/img/bg-modal/bg-modal-desk.webp';
 
 export const DevelopersModalStyled = styled(Modal)`
   position: absolute;

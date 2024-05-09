@@ -22,6 +22,9 @@ const TourModal = forwardRef(({ image, onClose }, ref) => {
     };
   }, [closeTourOnClickOutside]);
 
+  const isIOS =
+    /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+
   return (
     <ModalWrapperTour ref={wrapperRef}>
       <ReactPhotoSphereViewer
@@ -31,11 +34,13 @@ const TourModal = forwardRef(({ image, onClose }, ref) => {
         height={'100%'}
         width={'100%'}
         defaultZoomLvl={10}
-        navbar={['zoom', 'fullscreen']}
+        // navbar={['zoom', 'fullscreen']}
+        // navbar={['move']}
+        navbar={isIOS ? ['move'] : ['zoom', 'fullscreen']}
         loading="lazy"
       />
       <CloseButton onClick={onClose} type="button">
-        <Iconsvg width="20" height="20" iconName="icon-closeX" />
+        <Iconsvg iconName="icon-closeX" />
       </CloseButton>
     </ModalWrapperTour>
   );

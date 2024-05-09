@@ -78,7 +78,7 @@ export const BackgroundVectorsContainer = styled.div`
     background-repeat: no-repeat;
   }
 
-  @media (max-width: 374px) {
+  @media screen and (max-width: 374px) {
     .octagonIcon {
       left: -28px;
     }
@@ -100,7 +100,7 @@ export const BackgroundVectorsContainer = styled.div`
     }
   }
 
-  @media (min-width: 767px) {
+  @media screen and (min-width: 768px) {
     .instagramIcon {
       width: 16px;
       height: 16px;
@@ -148,7 +148,7 @@ export const BackgroundVectorsContainer = styled.div`
     }
   }
 
-  @media (min-width: 1439px) {
+  @media screen and (min-width: 1440px) {
     .zigzagIcon {
       width: 69px;
       height: 78px;
