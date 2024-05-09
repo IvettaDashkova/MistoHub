@@ -54,14 +54,14 @@ const ModalInvestors = ({ data, onClose, isOpen }) => {
                     <Iconsvg
                       width="28"
                       height="28"
-                      iconName="icon-icon"
+                      iconName="icon-faceb"
                       styles="instaIcon"
                     />
                   ) : (
                     <Iconsvg
                       width="28"
                       height="28"
-                      iconName="icon-facebook"
+                      iconName="icon-instagram"
                       styles="instaIcon"
                     />
                   )}
@@ -78,9 +78,9 @@ const ModalInvestors = ({ data, onClose, isOpen }) => {
               </button>
               <button className="closeButton" onClick={onClose}>
                 <Iconsvg
-                  width="28"
-                  height="28"
-                  iconName="icon-x"
+                  width="12"
+                  height="12"
+                  iconName="close"
                   styles="close-icon"
                 />
               </button>
