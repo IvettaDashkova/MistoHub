@@ -13,7 +13,12 @@ const InvestorsPeople = () => {
   const isMobile = useMediaQuery({ maxWidth: 767 });
   const isTablet = useMediaQuery({ maxWidth: 1440 });
 
+  const defaultImage = 'src/assets/investors/default-img.jpg';
+
   function formImgURL(img) {
+    if (!img || !img.asset) {
+      return defaultImage;
+    }
     const imgData = img.asset._ref.split('-');
     return `https://cdn.sanity.io/images/${
       import.meta.env.VITE_ADMIN_PROJECT_ID
@@ -113,6 +118,7 @@ const InvestorsPeople = () => {
           </ul>
         </div>
       ))}
+
       {selectedInvestor && (
         <ModalInvestors
           data={selectedInvestor}

@@ -44,7 +44,7 @@ export async function fetchPeople() {
         import.meta.env.VITE_ADMIN_DATASET
       }?query=*[_type=="people"]{ _id, id,firstName,secondName,type, imageURL, facebook, instagram, otherLink, question, answer  } | order(id asc)`
     );
-    return Array(93).fill(result[0]);
+    return result;
   } catch (error) {
     return;
   }
