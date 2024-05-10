@@ -10,6 +10,7 @@ const InvestorsCompanies = () => {
   const [selectedCompanies, setSelectedCompanies] = useState(null);
 
   function formImgURL(img) {
+    if (!img) return defaultImage;
     const imgData = img.asset._ref.split('-');
 
     return `https://cdn.sanity.io/images/${
