@@ -92,6 +92,7 @@ export const Title = styled.h2`
   font-size: 24px;
   line-height: 133%;
   color: #ffffff;
+    font-family: Oddval;
 
   @media screen and (min-width: 768px) {
     font-size: 45px;

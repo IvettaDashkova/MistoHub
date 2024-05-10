@@ -9,6 +9,7 @@ function App() {
   return (
     <ModalProvider>
       <Routes>
+        <Route path="/" element={<HomePage />} />
         <Route path="*" element={<HomePage />} />
       </Routes>
     </ModalProvider>
