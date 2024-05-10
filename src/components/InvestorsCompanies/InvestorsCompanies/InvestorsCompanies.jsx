@@ -10,7 +10,6 @@ const InvestorsCompanies = () => {
   const [selectedCompanies, setSelectedCompanies] = useState(null);
 
   function formImgURL(img) {
-    if (!img) return defaultImage;
     const imgData = img.asset._ref.split('-');
 
     return `https://cdn.sanity.io/images/${
@@ -50,7 +49,11 @@ const InvestorsCompanies = () => {
             {companiesData.map((company) => (
               <li key={nanoid()}>
                 <img
-                  src={formImgURL(company.logoURL)}
+                  src={
+                    formImgURL(company.logoURL)
+                      ? formImgURL(company.logoURL)
+                      : defaultImage
+                  }
                   alt={`Company ${company.id}`}
                   onClick={() => openModal(company)}
                   loading="lazy"
