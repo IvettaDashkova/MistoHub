@@ -8,8 +8,9 @@ const InvestorsCompanies = () => {
   const [companiesData, setCompaniesData] = useState(null);
   const [selectedCompanies, setSelectedCompanies] = useState(null);
 
+  const defaultImage = 'src/assets/investors/default-img.jpg';
   function formImgURL(img) {
-    if (!img) return '';
+    if (!img) return defaultImage;
     const imgData = img.asset._ref.split('-');
 
     return `https://cdn.sanity.io/images/${
@@ -56,14 +57,14 @@ const InvestorsCompanies = () => {
                 />
               </li>
             ))}
-            {selectedCompanies && (
-              <ModalCompanies
-                isOpen={selectedCompanies !== null}
-                data={selectedCompanies}
-                onClose={closeModal}
-              />
-            )}
           </ul>
+          {selectedCompanies && (
+            <ModalCompanies
+              isOpen={selectedCompanies !== null}
+              data={selectedCompanies}
+              onClose={closeModal}
+            />
+          )}
         </div>
       )}
     </CompanyWrapper>

@@ -6,30 +6,31 @@ export const CompanyWrapper = styled.div`
     position: relative;
     display: flex;
     overflow: hidden;
+    // width: 100%;
   }
   @keyframes moveRightToLeft {
     0% {
-      transform: translateX(0%);
+      transform: translateX(10%);
     }
-    25% {
-      transform: translateX(-25%);
-    }
-    50% {
-      transform: translateX(-50%);
-    }
-    75% {
-      transform: translateX(-75%);
-    }
+    // 25% {
+    //   transform: translateX(-25%);
+    // }
+    // 50% {
+    //   transform: translateX(-50%);
+    // }
+    // 75% {
+    //   transform: translateX(-75%);
+    // }
     100% {
-      transform: translateX(-100%);
+      transform: translateX(-58%);
     }
   }
 
   ul {
     display: flex;
     gap: 12px;
-    width: 100vw;
-    animation: moveRightToLeft 10s linear infinite;
+    // width: 300%;
+    animation: moveRightToLeft 20s linear infinite;
   }
 
   ul:hover {
@@ -55,7 +56,7 @@ export const CompanyWrapper = styled.div`
     ul {
       display: flex;
       gap: 32px;
-      width: 100vw;
+      width: 100%;
       animation: moveRightToLeft 10s linear infinite;
     }
 

@@ -2,11 +2,12 @@ import styled, { keyframes } from 'styled-components';
 
 const animToLeft = keyframes`
   0% {
-    transform: translateX(0)
+    transform: translateX(0%)
   }
   100% {
-    transform: translateX(-100%)
+    transform: translateX(-260%)
   }
+
   `;
 
 const animToRight = keyframes`

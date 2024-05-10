@@ -26,8 +26,8 @@ const JoinUs = () => {
     const fetchData = async () => {
       const people = await fetchPeople();
       const companies = await fetchCompanies();
-      setCompanies(companies.length);
-      setPeople(people.length);
+      setCompanies(companies?.length);
+      setPeople(people?.length);
     };
     fetchData();
   }, []);
