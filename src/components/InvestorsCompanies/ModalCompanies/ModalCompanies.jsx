@@ -1,23 +1,11 @@
 import { CustomModal, ModalCompanyWrapper } from './ModalCompanies.styled';
 import Iconsvg from '../../Icon/Icon';
+import defaultImage from 'src/assets/investors/default-img.png';
 
 const ModalCompanies = ({ isOpen, data, onClose }) => {
   const { name, logoURL, link, question, answer } = data;
 
   if (!isOpen) return null;
-
-  const defaultImage = 'src/assets/investors/default-img.jpg';
-
-  function formImgURL(img) {
-    if (!img) return defaultImage;
-    const imgData = img.asset._ref.split('-');
-
-    return `https://cdn.sanity.io/images/${
-      import.meta.env.VITE_ADMIN_PROJECT_ID
-    }/${import.meta.env.VITE_ADMIN_DATASET}/${imgData[1]}-${imgData[2]}.${
-      imgData[3]
-    }`;
-  }
 
   return (
     <CustomModal
@@ -34,7 +22,7 @@ const ModalCompanies = ({ isOpen, data, onClose }) => {
             <div className="title-wrapper">
               <img
                 className="main-image"
-                src={formImgURL(logoURL)}
+                src={logoURL || defaultImage}
                 alt={name}
                 loading="lazy"
               />

@@ -3,6 +3,7 @@ import {
   ModalCompanyWrapper,
 } from '../ModalCompanies/ModalCompanies.styled';
 import Iconsvg from '../../Icon/Icon';
+import defaultImage from 'src/assets/investors/noname.jpg';
 
 const ModalInvestors = ({ data, onClose, isOpen }) => {
   const {
@@ -15,18 +16,6 @@ const ModalInvestors = ({ data, onClose, isOpen }) => {
     question,
     answer,
   } = data;
-
-  const defaultImage = 'src/assets/investors/default-img.jpg';
-  function formImgURL(img) {
-    if (!img) return defaultImage;
-    const imgData = img.asset._ref.split('-');
-
-    return `https://cdn.sanity.io/images/${
-      import.meta.env.VITE_ADMIN_PROJECT_ID
-    }/${import.meta.env.VITE_ADMIN_DATASET}/${imgData[1]}-${imgData[2]}.${
-      imgData[3]
-    }`;
-  }
 
   return (
     <CustomModal
@@ -43,7 +32,7 @@ const ModalInvestors = ({ data, onClose, isOpen }) => {
             <div className="title-wrapper">
               <img
                 className="main-image"
-                src={formImgURL(imageURL)}
+                src={imageURL ? imageURL : defaultImage}
                 alt={`${firstName} ${secondName}`}
                 loading="lazy"
               />

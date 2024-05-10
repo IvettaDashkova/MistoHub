@@ -1,40 +1,24 @@
 import { useEffect, useMemo, useState } from 'react';
-import { fetchPeople } from '../../../services/API';
 import ModalInvestors from '../ModalInvestors/ModalInvestors';
 import { ListWrapper } from './InvestorsPeople.styled';
 import { nanoid } from 'nanoid';
 import { useMediaQuery } from 'react-responsive';
 import { confirmTriggerZone } from '../../../helpers/confirmTriggerZone';
+import defaultImage from 'src/assets/investors/noname.jpg';
 
-const InvestorsPeople = () => {
+const InvestorsPeople = ({people}) => {
   const [peopleData, setPeopleData] = useState(null);
   const [selectedInvestor, setSelectedInvestor] = useState(null);
   const [isOpen, setIsOpen] = useState(false);
   const isMobile = useMediaQuery({ maxWidth: 767 });
   const isTablet = useMediaQuery({ maxWidth: 1440 });
 
-  const defaultImage = 'src/assets/investors/default-img.jpg';
-
-  function formImgURL(img) {
-    if (!img || !img.asset) {
-      return defaultImage;
-    }
-    const imgData = img.asset._ref.split('-');
-    return `https://cdn.sanity.io/images/${
-      import.meta.env.VITE_ADMIN_PROJECT_ID
-    }/${import.meta.env.VITE_ADMIN_DATASET}/${imgData[1]}-${imgData[2]}.${
-      imgData[3]
-    }`;
-  }
-
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const peopleResponse = await fetchPeople();
-        if (!peopleResponse) return;
         const newGroups = [];
-        for (let i = 0; i < peopleResponse.length; i += 25) {
-          newGroups.push(peopleResponse.slice(i, i + 25));
+        for (let i = 0; i < people.length; i += 25) {
+          newGroups.push(people.slice(i, i + 25));
         }
         setPeopleData(newGroups);
       } catch (error) {
@@ -42,7 +26,7 @@ const InvestorsPeople = () => {
       }
     };
     fetchData();
-  }, []);
+  }, [people]);
 
   const checkPosition = useMemo(() => {
     return (containerIndex) => {
@@ -109,7 +93,7 @@ const InvestorsPeople = () => {
                   onClick={() => openModal(investor)}
                 >
                   <img
-                    src={formImgURL(investor.imageURL)}
+                    src={investor.imageURL ? investor.imageURL : defaultImage}
                     alt={`Investor ${investor.id}`}
                     loading="lazy"
                   />

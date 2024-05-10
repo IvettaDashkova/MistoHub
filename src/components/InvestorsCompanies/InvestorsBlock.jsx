@@ -1,5 +1,4 @@
-import { useEffect, useState } from 'react';
-import { fetchCompanies, fetchPeople } from '../../services/API';
+import { useState } from 'react';
 import InvestorsPeople from './InvestorsPeople/InvestorsPeople';
 import InvestorsCompanies from './InvestorsCompanies/InvestorsCompanies';
 import ModalInvestors from './ModalInvestors/ModalInvestors';
@@ -13,21 +12,9 @@ import {
   TextWrapper,
 } from './InvestorsBlock.styled';
 
-const InvestorsBlock = () => {
-  const [companies, setCompanies] = useState([]);
-  const [people, setPeople] = useState([]);
+const InvestorsBlock = ({people, companies}) => {
+
   const [selectedItem, setSelectedItem] = useState(null);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      const companiesData = await fetchCompanies();
-      const peopleData = await fetchPeople();
-      setCompanies(companiesData);
-      setPeople(peopleData);
-    };
-
-    fetchData();
-  }, []);
 
   const closeModal = () => {
     setSelectedItem(null);
@@ -37,19 +24,15 @@ const InvestorsBlock = () => {
       <TextWrapper>
         <InfoText>Імпакт-інвестори МІСТОХАБ</InfoText>
         <MainHeading>З нами вже</MainHeading>
-        <SecondHeading>
-          {people?.length} {getWordForCount(people?.length, 'p')}
-        </SecondHeading>
+        <SecondHeading>{people?.length} {getWordForCount(people.length, 'p')}</SecondHeading>
       </TextWrapper>
       <PeopleContainer>
-        <InvestorsPeople />
+       {people &&  <InvestorsPeople people={people} />}
 
         <TextWrapper>
-          <SecondHeading>
-            {companies?.length} {getWordForCount(companies?.length, 'k')}
-          </SecondHeading>
+          <SecondHeading>{companies?.length} {getWordForCount(companies.length, 'k')}</SecondHeading>
         </TextWrapper>
-        <InvestorsCompanies />
+      {companies &&   <InvestorsCompanies companies={companies} />}
       </PeopleContainer>
       {selectedItem && (
         <ModalInvestors data={selectedItem} onClose={closeModal} />

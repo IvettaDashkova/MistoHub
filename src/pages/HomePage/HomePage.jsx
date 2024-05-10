@@ -1,4 +1,5 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useMemo } from 'react';
+import { fetchCompanies, fetchPeople } from '../../services/API';
 import { useLocation } from 'react-router-dom';
 import Modal from 'react-modal';
 
@@ -20,6 +21,26 @@ Modal.setAppElement('#root');
 const HomePage = () => {
   const [activeSection, setActiveSection] = useState('main');
   const location = useLocation();
+
+    const [companies, setCompanies] = useState([]);
+  const [people, setPeople] = useState([]);
+
+ const memoizedFetchData = useMemo(() => async () => {
+    try {
+      const [companiesData, peopleData] = await Promise.all([
+        fetchCompanies(),
+        fetchPeople()
+      ]);
+      setCompanies(companiesData);
+      setPeople(peopleData);
+    } catch (error) {
+      console.error('Error fetching data:', error);
+    }
+ }, []);
+  
+  useEffect(() => {
+    memoizedFetchData();
+  }, [memoizedFetchData]);
 
   useEffect(() => {
     const { hash } = location;
@@ -78,8 +99,8 @@ const HomePage = () => {
         <AboutProject />
         <Visualization />
         <AccumulatedMoney />
-        <InvestorsBlock />
-        <JoinUs />
+        <InvestorsBlock people={people} companies={companies}/>
+        <JoinUs people={people} companies={companies} />
         <CoFounders />
         <ScrollToTopButton />
       </main>
