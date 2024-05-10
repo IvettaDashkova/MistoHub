@@ -1,23 +1,13 @@
-import styled, { keyframes } from 'styled-components';
+import styled, { keyframes, css } from 'styled-components';
 
-const animToLeft = keyframes`
+const generateKeyframes = ({ startTranslate, endTranslate }) => keyframes`
   0% {
-    transform: translateX(0%)
+    transform: translateX(${startTranslate}%);
   }
   100% {
-    transform: translateX(-260%)
+    transform: translateX(${endTranslate}%);
   }
-
-  `;
-
-const animToRight = keyframes`
-  0% {
-    transform: translateX(-100%)
-  }
-  100% {
-    transform: translateX(0)
-  }
-  `;
+`;
 
 export const ListWrapper = styled.div`
   display: flex;
@@ -35,23 +25,102 @@ export const ListWrapper = styled.div`
     flex-wrap: nowrap;
     column-gap: 13px;
   }
+`;
+export const Container = styled.div`
+max-width: 375px;
+overflow: hidden;
+@media screen and (min-width: 768px) {
+  max-width: 768px;
+}
+@media screen and (min-width: 1440px) {
+  max-width: 1440px;
+}
+`
+export const GroupContainer = styled.div`
+  ${props => {
 
-  .group-0 ul {
-    animation: ${animToLeft} 14s linear infinite;
-  }
+    const left = {
+      startTranslate: 0,
+      endTranslate: -(props.length*props.length - 4*props.length)
+    };
+    const right = {
+      startTranslate: props.length === 25 ?  -(props.length*props.length -  4*props.length):  -(props.length*props.length + props.length),
+      endTranslate: 0
+    };
+  const animToLeft = generateKeyframes(left);
+  const animToRight = generateKeyframes(right);
 
-  .group-1 ul {
-    animation: ${animToRight} 33s linear infinite;
-  }
+    const leftDesktop = {
+      startTranslate: 0,
+      endTranslate: -(props.length*props.length - 14*props.length)
+    };
+    const rightDesktop = {
+      startTranslate: props.length === 25 ?  -(props.length*props.length -  14*props.length):  -(props.length*props.length - 8* props.length),
+      endTranslate: 0
+    };
+    const animToLeftDesktop = generateKeyframes(leftDesktop);
+  const animToRightDesktop = generateKeyframes(rightDesktop);
 
-  .group-2 ul {
-    animation: ${animToLeft} 33s linear infinite;
-  }
+  return css`
+        color: red;
+     &.group-0 {
+      overflow:visible;
+        animation: ${css`${animToLeft} 133s linear infinite`};
+      }
+      &.group-1 {
+        overflow:visible;
+        animation: ${css`${animToRight} 133s linear infinite`};
+      }
+      &.group-2 {
+          overflow:visible;
+        animation: ${css`${animToLeft} 133s linear infinite`};
+      }
+      &.group-3 {
+          overflow:visible;
+        animation: ${css`${animToRight} 133s linear infinite`};
+      }
+       &.group-4 {
+      overflow:visible;
+        animation: ${css`${animToLeft} 133s linear infinite`};
+      }
+       &.group-5 {
+        overflow:visible;
+        animation: ${css`${animToRight} 133s linear infinite`};
+      }
+       &.group-0:hover, &.group-1:hover, &.group-2:hover, &.group-3:hover, &.group-4:hover, &.group-5:hover {
+      animation-play-state: paused;
+    }
 
-  .group-3 ul {
-    animation: ${animToRight} 14s linear infinite;
-  }
+        @media screen and (min-width: 1440px) {
+   &.group-0 {
+      overflow:visible;
+        animation: ${css`${animToLeftDesktop} 133s linear infinite`};
+      }
+      &.group-1 {
+        overflow:visible;
+        animation: ${css`${animToRightDesktop} 133s linear infinite`};
+      }
+      &.group-2 {
+          overflow:visible;
+        animation: ${css`${animToLeftDesktop} 133s linear infinite`};
+      }
+      &.group-3 {
+          overflow:visible;
+        animation: ${css`${animToRightDesktop} 133s linear infinite`};
+      }
+ &.group-4 {
+      overflow:visible;
+        animation: ${css`${animToLeftDesktop} 133s linear infinite`};
+      }
+       &.group-5 {
+      overflow:visible;
+        animation: ${css`${animToLeftDesktop} 133s linear infinite`};
+      }
 
+        }
+    `;
+
+  }}
   .item-list {
     width: 80px;
     height: 62px;
@@ -91,21 +160,6 @@ export const ListWrapper = styled.div`
 
   @media screen and (min-width: 768px) {
     row-gap: 30px;
-    .group-0 ul {
-      animation: ${animToLeft} 15s linear infinite;
-    }
-
-    .group-1 ul {
-      animation: ${animToRight} 35s linear infinite;
-    }
-
-    .group-2 ul {
-      animation: ${animToLeft} 35s linear infinite;
-    }
-
-    .group-3 ul {
-      animation: ${animToRight} 15s linear infinite;
-    }
 
     ul {
       column-gap: 30px;
@@ -116,10 +170,7 @@ export const ListWrapper = styled.div`
       height: 140px;
     }
 
-    ul:hover {
-      animation-play-state: paused;
-    }
-
+   
     img {
       width: 180px;
       height: 140px;
@@ -128,21 +179,6 @@ export const ListWrapper = styled.div`
   }
 
   @media screen and (min-width: 1440px) {
-    .group-0 ul {
-      animation: ${animToLeft} 30s linear infinite;
-    }
-
-    .group-1 ul {
-      animation: ${animToRight} 80s linear infinite;
-    }
-
-    .group-2 ul {
-      animation: ${animToLeft} 80s linear infinite;
-    }
-
-    .group-3 ul {
-      animation: ${animToRight} 30s linear infinite;
-    }
 
     .item-list img {
       filter: opacity(0px);
