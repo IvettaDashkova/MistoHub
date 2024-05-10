@@ -22,14 +22,6 @@ export const StyledNavList = styled.ul`
   }
 
   .active {
-    /* font-family: 'Oddval', 'Inter', sans-serif;
-    font-weight: 600;
-    font-size: 24px;
-    line-height: 1.17;
-    letter-spacing: -0.02em; */
-    /* color: #0b0b0b; */
-    /* outline: none;
-    border: none; */
     color: #f77d07;
 
     svg {
@@ -52,19 +44,6 @@ export const StyledNavList = styled.ul`
   }
 
   .link {
-    /* font-family: 'Oddval', 'Inter', sans-serif;
-    font-weight: 600;
-    font-size: 24px;
-    line-height: 1.17;
-    letter-spacing: -0.02em;
-    color: #0b0b0b;
-    outline: none;
-    border: none;
-    display: flex;
-    flex-wrap: nowrap;
-    align-items: center;
-    justify-content: space-between; */
-
     svg {
       display: none;
     }
@@ -83,14 +62,6 @@ export const StyledNavList = styled.ul`
       font-size: 44px;
     }
   }
-
-  /* a svg {
-    display: none;
-  } */
-
-  /* a:hover svg {
-    display: block;
-  } */
 `;
 
 export const StyledItem = styled.li`
