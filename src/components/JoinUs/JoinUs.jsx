@@ -26,8 +26,8 @@ const JoinUs = () => {
     const fetchData = async () => {
       const people = await fetchPeople();
       const companies = await fetchCompanies();
-      setCompanies(companies.length);
-      setPeople(people.length);
+      setCompanies(companies?.length);
+      setPeople(people?.length);
     };
     fetchData();
   }, []);
@@ -37,14 +37,18 @@ const JoinUs = () => {
       <JoinUsContainer>
         <Title>Приєднуйся до спільноти людей, які змінюють Полтаву!</Title>
         <Description>
-          Саме імпакт-інвестори будуть вливати на розподіл коштів серед проєктів
-          містян
+          Саме імпакт-інвестори будуть впливати на розподіл коштів серед
+          проєктів містян
         </Description>
         <StatsContainer>
           <StatsTitle>До відкриття МІСТОХАБ залишилось:</StatsTitle>
           <StatsList>
-            <StatsListItem>{116 - people} {getWordForCount(116 - people, 'i')}</StatsListItem>
-            <StatsListItem>{17 - companies} {getWordForCount(17 - companies, 'k')}</StatsListItem>
+            <StatsListItem>
+              {116 - people} {getWordForCount(116 - people, 'i')}
+            </StatsListItem>
+            <StatsListItem>
+              {17 - companies} {getWordForCount(17 - companies, 'k')}
+            </StatsListItem>
           </StatsList>
         </StatsContainer>
         <JoinButton type="button" onClick={() => openModal('join_modal')}>

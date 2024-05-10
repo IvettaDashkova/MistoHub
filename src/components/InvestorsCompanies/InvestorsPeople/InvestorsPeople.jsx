@@ -31,6 +31,7 @@ const InvestorsPeople = () => {
     const fetchData = async () => {
       try {
         const peopleResponse = await fetchPeople();
+        if (!peopleResponse) return;
         const newGroups = [];
         for (let i = 0; i < peopleResponse.length; i += 25) {
           newGroups.push(peopleResponse.slice(i, i + 25));
@@ -118,7 +119,6 @@ const InvestorsPeople = () => {
           </ul>
         </div>
       ))}
-
       {selectedInvestor && (
         <ModalInvestors
           data={selectedInvestor}

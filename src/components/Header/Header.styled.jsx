@@ -25,8 +25,8 @@ export const StyledHeader = styled.header`
   }
 
   .dark-header.hidden-wrap {
-    background-color: rgba(255, 255, 255, 0.07);
-    backdrop-filter: blur(17.4px);
+    background-color: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
   }
 
   .hidden-wrap.hidden {

@@ -3,7 +3,7 @@ import { AboutProjectContainer } from './AboutProject.styled';
 
 export const AboutContainer = styled(AboutProjectContainer)`
   margin-bottom: 60px;
-  
+
   .about-project {
     font-size: 14px;
     font-weight: 500;
@@ -191,7 +191,7 @@ export const AboutContainer = styled(AboutProjectContainer)`
     .about-list {
       gap: 24px;
     }
-    .about-list-item{
+    .about-list-item {
       width: 369px !important;
       &:nth-of-type(3) {
         width: 414px !important;
