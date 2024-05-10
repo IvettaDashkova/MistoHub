@@ -13,6 +13,7 @@ import {
   StyledText,
   TopContainer,
 } from './BurgerMenu.styled';
+import CloseButton from '../CloseButton/CloseButton';
 
 const BurgerMenu = ({ controlsMenuModal }) => {
   const { activeSection, isModalOpen, openModal, closeModal } =
@@ -38,15 +39,7 @@ const BurgerMenu = ({ controlsMenuModal }) => {
           <BtnSupport type="button" onClick={() => openModal('join_modal')}>
             Підтримати проєкт
           </BtnSupport>
-          <button
-            type="button"
-            title="Закрити вікно"
-            onClick={() => closeModal('menu_modal')}
-            className="close-button"
-          >
-            <span>Закрити</span>
-            <Iconsvg iconName="close" width="14" height="14" />
-          </button>
+          <CloseButton onClose={() => closeModal('menu_modal')} />
         </BtnContainer>
       </TopContainer>
 
