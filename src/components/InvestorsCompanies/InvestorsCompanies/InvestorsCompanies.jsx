@@ -3,12 +3,12 @@ import { fetchCompanies } from '../../../services/API';
 import ModalCompanies from '../ModalCompanies/ModalCompanies';
 import { CompanyWrapper } from './InvestorsCompanies.styled';
 import { nanoid } from 'nanoid';
+import defaultImage from 'src/assets/investors/default-img.jpg';
 
 const InvestorsCompanies = () => {
   const [companiesData, setCompaniesData] = useState(null);
   const [selectedCompanies, setSelectedCompanies] = useState(null);
 
-  const defaultImage = 'src/assets/investors/default-img.jpg';
   function formImgURL(img) {
     if (!img) return defaultImage;
     const imgData = img.asset._ref.split('-');
