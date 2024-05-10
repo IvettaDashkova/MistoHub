@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from 'react';
 import ModalInvestors from '../ModalInvestors/ModalInvestors';
-import { ListWrapper } from './InvestorsPeople.styled';
+import { ListWrapper, GroupContainer, Container } from './InvestorsPeople.styled';
 import { nanoid } from 'nanoid';
 import { useMediaQuery } from 'react-responsive';
 import { confirmTriggerZone } from '../../../helpers/confirmTriggerZone';
@@ -30,7 +30,7 @@ const InvestorsPeople = ({people}) => {
 
   const checkPosition = useMemo(() => {
     return (containerIndex) => {
-      const container = document.getElementById(`container-${containerIndex}`);
+      const container = document.getElementById(`investors-anim`);
       const elements = container.getElementsByClassName('item-list');
 
       for (const element of elements) {
@@ -78,10 +78,12 @@ const InvestorsPeople = ({people}) => {
 
   return (
     <ListWrapper>
+      <Container id="investors-anim">
       {peopleData?.map((group, index) => (
-        <div
+     <GroupContainer
           id={`container-${index}`}
           key={nanoid()}
+          length={group.length}
           className={`group-${index} ${index % 2 === 0 ? 'odd-group' : 'even-group'}`}
         >
           <ul>
@@ -101,8 +103,9 @@ const InvestorsPeople = ({people}) => {
               </li>
             ))}
           </ul>
-        </div>
+        </GroupContainer>
       ))}
+        </Container>
       {selectedInvestor && (
         <ModalInvestors
           data={selectedInvestor}
