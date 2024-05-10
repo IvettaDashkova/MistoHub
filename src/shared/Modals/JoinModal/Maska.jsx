@@ -11,7 +11,7 @@ const Maska = () => {
       <picture>
         <source
           className="joinImg"
-          srcSet={`${maska_webp1} 1x, ${maska_webp2} 2x`} //
+          srcSet={`${maska_webp1} 1x, ${maska_webp2} 2x`}
           type="image/png"
         />
         <source
