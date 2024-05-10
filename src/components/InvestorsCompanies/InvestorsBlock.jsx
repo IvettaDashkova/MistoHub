@@ -37,13 +37,17 @@ const InvestorsBlock = () => {
       <TextWrapper>
         <InfoText>Імпакт-інвестори МІСТОХАБ</InfoText>
         <MainHeading>З нами вже</MainHeading>
-        <SecondHeading>{people.length} {getWordForCount(people.length, 'p')}</SecondHeading>
+        <SecondHeading>
+          {people?.length} {getWordForCount(people?.length, 'p')}
+        </SecondHeading>
       </TextWrapper>
       <PeopleContainer>
         <InvestorsPeople />
 
         <TextWrapper>
-          <SecondHeading>{companies.length} {getWordForCount(companies.length, 'k')}</SecondHeading>
+          <SecondHeading>
+            {companies?.length} {getWordForCount(companies?.length, 'k')}
+          </SecondHeading>
         </TextWrapper>
         <InvestorsCompanies />
       </PeopleContainer>

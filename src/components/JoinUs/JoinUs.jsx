@@ -26,8 +26,8 @@ const JoinUs = () => {
     const fetchData = async () => {
       const people = await fetchPeople();
       const companies = await fetchCompanies();
-      setCompanies(companies.length);
-      setPeople(people.length);
+      setCompanies(companies?.length);
+      setPeople(people?.length);
     };
     fetchData();
   }, []);
@@ -43,8 +43,12 @@ const JoinUs = () => {
         <StatsContainer>
           <StatsTitle>До відкриття МІСТОХАБ залишилось:</StatsTitle>
           <StatsList>
-            <StatsListItem>{116 - people} {getWordForCount(116 - people, 'i')}</StatsListItem>
-            <StatsListItem>{17 - companies} {getWordForCount(17 - companies, 'k')}</StatsListItem>
+            <StatsListItem>
+              {116 - people} {getWordForCount(116 - people, 'i')}
+            </StatsListItem>
+            <StatsListItem>
+              {17 - companies} {getWordForCount(17 - companies, 'k')}
+            </StatsListItem>
           </StatsList>
         </StatsContainer>
         <JoinButton type="button" onClick={() => openModal('join_modal')}>
