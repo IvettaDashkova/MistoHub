@@ -1,12 +1,16 @@
 import { useEffect, useMemo, useState } from 'react';
 import ModalInvestors from '../ModalInvestors/ModalInvestors';
-import { ListWrapper, GroupContainer, Container } from './InvestorsPeople.styled';
+import {
+  ListWrapper,
+  GroupContainer,
+  Container,
+} from './InvestorsPeople.styled';
 import { nanoid } from 'nanoid';
 import { useMediaQuery } from 'react-responsive';
 import { confirmTriggerZone } from '../../../helpers/confirmTriggerZone';
 import defaultImage from 'src/assets/investors/noname.jpg';
 
-const InvestorsPeople = ({people}) => {
+const InvestorsPeople = ({ people }) => {
   const [peopleData, setPeopleData] = useState(null);
   const [selectedInvestor, setSelectedInvestor] = useState(null);
   const [isOpen, setIsOpen] = useState(false);
@@ -79,33 +83,33 @@ const InvestorsPeople = ({people}) => {
   return (
     <ListWrapper>
       <Container id="investors-anim">
-      {peopleData?.map((group, index) => (
-     <GroupContainer
-          id={`container-${index}`}
-          key={nanoid()}
-          length={group.length}
-          className={`group-${index} ${index % 2 === 0 ? 'odd-group' : 'even-group'}`}
-        >
-          <ul>
-            {group.map((investor) => (
-              <li key={nanoid()}>
-                <button
-                  className="item-list"
-                  type="button"
-                  onClick={() => openModal(investor)}
-                >
-                  <img
-                    src={investor.imageURL ? investor.imageURL : defaultImage}
-                    alt={`Investor ${investor.id}`}
-                    loading="lazy"
-                  />
-                </button>
-              </li>
-            ))}
-          </ul>
-        </GroupContainer>
-      ))}
-        </Container>
+        {peopleData?.map((group, index) => (
+          <GroupContainer
+            id={`container-${index}`}
+            key={nanoid()}
+            length={group.length}
+            className={`group-${index} ${index % 2 === 0 ? 'odd-group' : 'even-group'}`}
+          >
+            <ul>
+              {group.map((investor) => (
+                <li key={nanoid()}>
+                  <button
+                    className="item-list"
+                    type="button"
+                    onClick={() => openModal(investor)}
+                  >
+                    <img
+                      src={investor.imageURL ? investor.imageURL : defaultImage}
+                      alt={`Investor ${investor.id}`}
+                      loading="lazy"
+                    />
+                  </button>
+                </li>
+              ))}
+            </ul>
+          </GroupContainer>
+        ))}
+      </Container>
       {selectedInvestor && (
         <ModalInvestors
           data={selectedInvestor}

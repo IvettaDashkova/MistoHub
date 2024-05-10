@@ -1,13 +1,13 @@
 import axios from 'axios';
 
-  function formImgURL(img) {
-    const imgData = img.asset._ref.split('-');
-    return `https://cdn.sanity.io/images/${
-      import.meta.env.VITE_ADMIN_PROJECT_ID
-    }/${import.meta.env.VITE_ADMIN_DATASET}/${imgData[1]}-${imgData[2]}.${
-      imgData[3]
-    }`;
-  }
+function formImgURL(img) {
+  const imgData = img.asset._ref.split('-');
+  return `https://cdn.sanity.io/images/${
+    import.meta.env.VITE_ADMIN_PROJECT_ID
+  }/${import.meta.env.VITE_ADMIN_DATASET}/${imgData[1]}-${imgData[2]}.${
+    imgData[3]
+  }`;
+}
 
 export async function fetchGoal() {
   try {
@@ -37,13 +37,13 @@ export async function fetchCompanies() {
       }?query=*[_type=="companies"]{ _id, id, name, logoURL, link, question, answer } | order(id asc)`
     );
 
-     const companies= result.map((res) => {
-       if (res.logoURL) {
-         res.logoURL = formImgURL(res.logoURL);
-       }
-       return res;
-     });
-    
+    const companies = result.map((res) => {
+      if (res.logoURL) {
+        res.logoURL = formImgURL(res.logoURL);
+      }
+      return res;
+    });
+
     return companies;
   } catch (error) {
     return;
@@ -59,16 +59,16 @@ export async function fetchPeople() {
       }/data/query/${
         import.meta.env.VITE_ADMIN_DATASET
       }?query=*[_type=="people"]{ _id, id,firstName,secondName,type, imageURL, facebook, instagram, otherLink, question, answer  } | order(id asc)`
-      );
-  
-    const people = result.map(res => {
+    );
+
+    const people = result.map((res) => {
       if (res.imageURL) {
         res.imageURL = formImgURL(res.imageURL);
       }
-      return res
-    })
-     return people;
-    //  return Array(93).fill(people[0]);
+      return res;
+    });
+    // return people;
+    return [...people, ...Array(23).fill(people[0])];
   } catch (error) {
     return;
   }
