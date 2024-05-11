@@ -8,6 +8,7 @@ import {
 import { nanoid } from 'nanoid';
 import { useMediaQuery } from 'react-responsive';
 import { confirmTriggerZone } from '../../../helpers/confirmTriggerZone';
+import { makerGroupsToAnim } from '../../../helpers/makerGroupsToAnim';
 import defaultImage from 'src/assets/investors/noname.jpg';
 
 const InvestorsPeople = ({ people }) => {
@@ -20,10 +21,11 @@ const InvestorsPeople = ({ people }) => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const newGroups = [];
-        for (let i = 0; i < people.length; i += 25) {
-          newGroups.push(people.slice(i, i + 25));
-        }
+        const newGroups = makerGroupsToAnim(people);
+        // const newGroups = [];
+        // for (let i = 0; i < people.length; i += 25) {
+        //   newGroups.push(people.slice(i, i + 25));
+        // }
         setPeopleData(newGroups);
       } catch (error) {
         console.error('Error fetching people data:', error);
