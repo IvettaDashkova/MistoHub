@@ -68,6 +68,7 @@ export async function fetchPeople() {
       return res;
     });
     // return people;
+
     return [...people, ...Array(23).fill(people[0])];
   } catch (error) {
     return;

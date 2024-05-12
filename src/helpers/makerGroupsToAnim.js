@@ -10,7 +10,7 @@ export const makerGroupsToAnim = (data) => {
 
   const lastGroup = newData[newData.length - 1];
 
-  while (lastGroup.length < 25) {
+  while (lastGroup?.length < 25) {
     const randomIndex = Math.floor(
       Math.random() * Array.from(uniqueElements).length
     );
