@@ -11,16 +11,13 @@ export const makerGroupsToAnim = (data) => {
   const lastGroup = newData[newData.length - 1];
 
   while (lastGroup?.length < 25) {
-    const randomIndex = Math.floor(
-      Math.random() * Array.from(uniqueElements).length
+    const arrUniqueEl = Array.from(uniqueElements);
+    const randomIndex = Math.floor(Math.random() * arrUniqueEl.length);
+    const randomElNotUnique = lastGroup.some(
+      (person) => person.id === arrUniqueEl[randomIndex].id
     );
-    const isRandomElInGroup = lastGroup.some(
-      (person) => person.id === Array.from(uniqueElements)[randomIndex].id
-    );
-    !isRandomElInGroup &&
-      lastGroup.push(Array.from(uniqueElements)[randomIndex]);
+    !randomElNotUnique && lastGroup.push(arrUniqueEl[randomIndex]);
   }
 
-  console.log('newData: ', newData);
   return newData;
 };
