@@ -108,7 +108,7 @@ export const GroupContainer = styled.div`
           overflow:visible;
         animation: ${css`${animToRightDesktop} 133s linear infinite`};
       }
- &.group-4 {
+      &.group-4 {
       overflow:visible;
         animation: ${css`${animToLeftDesktop} 133s linear infinite`};
       }

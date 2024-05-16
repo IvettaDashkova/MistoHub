@@ -13,20 +13,27 @@ const InvestorsPeople = ({people}) => {
   const isMobile = useMediaQuery({ maxWidth: 767 });
   const isTablet = useMediaQuery({ maxWidth: 1440 });
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const newGroups = [];
-        for (let i = 0; i < people.length; i += 25) {
-          newGroups.push(people.slice(i, i + 25));
+useEffect(() => {
+  const fetchData = async () => {
+    try {
+      const newGroups = [];
+      for (let i = 0; i < people.length; i += 25) {
+        let group = people.slice(i, i + 25);
+        if (group.length < 25 && i + 25 >= people.length) {
+          const repeatCount = 25 - group.length;
+          group = [...group, ...Array.from({ length: repeatCount }, (_, index) => group[index % group.length])];
         }
-        setPeopleData(newGroups);
-      } catch (error) {
-        console.error('Error fetching people data:', error);
+
+        newGroups.push(group);
       }
-    };
-    fetchData();
-  }, [people]);
+      setPeopleData(newGroups);
+    } catch (error) {
+      console.error('Error fetching people data:', error);
+    }
+  };
+  fetchData();
+}, [people]);
+
 
   const checkPosition = useMemo(() => {
     return (containerIndex) => {
@@ -76,6 +83,7 @@ const InvestorsPeople = ({people}) => {
     setIsOpen(false);
   };
 
+  
   return (
     <ListWrapper>
       <Container id="investors-anim">
@@ -83,7 +91,7 @@ const InvestorsPeople = ({people}) => {
      <GroupContainer
           id={`container-${index}`}
           key={nanoid()}
-          length={group.length}
+          length={25}
           className={`group-${index} ${index % 2 === 0 ? 'odd-group' : 'even-group'}`}
         >
           <ul>
