@@ -4,7 +4,7 @@ import { CompanyWrapper } from './InvestorsCompanies.styled';
 import { nanoid } from 'nanoid';
 import defaultImage from 'src/assets/investors/default-img.png';
 
-const InvestorsCompanies = ({companies: companiesData}) => {
+const InvestorsCompanies = ({ companies: companiesData }) => {
   const [selectedCompanies, setSelectedCompanies] = useState(null);
 
   const openModal = (company) => {
@@ -25,8 +25,7 @@ const InvestorsCompanies = ({companies: companiesData}) => {
             {companiesData.map((company) => (
               <li key={nanoid()}>
                 <img
-                  src={company.logoURL
-                      || defaultImage}
+                  src={company.logoURL || defaultImage}
                   alt={`Company ${company.id}`}
                   onClick={() => openModal(company)}
                   loading="lazy"
