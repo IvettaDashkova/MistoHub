@@ -27,99 +27,138 @@ export const ListWrapper = styled.div`
   }
 `;
 export const Container = styled.div`
-max-width: 375px;
-overflow: hidden;
-@media screen and (min-width: 768px) {
-  max-width: 768px;
-}
-@media screen and (min-width: 1440px) {
-  max-width: 1440px;
-}
-`
+  max-width: 375px;
+  overflow: hidden;
+  @media screen and (min-width: 768px) {
+    max-width: 768px;
+  }
+  @media screen and (min-width: 1440px) {
+    max-width: 1440px;
+  }
+`;
 export const GroupContainer = styled.div`
-  ${props => {
-
+  ${(props) => {
     const left = {
       startTranslate: 0,
-      endTranslate: -(props.length*props.length - 4*props.length)
+      endTranslate:
+        props.length === 25
+          ? -(props.length * props.length - 4 * props.length)
+          : -(props.length * props.length + 17 * props.length),
     };
+
     const right = {
-      startTranslate: props.length === 25 ?  -(props.length*props.length -  4*props.length):  -(props.length*props.length + props.length),
-      endTranslate: 0
+      startTranslate:
+        props.length === 25
+          ? -(props.length * props.length - 4 * props.length)
+          : -(props.length * props.length + props.length),
+      endTranslate: 0,
     };
-  const animToLeft = generateKeyframes(left);
-  const animToRight = generateKeyframes(right);
+    const animToLeft = generateKeyframes(left);
+    const animToRight = generateKeyframes(right);
 
     const leftDesktop = {
       startTranslate: 0,
-      endTranslate: -(props.length*props.length - 14*props.length)
+      endTranslate:
+        props.length === 25
+          ? -(props.length * props.length - 14 * props.length)
+          : -(props.length * props.length + 1.2 * props.length),
     };
     const rightDesktop = {
-      startTranslate: props.length === 25 ?  -(props.length*props.length -  14*props.length):  -(props.length*props.length - 8* props.length),
-      endTranslate: 0
+      startTranslate:
+        props.length === 25
+          ? -(props.length * props.length - 15 * props.length)
+          : -(props.length * props.length - 8 * props.length),
+      endTranslate: 0,
     };
     const animToLeftDesktop = generateKeyframes(leftDesktop);
-  const animToRightDesktop = generateKeyframes(rightDesktop);
+    const animToRightDesktop = generateKeyframes(rightDesktop);
 
-  return css`
-        color: red;
-     &.group-0 {
-      overflow:visible;
-        animation: ${css`${animToLeft} 133s linear infinite`};
+    return css`
+      &.group-0 {
+        overflow: visible;
+        animation: ${css`
+          ${animToLeft} 133s linear infinite
+        `};
       }
       &.group-1 {
-        overflow:visible;
-        animation: ${css`${animToRight} 133s linear infinite`};
+        overflow: visible;
+        animation: ${css`
+          ${animToRight} 133s linear infinite
+        `};
       }
       &.group-2 {
-          overflow:visible;
-        animation: ${css`${animToLeft} 133s linear infinite`};
+        overflow: visible;
+        animation: ${css`
+          ${animToLeft} 133s linear infinite
+        `};
       }
       &.group-3 {
-          overflow:visible;
-        animation: ${css`${animToRight} 133s linear infinite`};
+        overflow: visible;
+        animation: ${css`
+          ${animToRight} 133s linear infinite
+        `};
       }
-       &.group-4 {
-      overflow:visible;
-        animation: ${css`${animToLeft} 133s linear infinite`};
+      &.group-4 {
+        overflow: visible;
+        animation: ${css`
+          ${animToLeft} 133s linear infinite
+        `};
       }
-       &.group-5 {
-        overflow:visible;
-        animation: ${css`${animToRight} 133s linear infinite`};
+      &.group-5 {
+        overflow: visible;
+        animation: ${css`
+          ${animToRight} 133s linear infinite
+        `};
       }
-       &.group-0:hover, &.group-1:hover, &.group-2:hover, &.group-3:hover, &.group-4:hover, &.group-5:hover {
-      animation-play-state: paused;
-    }
+      &.group-0:hover,
+      &.group-1:hover,
+      &.group-2:hover,
+      &.group-3:hover,
+      &.group-4:hover,
+      &.group-5:hover {
+        animation-play-state: paused;
 
-        @media screen and (min-width: 1440px) {
-   &.group-0 {
-      overflow:visible;
-        animation: ${css`${animToLeftDesktop} 133s linear infinite`};
-      }
-      &.group-1 {
-        overflow:visible;
-        animation: ${css`${animToRightDesktop} 133s linear infinite`};
-      }
-      &.group-2 {
-          overflow:visible;
-        animation: ${css`${animToLeftDesktop} 133s linear infinite`};
-      }
-      &.group-3 {
-          overflow:visible;
-        animation: ${css`${animToRightDesktop} 133s linear infinite`};
-      }
- &.group-4 {
-      overflow:visible;
-        animation: ${css`${animToLeftDesktop} 133s linear infinite`};
-      }
-       &.group-5 {
-      overflow:visible;
-        animation: ${css`${animToLeftDesktop} 133s linear infinite`};
       }
 
+      @media screen and (min-width: 1440px) {
+        &.group-0 {
+          overflow: visible;
+          animation: ${css`
+            ${animToLeftDesktop} 133s linear infinite
+          `};
         }
+        &.group-1 {
+          overflow: visible;
+          animation: ${css`
+            ${animToRightDesktop} 133s linear infinite
+          `};
+        }
+        &.group-2 {
+          overflow: visible;
+          animation: ${css`
+            ${animToLeftDesktop} 133s linear infinite
+          `};
+        }
+        &.group-3 {
+          overflow: visible;
+          animation: ${css`
+            ${animToRightDesktop} 133s linear infinite
+          `};
+        }
+        &.group-4 {
+          overflow: visible;
+          animation: ${css`
+            ${animToLeftDesktop} 133s linear infinite
+          `};
+        }
+        &.group-5 {
+          overflow: visible;
+          animation: ${css`
+            ${animToLeftDesktop} 133s linear infinite
+          `};
+        }
+      }
     `;
-
   }}
   .item-list {
     width: 80px;
@@ -170,7 +209,6 @@ export const GroupContainer = styled.div`
       height: 140px;
     }
 
-   
     img {
       width: 180px;
       height: 140px;
@@ -179,7 +217,6 @@ export const GroupContainer = styled.div`
   }
 
   @media screen and (min-width: 1440px) {
-
     .item-list img {
       filter: opacity(0px);
       transition: filter 1s linear;
