@@ -12,8 +12,7 @@ import {
   TextWrapper,
 } from './InvestorsBlock.styled';
 
-const InvestorsBlock = ({people, companies}) => {
-
+const InvestorsBlock = ({ people, companies }) => {
   const [selectedItem, setSelectedItem] = useState(null);
 
   const closeModal = () => {
@@ -24,15 +23,23 @@ const InvestorsBlock = ({people, companies}) => {
       <TextWrapper>
         <InfoText>Імпакт-інвестори МІСТОХАБ</InfoText>
         <MainHeading>З нами вже</MainHeading>
-        <SecondHeading>{people?.length} {getWordForCount(people.length, 'p')}</SecondHeading>
+        {people?.length > 0 && (
+          <SecondHeading>
+            {people.length} {getWordForCount(people.length, 'p')}
+          </SecondHeading>
+        )}
       </TextWrapper>
       <PeopleContainer>
-       {people &&  <InvestorsPeople people={people} />}
+        {people && <InvestorsPeople people={people} />}
 
         <TextWrapper>
-          <SecondHeading>{companies?.length} {getWordForCount(companies.length, 'k')}</SecondHeading>
+          {companies?.length > 0 && (
+            <SecondHeading>
+              {companies.length} {getWordForCount(companies.length, 'k')}
+            </SecondHeading>
+          )}
         </TextWrapper>
-      {companies &&   <InvestorsCompanies companies={companies} />}
+        {companies && <InvestorsCompanies companies={companies} />}
       </PeopleContainer>
       {selectedItem && (
         <ModalInvestors data={selectedItem} onClose={closeModal} />

@@ -10,7 +10,7 @@ export const About = () => {
         <p className="about-project">Про проєкт</p>
 
         <h2 className="about-title">
-          <span className="accent">Містохаб</span> це
+          <span className="accent">МІСТОХАБ</span> це
         </h2>
 
         <Swiper

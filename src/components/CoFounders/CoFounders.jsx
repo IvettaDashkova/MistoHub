@@ -16,7 +16,7 @@ const CoFounders = () => {
       <CoFoundersContainer>
         <SectionTitle>
           Співзасновники <br />
-          <SectionSpan>містохаб</SectionSpan>
+          <SectionSpan>МІСТОХАБ</SectionSpan>
         </SectionTitle>
 
         <List>

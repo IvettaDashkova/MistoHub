@@ -76,7 +76,7 @@ const HeroSection = () => {
           </button>
         </div>
         <h1 className="hero-title">
-          <span>Містохаб -</span>
+          <span>МІСТОХАБ -</span>
           <br />
           створюємо простір
           <br />
