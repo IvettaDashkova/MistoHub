@@ -103,7 +103,7 @@ const InvestorsPeople = ({ people }) => {
             className={`group-${index} ${index % 2 === 0 ? 'odd-group' : 'even-group'}`}
           >
             <ul>
-              {group.map((investor) => (
+              {group.map((investor, idx) => (
                 <li key={nanoid()}>
                   <button
                     data-group_id={index}
@@ -111,11 +111,11 @@ const InvestorsPeople = ({ people }) => {
                     type="button"
                     onClick={() => openModal(investor)}
                   >
-                    <img
+                     <img
                       src={investor.imageURL ? investor.imageURL : defaultImage}
                       alt={`Investor ${investor.id}`}
                       loading="lazy"
-                    />
+                    /> 
                   </button>
                 </li>
               ))}
