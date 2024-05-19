@@ -16,5 +16,5 @@ export default defineConfig({
       shared: '/src/shared',
     },
   },
-  base: '/',
+  base: '/MistoHub/',
 });
