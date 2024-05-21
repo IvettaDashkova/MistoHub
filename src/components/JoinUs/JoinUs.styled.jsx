@@ -203,7 +203,11 @@ export const JoinButton = styled.button`
   }
 `;
 
-export const AlreadyJoined = styled.p`
+export const AlreadyJoined = styled.div`
+& p {
+  margin: 0;
+}
+
   font-weight: 500;
   font-size: 12px;
   line-height: 133%;
