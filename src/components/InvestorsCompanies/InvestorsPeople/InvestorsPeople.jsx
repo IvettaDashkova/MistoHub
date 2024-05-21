@@ -18,7 +18,6 @@ const InvestorsPeople = ({ people }) => {
   const isMobile = useMediaQuery({ maxWidth: 767 });
   const isTablet = useMediaQuery({ maxWidth: 1440 });
 
-
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -31,11 +30,9 @@ const InvestorsPeople = ({ people }) => {
       } catch (error) {
         console.error('Error fetching people data:', error);
       }
-      
-  };
-  fetchData();
-}, [people]);
-
+    };
+    fetchData();
+  }, [people]);
 
   const checkPosition = useMemo(() => {
     return (containerIndex) => {
@@ -91,7 +88,6 @@ const InvestorsPeople = ({ people }) => {
     setIsOpen(false);
   };
 
-  
   return (
     <ListWrapper>
       <Container id="investors-anim">

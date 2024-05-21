@@ -22,22 +22,25 @@ const HomePage = () => {
   const [activeSection, setActiveSection] = useState('main');
   const location = useLocation();
 
-    const [companies, setCompanies] = useState([]);
+  const [companies, setCompanies] = useState([]);
   const [people, setPeople] = useState([]);
 
- const memoizedFetchData = useMemo(() => async () => {
-    try {
-      const [companiesData, peopleData] = await Promise.all([
-        fetchCompanies(),
-        fetchPeople()
-      ]);
-      setCompanies(companiesData);
-      setPeople(peopleData);
-    } catch (error) {
-      console.error('Error fetching data:', error);
-    }
- }, []);
-  
+  const memoizedFetchData = useMemo(
+    () => async () => {
+      try {
+        const [companiesData, peopleData] = await Promise.all([
+          fetchCompanies(),
+          fetchPeople(),
+        ]);
+        setCompanies(companiesData);
+        setPeople(peopleData);
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+    },
+    []
+  );
+
   useEffect(() => {
     memoizedFetchData();
   }, [memoizedFetchData]);
@@ -99,7 +102,7 @@ const HomePage = () => {
         <AboutProject />
         <Visualization />
         <AccumulatedMoney />
-        <InvestorsBlock people={people} companies={companies}/>
+        <InvestorsBlock people={people} companies={companies} />
         <JoinUs people={people} companies={companies} />
         <CoFounders />
         <ScrollToTopButton />
