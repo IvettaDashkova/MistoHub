@@ -18,7 +18,6 @@ const InvestorsPeople = ({ people }) => {
   const isMobile = useMediaQuery({ maxWidth: 767 });
   const isTablet = useMediaQuery({ maxWidth: 1440 });
 
-
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -31,11 +30,9 @@ const InvestorsPeople = ({ people }) => {
       } catch (error) {
         console.error('Error fetching people data:', error);
       }
-      
-  };
-  fetchData();
-}, [people]);
-
+    };
+    fetchData();
+  }, [people]);
 
   const checkPosition = useMemo(() => {
     return (containerIndex) => {
@@ -91,7 +88,6 @@ const InvestorsPeople = ({ people }) => {
     setIsOpen(false);
   };
 
-  
   return (
     <ListWrapper>
       <Container id="investors-anim">
@@ -99,11 +95,11 @@ const InvestorsPeople = ({ people }) => {
           <GroupContainer
             id={`container-${index}`}
             key={nanoid()}
-            length={group.length}
+            $length={group.length}
             className={`group-${index} ${index % 2 === 0 ? 'odd-group' : 'even-group'}`}
           >
             <ul>
-              {group.map((investor, idx) => (
+              {group.map((investor) => (
                 <li key={nanoid()}>
                   <button
                     data-group_id={index}
@@ -111,11 +107,11 @@ const InvestorsPeople = ({ people }) => {
                     type="button"
                     onClick={() => openModal(investor)}
                   >
-                     <img
+                    <img
                       src={investor.imageURL ? investor.imageURL : defaultImage}
                       alt={`Investor ${investor.id}`}
                       loading="lazy"
-                    /> 
+                    />
                   </button>
                 </li>
               ))}
