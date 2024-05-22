@@ -350,11 +350,6 @@ export const MadeListItem = styled.li`
     min-width: 243px;
   }
 
-  @media screen and (min-width: 1440px) {
-    padding: 20px;
-    max-width: 243px;
-  }
-
   ul {
     padding-left: 16px;
     list-style-type: disc;
