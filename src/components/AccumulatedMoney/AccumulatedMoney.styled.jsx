@@ -415,7 +415,8 @@ export const SVGContainer = styled.div`
     !props.isDesktop &&
     'position: absolute; left: 50%; top: -14px; margin-right: 5px;'};
 
-  width: 20px;
+  width: 100%;
+  max-width: 20px;
   height: 20px;
 
   border-radius: 6px;
@@ -427,12 +428,12 @@ export const SVGContainer = styled.div`
   font-size: 12px;
 
   @media screen and (min-width: 768px) {
-    width: 24px;
+    max-width: 24px;
     height: 24px;
   }
 
   @media screen and (min-width: 1440px) {
-    min-width: 20px;
+    max-width: 20px;
     height: 20px;
     margin-right: 10px;
     transform: none;
@@ -448,4 +449,9 @@ export const SVGContainer = styled.div`
 
 export const SVGContainerForNeedItem = styled(SVGContainer)`
   background-color: #f77d07;
+  padding-top: 3px;
+
+  @media screen and (min-width: 1440px) {
+    padding-top: 2px;
+  }
 `;
