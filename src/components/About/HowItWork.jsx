@@ -92,7 +92,7 @@ export const HowItWork = () => {
                 <div className="how-it-work-number">3</div>
                 <p className="how-it-work-text">
                   80% прибутку передається у Фонд міських ініціатив{' '}
-                  <span className="accent">МІСТОХАБу</span>
+                  <span className="accent">МІСТОХАБ</span>
                 </p>
               </SwiperSlide>
               <SwiperSlide tag="li" className="how-it-work-item">

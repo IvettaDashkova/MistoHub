@@ -41,33 +41,51 @@ export const GroupContainer = styled.div`
     const left = {
       startTranslate: 0,
       endTranslate:
-        props.length === 25
-          ? -(props.length * props.length - 4 * props.length)
-          : -(props.length * props.length + 17 * props.length),
+        props.$length === 20
+          ? -(props.$length * props.$length - 0.3 * props.$length)
+          : -(props.$length * props.$length + 0.3 * props.$length),
     };
 
     const right = {
       startTranslate:
-        props.length === 25
-          ? -(props.length * props.length - 4 * props.length)
-          : -(props.length * props.length + props.length),
+        props.$length === 20
+          ? -(props.$length * props.$length - 0.3 * props.$length)
+          : -(props.$length * props.$length + 0.3 * props.$length),
       endTranslate: 0,
     };
     const animToLeft = generateKeyframes(left);
     const animToRight = generateKeyframes(right);
 
+    const leftTablet = {
+      startTranslate: 0,
+      endTranslate:
+        props.$length === 20
+          ? -(props.$length * props.$length + 2.2 * props.$length)
+          : -(props.$length * props.$length + 0.2 * props.$length),
+    };
+
+    const rightTablet = {
+      startTranslate:
+        props.$length === 20
+          ? -(props.$length * props.$length + 2.2 * props.$length)
+          : -(props.$length * props.$length + 0.2 * props.$length),
+      endTranslate: 0,
+    };
+    const animToLeftTablet = generateKeyframes(leftTablet);
+    const animToRightTablet = generateKeyframes(rightTablet);
+
     const leftDesktop = {
       startTranslate: 0,
       endTranslate:
-        props.length === 25
-          ? -(props.length * props.length - 14 * props.length)
-          : -(props.length * props.length + 1.2 * props.length),
+        props.$length === 20
+          ? -(props.$length * props.$length - 10.5 * props.$length)
+          : -(props.$length * props.$length + 1.2 * props.$length),
     };
     const rightDesktop = {
       startTranslate:
-        props.length === 25
-          ? -(props.length * props.length - 15 * props.length)
-          : -(props.length * props.length - 8 * props.length),
+        props.$length === 20
+          ? -(props.$length * props.$length - 10.5 * props.$length)
+          : -(props.$length * props.$length - 8 * props.$length),
       endTranslate: 0,
     };
     const animToLeftDesktop = generateKeyframes(leftDesktop);
@@ -77,37 +95,37 @@ export const GroupContainer = styled.div`
       &.group-0 {
         overflow: visible;
         animation: ${css`
-          ${animToLeft} 133s linear infinite
+          ${animToLeft} 50s linear infinite
         `};
       }
       &.group-1 {
         overflow: visible;
         animation: ${css`
-          ${animToRight} 133s linear infinite
+          ${animToRight} 50s linear infinite
         `};
       }
       &.group-2 {
         overflow: visible;
         animation: ${css`
-          ${animToLeft} 133s linear infinite
+          ${animToLeft} 50s linear infinite
         `};
       }
       &.group-3 {
         overflow: visible;
         animation: ${css`
-          ${animToRight} 133s linear infinite
+          ${animToRight} 50s linear infinite
         `};
       }
       &.group-4 {
         overflow: visible;
         animation: ${css`
-          ${animToLeft} 133s linear infinite
+          ${animToLeft} 50s linear infinite
         `};
       }
       &.group-5 {
         overflow: visible;
         animation: ${css`
-          ${animToRight} 133s linear infinite
+          ${animToRight} 50s linear infinite
         `};
       }
       &.group-0:hover,
@@ -117,44 +135,80 @@ export const GroupContainer = styled.div`
       &.group-4:hover,
       &.group-5:hover {
         animation-play-state: paused;
-
       }
-
-      @media screen and (min-width: 1440px) {
+      @media screen and (min-width: 768px) {
         &.group-0 {
           overflow: visible;
           animation: ${css`
-            ${animToLeftDesktop} 133s linear infinite
+            ${animToLeftTablet} 50s linear infinite
           `};
         }
         &.group-1 {
           overflow: visible;
           animation: ${css`
-            ${animToRightDesktop} 133s linear infinite
+            ${animToRightTablet} 50s linear infinite
           `};
         }
         &.group-2 {
           overflow: visible;
           animation: ${css`
-            ${animToLeftDesktop} 133s linear infinite
+            ${animToLeftTablet} 50s linear infinite
           `};
         }
         &.group-3 {
           overflow: visible;
           animation: ${css`
-            ${animToRightDesktop} 133s linear infinite
+            ${animToRightTablet} 50s linear infinite
           `};
         }
         &.group-4 {
           overflow: visible;
           animation: ${css`
-            ${animToLeftDesktop} 133s linear infinite
+            ${animToLeftTablet} 50s linear infinite
           `};
         }
         &.group-5 {
           overflow: visible;
           animation: ${css`
-            ${animToLeftDesktop} 133s linear infinite
+            ${animToRightTablet} 50s linear infinite
+          `};
+        }
+      }
+      @media screen and (min-width: 1440px) {
+        &.group-0 {
+          overflow: visible;
+          animation: ${css`
+            ${animToLeftDesktop} 80s linear infinite
+          `};
+        }
+        &.group-1 {
+          overflow: visible;
+          animation: ${css`
+            ${animToRightDesktop} 80s linear infinite
+          `};
+        }
+        &.group-2 {
+          overflow: visible;
+          animation: ${css`
+            ${animToLeftDesktop} 80s linear infinite
+          `};
+        }
+        &.group-3 {
+          overflow: visible;
+          animation: ${css`
+            ${animToRightDesktop} 80s linear infinite
+          `};
+        }
+        &.group-4 {
+          overflow: visible;
+          animation: ${css`
+            ${animToLeftDesktop} 80s linear infinite
+          `};
+        }
+        &.group-5 {
+          overflow: visible;
+          animation: ${css`
+            ${animToRightDesktop} 80s linear infinite
           `};
         }
       }

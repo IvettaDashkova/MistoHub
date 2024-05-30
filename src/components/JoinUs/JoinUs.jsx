@@ -12,7 +12,7 @@ import {
   Title,
   StatsListItem,
   JoinButton,
-  AlreadyJoined,
+  AlreadyJoined
 } from './JoinUs.styled';
 
 const JoinUs = ({people=[], companies=[]}) => {
@@ -37,7 +37,8 @@ const JoinUs = ({people=[], companies=[]}) => {
           Приєднатися
         </JoinButton>
         <AlreadyJoined>
-         {people.length > 0 &&  <span>+{Math.round(people.length / 10) * 10} людей</span>}
+          <p>{people?.length > 100 &&  <span>100+ людей</span>}</p>
+          <p>{companies?.length > 10 &&  <span>10+ компаній</span>}</p>
           вже приєдналися
         </AlreadyJoined>
         <Background />

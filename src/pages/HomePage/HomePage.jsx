@@ -76,7 +76,7 @@ const HomePage = () => {
           window.scrollY < sectionTop + sectionHeight - 100
         ) {
           setActiveSection(sectionId);
-          const url = `/MistoHub/#${sectionId}`;
+          const url = `/#${sectionId}`;
 
           if (sectionId !== null) {
             window.history.pushState(null, '', url);

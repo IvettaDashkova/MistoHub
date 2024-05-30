@@ -95,7 +95,7 @@ const InvestorsPeople = ({ people }) => {
           <GroupContainer
             id={`container-${index}`}
             key={nanoid()}
-            length={group.length}
+            $length={group.length}
             className={`group-${index} ${index % 2 === 0 ? 'odd-group' : 'even-group'}`}
           >
             <ul>
