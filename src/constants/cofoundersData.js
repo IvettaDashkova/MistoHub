@@ -81,7 +81,7 @@ const data = [
     jpgMobile: alyonaGoncharenkoMobileJpg,
     instagram: 'https://www.instagram.com/alena_poltava/',
     name: 'Альона Гончаренко',
-    description: 'Керівниця центру підтримки підприємців "Дія.Бізнес" Полтава',
+    description: 'Керівниця центру підтримки підприємців Дія.Бізнес Полтава',
   },
   {
     id: 1,
