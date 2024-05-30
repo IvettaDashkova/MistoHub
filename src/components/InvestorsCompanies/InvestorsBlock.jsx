@@ -1,5 +1,5 @@
-import { useState } from 'react';
-import InvestorsPeople from './InvestorsPeople/InvestorsPeople';
+import React, { Suspense, useState } from 'react';
+// import InvestorsPeople from './InvestorsPeople/InvestorsPeople';
 import InvestorsCompanies from './InvestorsCompanies/InvestorsCompanies';
 import ModalInvestors from './ModalInvestors/ModalInvestors';
 import { getWordForCount } from '../../helpers/semantic';
@@ -11,6 +11,10 @@ import {
   SecondHeading,
   TextWrapper,
 } from './InvestorsBlock.styled';
+
+const InvestorsPeople = React.lazy(
+  () => import('./InvestorsPeople/InvestorsPeople')
+);
 
 const InvestorsBlock = ({ people, companies }) => {
   const [selectedItem, setSelectedItem] = useState(null);
@@ -30,7 +34,9 @@ const InvestorsBlock = ({ people, companies }) => {
         )}
       </TextWrapper>
       <PeopleContainer>
-        {people && <InvestorsPeople people={people} />}
+        <Suspense fallback={<div style={{ color: 'black' }}>LOADING...</div>}>
+          {people && <InvestorsPeople people={people} />}
+        </Suspense>
 
         <TextWrapper>
           {companies?.length > 0 && (
