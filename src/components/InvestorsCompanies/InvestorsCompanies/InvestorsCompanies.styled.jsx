@@ -1,39 +1,40 @@
-import styled from 'styled-components';
+import styled, { css, keyframes } from 'styled-components';
+
+const generateKeyframes = ({ start, end }) => keyframes`
+  0% {
+    transform: translateX(${start});
+  }
+  100% {
+    transform: translateX(${end}px);
+  }
+`;
 
 export const CompanyWrapper = styled.div`
-  div {
-    margin-bottom: 60px;
-    position: relative;
-    display: flex;
-    overflow: hidden;
-    // width: 100%;
-  }
-  @keyframes moveRightToLeft {
-    0% {
-      transform: translateX(10%);
-    }
-    // 25% {
-    //   transform: translateX(-25%);
-    // }
-    // 50% {
-    //   transform: translateX(-50%);
-    // }
-    // 75% {
-    //   transform: translateX(-75%);
-    // }
-    100% {
-      transform: translateX(-58%);
-    }
+  margin-bottom: 60px;
+  overflow: hidden;
+
+  @media screen and (min-width: 768px) {
+    margin-bottom: 120px;
   }
 
-  ul {
-    display: flex;
-    gap: 12px;
-    // width: 300%;
-    animation: moveRightToLeft 20s linear infinite;
+  @media screen and (min-width: 1440px) {
+    margin-bottom: 150px;
   }
+`;
 
-  ul:hover {
+export const CompaniesList = styled.ul`
+  ${(props) => {
+    if (!props.$anim) return;
+    const animate = generateKeyframes(props.$anim);
+    return css`
+      animation: ${animate} ${props.$anim.time}s linear infinite;
+    `;
+  }}
+
+  display: flex;
+  column-gap: 12px;
+
+  &:active {
     animation-play-state: paused;
   }
 
@@ -49,16 +50,8 @@ export const CompanyWrapper = styled.div`
   }
 
   @media screen and (min-width: 768px) {
-    div {
-      margin-bottom: 120px;
-    }
-
-    ul {
-      display: flex;
-      gap: 32px;
-      width: 100%;
-      animation: moveRightToLeft 10s linear infinite;
-    }
+    display: flex;
+    column-gap: 32px;
 
     img {
       width: 180px;
@@ -67,8 +60,8 @@ export const CompanyWrapper = styled.div`
   }
 
   @media screen and (min-width: 1440px) {
-    div {
-      margin-bottom: 150px;
+    &:hover {
+      animation-play-state: paused;
     }
   }
 `;
